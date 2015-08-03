@@ -11,5 +11,5 @@ Domain : https://www.h2perf.org
 ###Team List###
 - 강상진 멘토님 : [@BrandonKang](https://github.com/BrandonKang)
 - 박정현 : [@Victorrica](https://github.com/victorrica)
-- 장희정 : [@Kolnidur](https://github.com/Kolnidur)
-- 장재혁 : [@jang4427](https://github.com/jang4427)
+- 장재혁 : [@Kolnidur](https://github.com/Kolnidur)
+- 장희정 : [@jang4427](https://github.com/jang4427)
