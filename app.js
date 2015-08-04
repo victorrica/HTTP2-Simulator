@@ -28,7 +28,7 @@ process.on('uncaughtException', function (err) {
   }
 });
 // all environments
-app.set('port', process.env.PORT || 80);
+app.set('port', process.env.PORT || 3000);
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 app.use(express.favicon());
@@ -60,6 +60,13 @@ app.post('/check', function(req, res) {
   console.log(req.body.hostName);
   checker.fillUrl(req.body.hostName, res);
   checker.checkSpdy();
+});
+
+
+//Add by Kolnidur
+app.post('/tls', function(req, res) {
+  console.log(req.body.hostName);
+  checker.checkNPNproto();
 });
 
 http.createServer(app).listen(app.get('port'), function(){

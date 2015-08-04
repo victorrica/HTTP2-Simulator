@@ -21,14 +21,23 @@
 
 			<div class="container">
 				<h1 class="logo">HTTP/2.0 & SPDY Checker</h1>
-				<p id="summary">입력한 사이트가 HTTP/2.0이나 SPDY를 지원하는지 확인합니다.
-				</p>
+				<p id="summary">입력한 사이트가 HTTP/2.0이나 SPDY를 지원하는지 확인합니다.</p>
 				<div class="hostname input-group input-group-lg">
 					<span class="input-group-addon" id="basic-addon1">https://</span>
 					<input id="hostname" type="text" class="form-control" aria-describedby="basic-addon1">
 
 					<span class="input-group-btn">
 						<button id="start" class="btn btn-default" type="button">Check</button>
+					</span>
+				</div>
+
+				<p id="summary">Checker using TSL module </p>
+				<div class="hostname input-group input-group-lg">
+					<span class="input-group-addon" id="basic-addon1">https://</span>
+					<input id="tls_hostname" type="text" class="form-control" aria-describedby="basic-addon1">
+
+					<span class="input-group-btn">
+						<button id="tls_start" class="btn btn-default" type="button">Check</button>
 					</span>
 				</div>
 			</div>

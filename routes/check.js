@@ -10,6 +10,9 @@ var chunked = false;
 var spdy = require('spdy');
 var http = require('https');
 
+// Add by Kolnidur
+var tls = require('tls');
+
 var ERROR = '4';
 var OK = '2';
 
@@ -157,4 +160,54 @@ exports.checkSpdy = function() {
 		agent.close();
 		exports.checkHttp2();
 	}).end();
+}
+
+//Protocol Check with TLS extensions NPN protocol
+
+
+exports.checkNPNproto = function(){
+
+
+	var port = 443;
+	var host = "www.google.com";
+
+	var options = {
+		// Chain of certificate autorities
+		// Client and server have these to authenticate keys
+		ca: [
+			fs.readFileSync('public/ssl/root-cert.pem'),
+			fs.readFileSync('public/ssl/ca1-cert.pem'),
+			fs.readFileSync('public/ssl/ca2-cert.pem'),
+			fs.readFileSync('public/ssl/ca3-cert.pem'),
+			fs.readFileSync('public/ssl/ca4-cert.pem')
+		],
+		// Private key of the client
+		key: fs.readFileSync('public/ssl/agent2-key.pem'),
+		// Public key of the client (certificate key)
+		cert: fs.readFileSync('public/ssl/agent2-cert.pem'),
+		NPNProtocols: ['h2', 'spdy/1', 'spdy/2', 'spdy/3', 'spdy/3.1'],
+		// Automatically reject clients with invalid certificates.
+		rejectUnauthorized: false             // Set false to see what happens.
+	};
+
+	var socket = tls.connect(port, host, options, function () {
+
+		var npn = 'http/1';
+		console.log(this.npnProtocol)
+		if(this.npnProtocol == 'h2')  {
+			npn = 'http/2';
+		}
+		else if(this.npnProtocol != false) {
+			if(/spdy\/[0-9\.]+/.test(this.npnProtocol)) {
+				npn = this.npnProtocol;
+			}
+		}
+
+		console.log('This host using '+npn);
+	});
+
+	socket.on('error', function(error) {
+		console.log("This host not support TSL connection");  // when unsupport secure connection
+	})
+
 }
