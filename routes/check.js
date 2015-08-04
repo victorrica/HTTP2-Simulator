@@ -104,7 +104,7 @@ function Download(url,filename)
 
 exports.sendFailMsg = function() {
 	ajaxResponse.status = ERROR;
-	ajaxResponse.value = "This site is not supported.";
+	//ajaxResponse.value = "This site is not supported.";
 	mResponse.send(ajaxResponse);
 	ajaxResponse.status = undefined;
 	ajaxResponse.value = undefined;
@@ -140,7 +140,8 @@ exports.fillUrl = function(aUrl, aResponse){
 	url.http2 = aUrl;
 	url.spdy = url.http2.substring(8, Buffer.byteLength(url.http2));
 }
-exports.checkSpdy = function() {
+
+exports.checkSpdy = function(callback) {
 	console.log(spdy);
 	var agent = spdy.createAgent({
 		host: url.spdy,
