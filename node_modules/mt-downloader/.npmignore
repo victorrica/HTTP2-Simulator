@@ -1,0 +1,6 @@
+test/core.downloaded.png
+coverage
+__*
+*.diff
+node_modules/
+*.sublime-*
