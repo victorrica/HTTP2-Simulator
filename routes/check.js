@@ -171,7 +171,6 @@ exports.checkNPNproto = function(){
 
 	var port = 443;
 	var host = url.spdy;
-
 	var options = {
 		// Chain of certificate autorities
 		// Client and server have these to authenticate keys
@@ -194,7 +193,6 @@ exports.checkNPNproto = function(){
 	var socket = tls.connect(port, host, options, function () {
 
 		var npn = 'http/1';
-		var ajax_message='';
 		console.log('check host name : '+host);
 		console.log('npn data : ' + this.npnProtocol);
 		if(this.npnProtocol == 'h2')  {
@@ -209,9 +207,9 @@ exports.checkNPNproto = function(){
 			}
 		}
 
+		var ajax_message = 'This host using '+npn+'(origin : '+this.npnProtocol+')';
+		console.log(ajax_message);
 
-		console.log('This host using '+npn+'(origin : '+this.npnProtocol+')');
-		ajax_message = 'This host using '+npn+'(origin : '+this.npnProtocol+')';
 		mResponse.send(ajax_message);
 	});
 
