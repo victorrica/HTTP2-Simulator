@@ -163,12 +163,8 @@ exports.checkSpdy = function(callback) {
 	}).end();
 }
 
-//Protocol Check with TLS extensions NPN protocol
-
-
+//Protocol Check using TLS extensions NPN protocol
 exports.checkNPNproto = function(){
-
-
 	var port = 443;
 	var host = url.spdy;
 	var options = {
