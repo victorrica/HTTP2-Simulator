@@ -104,7 +104,7 @@ function Download(url,filename)
 
 exports.sendFailMsg = function() {
 	ajaxResponse.status = ERROR;
-	ajaxResponse.value = "This site is not supported.";
+	//ajaxResponse.value = "This site is not supported.";
 	mResponse.send(ajaxResponse);
 	ajaxResponse.status = undefined;
 	ajaxResponse.value = undefined;
@@ -113,6 +113,7 @@ exports.sendFailMsg = function() {
 exports.checkHttp2 = function() {
 	require('http2').get(url.http2, function(response) {
 		version.http2 = response.httpVersion;
+
 
 		if(version.spdy != undefined && (version.http2 == undefined || version.http2 == '1.1')) {
 			console.log(version.spdy);
@@ -140,7 +141,7 @@ exports.fillUrl = function(aUrl, aResponse){
 	url.http2 = aUrl;
 	url.spdy = url.http2.substring(8, Buffer.byteLength(url.http2));
 }
-exports.checkSpdy = function() {
+exports.checkSpdy = function(callback) {
 	console.log(spdy);
 	var agent = spdy.createAgent({
 		host: url.spdy,
@@ -169,7 +170,7 @@ exports.checkNPNproto = function(){
 
 
 	var port = 443;
-	var host = "www.google.com";
+	var host = url.spdy;
 
 	var options = {
 		// Chain of certificate autorities
@@ -193,9 +194,14 @@ exports.checkNPNproto = function(){
 	var socket = tls.connect(port, host, options, function () {
 
 		var npn = 'http/1';
-		console.log(this.npnProtocol)
+		var ajax_message='';
+		console.log('check host name : '+host);
+		console.log('npn data : ' + this.npnProtocol);
 		if(this.npnProtocol == 'h2')  {
-			npn = 'http/2';
+			npn = 'http/2(npn)';
+		}
+		else if(this.npnProtocol == undefined){
+			npn = 'http/2(alpn)';
 		}
 		else if(this.npnProtocol != false) {
 			if(/spdy\/[0-9\.]+/.test(this.npnProtocol)) {
@@ -203,11 +209,15 @@ exports.checkNPNproto = function(){
 			}
 		}
 
-		console.log('This host using '+npn);
+
+		console.log('This host using '+npn+'(origin : '+this.npnProtocol+')');
+		ajax_message = 'This host using '+npn+'(origin : '+this.npnProtocol+')';
+		mResponse.send(ajax_message);
 	});
 
 	socket.on('error', function(error) {
-		console.log("This host not support TSL connection");  // when unsupport secure connection
+		console.log("This host not support TSL connection or wrong host name");
+		mResponse.send('This host not support TSL connection or wrong host name');
 	})
 
 }

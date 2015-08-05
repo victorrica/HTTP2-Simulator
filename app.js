@@ -46,26 +46,20 @@ if ('development' == app.get('env')) {
 }
 
 app.get('/', routes.index);
-/*
-app.get('/',function(req,res){
-  fs.readFile('index.html',function(error,data){
-    console.log("request");
-    res.writeHead(200,{'Content-type': 'text/html'});
-    res.end(data);
-  });
-});
-*/
 
 app.post('/check', function(req, res) {
   console.log(req.body.hostName);
   checker.fillUrl(req.body.hostName, res);
-  checker.checkSpdy();
+  checker.checkSpdy(function() {
+    checker.checkHttp2();
+  })
 });
 
 
 //Add by Kolnidur
 app.post('/tls', function(req, res) {
   console.log(req.body.hostName);
+  checker.fillUrl(req.body.hostName, res);
   checker.checkNPNproto();
 });
 
