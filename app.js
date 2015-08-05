@@ -47,6 +47,7 @@ if ('development' == app.get('env')) {
 
 app.get('/', routes.index);
 
+
 app.post('/check', function(req, res) {
   console.log(req.body.hostName);
   checker.fillUrl(req.body.hostName, res);
