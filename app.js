@@ -46,6 +46,7 @@ if ('development' == app.get('env')) {
 }
 
 app.get('/', routes.index);
+app.get('/Webpagetest', routes.Webpagetest);
 
 
 app.post('/check', function(req, res) {
@@ -63,6 +64,8 @@ app.post('/tls', function(req, res) {
   checker.fillUrl(req.body.hostName, res);
   checker.checkNPNproto();
 });
+
+
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('HTTP2-Simulator server listening on port ' + app.get('port'));
