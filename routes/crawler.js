@@ -4,6 +4,7 @@ var spawn = process.spawn;
 var page = require('webpage').create(),
     system = require('system'),
     address;
+var URL,parsedURL,child;
     
 if (system.args.length === 1) {
     console.log('Usage: netlog.js <some URL>');
@@ -12,11 +13,20 @@ if (system.args.length === 1) {
     address = system.args[1];
 
     page.onResourceReceived = function (res) {			
-		//console.log(JSON.stringify(res, undefined, 4));
-		//console.log(res.url + "\n" + parseURL(res.url).path);
-		//var url = res.url;
 		
-		var child = spawn("node", ["download.js", res.url,parseURL(res.url).path])
+		URL = res.url;
+		parsedURL = parseURL(res.url).path;
+		
+		if(parsedURL == null)
+		{
+			URL += "index.html";
+			parsedURL = "index.html";
+		}
+		
+		child = spawn("node", ["download.js", URL, parsedURL]);
+		
+		//console.log(JSON.stringify(res, undefined, 4));
+		//console.log(res.url + "\n" + parsedURL);
 		
 		child.stdout.on("data", function (data) {
 			console.log("Download Start " + parseURL(res.url).path);
