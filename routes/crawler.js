@@ -1,4 +1,6 @@
 var phantomjs = require('phantomjs');
+var process = require("child_process");
+var spawn = process.spawn;
 var page = require('webpage').create(),
     system = require('system'),
     address;
@@ -10,9 +12,23 @@ if (system.args.length === 1) {
     address = system.args[1];
 
     page.onResourceReceived = function (res) {			
-		console.log(res.url + "\n" + parseURL(res.url).path);
-		var url = res.url;
-		var file = 'test/' + parseURL(res.url).path;	
+		//console.log(JSON.stringify(res, undefined, 4));
+		//console.log(res.url + "\n" + parseURL(res.url).path);
+		//var url = res.url;
+		
+		var child = spawn("node", ["download.js", res.url,parseURL(res.url).path])
+		
+		child.stdout.on("data", function (data) {
+			console.log("Download Start " + parseURL(res.url).path);
+		});
+		
+		child.stderr.on("data", function (data) {
+		    console.log("Download Error : " + parseURL(res.url).path);
+		});
+		
+		child.on("exit", function (code) {
+		  	console.log("Download Done : " + parseURL(res.url).path);
+		});
     };
 
     page.open(address, function (status) {
