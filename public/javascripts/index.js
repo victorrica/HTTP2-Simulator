@@ -51,13 +51,16 @@ function check_tls(url){
 		data:{'hostName':'https://'+url},
 		//data: "hostname=" + url.substring(8, url.length).replace("/", "") + "&public=true",
 		success: function(result){
-			var res;
-			if(result.status == 2) {
-				res = "This site supports " + result.value + ".";
-			} else {
-				res = result.value;
-			}
-			$('#result').text(res);
+
+			alert(result);
+
+			//var res;
+			//if(result.status == 2) {
+			//	res = "This site supports " + result.value + ".";
+			//} else {
+			//	res = result.value;
+			//}
+			//$('#result').text(res);
 			/*			if(data.error)
 			 alert("443포트, SSL이 적용되어있지 않습니다.");*/
 			//호스트에 연결 에러, 이 서비스에 포트가 열려있습니까? 그리고 방화벽으로 방해 되지 않았습니까? 꼭, HTTP/2를 위한 https를 이용한 443 포트가 열려 있어야 합니다.
@@ -84,7 +87,9 @@ $(document).ready(function(){
 	$("#start").click(function(){
 		var json = checkh2($("#hostname").val());
 	});
-
+	$("#tls_start").click(function(){
+		var json = check_tls($("#tls_hostname").val());
+	});
 });
 
 
