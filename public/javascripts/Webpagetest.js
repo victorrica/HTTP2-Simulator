@@ -44,9 +44,9 @@ function wpt_result(url) {
 
                 var img_url = "http://www.webpagetest.org/results/"+year+'\/'+month+'\/'+day+'\/'+id_array[1]+'\/'+id_array[2]+'\/'+"1_waterfall.png";
                 alert(img_url);
-                var path="<img src='"+img_url+">";
-                //alert(path);
-                $("img_div").append(path);
+                var path="<img src=\""+img_url+"\">";
+                alert(path);
+                $("#img_div").append(path);
             }
 
 
@@ -63,8 +63,8 @@ $(document).ready(function(){
 
 
     $("#wpt1_start").click(function(){
-        //var json = wpt_start($("#hostname").val());
-        var json= $("#result_url").val('http://www.webpagetest.org/jsonResult.php?test=150806_KY_E97');
+        var json = wpt_start($("#hostname").val());
+        //var json= $("#result_url").val('http://www.webpagetest.org/jsonResult.php?test=150806_KY_E97');
     });
 
     $("#wptr_start").click(function(){
