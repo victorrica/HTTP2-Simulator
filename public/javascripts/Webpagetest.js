@@ -26,12 +26,9 @@ function wpt_result(url) {
         //data: "url=" + url + "&k=A.4c4149b53488c09ce7ee8f7e8cc637b6&f=json&video=1",
         success: function(result) {
 
-            alert(url);
-
-
-
+            //alert(url);
             if(result.statusText=="Test Complete"){
-                //alert("income");
+                alert("Test Complete");
 
                 var url_array=url.split('?');
                 var temp1=url_array[1].split('=');
@@ -43,13 +40,13 @@ function wpt_result(url) {
                // alert(id_array);  // 15 , 08 , 06 , KY , E97
 
                 var img_url = "http://www.webpagetest.org/results/"+year+'\/'+month+'\/'+day+'\/'+id_array[1]+'\/'+id_array[2]+'\/'+"1_waterfall.png";
-                alert(img_url);
+                //alert(img_url);
                 var path="<img src=\""+img_url+"\">";
-                alert(path);
+                //alert(path);
                 $("#img_div").append(path);
+            }else{
+                alert("Now test status is "+result.statusText+". Please retry 30 seconds later.");
             }
-
-
         },
         error:function(e){
             alert(e.responseText);
