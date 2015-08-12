@@ -49,6 +49,8 @@ app.get('/', routes.index);
 app.get('/Webpagetest', routes.Webpagetest);
 app.get('/rank', routes.rank);
 app.get('/contactus', routes.contactus);
+app.get('/check_result', routes.check_result);
+app.get('/progress_page', routes.progress_page);
 
 
 app.post('/check', function(req, res) {

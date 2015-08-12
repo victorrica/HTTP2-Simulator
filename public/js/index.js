@@ -26,11 +26,12 @@ function check_tls(url){
 		success: function(result){
 
 			//alert(result);
-			$("#protocol_result").text(result);
-			$("#one").css("visibility","visible");
-			$("#one").css("display","block");
-			$(location).attr('href',"/#one");
+			//$("#protocol_result").text(result);
+			//$("#one").css("visibility","visible");
+			//$("#one").css("display","block");
+			//$(location).attr('href',"/#one");
 
+			get_html("/check_result");
 
 		},
 		error:function(e){
@@ -38,6 +39,21 @@ function check_tls(url){
 		}
 	});
 }
+
+function click_next(){
+	get_html("/progress_page");
+
+}
+
+function get_html(source){
+
+	$.ajax({
+		url: source,
+		success: function (data) { $('body').append(data); },
+		dataType: 'html'
+	});
+}
+
 
 $(document).ready(function(){
 
@@ -47,13 +63,15 @@ $(document).ready(function(){
 	//});
 
 	$("#start").click(function(){
-		var json = check_tls($("#url").val());
+		check_tls($("#url").val());
 	});
 
 	$("#next").click(function(){
-		$("#two").css("visibility","visible");
-		$("#two").css("display","block");
-		$(location).attr('href',"/#two");
+		//$("#two").css("visibility","visible");
+		//$("#two").css("display","block");
+		//$(location).attr('href',"/#two");
+		//alert("asdf");
+		click_next();
 	});
 
 });
