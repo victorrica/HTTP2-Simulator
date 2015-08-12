@@ -1,0 +1,1081 @@
+/* SIDE PART */
+	#sidePart {
+		width: 202px;
+		overflow: hidden;
+		margin: 0 0 0 7px;
+	}
+	/* GROUPS */
+		#sidePart .floatGroups {
+			clear: both;
+			width: 202px;
+			overflow: hidden;
+			margin: -11px 0 0;
+		}
+		#sidePart .floatGroup {
+			clear: both;
+			width: 202px;
+			overflow: hidden;
+			margin: 11px 0 0;
+		}
+	/* LAUNCHING */
+		#sidePart .invenLaunching .buttons {
+			width:202px; height:25px;background-color:#38393e;
+		}
+		#sidePart .invenLaunching .buttons .buttonsWrap {float:right; margin: 5px 3px 0;}
+		#sidePart .invenLaunching .buttons .buttonsWrap ul {width:100%; height:15px;}
+		#sidePart .invenLaunching .buttons ul li {
+		    height: 15px;
+		    margin: 0 0 0 3px;
+		    overflow: hidden;
+		    width: 15px;
+		}
+		#sidePart .invenLaunching .buttons ul li a {
+		    background: url("http://static.inven.co.kr/image_2011/webzine/common/icon_15x15_yellow1_dia.png") no-repeat scroll left top transparent;
+		    display: inline;
+		    float: left;
+		    height: 15px;
+		    width: 15px;
+		    overflow: hidden;
+		    text-indent:-9999px;
+		}
+		#sidePart .invenLaunching .buttons ul.buttons1 li a.button1,
+		#sidePart .invenLaunching .buttons ul.buttons2 li a.button2,
+		#sidePart .invenLaunching .buttons ul.buttons3 li a.button3,
+		#sidePart .invenLaunching .buttons ul.buttons4 li a.button4,
+		#sidePart .invenLaunching .buttons ul.buttons5 li a.button5,
+		#sidePart .invenLaunching .buttons ul.buttons6 li a.button6,
+		#sidePart .invenLaunching .buttons ul.buttons7 li a.button7,
+		#sidePart .invenLaunching .buttons ul.buttons8 li a.button8,
+		#sidePart .invenLaunching .buttons ul.buttons9 li a.button9,
+		#sidePart .invenLaunching .buttons ul.buttons10 li a.button10,
+		#sidePart .invenLaunching .buttons ul.buttons11 li a.button11 {
+		    background-position: left -15px;
+		}
+	/* BOARD LIST */
+		#sidePart .boardList {
+			overflow: hidden;
+		}
+		#sidePart .boardList ul {
+			overflow: hidden;
+		}
+		#sidePart .boardList ul li {
+			clear: both;
+			height: 15px;
+			overflow: hidden;
+			text-indent: 9px;
+			white-space: nowrap;
+			line-height: 15px;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/icon_rect_gray8.gif') no-repeat left 6px;
+			margin: 7px 0 0 0;
+			padding: 0;
+		}
+		#sidePart .boardList ul li img {
+			vertical-align: middle;
+		}
+		#sidePart .boardList ul li a {
+			color: #333333;
+		}
+		#sidePart .boardList ul li a span.category {
+			font-weight: bold;
+			letter-spacing: -1px;
+		}
+		#sidePart .boardList ul li a span.comment {
+			color: #0072ff;
+			font-size: 11px;
+			font-family: µ¸¿ò, dotum, ±¼¸², gulim, Helvetica;
+			line-height: 14px;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/icon_image_talk1.gif') no-repeat left top;
+			padding: 0 0 0 15px;
+		}
+	/* BANNER LIST */
+		#sidePart .invenBanner .bannerList {
+			clear: both;
+			width: 202px;
+			overflow: hidden;
+		}
+		#sidePart .invenBanner .bannerList ul {
+			clear: both;
+			width: 202px;
+			overflow: hidden;
+			margin: -6px 0 0;
+		}
+		#sidePart .invenBanner .bannerList ul li {
+			clear: both;
+			width: 202px;
+			overflow: hidden;
+			margin: 6px 0 0;
+		}
+		#sidePart .invenBanner .bannerList ul li a {
+			display: inline;
+			float: left;
+			width: 202px;
+			overflow: hidden;
+		}
+		#sidePart .invenBanner .bannerList ul li a img {
+			width: 202px;
+			border: 0;
+		}
+		#sidePart .invenBanner .loadError {
+			color: black;
+			white-space: nowrap;
+			margin: 3px 0 0 5px;
+		}
+		
+		/* MOBILE SIDE V1*/
+		#sidePart .mobileside div.header {
+			width: 201px;
+			height: 31px;
+			overflow: hidden;
+			background: url('http://static.inven.co.kr/image_2011/webzine/common/mobileside_top.png') no-repeat left top;
+		}
+		#sidePart .mobileside div.content {
+			width: 202px;
+			height: 395px;
+			overflow: hidden;
+			background: url('http://static.inven.co.kr/image_2011/webzine/common/mobileside_middle.jpg') no-repeat left top;
+		}		
+		#sidePart .mobileside div.footer {
+			width: 201px;
+			height: 25px;
+			overflow: hidden;
+			background: url('http://static.inven.co.kr/image_2011/webzine/common/mobileside_bottom.png') no-repeat center top;
+		}
+		#sidePart .mobileside .content a.more {
+			width: 41px;
+			height: 11px;
+			overflow: hidden;
+			float:right;
+			background: url('http://static.inven.co.kr/image_2011/webzine/common/mobileside_more.png') no-repeat center top;
+			margin: 10px 18px 0px 0px;
+			text-indent: -10000em;
+		}
+		#sidePart .mobileside .content .topContent { 
+			width: 175px; 
+			height: 163px; 
+			overflow: hidden; 
+			margin-left: 13px; 
+		} 
+		#sidePart .mobileside .content .topContent .banner { margin-top: 9px; }
+		#sidePart .mobileside .content .topContent .banner a img { width: 175px; height: 100px; }
+		#sidePart .mobileside .content .topContent .name_code { 
+			width: 175px; 
+			height: 25px; 
+			overflow: hidden; 
+			margin-top: 2px;  
+		}
+		#sidePart .mobileside .content .topContent .company_os { 
+			width: 175px; 
+			height: 25px;
+			overflow: hidden;
+		}
+		#sidePart .mobileside .content .topContent .name { 
+			width: 117px; 
+			height: 18px;
+			margin: 4px 0px 0px 5px;
+			_margin: 1px 0px 0px 5px;
+			overflow: hidden;
+			font-size: 15px; 
+			font-weight: bold;
+		}
+		#sidePart .mobileside .content .topContent .company { 
+			width: 117px; 
+			height: 18px;
+			margin: 6px 0px 0px 5px;
+			_margin: 3px 0px 0px 5px;
+			overflow: hidden;
+			color: #447e6f;
+		}
+		#sidePart .mobileside .content .topContent .code { 
+			width: 53px; 
+			text-align: center; 
+			overflow: hidden;
+			margin-top: 3px; 
+			_margin-top: -1px;
+		}
+		#sidePart .mobileside .content .topContent .code img.integer0 { margin-left: 1px; }
+		#sidePart .mobileside .content .topContent .code img.integer1 { margin-left: -1px;}
+		#sidePart .mobileside .content .topContent .code img.integer2 { margin-left: -1px;}
+		#sidePart .mobileside .content .topContent .os { 
+			width: 53px; 
+			text-align: center; 
+			/*overflow: hidden; */
+			margin-top: 8px;
+			_margin-top: 3px;
+		}
+		#sidePart .mobileside .content .topContent .os img { margin-right: 3px; margin-left: 3px; }
+		#sidePart .mobileside .content .midContent { 
+			margin-left: 11px;
+			width: 179px;
+			height: 55px;
+			overflow: hidden;
+			margin-top: 27px;
+		}
+		#sidePart .mobileside .content .midContent .leftarrow a { 
+			width: 17px;
+			height: 45px;
+			overflow: hidden;
+			display: block; 
+			background: url('http://static.inven.co.kr/image_2011/webzine/common/leftarrow.png') no-repeat left top;	
+		}
+		#sidePart .mobileside .content .midContent .rightarrow a { 
+			width: 17px;
+			height: 45px;
+			overflow: hidden;
+			display: block;
+			background: url('http://static.inven.co.kr/image_2011/webzine/common/rightarrow.png') no-repeat left top;	
+		}
+		#sidePart .mobileside .content .midContent .appImg { width: 145px; height: 45px; overflow: hidden; }
+		#sidePart .mobileside .content .midContent .appImg ul { width: 850px; height: 45px; overflow: hidden; }
+		#sidePart .mobileside .content .midContent .appImg ul li { margin-right: 5px; }
+		#sidePart .mobileside .content .midContent .appImg ul li a img { width:45px; height:45px; }
+		#sidePart .mobileside .content .botContent {
+			width: 175px;
+			height: 96px;
+			overflow: hidden;
+			margin: 30px 0px 0px 13px;	
+		}
+		#sidePart .mobileside .content .botContent .news { margin: 5px 0px 0px 4px; _margin: 5px 0px 0px 5px; }
+		#sidePart .mobileside .content .botContent .news dl { padding-bottom: 4px; }
+		#sidePart .mobileside .content .botContent .news dd a img { 
+			width: 60px;
+			height: 40px;
+			overflow: hidden;
+			border: 1px solid #c9c9c9;
+		}
+		#sidePart .mobileside .content .botContent .news dd.desc { 
+			width: 103px;
+			height: 40px;
+			overflow: hidden;
+			margin: 2px 0px 0px 5px;
+		}
+		/*
+		.ie10 #sidePart .mobileside .content .botContent .news dd.desc { 
+			width: 103px;
+			height: 40px;
+			overflow: hidden;
+			margin: 2px 0px 0px 5px;
+			line-height: 14px; 
+		}
+		*/
+		#sidePart .mobileside .content .botContent .news dd.desc a { color:#474747; font-size:11px; word-break:break-all; }
+				
+				
+				
+				
+						
+		/* HOT SMART PHONE GAME */
+		#sidePart .hotSmart .title {
+			display: inline;
+			float: left;
+			width: 202px;
+			height: 35px;
+			overflow: hidden;
+			text-indent: -10000em;
+			background: url('http://static.inven.co.kr/image_2011/webzine/common/wrap_202_navy1b_head_hotsmart2.png') no-repeat left top;
+		}
+		#sidePart .hotSmart .articleBody {
+			width: 202px;
+			background: url('http://static.inven.co.kr/image_2011/webzine/common/wrap_202_navy1_mid.png') repeat-y left top;
+			border-bottom: 1px solid #404c71;
+		}
+		#sidePart .hotSmart .articleBody .articleWrap {
+			padding-bottom: 5px;
+		}
+		#sidePart .hotSmart .articleBody .topimage {
+			display: inline;
+			float: left;
+			background: #c7d1e4;
+			border: 1px solid #4b5982;
+			margin: 0 6px 0;
+			padding: 2px;
+		}
+		#sidePart .hotSmart .articleBody .topimage img {
+			width: 184px;
+			height: 129px;
+			border: 0;
+		}
+		#sidePart .hotSmart .articleBody dl {
+			width: 190px;
+			background: #d4d9e5;
+			margin: 5px 6px 0;
+			padding-bottom: 5px;
+		}
+		#sidePart .hotSmart .articleBody dl dt {
+			clear: both;
+			width: 186px;
+			height: 22px;
+			overflow: hidden;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/dot_4x1_gray3.gif') repeat-x left bottom;
+			margin: 8px 2px 0;
+		}
+		#sidePart .hotSmart .articleBody dl dt a {
+			display: inline;
+			float: left;
+			color: #002daa;
+			font-size: 14px;
+			font-family: µ¸¿ò, dotum, ±¼¸², gulim, Helvetica;
+			font-weight: bold;
+			letter-spacing: -1px;
+			line-height: 17px;
+			text-decoration: none;
+			white-space: nowrap;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/icon_arrow_white1.gif') no-repeat left top;
+			margin: 0 0 0 6px;
+			padding-left: 16px;
+		}
+		#sidePart .hotSmart .articleBody dl dd {
+			clear: none;
+			width: 117px;
+			_width: 127px;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/icon_rect_black1.gif') no-repeat 3px 4px;
+			margin: 5px 0 0 7px;
+			padding-left: 10px;
+		}
+		#sidePart .hotSmart .articleBody dl dd {
+			color: #172344;
+		}
+		#sidePart .hotSmart .articleBody dl dd.writer {
+			margin-top: 9px;
+		}
+		#sidePart .hotSmart .articleBody dl dd.reason {
+			float: right;
+			width: 52px;
+			height: 18px;
+			_height: 38px;
+			overflow: hidden;
+			color: #ce1414;
+			text-align: center;
+			font-size: 11px;
+			font-family: µ¸¿ò, dotum, ±¼¸², gulim, Helvetica;
+			line-height: 14px;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/button_52x38_red1.gif') no-repeat left top;
+			margin: 6px 4px 0 0;
+			padding: 20px 0 0;
+		}
+		#sidePart .hotSmart .loadError {
+			width: 180px;
+			_width: 190px;
+			background: #d4d9e5;
+			color: #002daa;
+			font-size: 14px;
+			font-family: µ¸¿ò, dotum, ±¼¸², gulim, Helvetica;
+			font-weight: bold;
+			letter-spacing: -1px;
+			margin: 5px 6px 0;
+			padding: 5px;
+		}
+	/* PLAY THIS GAME */
+		#sidePart .playThisGame .title {
+			display: inline;
+			float: left;
+			width: 202px;
+			height: 31px;
+			overflow: hidden;
+			text-indent: -10000em;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/wrap_202_navy1_head_playthisgame.gif') no-repeat left top;
+		}
+		#sidePart .playThisGame .articleBody {
+			width: 202px;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/wrap_202_navy1_mid.gif') repeat-y left top;
+			border-bottom: 1px solid #404c71;
+			padding-bottom: 5px;
+		}
+		#sidePart .playThisGame .articleBody .topimage {
+			display: inline;
+			float: left;
+			background: #c7d1e4;
+			border: 1px solid #4b5982;
+			margin: 4px 6px 0;
+			padding: 2px;
+		}
+		#sidePart .playThisGame .articleBody .topimage img {
+			width: 184px;
+			height: 129px;
+			border: 0;
+		}
+		#sidePart .playThisGame .articleBody dl {
+			width: 190px;
+			background: #d4d9e5;
+			margin: 5px 6px 0;
+			padding-bottom: 5px;
+		}
+		#sidePart .playThisGame .articleBody dl dt {
+			clear: both;
+			width: 186px;
+			height: 22px;
+			overflow: hidden;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/dot_4x1_gray3.gif') repeat-x left bottom;
+			margin: 8px 2px 0;
+		}
+		#sidePart .playThisGame .articleBody dl dt a {
+			display: inline;
+			float: left;
+			color: #002daa;
+			font-size: 14px;
+			font-family: µ¸¿ò, dotum, ±¼¸², gulim, Helvetica;
+			font-weight: bold;
+			letter-spacing: -1px;
+			line-height: 16px;
+			text-decoration: none;
+			white-space: nowrap;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/icon_arrow_white1.gif') no-repeat left top;
+			margin: 0 0 0 6px;
+			padding-left: 16px;
+		}
+		#sidePart .playThisGame .articleBody dl dd {
+			clear: none;
+			width: 117px;
+			_width: 127px;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/icon_rect_black1.gif') no-repeat 3px 4px;
+			margin: 5px 0 0 7px;
+			padding-left: 10px;
+		}
+		#sidePart .playThisGame .articleBody dl dd {
+			color: #172344;
+		}
+		#sidePart .playThisGame .articleBody dl dd.writer {
+			margin-top: 9px;
+		}
+		#sidePart .playThisGame .articleBody dl dd.reason {
+			float: right;
+			width: 52px;
+			height: 18px;
+			_height: 38px;
+			overflow: hidden;
+			color: #ce1414;
+			text-align: center;
+			font-size: 11px;
+			font-family: µ¸¿ò, dotum, ±¼¸², gulim, Helvetica;
+			line-height: 14px;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/button_52x38_red1.gif') no-repeat left top;
+			margin: 6px 4px 0 0;
+			padding: 20px 0 0;
+		}
+		#sidePart .playThisGame .loadError {
+			width: 180px;
+			_width: 190px;
+			background: #d4d9e5;
+			color: #002daa;
+			font-size: 14px;
+			font-family: µ¸¿ò, dotum, ±¼¸², gulim, Helvetica;
+			font-weight: bold;
+			letter-spacing: -1px;
+			margin: 5px 6px 0;
+			padding: 5px;
+		}
+	/* GAME SCHEDULE */
+		#sidePart .gameSchedule .scheduleList {
+			clear: both;
+			width: 184px;
+			overflow: hidden;
+			margin: 5px 0 0 11px;
+		}
+		#sidePart .gameSchedule .scheduleList ul {
+			clear: both;
+			width: 184px;
+			overflow: hidden;
+			margin: -1px 0 0;
+			padding: 0 0 7px;
+		}
+		#sidePart .gameSchedule .scheduleList ul li {
+			clear: both;
+			width: 184px;
+			height: 21px;
+			overflow: hidden;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/dot_4x1_cc2c2c2.gif') repeat-x left top;
+		}
+		#sidePart .gameSchedule .scheduleList ul li span.scheduletype {
+			display: inline;
+			float: left;
+			width: 146px;
+			_width: 184px;
+			height: 16px;
+			overflow: hidden;
+			background: none no-repeat left top;
+			margin: 5px 0 0;
+			padding: 0 0 0 38px;
+		}
+		#sidePart .gameSchedule .scheduleList ul li span.scheduletype-recruit {
+			background-image: url('http://static.inven.co.kr/image/webzine/s3/fonticon/scheduleclass1_recruit1.gif');
+		}
+		#sidePart .gameSchedule .scheduleList ul li span.scheduletype-cbt {
+			background-image: url('http://static.inven.co.kr/image/webzine/s3/fonticon/scheduleclass1_cbt1.gif');
+		}
+		#sidePart .gameSchedule .scheduleList ul li span.scheduletype-obt {
+			background-image: url('http://static.inven.co.kr/image/webzine/s3/fonticon/scheduleclass1_obt1.gif');
+		}
+		#sidePart .gameSchedule .scheduleList ul li span.scheduletype-commence {
+			background-image: url('http://static.inven.co.kr/image/webzine/s3/fonticon/scheduleclass1_commence1.gif');
+		}
+		#sidePart .gameSchedule .scheduleList ul li span.scheduletype-conference {
+			background-image: url('http://static.inven.co.kr/image/webzine/s3/fonticon/scheduleclass1_conference1.gif');
+		}
+		#sidePart .gameSchedule .scheduleList ul li span.scheduletype-issue {
+			background-image: url('http://static.inven.co.kr/image/webzine/s3/fonticon/scheduleclass1_issue1.gif');
+		}
+		#sidePart .gameSchedule .scheduleList ul li span.scheduletype-event {
+			background-image: url('http://static.inven.co.kr/image/webzine/s3/fonticon/scheduleclass1_event1.gif');
+		}
+		#sidePart .gameSchedule .scheduleList ul li span.scheduletype-etc {
+			background-image: url('http://static.inven.co.kr/image/webzine/s3/fonticon/scheduleclass1_etc1.gif');
+		}
+		#sidePart .gameSchedule .scheduleList ul li span {
+			white-space: nowrap;
+		}
+		#sidePart .gameSchedule .scheduleList ul li span a {
+			color: black;
+		}
+		#sidePart .gameSchedule .scheduleList ul li span span.date {
+			color: #707070;
+			font-size: 11px;
+			font-family: µ¸¿ò, dotum, ±¼¸², gulim, Helvetica;
+			line-height: 14px;
+		}
+		#sidePart .gameSchedule .focusPart {
+			clear: both;
+			width: 182px;
+			margin-left: 10px;
+			margin-top: 2px;
+			overflow: hidden;
+		}
+		#sidePart .gameSchedule .focusPart dl {
+			overflow: hidden;
+			margin-top: 7px;
+			border: 1px solid #7cb781;
+			width: 180px;
+			_width: 182px;
+			background-color: #ecf5ed;
+		}
+		#sidePart .gameSchedule .focusPart dl dt {
+			margin: 2px;
+		}
+		#sidePart .gameSchedule .focusPart dl dt a {
+			width: 176px;
+			height: 49px;
+		}
+		#sidePart .gameSchedule .focusPart dl dt img {
+			width: 176px;
+			height: 49px;
+		}
+		#sidePart .gameSchedule .focusPart dl dd {
+			width: 182px;
+			padding-bottom: 4px;
+		}
+		#sidePart .gameSchedule .focusPart dl dd a {
+			display: inline;
+			float: left;
+			width: 182px;
+			font-size: 11px;
+			font-weight: bold;
+			letter-spacing: -1px;
+			color: #000000;
+			font-family: Gulim, Anial;
+			text-align: center;
+		}
+	/* GAME RANKING ZONE */
+		.rankingwrap {width: 162px; margin: 8px 0 0 20px; padding-bottom: 15px;}
+		.rankingwrap ul.ranklist { width: 162px; overflow:hidden; }
+		.rankingwrap ul.ranklist li { clear:both; float: left; overflow: hidden; position: relative; width: 162px; height: 17px; margin-top: 7px; line-height: 1.7;}
+		.rankingwrap ul.ranklist li span.ranknum { float: left; width: 15px; height:15px; margin-top: 1px; text-indent: -9999px;  background:url('http://static.inven.co.kr/image_2011/common/module/gameranking/tile_24x24_vote1a.png');}
+		.rankingwrap ul.ranklist li.rank1 span.ranknum {background-position: 0px 0px;}
+		.rankingwrap ul.ranklist li.rank2 span.ranknum {background-position: 0px -24px;}
+		.rankingwrap ul.ranklist li.rank3 span.ranknum {background-position: 0px -48px;}
+		.rankingwrap ul.ranklist li.rank4 span.ranknum {background-position: 0px -72px;}
+		.rankingwrap ul.ranklist li.rank5 span.ranknum {background-position: 0px -96px;}
+		.rankingwrap ul.ranklist li.rank6 span.ranknum {background-position: 0px -120px;}
+		.rankingwrap ul.ranklist li.rank7 span.ranknum {background-position: 0px -144px;}
+		.rankingwrap ul.ranklist li.rank8 span.ranknum {background-position: 0px -168px;}
+		.rankingwrap ul.ranklist li.rank9 span.ranknum {background-position: 0px -192px;}
+		.rankingwrap ul.ranklist li.rank10 span.ranknum {background-position: 0px -216px;}
+
+		.rankingwrap ul.ranklist li.rank1 span.ranksubject a {color: #ff6484; font-weight: bold;}
+		.rankingwrap ul.ranklist li span.ranksubject {width:110px; float:left; padding-left: 11px; margin-right: 2px;}
+		.rankingwrap ul.ranklist li span.ranksubject a {display:inline-block; max-width: 100%; padding-right: 2px; vertical-align: top; overflow:hidden; text-overflow: ellipsis; white-space: nowrap;}
+		.rankingwrap ul.ranklist li span.risefall {margin-top:2px; width: 24px; line-height:17px; _line-height:15px; vertical-align: top; white-space: nowrap; font-size: 11px; padding-left:12px; overflow:hidden; background:url('http://static.inven.co.kr/image_2011/common/module/gameranking/tile_24x24_vote1a.png');}
+		.rankingwrap ul.ranklist li span.rise { background-position: -24px 1px;}
+		.rankingwrap ul.ranklist li span.fall { background-position: -48px 1px;}
+		.rankingwrap ul.ranklist li span.intect {background-position: -64px 4px;}
+		.rankingwrap ul.ranklist li span.new {background-position: -88px 1px;}
+
+		.rankingwrap ul.buttons {display:inline-block; float:left; width:100%; margin-top: 13px; text-align: center;}
+		.rankingwrap ul.buttons li {width:78px;height: 21px;display:inline-block;float: none;padding:0;list-style: none;overflow:hidden;}
+		.rankingwrap ul.buttons li a {display:inline;width:78px;height:21px;float:left;overflow:hidden;text-indent: -999px;background:url('http://static.inven.co.kr/image_2011/common/module/gameranking/tile_24x24_vote1a.png');}
+		.rankingwrap ul.buttons li.vote {margin-right: 2px;}
+		.rankingwrap ul.buttons li.vote a {background-position: -24px -24px;}
+		.rankingwrap ul.buttons li.result a {background-position: -24px -48px;}
+	/* CONSOLE PAKAGE ZONE */
+		#sidePart .consoleZone {
+			clear: both;
+			width: 202px;
+			overflow: hidden;
+		}
+		#sidePart .consoleZone h3 a { text-indent: -1000em; width: 202px; height: 53px; display:inline;float: left;}
+		#sidePart .consoleZone .focusPart {
+			clear: both;
+			width: 182px;
+			margin-left: 10px;
+			margin-top: -7px;
+			overflow: hidden;
+			padding-bottom: 10px;
+		}
+		#sidePart .consoleZone .focusPart dl {
+			overflow: hidden;
+			margin-top: 7px;
+			border: 1px solid #819eac;
+			width: 180px;
+			_width: 182px;
+			background-color: #e7f7ff;
+		}
+		#sidePart .consoleZone .focusPart dl dt {
+			margin: 2px;
+		}
+		#sidePart .consoleZone .focusPart dl dt a {
+			width: 176px;
+			height: 49px;
+		}
+		#sidePart .consoleZone .focusPart dl dt img {
+			width: 176px;
+			height: 49px;
+		}
+		#sidePart .consoleZone .focusPart dl dd {
+			width: 182px;
+			padding-bottom: 4px;
+		}
+		#sidePart .consoleZone .focusPart dl dd a {
+			display: inline;
+			float: left;
+			width: 182px;
+			font-size: 11px;
+			font-weight: bold;
+			letter-spacing: -1px;
+			color: #091318;
+			font-family: Gulim, Anial;
+			text-align: center;
+		}
+		#sidePart .consoleZone .boardList {
+			margin-left: 10px;
+			width: 182px;
+		}
+		#sidePart .consoleZone .boardList.boardList-TopBlueDot1 {
+			background: url("http://static.inven.co.kr/image_2011/webzine/common/dot_4x1_56717e.png") repeat-x left top;
+		}
+		#sidePart .consoleZone .boardList ul {
+			clear: both;
+			margin: 5px 0 0 0;
+			padding: 0 0 9px;
+		}
+		#sidePart .consoleZone .boardList ul li {
+			height: 15px;
+			background: url('http://static.inven.co.kr/image_2011/webzine/common/rect_2x2_415c69.png') no-repeat left 6px;
+			margin-top: 4px;
+		}
+		#sidePart .consoleZone .boardList ul li a {
+			font-size: 11px;
+			font-family: µ¸¿ò, dotum, ±¼¸², gulim, Helvetica;
+			line-height: 15px;
+		}
+		#sidePart .consoleZone .boardList ul li a:hover {
+			text-decoration: underline;
+		}
+	/* TODAYFOCUS ZONE */
+		#sidePart .todayFocusSide {
+			clear: both;
+			width: 202px;
+			overflow: hidden;
+		}
+		#sidePart .todayFocusSide h3 a { text-indent: -1000em; width: 202px; height: 53px; display:inline;float: left;}
+		#sidePart .todayFocusSide .focusPart {
+			clear: both;
+			width: 182px;
+			margin-left: 10px;
+			margin-top: -7px;
+			overflow: hidden;
+			padding-bottom: 10px;
+		}
+		#sidePart .todayFocusSide .focusPart dl {
+			overflow: hidden;
+			margin-top: 7px;
+			border: 1px solid #819eac;
+			width: 180px;
+			_width: 182px;
+			background-color: #e7f7ff;
+		}
+		#sidePart .todayFocusSide .focusPart dl dt {
+			margin: 2px;
+		}
+		#sidePart .todayFocusSide .focusPart dl dt a {
+			width: 176px;
+			height: 49px;
+		}
+		#sidePart .todayFocusSide .focusPart dl dt img {
+			width: 176px;
+			height: 49px;
+		}
+		#sidePart .todayFocusSide .focusPart dl dd {
+			width: 182px;
+			padding-bottom: 4px;
+		}
+		#sidePart .todayFocusSide .focusPart dl dd a {
+			display: inline;
+			float: left;
+			width: 182px;
+			font-size: 11px;
+			font-weight: bold;
+			letter-spacing: -1px;
+			color: #091318;
+			font-family: Gulim, Anial;
+			text-align: center;
+		}
+		#sidePart .todayFocusSide .boardList {
+			margin-left: 10px;
+			width: 182px;
+		}
+		#sidePart .todayFocusSide .boardList.boardList-TopBlueDot1 {
+			background: url("http://static.inven.co.kr/image_2011/webzine/common/dot_4x1_56717e.png") repeat-x left top;
+		}
+		#sidePart .todayFocusSide .boardList ul {
+			clear: both;
+			margin: 5px 0 0 0;
+			padding: 0 0 9px;
+		}
+		#sidePart .todayFocusSide .boardList ul li {
+			height: 15px;
+			background: url('http://static.inven.co.kr/image_2011/webzine/common/rect_2x2_415c69.png') no-repeat left 6px;
+			margin-top: 4px;
+		}
+		#sidePart .todayFocusSide .boardList ul li a {
+			font-size: 11px;
+			font-family: µ¸¿ò, dotum, ±¼¸², gulim, Helvetica;
+			line-height: 14px;
+		}
+		#sidePart .todayFocusSide .boardList ul li a:hover {
+			text-decoration: underline;
+		}
+	/* USER OPINION */
+		#sidePart .userOpinion .gameImage {
+			width: 198px;
+			overflow: hidden;
+			background: #747579;
+			margin: 0 2px;
+			padding: 1px 0 0;
+		}
+		#sidePart .userOpinion .gameImage a {
+			display: inline;
+			float: left;
+		}
+		#sidePart .userOpinion .gameImage img {
+			width: 198px;
+			height: 137px;
+			border: 0;
+		}
+		#sidePart .userOpinion .gameInfo {
+			width: 198px;
+			height: 38px;
+			overflow: hidden;
+			margin: 0 2px;
+		}
+		#sidePart .userOpinion .gameInfo .gameName {
+			width: 137px;
+			overflow: hidden;
+			text-align: center;
+			margin: 11px 0 0;
+			/* ÇÑÁÙÀÏ¶§ ¸¶Áø 11px 0 0 */
+			/* µÎÁÙÀÏ¶§ ¸¶Áø 4px 0 0 */
+		}
+		#sidePart .userOpinion .gameInfo .gameName a {
+			color: white;
+			font-size: 14px;
+			line-height: 17px;
+			font-weight: bold;
+			letter-spacing: -1px;
+			text-decoration: none;
+		}
+		#sidePart .userOpinion .gameInfo .gamePoint {
+			width: 61px;
+			height: 28px;
+			_height: 39px;
+			overflow: hidden;
+			color: #fff600;
+			font-family: Tahoma, µ¸¿ò, dotum, ±¼¸², gulim, Helvetica;
+			line-height: 14px;
+			font-size: 18px;
+			line-height: 19px;
+			font-weight: bold;
+			text-align: center;
+			padding: 11px 0 0;
+		}
+		#sidePart .userOpinion .opinionForm {
+			margin: 0;
+			padding: 0;
+		}
+		#sidePart .userOpinion .opinionForm p {
+			display: inline;
+			float: left;
+			margin: 0;
+			padding: 0;
+		}
+		#sidePart .userOpinion .opinionForm p.opinion {
+			clear: both;
+			width: 187px;
+			margin: 7px 8px 0;
+		}
+		#sidePart .userOpinion .opinionForm p.opinion textarea {
+			clear: both;
+			display: inline;
+			float: left;
+			width: 187px;
+			height: 42px;
+			cursor: pointer;
+			border: 1px solid #acb3b8;
+		}
+		#sidePart .userOpinion .opinionForm p.submit {
+			clear: both;
+			width: 187px;
+			margin: 4px 7px 0 8px;
+			padding: 0 0 7px;
+		}
+		#sidePart .userOpinion .opinionForm p.submit select,
+		#sidePart .userOpinion .opinionForm p.submit input {
+			display: inline;
+			float: left;
+			cursor: pointer;
+		}
+		#sidePart .userOpinion .opinionForm p.submit select {
+			width: 84px;
+			margin: 1px 7px 0 1px;
+		}
+		#sidePart .userOpinion .opinionForm p.submit input.submit {
+			display: inline;
+			float: right;
+			width: 95px;
+			height: 23px;
+			overflow: hidden;
+			text-indent: -10000em;
+			cursor: pointer;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/bttn_95x23_gray1_submit.gif') no-repeat left top;
+			border: 0;
+			padding: 0;
+		}
+		#sidePart .userOpinion .opinionList {
+			clear: both;
+			width: 187px;
+			overflow: hidden;
+			margin: 0 7px 0 8px;
+		}
+		#sidePart .userOpinion .opinionList ul {
+			clear: both;
+			width: 187px;
+			overflow: hidden;
+		}
+		#sidePart .userOpinion .opinionList ul li {
+			clear: both;
+			width: 187px;
+			overflow: hidden;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/dot_4x1_c808080.gif') repeat-x left top;
+		}
+		#sidePart .userOpinion .opinionList ul li span.writerInfo {
+			display: inline;
+			float: left;
+			width: 187px;
+			height: 28px;
+			overflow: hidden;
+		}
+		#sidePart .userOpinion .opinionList ul li span.writerInfo span.point {
+			display: inline;
+			float: left;
+			width: 25px;
+			height: 19px;
+			_height: 22px;
+			overflow: hidden;
+			font-size: 10px;
+			font-family: Tahoma, µ¸¿ò, dotum, ±¼¸², gulim, Helvetica;
+			line-height: 13px;
+			text-align: center;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/icon_image_talk2.gif') no-repeat left top;
+			margin: 6px 0 0 3px;
+			padding: 3px 0 0;
+		}
+		#sidePart .userOpinion .opinionList ul li span.writerInfo em.writer {
+			display: inline;
+			float: left;
+			font-size: 11px;
+			font-family: µ¸¿ò, dotum, ±¼¸², gulim, Helvetica;
+			line-height: 14px;
+			font-weight: bold;
+			letter-spacing: -1px;
+			white-space: nowrap;
+			margin: 11px 0 0 6px;
+		}
+		#sidePart .userOpinion .opinionList ul li span.writerInfo span.date {
+			display: inline;
+			float: left;
+			color: #64737d;
+			font-size: 11px;
+			font-family: µ¸¿ò, dotum, ±¼¸², gulim, Helvetica;
+			line-height: 14px;
+			font-weight: bold;
+			letter-spacing: -1px;
+			white-space: nowrap;
+			margin: 11px 0 0 3px;
+		}
+		#sidePart .userOpinion .opinionList ul li span.opinion {
+			clear: both;
+			display: inline;
+			float: left;
+			width: 171px;
+			color: #3e4e59;
+			font-size: 11px;
+			font-family: µ¸¿ò, dotum, ±¼¸², gulim, Helvetica;
+			line-height: 16px;
+			margin: 5px 8px 0;
+			padding: 0 0 5px;
+		}
+		#sidePart .userOpinion .opinionList ul li span.opinion a {
+			color: #0057ba;
+			font-size: 11px;
+			font-family: µ¸¿ò, dotum, ±¼¸², gulim, Helvetica;
+			line-height: 14px;
+		}
+	/* INVEN EVENT */
+		#sidePart .invenEvent .eventList {
+			clear: both;
+			width: 202px;
+			overflow: hidden;
+		}
+		#sidePart .invenEvent .eventList ul {
+			clear: both;
+			width: 202px;
+			overflow: hidden;
+			margin: 1px 0 0;
+			padding: 0 0 7px;
+		}
+		#sidePart .invenEvent .eventList ul li {
+			clear: both;
+			width: 190px;
+			overflow: hidden;
+			margin: 6px 6px 0;
+		}
+		#sidePart .invenEvent .eventList ul li a {
+			display: inline;
+			float: left;
+			width: 190px;
+			overflow: hidden;
+		}
+		#sidePart .invenEvent .eventList ul li a img {
+			width: 190px;
+			border: 0;
+		}
+		#sidePart .invenEvent .loadError {
+			color: black;
+			white-space: nowrap;
+			margin: 3px 0 0 5px;
+		}
+	/* INVEN NOTICE */
+		#sidePart .invenNotice .boardList {
+			clear: both;
+			width: 193px;
+			overflow: hidden;
+			margin: 0 0 0 9px;
+			padding: 0 0 4px;
+		}
+	/* INVEN RANKING */
+		#sidePart .invenRanking { width: 202px; background: white; }
+		#sidePart .invenRanking .title {
+			width: 202px;
+			height: 31px;
+			overflow: hidden;
+			text-indent: -10000em;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/title_202x31_white_invenranking1.gif') no-repeat left top;
+		}
+		#sidePart .invenRanking .compBody { width: 200px; _width: 202px; border: solid 1px #d1d1d1; margin-top: -1px; overflow: hidden; padding: 7px 0; }
+		#sidePart .invenRanking .ranking ul { margin-left: 10px; }
+		#sidePart .invenRanking .ranking ul li { width: 190px; clear: both; padding: 4px 0 1px 0; }
+		#sidePart .invenRanking .ranking ul li span.rank { float: left; display: inline; width: 13px; height: 13px; _height: 13px; overflow: hidden; }
+		#sidePart .invenRanking .ranking ul li span.rank { color: white; font-family: dotum, µ¸¿ò, Helvetica; font-size: 11px; line-height: 14px; text-align: center; background: url('http://static.inven.co.kr/image/webzine/s3/common/icon_rect_gray3.gif') no-repeat left top; }
+		#sidePart .invenRanking .ranking ul li.rank1 span.rank { background: url('http://static.inven.co.kr/image/webzine/s3/common/icon_rect_orange2.gif') no-repeat left top; }
+		#sidePart .invenRanking .ranking ul li.rank1 a { font-weight: bold; letter-spacing: -1px; }
+		#sidePart .invenRanking .ranking ul li span.gameName { float: left; display: inline; width: 138px; margin-left: 7px; }
+		#sidePart .invenRanking .ranking ul li span.rank-up,
+		#sidePart .invenRanking .ranking ul li span.rank-down,
+		#sidePart .invenRanking .ranking ul li span.rank-stay { float: left; display: inline; width: 20px; _width: 27px; height: 15px; color: #949292; text-align: center; padding-left: 7px; font-family: tahoma, dotum, µ¸¿ò, Helvetica; font-size: 11px; line-height: 14px; }
+		#sidePart .invenRanking .ranking ul li span.rank-up { background: url('http://static.inven.co.kr/image/webzine/s3/common/icon_arrow_orange1.gif') no-repeat left 2px; }
+		#sidePart .invenRanking .ranking ul li span.rank-down { background: url('http://static.inven.co.kr/image/webzine/s3/common/icon_arrow_blue3.gif') no-repeat left 1px; }
+		#sidePart .invenRanking .ranking ul li span.rank-stay { background: url('http://static.inven.co.kr/image/webzine/s3/common/icon_rect_gray4.gif') no-repeat left 5px; }
+		#sidePart .invenRanking .ranking ul li a { color: black; }
+		#sidePart .invenRanking .list { width: 181px; padding: 5px 0 0px; margin-left: 10px; margin-top: 5px; background: url('http://static.inven.co.kr/image/webzine/s3/common/dot_4x1_silver1.gif') repeat-x left top; }
+		#sidePart .invenRanking .list li { width: 181px; }
+	/* INVEN TWITTER */
+		#sidePart .invenTwitter .twitterList { width: 177px; margin-left: 12px; }
+		#sidePart .invenTwitter .twitterList ul { width: 177px; margin-top: -9px; overflow: hidden; padding-bottom: 4px;}
+		#sidePart .invenTwitter .twitterList ul li { width: 173px; margin-left: 2px; margin-top: 6px; padding-top: 9px; background: url('http://static.inven.co.kr/image/webzine/s3/common/dot_4x1_aqua1.gif') repeat-x left top;}
+		#sidePart .invenTwitter .twitterList ul li { font-family:µ¸¿ò,dotum,±¼¸²,gulim,Helvetica; font-size:11px; line-height:14px; color: #15161c;}
+		#sidePart .invenTwitter .twitterList ul li .twitInfo { width: 173px; height: 31px; }
+		#sidePart .invenTwitter .twitterList ul li .twitInfo .image { display: inline; float: left; padding: 2px; border: 1px solid #addee4;background-color:white;}
+		#sidePart .invenTwitter .twitterList ul li .twitInfo .image img { width: 25px; height: 25px; vertical-align: top; }
+		#sidePart .invenTwitter .twitterList ul li .twitInfo .nametime { display: inline; float: left; width: 136px; height: 31px; margin-left: 6px; margin-top: 2px; overflow: hidden; }
+		#sidePart .invenTwitter .twitterList ul li .twitInfo .nametime .twitterNick { display: inline; float: left; width: 136px; height: 15px; overflow: hidden; color: #15161c; font-weight: bold; letter-spacing: -1px; }
+		#sidePart .invenTwitter .twitterList ul li .twitInfo .nametime .twitterNick a { color: #15161c; font-weight: bold; letter-spacing: -1px; }
+		#sidePart .invenTwitter .twitterList ul li .twitInfo .nametime .twitterTime { display: inline; float: left; width: 136px; height: 15px; overflow: hidden; color: #818d95; }
+		#sidePart .invenTwitter .twitterList ul li .twitContent { display: inline; float: left; width: 173px; margin-top: 4px; }
+		#sidePart .invenTwitter .twitterList ul li a,
+		#sidePart .invenTwitter .twitterList ul li .twitContent a  { font-family:µ¸¿ò,dotum,±¼¸²,gulim,Helvetica; font-size:11px; line-height:14px; color: #3e4e59;}
+	/* E-SPORTS NEWS */
+		#sidePart .esportsNews {
+			clear: both;
+			width: 202px;
+			overflow: hidden;
+		}
+		#sidePart .esportsNews ul {
+			clear: both;
+			margin: 5px 0 0 10px;
+			padding: 0 0 9px;
+		}
+		#sidePart .esportsNews ul li {
+			height: 15px;
+			background-position: left 6px;
+			margin-top: 4px;
+		}
+		#sidePart .esportsNews ul li a {
+			font-size: 11px;
+			font-family: µ¸¿ò, dotum, ±¼¸², gulim, Helvetica;
+			line-height: 14px;
+		}
+		#sidePart .esportsNews ul li a:hover {
+			text-decoration: underline;
+		}
+	/* INVEN REVIEW */
+		#sidePart .invenReview { }
+		#sidePart .invenReview .focusPart { width: 184px; clear: both; margin: 6px 0 0 9px; }
+		#sidePart .invenReview .focusPart .banner { border: solid 1px #2a4892; }
+		#sidePart .invenReview .focusPart .banner img { width: 182px; height: 53px; border: 0; vertical-align: top; }
+		#sidePart .invenReview .focusPart .content { clear: both; }
+		#sidePart .invenReview .focusPart .content .nameLine { clear: both; margin-left: 8px; }
+		#sidePart .invenReview .focusPart .content .nameLine .name { width: 81px; _width: 82px; height: 20px; _height: 22px; padding-top: 2px; border-right: solid 1px #223770; margin: 12px 0 0 2px; text-align: center; }
+		#sidePart .invenReview .focusPart .content .nameLine .name,
+		#sidePart .invenReview .focusPart .content .nameLine .name a { font-size: 14px; line-height: 17px; color: #ffffff; font-weight: bold; letter-spacing: -1px; text-decoration: none; }
+		#sidePart .invenReview .focusPart .content .nameLine .rating { width: 73px; height: 31px; overflow: hidden; margin: 8px 0 0 10px; background: none no-repeat center bottom; }
+		#sidePart .invenReview .focusPart .content .nameLine .rating { font-family: Tahoma, Helvetica; font-size: 12px; line-height: 15px; font-weight: bold; letter-spacing: 0px; color: #ffb400; text-align: center; }
+		#sidePart .invenReview .focusPart .content .nameLine .rating strong { font-size: 16px; letter-spacing: 0px; }
+		#sidePart .invenReview .focusPart .content .nameLine .rating.ratingPlatinum { background-image: url('http://static.inven.co.kr/image/webzine/s3/fonticon/medal2_platinum1.gif'); }
+		#sidePart .invenReview .focusPart .content .nameLine .rating.ratingGold { background-image: url('http://static.inven.co.kr/image/webzine/s3/fonticon/medal2_gold1.gif'); }
+		#sidePart .invenReview .focusPart .content .nameLine .rating.ratingSilver { background-image: url('http://static.inven.co.kr/image/webzine/s3/fonticon/medal2_silver1.gif'); }
+		#sidePart .invenReview .focusPart .content .nameLine .rating.ratingBronze { background-image: url('http://static.inven.co.kr/image/webzine/s3/fonticon/medal2_bronze1.gif'); }
+		#sidePart .invenReview .focusPart .content .nameLine .rating.ratingCopper { background-image: url('http://static.inven.co.kr/image/webzine/s3/fonticon/medal2_copper1.gif'); }
+		#sidePart .invenReview .focusPart .content .detail { width: 162px; _width: 170px; padding: 9px 4px; clear: both; margin: 7px 0 0 6px; background: url('http://static.inven.co.kr/image/webzine/s3/common/dot_4x1_c6782c1.gif') repeat-x left top; }
+		#sidePart .invenReview .focusPart .content .detail,
+		#sidePart .invenReview .focusPart .content .detail a { font-family: dotum, µ¸¿ò, Helvetica; font-size: 11px; line-height: 14px; letter-spacing: -1px; color: #9ec2ff; }
+		#sidePart .invenReview .briefListPart { width: 184px; clear: both; margin: 4px 0 0 9px; padding-bottom: 1px; }
+		#sidePart .invenReview .briefListPart ul { }
+		#sidePart .invenReview .briefListPart ul li { width: 184px; height: 36px; overflow: hidden; clear: both; background: url('http://static.inven.co.kr/image/webzine/s3/common/line_1x2_blue2.gif') repeat-x left top; }
+		#sidePart .invenReview .briefListPart ul li span { float: left; display: inline; }
+		#sidePart .invenReview .briefListPart ul li span.name { width: 107px; height: 15px; _height: 17px; padding-top: 2px; margin: 11px 0 0 8px; background: url('http://static.inven.co.kr/image/webzine/s3/common/dot_1x3_c8ba0c8.gif') repeat-y right top; }
+		#sidePart .invenReview .briefListPart ul li span.name,
+		#sidePart .invenReview .briefListPart ul li span.name a { color: #ffffff; font-weight: bold; letter-spacing: -1px; text-decoration: none; }
+		#sidePart .invenReview .briefListPart ul li span.rating { width: 62px; height: 24px; margin: 6px 0 0 7px; background: none no-repeat left bottom; }
+		#sidePart .invenReview .briefListPart ul li span.rating { font-family: Tahoma, Helvetica; font-size: 11px; line-height: 14px; font-weight: bold; letter-spacing: 0px; color: #daa524; text-indent: 4px; }
+		#sidePart .invenReview .briefListPart ul li span.rating.ratingPlatinum { background-image: url('http://static.inven.co.kr/image/webzine/s3/fonticon/medal3_platinum1.gif'); }
+		#sidePart .invenReview .briefListPart ul li span.rating.ratingGold { background-image: url('http://static.inven.co.kr/image/webzine/s3/fonticon/medal3_gold1.gif'); }
+		#sidePart .invenReview .briefListPart ul li span.rating.ratingSilver { background-image: url('http://static.inven.co.kr/image/webzine/s3/fonticon/medal3_silver1.gif'); }
+		#sidePart .invenReview .briefListPart ul li span.rating.ratingBronze { background-image: url('http://static.inven.co.kr/image/webzine/s3/fonticon/medal3_bronze1.gif'); }
+		#sidePart .invenReview .briefListPart ul li span.rating.ratingCopper { background-image: url('http://static.inven.co.kr/image/webzine/s3/fonticon/medal3_copper1.gif'); }
+

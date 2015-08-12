@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<!--
+	Interphase by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>HTTP2 Simulator</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+		<script src="js/jquery.min.js"></script>
+		<script src="js/skel.min.js"></script>
+		<script src="js/skel-layers.min.js"></script>
+		<script src="js/init.js"></script>
+		    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.load("visualization", "1", {packages:["corechart"]});
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Protocol Type', 'Speed'],
+          ['HTTP/2', 70],
+          ['HTTP/1.1', 30]
+        ]);
+
+        var options = {
+          title: 'Average Speed',
+          is3D: true,
+          backgroundColor: '#EEEEEE'
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
+        chart.draw(data, options);
+      }
+    </script>
+		<noscript>
+			<link rel="stylesheet" href="css/skel.css" />
+			<link rel="stylesheet" href="css/style.css" />
+			<link rel="stylesheet" href="css/style-xlarge.css" />
+		</noscript>
+		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
+	</head>
+	<body>
+
+		<!-- Header -->
+			<header id="header">
+				<h1><a href="/">HTTP2 Simulator</a></h1>
+				<nav id="nav">
+					<ul>
+						<li><a href="/">Home</a></li>
+						<li><a href="/rank">Rank</a></li>
+						<li><a href="/contactus">Contact Us</a></li>
+					</ul>
+				</nav>
+			</header>
+		<!-- Main -->
+			<section id="top">
+				<div id="piechart_3d" style="width: 900px; height: 300px;"></div>
+			</div>
+			</section>
+			<section id="ranks">
+				<div class="table-wrapper">
+						<table class="alt">
+							<thead>
+								<tr>
+									<th>Rank</th>
+									<th>URL</th>
+									<th>HTTP/2</th>
+									<th>HTTP/1.1</th>
+									<th>Percentage</th>
+									<th>Result Page</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>1</td>
+									<td>http://google.com/</td>
+									<td>2.5 Sec</td>
+									<td>5 Sec</td>
+									<td>50%</td>
+									<td><a href="#">Link</a></td>
+								</tr>
+								<tr>
+									<td>2</td>
+									<td>http://google.com/</td>
+									<td>2.5 Sec</td>
+									<td>5 Sec</td>
+									<td>50%</td>
+									<td><a href="#">Link</a></td>
+								</tr>
+								<tr>
+									<td>3</td>
+									<td>http://google.com/</td>
+									<td>2.5 Sec</td>
+									<td>5 Sec</td>
+									<td>50%</td>
+									<td><a href="#">Link</a></td>
+								</tr>
+								<tr>
+									<td>4</td>
+									<td>http://google.com/</td>
+									<td>2.5 Sec</td>
+									<td>5 Sec</td>
+									<td>50%</td>
+									<td><a href="#">Link</a></td>
+								</tr>
+								<tr>
+									<td>5</td>
+									<td>http://google.com/</td>
+									<td>2.5 Sec</td>
+									<td>5 Sec</td>
+									<td>50%</td>
+									<td><a href="#">Link</a></td>
+								</tr>
+								<tr>
+									<td>6</td>
+									<td>http://google.com/</td>
+									<td>2.5 Sec</td>
+									<td>5 Sec</td>
+									<td>50%</td>
+									<td><a href="#">Link</a></td>
+								</tr>
+								<tr>
+									<td>7</td>
+									<td>http://google.com/</td>
+									<td>2.5 Sec</td>
+									<td>5 Sec</td>
+									<td>50%</td>
+									<td><a href="#">Link</a></td>
+								</tr>
+								<tr>
+									<td>8</td>
+									<td>http://google.com/</td>
+									<td>2.5 Sec</td>
+									<td>5 Sec</td>
+									<td>50%</td>
+									<td><a href="#">Link</a></td>
+								</tr>
+								<tr>
+									<td>9</td>
+									<td>http://google.com/</td>
+									<td>2.5 Sec</td>
+									<td>5 Sec</td>
+									<td>50%</td>
+									<td><a href="#">Link</a></td>
+								</tr>
+								<tr>
+									<td>10</td>
+									<td>http://google.com/</td>
+									<td>2.5 Sec</td>
+									<td>5 Sec</td>
+									<td>50%</td>
+									<td><a href="#">Link</a></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+			</section>
+	</body>
+</html>

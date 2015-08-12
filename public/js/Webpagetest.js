@@ -54,6 +54,38 @@ function wpt_result(url) {
     });
 }
 
+function cpr_start(url) {
+    $.ajax({
+        type: "POST",
+        url: url,  // http://www.webpagetest.org/video/create.php?end=visual&tests=150810_CD_MZV%2C150810_JY_MZW&bg=000000&text=ffffff
+        success: function(data, status, xhr) {
+            alert(xhr.getResponseHeader('Location'));
+
+        },
+        error:function(e){
+            alert("error");
+            alert(e.responseText);
+        }
+    });
+    //
+    //$.ajax({
+    //    type: "POST",
+    //    url: url,
+    //    //data: reqBody,
+    //    //dataType: "json",
+    //    success: function(data, textStatus) {
+    //        if (data.redirect) {
+    //            // data.redirect contains the string URL to redirect to
+    //            window.location.href = data.redirect;
+    //        }
+    //        else {
+    //            // data.form contains the HTML for the replacement form
+    //            //$("#myform").replaceWith(data.form);
+    //            alert(data.form);
+    //        }
+    //    }
+    //});
+}
 
 
 $(document).ready(function(){
@@ -68,6 +100,10 @@ $(document).ready(function(){
         var json = wpt_result($("#result_url").val());
     });
 
+
+    $("#cpr_start").click(function(){
+        var json = cpr_start($("#cpr_url").val());
+    });
 
 
 });

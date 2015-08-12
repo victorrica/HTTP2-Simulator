@@ -47,6 +47,8 @@ if ('development' == app.get('env')) {
 
 app.get('/', routes.index);
 app.get('/Webpagetest', routes.Webpagetest);
+app.get('/rank', routes.rank);
+app.get('/contactus', routes.contactus);
 
 
 app.post('/check', function(req, res) {

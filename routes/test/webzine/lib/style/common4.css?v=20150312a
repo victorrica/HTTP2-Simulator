@@ -1,0 +1,2577 @@
+/* COMMON STYLE */
+	/* DEFAULT */
+		div, ul, ol, li, dl, dt, dd, h1, h2, h3, h4, h5, h6, form { float: left; display: inline; margin:0; padding:0; height: auto; }
+		body, input, select, textarea, a, th, td, caption, h1, h2, h3, h4, h5, h6  { font-family: gulim, ±¼¸², Helvetica; font-size: 9pt; color: #000; font-weight: normal; font-style: normal; text-decoration: none; }
+		a:hover, a:active { text-decoration: underline; }
+		img { border: none; }
+		em { font-style: normal; }
+		strong, b { letter-spacing:-1px; font-weight: bold; }
+		a h1, a h2, a h3, a h4, a h5 { cursor: pointer; }
+		select { height: 20px; }
+		input.radio { width: 12px; height: 12px; margin: 0; padding: 0; }
+		input.checkbox { width: 12px; height: 12px; margin: 0; padding: 0; }
+	/* FREQUENT */
+		.hidden { display: none; }
+		.hide { text-indent: -1000em; }
+		.wh0 { display: inline; float: left; width: 1px; height: 1px; margin:-1px 0 0 -1px; overflow: hidden; }
+		.iefix {
+			width: 1px !important;
+			height: 0px !important;
+			_height: 1px !important;
+			margin: -1px 0 0 0 !important;
+			clear: both !important;
+			display: none !important;
+			_display: inline !important;
+			overflow: hidden !important;
+			padding: 1px 0 0 0 !important;
+			font-size: 1pt !important;
+		}
+		img.iconimg, .iconimg img { vertical-align: middle; border: none; margin-top: -4px; margin-bottom: -1px; }
+
+/* WRAPPING */
+	/* WRAPPING 889 SILVER 1 : T- */
+		#webzineBody .wrap889SL1 {
+			width: 889px;
+			overflow: hidden;
+		}
+		#webzineBody .wrap889SL1 .w889T {
+			width: 889px;
+			height: 2px;
+			overflow: hidden;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/wrap_889_silver1_top.gif') no-repeat left top;
+		}
+		#webzineBody .wrap889SL1 .w889M {
+			width: 889px;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/wrap_889_silver1_mid.gif') repeat-y left top;
+		}
+		#webzineBody .wrap889SL1 .w889B {
+			width: 889px;
+			height: 2px;
+			overflow: hidden;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/wrap_889_silver1_bot.gif') no-repeat left top;
+		}
+	/* WRAPPING 717 SILVER 1 : H- */
+		#webzineBody .wrap717SL1 { width: 717px; }
+		#webzineBody .wrap717SL1 .w717H {
+			width: 717px;
+			height: 19px;
+			_height: 26px;
+			overflow: hidden;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/wrap_717_silver1_head.gif') no-repeat left top;
+			padding-top: 8px;
+			font-weight: bold;
+			letter-spacing: -1px;
+			color: white;
+			text-indent: 26px;
+			line-height: 117.5%;
+		}
+		#webzineBody .wrap717SL1 .w717M {
+			width: 717px;
+			overflow: hidden;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/wrap_717_silver1_mid.gif') repeat-y left top;
+		}
+		#webzineBody .wrap717SL1 .w717B {
+			width: 717px;
+			height: 6px;
+			overflow: hidden;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/wrap_717_silver1_bot.gif') no-repeat left top;
+		}
+	/* WRAPPING 717 SILVER 1 : H- */
+		#webzineBody .wrap717SL2 { width: 717px; }
+		#webzineBody .wrap717SL2 .w717H {
+			display:inline;
+			float: left;
+			width: 717px;
+			height: 21px;
+			_height: 33px;
+			overflow: hidden;
+			background: url('http://static.inven.co.kr/image_2011/webzine/s3/common/wrap_717_silver1_head.png') no-repeat left top;
+			padding-top: 12px;
+			font-weight: bold;
+			letter-spacing: -1px;
+			color: #000B25;
+			text-indent: 29px;
+			line-height: 117.5%;
+			display: block;
+		}
+		#webzineBody .wrap717SL2 .w717H a:hover {
+			color: #1953e7;
+		}
+		#webzineBody .wrap717SL2 .w717H strong { color: #004fa0;}
+		#webzineBody .wrap717SL2 .w717M {
+			width: 717px;
+			overflow: hidden;
+			background: url('http://static.inven.co.kr/image_2011/webzine/s3/common/wrap_717_silver1_mid.png') repeat-y left top;
+		}
+		#webzineBody .wrap717SL2 .w717B {
+			width: 717px;
+			height: 7px;
+			overflow: hidden;
+			background: url('http://static.inven.co.kr/image_2011/webzine/s3/common/wrap_717_silver1_bot.png') no-repeat left top;
+		}
+		#webzineBody .wrap717SL2 .w717H a.morebttn {
+			width: 100px;
+			height:25px;
+			display:block;
+			float:right;
+			text-indent: -10000em;
+		}
+	/* WRAPPING 717 SILVER 3 : H- */
+		#webzineBody .wrap717SL3 { width: 717px; }
+		#webzineBody .wrap717SL3 .w717H {
+			width: 717px;
+			height: 38px;
+			overflow: hidden;
+			background: url('http://static.inven.co.kr/image_2011/webzine/common/wrap717_silver1_head.png') no-repeat left top;
+		}
+		#webzineBody .wrap717SL3 .w717M {
+			width: 717px;
+			overflow: hidden;
+			background: url('http://static.inven.co.kr/image_2011/webzine/common/wrap717_silver1_mid.png') repeat-y left top;
+		}
+		#webzineBody .wrap717SL3 .w717B {
+			width: 717px;
+			height: 1px;
+			overflow: hidden;
+			background: url('http://static.inven.co.kr/image_2011/webzine/common/wrap717_silver1_bot.png') no-repeat left top;
+		}
+	/* WRAPPING 693 BLUE 1 : W- */
+		#webzineBody .wrap693BU1 {
+			width: 693px;
+			height: 72px;
+			overflow: hidden;
+			background: url('http://static.inven.co.kr/image_2011/webzine/common/wrap_693x72_blue1_whole.png') no-repeat left top;
+		}
+	/* WRAPPING 683 AQUA 1 : W- */
+		#webzineBody .wrap683AQ1 {
+			width: 683px;
+			height: 80px;
+			overflow: hidden;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/wrap_683_aqua1_whole.gif') no-repeat left top;
+		}
+	/* WRAPPING 683 BLUE 1 : T- */
+		#webzineBody .wrap683BU1 {
+			width: 683px;
+			overflow: hidden;
+		}
+		#webzineBody .wrap683BU1 .w683T {
+			width: 683px;
+			height: 5px;
+			overflow: hidden;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/wrap_683_blue1_top.gif') no-repeat left top;
+		}
+		#webzineBody .wrap683BU1 .w683M {
+			width: 683px;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/wrap_683_blue1_mid.gif') repeat-y left top;
+		}
+		#webzineBody .wrap683BU1 .w683B {
+			width: 683px;
+			height: 5px;
+			overflow: hidden;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/wrap_683_blue1_bot.gif') no-repeat left top;
+		}
+	/* WRAPPING 683 SILVER 1 : T- */
+		#webzineBody .wrap683SL1 {
+			width: 683px;
+			overflow: hidden;
+		}
+		#webzineBody .wrap683SL1 .w683T {
+			width: 683px;
+			height: 6px;
+			overflow: hidden;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/wrap_683_silver1_top.gif') no-repeat left top;
+		}
+		#webzineBody .wrap683SL1 .w683M {
+			width: 683px;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/wrap_683_silver1_mid.gif') repeat-y left top;
+		}
+		#webzineBody .wrap683SL1 .w683B {
+			width: 683px;
+			height: 6px;
+			overflow: hidden;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/wrap_683_silver1_bot.gif') no-repeat left top;
+		}
+	/* WRAPPING 683 SILVER 2 : T- */
+		#webzineBody .wrap683SL2 {
+			width: 683px;
+			overflow: hidden;
+		}
+		#webzineBody .wrap683SL2 .w683T {
+			width: 683px;
+			height: 5px;
+			overflow: hidden;
+			background: url('http://static.inven.co.kr/image_2011/webzine/common/wrap_683_silver1_top.png') no-repeat left top;
+		}
+		#webzineBody .wrap683SL2 .w683M {
+			width: 683px;
+			background: url('http://static.inven.co.kr/image_2011/webzine/common/wrap_683_silver1_mid.png') repeat-y left top;
+		}
+		#webzineBody .wrap683SL2 .w683B {
+			width: 683px;
+			height: 5px;
+			overflow: hidden;
+			background: url('http://static.inven.co.kr/image_2011/webzine/common/wrap_683_silver1_bot.png') no-repeat left top;
+		}
+	/* WRAPPING 669 BLUE 1 : T- */
+		#webzineBody .wrap669BU1 {
+			width: 669px;
+			overflow: hidden;
+		}
+		#webzineBody .wrap669BU1 .w669T {
+			width: 669px;
+			height: 5px;
+			overflow: hidden;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/wrap_669_blue1_top.gif') no-repeat left top;
+		}
+		#webzineBody .wrap669BU1 .w669M {
+			width: 669px;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/wrap_669_blue1_mid.gif') repeat-y left top;
+		}
+		#webzineBody .wrap669BU1 .w669B {
+			width: 669px;
+			height: 5px;
+			overflow: hidden;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/wrap_669_blue1_bot.gif') no-repeat left top;
+		}
+	/* WRAPPING 454 GRAY 1 : W- */
+		#webzineBody .wrap454GR1 {
+			width: 454px;
+		}
+		#webzineBody .wrap454GR1 .w454T,
+		#webzineBody .wrap454GR1 .w454B {
+			width: 454px;
+			height: 1px;
+			overflow: hidden;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/wrap_454_gray1_top.gif') no-repeat left top;
+		}
+		#webzineBody .wrap454GR1 .w454M {
+			width: 454px;
+			overflow: hidden;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/wrap_454_gray1_mid.gif') repeat-y left top;
+		}
+	/* WRAPPING 420 TEAL 1 : T- */
+		#webzineBody .wrap420TE1 {
+			overflow: hidden;
+			width: 420px;
+		}
+		#webzineBody .wrap420TE1 .w420T {
+			width: 420px;
+			height: 10px;
+			overflow: hidden;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/wrap_420_teal1_top.gif') no-repeat left top;
+		}
+		#webzineBody .wrap420TE1 .w420M {
+			width: 420px;
+			overflow: hidden;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/wrap_420_teal1_mid.gif') repeat-y left top;
+		}
+		#webzineBody .wrap420TE1 .w420B {
+			width: 420px;
+			height: 10px;
+			overflow: hidden;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/wrap_420_teal1_bot.gif') no-repeat left top;
+		}
+	/* WRAPPING 420 BLUE 1 : T- */
+		#webzineBody .wrap420BU1 {
+			overflow: hidden;
+			width: 420px;
+		}
+		#webzineBody .wrap420BU1 .w420T {
+			width: 420px;
+			height: 5px;
+			overflow: hidden;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/wrap_420_blue1_top.gif') no-repeat left top;
+		}
+		#webzineBody .wrap420BU1 .w420M {
+			width: 420px;
+			overflow: hidden;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/wrap_420_blue1_mid.gif') repeat-y left top;
+		}
+		#webzineBody .wrap420BU1 .w420B {
+			width: 420px;
+			height: 5px;
+			overflow: hidden;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/wrap_420_blue1_bot.gif') no-repeat left top;
+		}
+	/* WRAPPING 420 GRAY 1 : T- */
+		#webzineBody .wrap420GR1 {
+			overflow: hidden;
+			width: 420px;
+		}
+		#webzineBody .wrap420GR1 .w420T {
+			width: 420px;
+			height: 6px;
+			overflow: hidden;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/wrap_420_gray1_top.gif') no-repeat left top;
+		}
+		#webzineBody .wrap420GR1 .w420M {
+			width: 420px;
+			overflow: hidden;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/wrap_420_gray1_mid.gif') repeat-y left top;
+		}
+		#webzineBody .wrap420GR1 .w420B {
+			width: 420px;
+			height: 6px;
+			overflow: hidden;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/wrap_420_gray1_bot.gif') no-repeat left top;
+		}
+	/* WRAPPING 355 LIME 1 : H- */
+		#webzineBody .wrap355LM1 { width: 355px; }
+		#webzineBody .wrap355LM1 .w355H {
+			width: 355px;
+			height: 22px;
+			_height: 33px;
+			overflow: hidden;
+			background: no-repeat left top;
+			padding-top: 11px;
+			text-align: center;
+			font-weight: bold;
+			letter-spacing: -1px;
+			color: white;
+			line-height: 117.5%;
+		}
+		#webzineBody .wrap355LM1 .w355M {
+			width: 355px;
+			overflow: hidden;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/wrap_355_lime1_mid.gif') repeat-y left top;
+		}
+		#webzineBody .wrap355LM1 .w355B {
+			width: 355px;
+			height: 4px;
+			overflow: hidden;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/wrap_355_lime1_bot.gif') no-repeat left top;
+		}
+		#webzineBody .wrap355LM1 .w355H.w355H-GamerHotissue { text-indent: -1000em; background-image: url('http://static.inven.co.kr/image/webzine/s3/common/wrap_355_lime1_head_gamerhotissue.gif'); }
+	/* WRAPPING 355 AQUA 1 : H- */
+		#webzineBody .wrap355AQ1 { width: 355px; }
+		#webzineBody .wrap355AQ1 .w355H {
+			display:inline;
+			float: left;
+			width: 355px;
+			height: 21px;
+			_height: 33px;
+			overflow: hidden;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/wrap_355_aqua1_head.gif') no-repeat left top;
+			padding-top: 12px;
+			font-weight: bold;
+			letter-spacing: -1px;
+			color: #000B25;
+			text-indent: 29px;
+			line-height: 117.5%;
+		}
+		#webzineBody .wrap355AQ1 a.w355H { text-decoration: none; background-position: 0 -33px;}
+		#webzineBody .wrap355AQ1 .w355H strong { color: #004fa0;}
+		#webzineBody .wrap355AQ1 .w355M {
+			width: 355px;
+			overflow: hidden;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/wrap_355_aqua1_mid.gif') repeat-y left top;
+		}
+		#webzineBody .wrap355AQ1 .w355B {
+			width: 355px;
+			height: 7px;
+			overflow: hidden;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/wrap_355_aqua1_bot.gif') no-repeat left top;
+		}
+		#webzineBody .wrap355AQ1 a .w355H { background-position: 0 -33px; }
+	/* WRAPPING 355 SILVER 1 : H- */
+		#webzineBody .wrap355SL1 { width: 355px; }
+		#webzineBody .wrap355SL1 .w355H {
+			display:inline;
+			float: left;
+			width: 355px;
+			height: 21px;
+			_height: 33px;
+			overflow: hidden;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/wrap_355_silver1_head.gif') no-repeat left top;
+			padding-top: 12px;
+			font-weight: bold;
+			letter-spacing: -1px;
+			color: #000B25;
+			text-indent: 29px;
+			line-height: 117.5%;
+		}
+		#webzineBody .wrap355SL1 a.w355H { text-decoration: none;background-position: 0 -33px;}
+		#webzineBody .wrap355SL1 a.w355H span { color: red; }
+		#webzineBody .wrap355SL1 .w355M {
+			width: 355px;
+			overflow: hidden;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/wrap_355_silver1_mid.gif') repeat-y left top;
+		}
+		#webzineBody .wrap355SL1 .w355B {
+			width: 355px;
+			height: 7px;
+			overflow: hidden;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/wrap_355_silver1_bot.gif') no-repeat left top;
+		}
+		#webzineBody .wrap355SL1 a .w355H { background-position: 0 -33px; }
+	/* WRAPPING 355 PINK 1 : H- */
+		#webzineBody .wrap355PN1 { width: 355px; }
+		#webzineBody .wrap355PN1 .w355H {
+			display:inline;
+			float: left;
+			width: 355px;
+			height: 21px;
+			_height: 33px;
+			overflow: hidden;
+			background: url('http://static.inven.co.kr/image_2011/webzine/common/wrap_355_pink1_head.png') no-repeat left top;
+			padding-top: 12px;
+			font-weight: bold;
+			letter-spacing: -1px;
+			color: #000B25;
+			text-indent: 29px;
+			line-height: 117.5%;
+		}
+		#webzineBody .wrap355PN1 a.w355H {  background-position: 0 -33px; text-decoration: none;}
+		#webzineBody .wrap355PN1 .w355H strong { color: #f72121;}
+		#webzineBody .wrap355PN1 .w355M {
+			width: 355px;
+			overflow: hidden;
+			background: url('http://static.inven.co.kr/image_2011/webzine/common/wrap_355_pink1_mid.png') repeat-y left top;
+		}
+		#webzineBody .wrap355PN1 .w355B {
+			width: 355px;
+			height: 7px;
+			overflow: hidden;
+			background: url('http://static.inven.co.kr/image_2011/webzine/common/wrap_355_pink1_bot.png') no-repeat left top;
+		}
+	/* WRAPPING 355 AQUA 1 : H- */
+		#webzineBody .wrap355AQ1 { width: 355px; }
+		#webzineBody .wrap355AQ1 .w355H {
+			width: 355px;
+			height: 21px;
+			_height: 33px;
+			overflow: hidden;
+			background: url('http://static.inven.co.kr/image_2011/webzine/common/wrap_355_aqua1_head.png') no-repeat left top;
+			padding-top: 12px;
+			font-weight: bold;
+			letter-spacing: -1px;
+			color: #000B25;
+			text-indent: 29px;
+			line-height: 117.5%;
+		}
+		#webzineBody .wrap355AQ1 .w355M {
+			width: 355px;
+			overflow: hidden;
+			background: url('http://static.inven.co.kr/image_2011/webzine/common/wrap_355_aqua1_mid.png') repeat-y left top;
+		}
+		#webzineBody .wrap355AQ1 .w355B {
+			width: 355px;
+			height: 7px;
+			overflow: hidden;
+			background: url('http://static.inven.co.kr/image_2011/webzine/common/wrap_355_aqua1_bot.png') no-repeat left top;
+		}
+		#webzineBody .wrap355SL1 a .w355H { background-position: 0 -33px; }
+	/* WRAPPING 339 SILVER 1 : H- */
+		#webzineBody .wrap339SL1 {
+			width: 339px;
+			overflow: hidden;
+		}
+		#webzineBody .wrap339SL1 .w339H {
+			width: 339px;
+			height: 18px;
+			_height: 30px;
+			padding-top: 10px;
+			padding-left: 12px;
+			font-weight: bold;
+			letter-spacing: -1px;
+			line-height: 117.5%;
+			color: #3e3e3e;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/wrap_339_silver1_head.gif') no-repeat left top;
+		}
+		#webzineBody .wrap339SL1 a .w339H { background-position: 0 -30px; }
+		#webzineBody .wrap339SL1 .w339M {
+			width: 339px;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/wrap_339_silver1_mid.gif') repeat-y left top;
+		}
+		#webzineBody .wrap339SL1 .w339B {
+			width: 339px;
+			height: 8px;
+			overflow: hidden;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/wrap_339_silver1_bot.gif') no-repeat left top;
+		}
+	/* WRAPPING 338 SILVER 1 : H- */
+		#webzineBody .wrap338SL1 {
+			width: 338px;
+			overflow: hidden;
+		}
+		#webzineBody .wrap338SL1 .w338H {
+			width: 338px;
+			height: 35px;
+			background: url('http://static.inven.co.kr/image_2011/webzine/common/wrap338_silver1_top.png') no-repeat left top;
+		}
+		#webzineBody .wrap338SL1 .w338M {
+			width: 339px;
+			background: url('http://static.inven.co.kr/image_2011/webzine/common/wrap338_silver1_mid.png') repeat-y left top;
+		}
+		#webzineBody .wrap338SL1 .w338B {
+			width: 339px;
+			height: 1px;
+			overflow: hidden;
+			background: url('http://static.inven.co.kr/image_2011/webzine/common/wrap338_silver1_bot.png') no-repeat left top;
+		}
+	/* WRAPPING 328 SILVER 1 : T- */
+		#webzineBody .wrap328SL1 {
+			width: 328px;
+			overflow: hidden;
+		}
+		#webzineBody .wrap328SL1 .w328T {
+			width: 328px;
+			height: 6px;
+			overflow: hidden;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/wrap_328_silver1_top.gif') no-repeat left top;
+		}
+		#webzineBody .wrap328SL1 .w328M {
+			width: 328px;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/wrap_328_silver1_mid.gif') repeat-y left top;
+		}
+		#webzineBody .wrap328SL1 .w328B {
+			width: 328px;
+			height: 7px;
+			overflow: hidden;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/wrap_328_silver1_bot.gif') no-repeat left top;
+		}
+	/* WRAPPING 266 GRAY 1 : H- */
+		#webzineBody .wrap266GR1 {
+			width: 266px;
+			overflow: hidden;
+		}
+		#webzineBody .wrap266GR1 .w266H {
+			width: 236px;
+			_width: 266px;
+			height: 19px;
+			_height: 27px;
+			overflow: hidden;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/wrap_266_gray1_head.gif') no-repeat left top;
+			color: black;
+			font-weight: bold;
+			letter-spacing: -1px;
+			padding-top: 8px;
+			padding-left: 30px;
+			line-height: 117.5%;
+		}
+		#webzineBody .wrap266GR1 a .w266H {
+			background-position: left -27px;
+		}
+		#webzineBody .wrap266GR1 .w266M {
+			width: 266px;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/wrap_266_gray1_mid.gif') repeat-y left top;
+		}
+		#webzineBody .wrap266GR1 .w266B {
+			width: 266px;
+			height: 6px;
+			overflow: hidden;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/wrap_266_gray1_bot.gif') no-repeat left top;
+		}
+	/* WRAPPING 266 BLUE 1 : T- */
+		#webzineBody .wrap266BU1 {
+			width: 266px;
+			overflow: hidden;
+		}
+		#webzineBody .wrap266BU1 .w266T {
+			width: 266px;
+			height: 5px;
+			overflow: hidden;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/wrap_266_blue1_top.gif') no-repeat left top;
+		}
+		#webzineBody .wrap266BU1 .w266M {
+			width: 266px;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/wrap_266_blue1_mid.gif') repeat-y left top;
+		}
+		#webzineBody .wrap266BU1 .w266B {
+			width: 266px;
+			height: 5px;
+			overflow: hidden;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/wrap_266_blue1_bot.gif') no-repeat left top;
+		}
+	/* WRAPPING 250 BLACK 1 : T- */
+		#webzineBody .wrap250BL1 {
+			width: 250px;
+			overflow: hidden;
+		}
+		#webzineBody .wrap250BL1 .w250T {
+			width: 250px;
+			height: 11px;
+			overflow: hidden;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/wrap_250_black1_top.gif') no-repeat left top;
+		}
+		#webzineBody .wrap250BL1 .w250M {
+			width: 250px;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/wrap_250_black1_mid.gif') repeat-y left top;
+		}
+		#webzineBody .wrap250BL1 .w250B {
+			width: 250px;
+			height: 11px;
+			overflow: hidden;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/wrap_250_black1_bot.gif') no-repeat left top;
+		}
+	/* WRAPPING 202 GRAY 3 : H- */
+		#webzinebody .wrap202GR3 {
+			width:202px;
+			overflow: hidden;
+		}
+		#webzinebody .wrap202GR3 .w202H {
+			display: inline;
+			float: left;
+			width: 202px;
+			height: 36px;
+			text-indent: -10000em;
+			background: url('http://static.inven.co.kr/image_2011/common/module/gameranking/wrap_202_gray1_ranking.png') no-repeat left top;
+		}
+		#webzinebody .wrap202GR3 .w202M {
+			width: 202px;
+			overflow: hidden;
+			background: url('http://static.inven.co.kr/image_2011/common/module/gameranking/wrap_202_gray1_mid.png') repeat-y left top;
+		}
+		#webzinebody .wrap202GR3 .w202B {
+			width: 202px;
+			height: 1px;
+			overflow: hidden;
+			background: url('http://static.inven.co.kr/image_2011/common/module/gameranking/wrap_202_gray1_bot.png') no-repeat left top;
+		}
+	/* WRAPPING 202 AQUA 1 : H- */
+		#webzinebody .wrap202AQ1 {
+			width:202px;
+			overflow: hidden;
+		}
+		#webzinebody .wrap202AQ1 .w202H {
+			clear: both;
+			width: 202px;
+			height: 53px;
+			overflow: hidden;
+			/* NEED FONT SET */
+		}
+		#webzinebody .wrap202AQ1 a.w202H {
+			display: inline;
+			float: left;
+		}
+		#webzinebody .wrap202AQ1 .w202H-Twitter {
+			text-indent: -10000em;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/wrap_202_aqua1_head_twitter.gif') no-repeat left top;
+		}
+		#webzinebody .wrap202AQ1 .w202M {
+			width: 202px;
+			overflow: hidden;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/wrap_202_aqua1_mid.gif') repeat-y left top;
+		}
+		#webzinebody .wrap202AQ1 .w202B {
+			width: 202px;
+			height: 9px;
+			overflow: hidden;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/wrap_202_aqua1_bot.gif') no-repeat left top;
+		}
+	/* WRAPPING 202 BLUE 2 : H- */
+		#webzineBody .wrap202BU2 { width: 202px; overflow: hidden; }
+		#webzineBody .wrap202BU2 .w202H { width: 202px; height: 28px; overflow: hidden; background: none no-repeat left top; }
+		#webzineBody .wrap202BU2 .w202H.w202H-Review { text-indent: -1000em; background-image: url('http://static.inven.co.kr/image/webzine/s3/common/wrap_202_blue2_head_review.gif'); }
+		#webzineBody .wrap202BU2 a.w202H { float: left; display: inline; background-position: 0 -28px; }
+		#webzineBody .wrap202BU2 .w202M { width: 202px; overflow: hidden; background: #4667b4 none repeat-y left top; }
+		#webzineBody .wrap202BU2 .w202B { width: 202px; height: 1px ; overflow: hidden; background: url('http://static.inven.co.kr/image/webzine/s3/common/wrap_202_blue2_bot.gif') no-repeat left top; }
+	/* WRAPPING 202 BLUE 3 : M>B>H */
+		#webzineBody .wrap202BU3 { width: 202px; overflow: hidden; }
+		#webzineBody .wrap202BU3 .w202H { width: 202px; overflow: hidden; background: url('http://static.inven.co.kr/image_2011/webzine/common/wrap_202_blue1_head_consol.png') no-repeat left top; }
+		#webzineBody .wrap202BU3 .w202M { width: 202px; overflow: hidden; background: url('http://static.inven.co.kr/image_2011/webzine/common/wrap_202_blue1_mid.png') repeat-y left top; }
+		#webzineBody .wrap202BU3 .w202B { width: 202px; padding-bottom: 1px ; overflow: hidden; background: url('http://static.inven.co.kr/image_2011/webzine/common/wrap_202_blue1_bot.png') no-repeat left bottom; }
+	/* WRAPPING 202 BLUE 4 : M>B>H */
+		#webzineBody .wrap202BU4 { width: 202px; overflow: hidden; }
+		#webzineBody .wrap202BU4 .w202H { width: 202px; overflow: hidden; background: url('http://static.inven.co.kr/image_2011/webzine/common/wrap_202_blue2_head_today.png') no-repeat left top; }
+		#webzineBody .wrap202BU4 .w202M { width: 202px; overflow: hidden; background: url('http://static.inven.co.kr/image_2011/webzine/common/wrap_202_blue2_mid.png') repeat-y left top; }
+		#webzineBody .wrap202BU4 .w202B { width: 202px; padding-bottom: 1px ; overflow: hidden; background: url('http://static.inven.co.kr/image_2011/webzine/common/wrap_202_blue2_top.png') no-repeat left bottom; }
+	/* WRAPPING 199 SILVER 1 : T- */
+		#webzineBody .wrap199SL1 {
+			width: 199px;
+			overflow: hidden;
+		}
+		#webzineBody .wrap199SL1 .w199T {
+			width: 199px;
+			height: 6px;
+			overflow: hidden;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/wrap_199_silver1_top.gif') no-repeat left top;
+		}
+		#webzineBody .wrap199SL1 .w199M {
+			width: 199px;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/wrap_199_silver1_mid.gif') repeat-y left top;
+		}
+		#webzineBody .wrap199SL1 .w199B {
+			width: 199px;
+			height: 7px;
+			overflow: hidden;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/wrap_199_silver1_bot.gif') no-repeat left top;
+		}
+	/* WRAPPING 184 NAVY 1 : M- */
+		#webzineBody .wrap184NA1 { width: 184px; overflow: hidden; }
+		#webzineBody .wrap184NA1 .w184T { width: 184px; overflow: hidden; background: url('http://static.inven.co.kr/image/webzine/s3/common/wrap_184_navy1_top.gif') no-repeat left top; }
+		#webzineBody .wrap184NA1 .w184M { width: 184px; overflow: hidden; background: url('http://static.inven.co.kr/image/webzine/s3/common/wrap_184_navy1_mid.gif') repeat-y left top; }
+		#webzineBody .wrap184NA1 .w184B { width: 184px; overflow: hidden; background: url('http://static.inven.co.kr/image/webzine/s3/common/wrap_184_navy1_bot.gif') no-repeat left bottom; }
+	/* WRAPPING 170 BLUE 1 : H- */
+		#webzineBody .wrap170BU1 { width: 170px; }
+		#webzineBody .wrap170BU1 .w170H {
+			width: 170px;
+			height: 20px;
+			_height: 30px;
+			overflow: hidden;
+			background: no-repeat left top;
+			padding-top: 10px;
+			font-size: 10pt;
+			text-indent: 11px;
+			font-weight: bold;
+			letter-spacing: -1px;
+			color: white;
+			line-height: 117.5%;
+		}
+		#webzineBody .wrap170BU1 .w170H.w170H-Gamerzone { text-indent: -1000em; background-image: url('http://static.inven.co.kr/image_2011/webzine/s3/common/wrap_178_gray1_head_gamerzone.png'); }
+		#webzineBody .wrap170BU1 .w170H.w170H-Mcom { text-indent: -1000em; background-image: url('http://static.inven.co.kr/image_2011/webzine/s3/common/wrap_178_gray1_head_mcom.png'); }
+		#webzineBody .wrap170BU1 .w170H.w170H-Pages { text-indent: -1000em; background-image: url('http://static.inven.co.kr/image_2011/webzine/s3/common/wrap_178_gray1_head_page.png'); }
+	/* WRAPPING 170 SILVER 1 : H- */
+		#webzineBody .wrap170SL1 { width: 170px; }
+		#webzineBody .wrap170SL1 .w170H {
+			display: inline;
+			float: left;
+			width: 170px;
+			height: 20px;
+			_height: 30px;
+			overflow: hidden;
+			background: no-repeat left top;
+			padding-top: 10px;
+			font-size: 12px;
+			text-indent: 29px;
+			font-weight: bold;
+			letter-spacing: -1px;
+			color: #000;
+			line-height: 117.5%;
+			background: url('http://static.inven.co.kr/image_2011/webzine/common/wrap_170_silver1_head.png') no-repeat left top;
+		}
+		#webzineBody .wrap170SL1 a.w170H { text-decoration: none;}
+		#webzineBody .wrap170SL1 .w170M {
+			width: 170px;
+			overflow: hidden;
+			background: url('http://static.inven.co.kr/image_2011/webzine/common/wrap_170_silver1_mid.png') repeat-y left top;
+		}
+		#webzineBody .wrap170SL1 .w170B {
+			width: 170px;
+			height: 6px;
+			overflow: hidden;
+			background: url('http://static.inven.co.kr/image_2011/webzine/common/wrap_170_silver1_bot.png') no-repeat left top;
+		}
+	/* WRAPPING 170 BEIGE 1 : H- */
+		#webzineBody .wrap170BE1 { width: 170px; }
+		#webzineBody .wrap170BE1 .w170H {
+			display: inline;
+			float: left;
+			width: 170px;
+			height: 20px;
+			_height: 30px;
+			overflow: hidden;
+			background: no-repeat left top;
+			padding-top:10px;
+			font-size: 12px;
+			text-indent: 29px;
+			font-weight: bold;
+			letter-spacing: -1px;
+			color: #000;
+			line-height: 117.5%;
+			background: url('http://static.inven.co.kr/image_2011/webzine/common/wrap_170_beige1_head.png') no-repeat left top;
+		}
+		#webzineBody .wrap170BE1 a.w170H { text-decoration: none;}
+		#webzineBody .wrap170BE1 .w170M {
+			width: 170px;
+			overflow: hidden;
+			background: url('http://static.inven.co.kr/image_2011/webzine/common/wrap_170_beige1_mid.png') repeat-y left top;
+		}
+		#webzineBody .wrap170BE1 .w170B {
+			width: 170px;
+			height: 6px;
+			overflow: hidden;
+			background: url('http://static.inven.co.kr/image_2011/webzine/common/wrap_170_beige1_bot.png') no-repeat left top;
+		}
+	/* WRAPPING 170 BLUE 1 : H- */
+		#webzineBody .wrap170BU2 { width: 170px; }
+		#webzineBody .wrap170BU2 .w170H {
+			display: inline;
+			float: left;
+			width: 170px;
+			height: 20px;
+			_height: 30px;
+			overflow: hidden;
+			background: no-repeat left top;
+			padding-top:10px;
+			font-size: 12px;
+			text-indent: 29px;
+			font-weight: bold;
+			letter-spacing: -1px;
+			color: #000;
+			line-height: 117.5%;
+			background: url('http://static.inven.co.kr/image_2011/webzine/common/wrap_170_blue1_head.png') no-repeat left top;
+		}
+		#webzineBody .wrap170BU2 a.w170H { text-decoration: none;}
+		#webzineBody .wrap170BU2 .w170M {
+			width: 170px;
+			overflow: hidden;
+			background: url('http://static.inven.co.kr/image_2011/webzine/common/wrap_170_blue1_mid.png') repeat-y left top;
+		}
+		#webzineBody .wrap170BU2 .w170B {
+			width: 170px;
+			height: 6px;
+			overflow: hidden;
+			background: url('http://static.inven.co.kr/image_2011/webzine/common/wrap_170_blue1_bot.png') no-repeat left top;
+		}
+	/* WRAPPING 131 SILVER 1 : T- */
+		#webzineBody .wrap131SL1 {
+			width: 131px;
+			overflow: hidden;
+		}
+		#webzineBody .wrap131SL1 .w131T {
+			width: 131px;
+			height: 6px;
+			overflow: hidden;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/wrap_131_silver1_top.gif') no-repeat left top;
+		}
+		#webzineBody .wrap131SL1 .w131M {
+			width: 131px;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/wrap_131_silver1_mid.gif') repeat-y left top;
+		}
+		#webzineBody .wrap131SL1 .w131B {
+			width: 131px;
+			height: 7px;
+			overflow: hidden;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/wrap_131_silver1_bot.gif') no-repeat left top;
+		}
+	/* WRAPPING 117 LIME 1 : H- */
+		#webzineBody .wrap117LM1 {
+			width: 117px;
+			overflow: hidden;
+		}
+		#webzineBody .wrap117LM1 .w117H {
+			width: 117px;
+			height: 30px;
+			overflow: hidden;
+			text-indent: -1000em;
+			background: none no-repeat left top;
+		}
+		#webzineBody .wrap117LM1 .w117H.w117H-Opinion { background-image: url('http://static.inven.co.kr/image/webzine/s3/common/wrap_117_lime1_head_opinion.gif'); }
+		#webzineBody .wrap117LM1 .w117M {
+			width: 117px;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/wrap_117_lime1_mid.gif') repeat-y left top;
+		}
+		#webzineBody .wrap117LM1 .w117B {
+			width: 117px;
+			height: 11px;
+			overflow: hidden;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/wrap_117_lime1_bot.gif') no-repeat left top;
+		}
+	/* WRAPPING 117 SILVER 1 : H- */
+		#webzineBody .wrap117SL1 {
+			width: 117px;
+			overflow: hidden;
+		}
+		#webzineBody .wrap117SL1 .w117H {
+			width: 117px;
+			height: 17px;
+			_height: 23px;
+			padding-top: 6px;
+			text-align: center;
+			color: #1c4fa1;
+			font-family: dotum, µ¸¿ò, Helvetica;
+			overflow: hidden;
+			font-weight: bold;
+			letter-spacing: -1px;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/wrap_117_silver1_head.gif') no-repeat left top;
+		}
+		#webzineBody .wrap117SL1 .w117M {
+			width: 117px;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/wrap_117_silver1_mid.gif') repeat-y left top;
+		}
+		#webzineBody .wrap117SL1 .w117B {
+			width: 117px;
+			height: 7px;
+			overflow: hidden;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/wrap_117_silver1_bot.gif') no-repeat left top;
+		}
+	/* WRAPPING 99 BLUE 1 : H- */
+		#webzineBody .wrap99BU1 {
+			width: 99px;
+			overflow: hidden;
+		}
+		#webzineBody .wrap99BU1 .w99H {
+			width: 99px;
+			_width: 92px;
+			height: 16px;
+			_height: 20px;
+			padding-top: 4px;
+			padding-right: 7px;
+			line-height: 117.5%;
+			font-weight: bold;
+			letter-spacing: -1px;
+			overflow: hidden;
+			color: white;
+			text-align: center;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/wrap_99_blue1_head.gif') no-repeat left top;
+		}
+		#webzineBody .wrap99BU1 .w99M {
+			width: 99px;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/wrap_99_blue1_mid.gif') repeat-y left top;
+		}
+		#webzineBody .wrap99BU1 .w99B {
+			width: 92px;
+			_width: 99px;
+			padding-right: 7px;
+			height: 11px;
+			overflow: hidden;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/wrap_99_blue1_bot.gif') no-repeat left top;
+		}
+	/* WRAPPING 93 BLACK 1 : H- */
+		#webzineBody .wrap93BL1 {
+			width: 93px;
+			overflow: hidden;
+		}
+		#webzineBody .wrap93BL1 .w93H {
+			width: 93px;
+			height: 16px;
+			_height: 20px;
+			padding-top: 4px;
+			line-height: 117.5%;
+			font-weight: bold;
+			letter-spacing: -1px;
+			overflow: hidden;
+			color: white;
+			text-align: center;
+			background: url('http://static.inven.co.kr/image_2011/webzine/common/wrap_93_black1_head.png') no-repeat left top;
+		}
+		#webzineBody .wrap93BL1 .w93M {
+			width: 93px;
+			background: url('http://static.inven.co.kr/image_2011/webzine/common/wrap_93_black1_mid.png') repeat-y left top;
+		}
+		#webzineBody .wrap93BL1 .w93B {
+			width: 93px;
+			height: 6px;
+			overflow: hidden;
+			background: url('http://static.inven.co.kr/image_2011/webzine/common/wrap_93_black1_bot.png') no-repeat left top;
+		}
+	/* ADD WITH HOME4.CSS */
+	/* WRAPPING 693 GRAY 1 : H,M[,H1],B */
+		#webzineBody .wrap693GR1 {
+			width: 693px;
+			overflow: hidden;
+		}
+		#webzineBody .wrap693GR1 .w693H {
+			clear: both;
+			width: 693px;
+			height: 35px;
+			overflow: hidden;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/wrap_693_gray1_head.jpg') no-repeat left top;
+			/* NEED FONT SET */
+		}
+		#webzineBody .wrap693GR1 .w693H-TodayFocus {
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/wrap_693_gray1_head_todayfocus.jpg') no-repeat left top;
+			text-indent: -10000em;
+		}
+		#webzineBody .wrap693GR1 a.w693H-TodayFocus {
+			display: inline;
+			float: left;
+			background-position: left -35px;
+		}
+		#webzineBody .wrap693GR1 .w693H-Realtime {
+			height: 34px;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/wrap_693_gray1_head_realtime.gif') no-repeat left top;
+			text-indent: -10000em;
+		}
+		#webzineBody .wrap693GR1 a.w693H-Realtime {
+			display: inline;
+			float: left;
+			background-position: left -34px;
+		}
+		#webzineBody .wrap693GR1 .w693H1 {
+			clear: both;
+			width: 693px;
+			height: 12px;
+			overflow: hidden;
+			text-indent: -10000em;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/wrap_693_gray1_head_realtimenews.jpg') no-repeat left top;
+		}
+		#webzineBody .wrap693GR1 a.w693H1 {
+			display: inline;
+			float: left;
+		}
+		#webzineBody .wrap693GR1 .w693M {
+			clear: both;
+			width: 693px;
+			overflow: hidden;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/wrap_693_gray1_mid.jpg') repeat-y left top;
+		}
+		#webzineBody .wrap693GR1 .w693B {
+			clear: both;
+			width: 693px;
+			height: 1px;
+			overflow: hidden;
+			background: #cbcbcb;
+		}
+	/* WRAPPING 693 GREEN 1 : H- */
+		#webzineBody .wrap693GN1 {
+			width: 693px;
+			overflow: hidden;
+		}
+		#webzineBody .wrap693GN1 .w693H {
+			clear: both;
+			display: inline;
+			float: left;
+			width: 693px;
+			height: 38px;
+			overflow: hidden;
+			text-indent: -10000em;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/wrap_693_green1_head_fomos.gif') no-repeat left top;
+		}
+		#webzineBody .wrap693GN1 a.w693H {
+			background-position: left -38px;
+		}
+		#webzineBody .wrap693GN1 .w693M {
+			clear: both;
+			width: 693px;
+			overflow: hidden;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/wrap_693_green1_mid.gif') repeat-y left top;
+		}
+		#webzineBody .wrap693GN1 .w693B {
+			clear: both;
+			width: 693px;
+			height: 5px;
+			overflow: hidden;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/wrap_693_green1_bot.gif') no-repeat left top;
+		}
+	/* WRAPPING 693 BROWN 1 : T,M[>M1],B */
+		#webzineBody .wrap693BR1 {
+			width: 693px;
+			overflow: hidden;
+		}
+		#webzineBody .wrap693BR1 .w693T {
+			clear: both;
+			width: 693px;
+			height: 4px;
+			overflow: hidden;
+			background: #ccc1a8;
+		}
+		#webzineBody .wrap693BR1 .w693M {
+			clear: both;
+			width: 693px;
+			overflow: hidden;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/wrap_693_brown1_mid.gif') repeat-y left top;
+		}
+		#webzineBody .wrap693BR1 .w693M1 {
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/wrap_693_brown1_mid1.gif') no-repeat 20px 20px;
+		}
+		#webzineBody .wrap693BR1 .w693B {
+			clear: both;
+			width: 693px;
+			height: 1px;
+			overflow: hidden;
+			background: #ccc1a8;
+		}
+	/* WRAPPING 342 GRAY 1 : H- */
+		#webzineBody .wrap342GR1 {
+			width: 342px;
+			overflow: hidden;
+		}
+		#webzineBody .wrap342GR1 .w342H {
+			clear: both;
+			width: 342px;
+			height: 34px;
+			overflow: hidden;
+			/* NEED FONT SET */
+		}
+		#webzineBody .wrap342GR1 .w342H-PowerBlogger {
+			text-indent: -10000em;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/wrap_342_gray1_head_powerblogger.gif') no-repeat left top;
+		}
+		#webzineBody .wrap342GR1 a.w342H-PowerBlogger {
+			display: inline;
+			float: left;
+			background-position: left -34px;
+		}
+		#webzineBody .wrap342GR1 .w342M {
+			clear: both;
+			width: 342px;
+			overflow: hidden;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/wrap_342_gray1_mid.gif') repeat-y left top;
+		}
+		#webzineBody .wrap342GR1 .w342B {
+			clear: both;
+			width: 342px;
+			height: 1px;
+			overflow: hidden;
+			background: #cbcbcb;
+		}
+	/* WRAPPING 342 AQUA 1 : H- */
+		#webzineBody .wrap342AQ1 {
+			width: 342px;
+			overflow: hidden;
+		}
+		#webzineBody .wrap342AQ1 .w342H {
+			clear: both;
+			width: 342px;
+			height: 34px;
+			overflow: hidden;
+			/* NEED FONT SET */
+		}
+		#webzineBody .wrap342AQ1 .w342H-ForTabs {
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/wrap_342_aqua1_head_fortabs.gif') no-repeat left bottom;
+		}
+		#webzineBody .wrap342AQ1 .w342H-GamerFocus {
+			text-indent: -10000em;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/wrap_342_aqua1_head_gamerfocus.gif') no-repeat left top;
+		}
+		#webzineBody .wrap342AQ1 a.w342H-GamerFocus {
+			display: inline;
+			float: left;
+			background-position: left -34px;
+		}
+		#webzineBody .wrap342AQ1 .w342M {
+			clear: both;
+			width: 342px;
+			overflow: hidden;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/wrap_342_aqua1_mid.gif') repeat-y left top;
+		}
+		#webzineBody .wrap342AQ1 .w342B {
+			clear: both;
+			width: 342px;
+			height: 1px;
+			overflow: hidden;
+			background: #b0c5dd;
+		}
+	/* WRAPPING 202 BLACK 1 : H- */
+		#webzineBody .wrap202BL1 {
+			width: 202px;
+			overflow: hidden;
+		}
+		#webzineBody .wrap202BL1 .w202H {
+			clear: both;
+			width: 202px;
+			height: 22px;
+			overflow: hidden;
+			/* NEED FONT SET */
+		}
+		#webzineBody .wrap202BL1 a.w202H {
+			display: inline;
+			float: left;
+		}
+		#webzineBody .wrap202BL1 .w202H-UserOpinion {
+			text-indent: -10000em;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/wrap_202_black1_head_useropinion.gif') no-repeat left top;
+		}
+		#webzineBody .wrap202BL1 .w202M {
+			clear: both;
+			width: 202px;
+			overflow: hidden;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/wrap_202_black1_mid.gif') repeat-y left top;
+		}
+		#webzineBody .wrap202BL1 .w202M1 {
+			clear: both;
+			width: 202px;
+			overflow: hidden;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/wrap_202_black1_mid1.gif') no-repeat left top;
+		}
+		#webzineBody .wrap202BL1 .w202M2 {
+			clear: both;
+			width: 202px;
+			height: 38px;
+			overflow: hidden;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/wrap_202_black1_mid2.gif') no-repeat left top;
+		}
+		#webzineBody .wrap202BL1 .w202M3 {
+			clear: both;
+			width: 202px;
+			height: 39px;
+			overflow: hidden;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/wrap_202_black1_mid3.gif') no-repeat left top;
+		}
+		#webzineBody .wrap202BL1 .w202B {
+			clear: both;
+			width: 202px;
+			height: 2px;
+			overflow: hidden;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/wrap_202_black1_bot.gif') no-repeat left top;
+		}
+	/* WRAPPING 202 WHITE 1 : H- */
+		#webzinebody .wrap202WH1 {
+			width:202px;
+			overflow: hidden;
+		}
+		#webzinebody .wrap202WH1 .w202H {
+			clear: both;
+			width: 202px;
+			height: 31px;
+			overflow: hidden;
+			/* NEED FONT SET */
+		}
+		#webzinebody .wrap202WH1 a.w202H {
+			display: inline;
+			float: left;
+		}
+		#webzinebody .wrap202WH1 .w202H-Event {
+			text-indent: -10000em;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/wrap_202_white1_head_event.gif') no-repeat left top;
+		}
+		#webzinebody .wrap202WH1 a.w202H-Event {
+			background-position: left -31px;
+		}
+		#webzinebody .wrap202WH1 .w202H-Notice {
+			text-indent: -10000em;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/wrap_202_white1_head_notice.gif') no-repeat left top;
+		}
+		#webzinebody .wrap202WH1 a.w202H-Notice {
+			background-position: left -31px;
+		}
+		#webzinebody .wrap202WH1 .w202M {
+			width: 202px;
+			overflow: hidden;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/wrap_202_white1_mid.gif') repeat-y left top;
+		}
+		#webzinebody .wrap202WH1 .w202B {
+			width: 202px;
+			height: 1px;
+			overflow: hidden;
+			background: #d2d2d2;
+		}
+	/* WRAPPING 202 GREEN 1 : H- */
+		#webzinebody .wrap202GR1 {
+			width:202px;
+			overflow: hidden;
+		}
+		#webzinebody .wrap202GR1 .w202H {
+			clear: both;
+			width: 202px;
+			height: 32px;
+			overflow: hidden;
+			/* NEED FONT SET */
+		}
+		#webzinebody .wrap202GR1 a.w202H {
+			display: inline;
+			float: left;
+		}
+		#webzinebody .wrap202GR1 .w202H-Schedule {
+			text-indent: -10000em;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/wrap_202_green1_head_schedule.gif') no-repeat left top;
+		}
+		#webzinebody .wrap202GR1 .w202M {
+			width: 202px;
+			overflow: hidden;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/wrap_202_green1_mid.gif') repeat-y left top;
+		}
+		#webzinebody .wrap202GR1 .w202B {
+			width: 202px;
+			height: 2px;
+			overflow: hidden;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/wrap_202_green1_bot.gif') no-repeat left top;
+		}
+	/* WRAPPING 202 GREEN 2 : H- */
+			#webzineBody .wrap202GR2 {
+				width: 202px;
+				overflow: hidden;
+			}
+			#webzineBody .wrap202GR2 .w202H {
+				clear: both;
+				width: 202px;
+				height: 32px;
+				overflow: hidden;
+				text-indent: -10000em;
+				background: url('http://static.inven.co.kr/image/webzine/s3/common/wrap_202_green2_head_esports.gif') no-repeat left top;
+			}
+			#webzineBody .wrap202GR2 a.w202H {
+				display: inline;
+				float: left;
+				background-position: left -32px;
+			}
+			#webzineBody .wrap202GR2 .w202M {
+				clear: both;
+				width: 202px;
+				overflow: hidden;
+				background: url('http://static.inven.co.kr/image/webzine/s3/common/wrap_202_green2_mid.gif') repeat-y left top;
+			}
+			#webzineBody .wrap202GR2 .w202B {
+				clear: both;
+				width: 202px;
+				height: 2px;
+				overflow: hidden;
+				background: url('http://static.inven.co.kr/image/webzine/s3/common/wrap_202_green2_bot.gif') no-repeat left top;
+			}
+	/* WRAPPING 683 TEAL 1 */
+		#webzineBody .wrap683TE1 {
+			width: 683px;
+			overflow: hidden;
+		}
+		#webzineBody .wrap683TE1 .w683H {
+			display: inline;
+			float: left;
+			width: 683px;
+			height: 42px;
+			overflow: hidden;
+		}
+		#webzineBody .wrap683TE1 .w683H-Esports {
+			text-indent: -10000em;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/wrap_683_teal1_head_esports.jpg') no-repeat left top;
+		}
+		#webzineBody .wrap683TE1 .w683M {
+			width: 683px;
+			overflow: hidden;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/wrap_683_teal1_mid.jpg') repeat-y left top;
+		}
+		#webzineBody .wrap683TE1 .w683B {
+			width: 683px;
+			height: 5px;
+			overflow: hidden;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/wrap_683_teal1_bot.jpg') no-repeat left top;
+		}
+	/* WRAPPING 659 WHITE 1 */
+		#webzineBody .wrap659WH1 {
+			width: 659px;
+			overflow: hidden;
+		}
+		#webzineBody .wrap659WH1 .w659T {
+			clear: both;
+			width: 659px;
+			overflow: hidden;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/wrap_659_white1_top.gif') no-repeat left top;
+		}
+		#webzineBody .wrap659WH1 .w659M {
+			clear: both;
+			width: 659px;
+			overflow: hidden;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/wrap_659_white1_mid.gif') repeat-y left top;
+		}
+		#webzineBody .wrap659WH1 .w659B {
+			clear: both;
+			width: 659px;
+			height: 1px;
+			overflow: hidden;
+			background: #d4d4d4 url('http://static.inven.co.kr/image/webzine/s3/common/wrap_659_white1_top.gif') no-repeat left top;
+		}
+	/* WRAPPING 198 GRAY 1 */
+		#webzineBody .wrap198GR1 {
+			width: 198px;
+			overflow: hidden;
+		}
+		#webzineBody .wrap198GR1 .w198T,
+		#webzineBody .wrap198GR1 .w198B {
+			clear: both;
+			width: 198px;
+			height: 1px;
+			overflow: hidden;
+			background: #bbbbbb;
+		}
+		#webzineBody .wrap198GR1 .w198M {
+			clear: both;
+			width: 198px;
+			overflow: hidden;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/wrap_198_gray1_mid.gif') repeat-y left top;
+		}
+	/* WRAPPING 326 RED 1 */
+		#webzineBody .wrap326RE1 {
+			width: 326px;
+			overflow: hidden;
+		}
+		#webzineBody .wrap326RE1 .w326H {
+			clear: both;
+			display: inline;
+			float: left;
+			width: 326px;
+			height: 32px;
+			overflow: hidden;
+		}
+		#webzineBody .wrap326RE1 .w326H-Hellgate {
+			text-indent: -10000em;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/wrap_326_red1_head_hellgate.jpg') no-repeat left top;
+		}
+		#webzineBody .wrap326RE1 .w326M {
+			clear: both;
+			width: 326px;
+			overflow: hidden;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/wrap_326_red1_mid.jpg') repeat-y left top;
+		}
+		#webzineBody .wrap326RE1 .w326B {
+			clear: both;
+			width: 326px;
+			height: 2px;
+			overflow: hidden;
+			background: #e11b1b url('http://static.inven.co.kr/image/webzine/s3/common/wrap_326_red1_bot.jpg') no-repeat left top;
+		}
+	/* WRAPPING 326 BLUE 1 */
+		#webzineBody .wrap326BU1 {
+			width: 326px;
+			overflow: hidden;
+		}
+		#webzineBody .wrap326BU1 .w326H {
+			clear: both;
+			display: inline;
+			float: left;
+			width: 326px;
+			height: 32px;
+			overflow: hidden;
+		}
+		#webzineBody .wrap326BU1 .w326H-Aion {
+			text-indent: -10000em;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/wrap_326_blue1_head_aion.jpg') no-repeat left top;
+		}
+		#webzineBody .wrap326BU1 .w326M {
+			clear: both;
+			width: 326px;
+			overflow: hidden;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/wrap_326_blue1_mid.jpg') repeat-y left top;
+		}
+		#webzineBody .wrap326BU1 .w326B {
+			clear: both;
+			width: 326px;
+			height: 2px;
+			overflow: hidden;
+			background: #297ad4 url('http://static.inven.co.kr/image/webzine/s3/common/wrap_326_blue1_bot.jpg') no-repeat left top;
+		}
+	/* WRAPPING 326 ORANGE 1 */
+		#webzineBody .wrap326OR1 {
+			width: 326px;
+			overflow: hidden;
+		}
+		#webzineBody .wrap326OR1 .w326H {
+			clear: both;
+			display: inline;
+			float: left;
+			width: 326px;
+			height: 32px;
+			overflow: hidden;
+		}
+		#webzineBody .wrap326OR1 .w326H-Aion {
+			text-indent: -10000em;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/wrap_326_orange1_head_aion.jpg') no-repeat left top;
+		}
+		#webzineBody .wrap326OR1 .w326M {
+			clear: both;
+			width: 326px;
+			overflow: hidden;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/wrap_326_orange1_mid.jpg') repeat-y left top;
+		}
+		#webzineBody .wrap326OR1 .w326B {
+			clear: both;
+			width: 326px;
+			height: 2px;
+			overflow: hidden;
+			background: #f87f01 url('http://static.inven.co.kr/image/webzine/s3/common/wrap_326_orange1_bot.jpg') no-repeat left top;
+		}
+	/* WRAPPING 326 PURPLE 1 */
+		#webzineBody .wrap326PU1 {
+			width: 326px;
+			overflow: hidden;
+		}
+		#webzineBody .wrap326PU1 .w326H {
+			clear: both;
+			display: inline;
+			float: left;
+			width: 326px;
+			height: 32px;
+			overflow: hidden;
+		}
+		#webzineBody .wrap326PU1 .w326H-TeraOpen {
+			text-indent: -10000em;
+			background: url('http://static.inven.co.kr/image_2011/webzine/module/1101_tera/wrap_326_purple1_head_tera.png') no-repeat left top;
+		}
+		#webzineBody .wrap326PU1 .w326M {
+			clear: both;
+			width: 326px;
+			overflow: hidden;
+			background: url('http://static.inven.co.kr/image_2011/webzine/module/1101_tera/wrap_326_purple1_mid.png') repeat-y left top;
+		}
+		#webzineBody .wrap326PU1 .w326B {
+			clear: both;
+			width: 326px;
+			height: 2px;
+			overflow: hidden;
+			background: url('http://static.inven.co.kr/image_2011/webzine/module/1101_tera/wrap_326_purple1_bot.png') no-repeat left top;
+		}
+	/* WRAPPING 326 GREEN 1 */
+		#webzineBody .wrap326GR1 {
+			width: 326px;
+			overflow: hidden;
+		}
+		#webzineBody .wrap326GR1 .w326H {
+			clear: both;
+			display: inline;
+			float: left;
+			width: 326px;
+			height: 32px;
+			overflow: hidden;
+		}
+		#webzineBody .wrap326GR1 .w326H-Expo {
+			text-indent: -10000em;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/wrap_326_green1_head_expo.jpg') no-repeat left top;
+		}
+		#webzineBody .wrap326GR1 .w326M {
+			clear: both;
+			width: 326px;
+			overflow: hidden;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/wrap_326_gray1_mid.jpg') repeat-y left top;
+		}
+		#webzineBody .wrap326GR1 .w326B {
+			clear: both;
+			width: 326px;
+			height: 2px;
+			overflow: hidden;
+			background: #f87f01 url('http://static.inven.co.kr/image/webzine/s3/common/wrap_326_green1_bot.jpg') no-repeat left top;
+		}
+
+/* TITLE */
+	/* TITLE 420 GRAY 1 */
+		#webzineBody .title420GR1 {
+			width: 405px;
+			_width: 420px;
+			height: 20px;
+			_height: 27px;
+			overflow: hidden;
+			color: #2a2a2a;
+			font-weight: bold;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/title_420x27_gray1.gif') no-repeat left top;
+			padding-top: 7px;
+			padding-left: 15px;
+			line-height: 117.5%;
+		}
+		#webzineBody a .title420GR1 {
+			background-position: left -27px;
+		}
+	/* TITLE 180 AQUA 1 */
+		#webzineBody .title180AQ1 {
+			width: 178px;
+			height: 67px;
+			color: #57ABFF;
+			background: no-repeat left top;
+			overflow: hidden;
+			text-indent: 35px;
+			font-size: 11pt;
+			font-weight: bold;
+			letter-spacing: -1px;
+			line-height: 117.5%;
+		}
+	
+		#webzineBody .title180AQ1.title180AQ1-Gamerzone { text-indent: -1000em; background: url('http://static.inven.co.kr/image_2011/webzine/s3/common/title_178x67_aqua1_gamerzone_hover.png') no-repeat left top; }
+		#webzineBody a:hover .title180AQ1.title180AQ1-Gamerzone { text-indent: -1000em; background: url('http://static.inven.co.kr/image_2011/webzine/s3/common/title_178x67_aqua1_gamerzone_hover.png') no-repeat left bottom; }
+	/* TEMP */
+	/* TITLE 883 WHITE 1 */
+		#webzineBody .title883WH1 {
+			width: 883px;
+			height: 43px;
+			text-indent: -1000em;
+			overflow: hidden;
+			background: none no-repeat left top;
+		}
+		#webzineBody .title883WH1.title883WH1-PowerBlogger { background-image: url('http://static.inven.co.kr/image/webzine/s3/common/title_883x43_white1_powerblogger.gif'); }
+	/* TITLE 683 WHITE 1 */
+		#webzineBody .title683WH1 {
+			width: 643px;
+			_width: 683px;
+			height: 20px;
+			_height: 29px;
+			padding-left: 40px;
+			padding-top: 9px;
+			line-height: 117.5%;
+			font-weight: bold;
+			letter-spacing: -1px;
+			color: #000000;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/title_683x29_white1.gif') no-repeat left top;
+		}
+	/* TITLE 683 BLUE 1 */
+		#webzineBody .title683BU1 {
+			width: 683px;
+			height: 43px;
+			text-indent: -1000em;
+			overflow: hidden;
+			background: none no-repeat left top;
+		}
+		#webzineBody .title683BU1.title683BU1-GameInfo { background-image: url('http://static.inven.co.kr/image/webzine/s3/common/title_683x43_blue1_gameinfo.gif'); }
+		#webzineBody .title683BU1.title683BU1-GameNews { background-image: url('http://static.inven.co.kr/image/webzine/s3/common/title_683x43_blue1_gamenews.gif'); }
+		#webzineBody .title683BU1.title683BU1-NamedBlogger { background-image: url('http://static.inven.co.kr/image/webzine/s3/common/title_683x43_blue1_namedblogger.gif'); }
+		#webzineBody .title683BU1.title683BU1-EsportsNews { background-image: url('http://static.inven.co.kr/image_2011/esports/common/title_683x43_blue1_esportsnews.png'); }
+	/* TITLE 683 SILVER 1 */
+		#webzineBody .title683SL1 {
+			width: 669px;
+			_width: 683px;
+			height: 21px;
+			_height: 30px;
+			padding-left: 14px;
+			padding-top: 9px;
+			line-height: 117.5%;
+			font-weight: bold;
+			letter-spacing: -1px;
+			color: #333333;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/title_683x30_silver1.gif') no-repeat left top;
+		}
+	/* TITLE FREE1 BLACK 1 */
+		#webzineBody .titleFree1BL1 {
+			padding-right: 12px;
+			font-weight: bold;
+			letter-spacing: -1px;
+			margin-left: 5px;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/icon_arrow_black1.gif') no-repeat right 4px;
+		}
+		#webzineBody .titleFree1BL1 strong { color: #1c4fa1; }
+	/* ADD WITH HOME4.CSS */
+	/* TITLE 321x22 BROWN 1 */
+		#webzineBody .title321BR1 {
+			width: 321px;
+			height: 22px;
+			overflow: hidden;
+			/* NEED FONT SET */
+		}
+		#webzineBody a.title321BR1 {
+			display: inline;
+			float: left;
+		}
+		#webzineBody .title321BR1-Hardware {
+			text-indent: -10000em;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/title_321x44_brown1_hardware.gif') no-repeat left top;
+		}
+		#webzineBody a.title321BR1-Hardware {
+			background-position: left -22px;
+		}
+		#webzineBody .title321BR1-Usernews {
+			text-indent: -10000em;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/title_321x44_brown1_usernews.gif') no-repeat left top;
+		}
+		#webzineBody a.title321BR1-Usernews {
+			background-position: left -22px;
+		}
+		#webzineBody .title321BR1-Discussion {
+			text-indent: -10000em;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/title_321x44_brown1_discussion.gif') no-repeat left top;
+		}
+		#webzineBody a.title321BR1-Discussion {
+			background-position: left -22px;
+		}
+		#webzineBody .title321BR1-Recommend {
+			text-indent: -10000em;
+			background: url('http://static.inven.co.kr/image_2011/webzine/common/title_321x44_brown1_recommend.png') no-repeat left top;
+		}
+		#webzineBody a.title321BR1-Recommend {
+			background-position: left top;
+		}
+		#webzineBody .title321BR1-Experience {
+			text-indent: -10000em;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/title_321x44_brown1_experience.gif') no-repeat left top;
+		}
+		#webzineBody a.title321BR1-Experience {
+			background-position: left -22px;
+		}
+		#webzineBody .title321BR1-Gamefun {
+			text-indent: -10000em;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/title_321x44_brown1_gamefun.gif') no-repeat left top;
+		}
+		#webzineBody .title321BR1-LiveTalk {
+			text-indent: -10000em;
+			background: url('http://static.inven.co.kr/image_2011/webzine/s3/common/title_321x44_brown1_livetalk1.png') no-repeat left top;
+		}
+		#webzineBody .title321BR1-Mobile {
+			text-indent: -10000em;
+			background: url('http://static.inven.co.kr/image_2011/webzine/s3/common/title_321x44_brown1_mobile1.png') no-repeat left top;
+		}
+		#webzineBody a.title321BR1-Mobile {
+			background-position: left -22px;
+		}
+		#webzineBody a.title321BR1-Gamefun {
+			background-position: left -22px;
+		}
+	/* TITLE 667x24 BROWN 1*/
+		#webzineBody .title667BR1 {
+			width: 667px;
+			height: 24px;
+			overflow: hidden;
+			/* NEED FONT SET */
+		}
+		#webzineBody a.title667BR1 {
+			display: inline;
+			float: left;
+		}
+		#webzineBody .title667BR1-OpenGallery {
+			text-indent: -10000em;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/title_667x24_brown1_opengallery.gif') no-repeat left top;
+		}
+		#webzineBody a.title667BR1-OpenGallery {
+			background-position: left -24px;
+		}
+
+/* TABLE */
+	/* TABLE TYPE 2 */
+		#webzineBody .wzTableType1 {
+			overflow: hidden;
+			border-bottom: 2px solid #a1a1a2;
+		}
+		#webzineBody .wzTableType1 table {
+			float: left;
+			display: inline;
+			table-layout: fixed;
+			margin-bottom: -1px;
+		}
+		#webzineBody .wzTableType1 thead th {
+			height: 28px;
+			overflow: hidden;
+			line-height: 117.5%;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/bg_gray2.gif') repeat-x left top;
+			padding-top: 3px;
+		}
+		#webzineBody .wzTableType1 thead th.first {
+			border-left: 1px solid #c1c1c1;
+		}
+		#webzineBody .wzTableType1 thead th.last {
+			border-right: 1px solid #c1c1c1;
+		}
+		#webzineBody .wzTableType1 thead th span {
+			display: inline;
+			float: left;
+			width: 100%;
+			font-weight: bold;
+			letter-spacing: -1px;
+			text-indent: 2px;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/sep_2x12_gray1.gif') no-repeat left top;
+		}
+		#webzineBody .wzTableType1 thead th.first span {
+			background: none;
+		}
+		#webzineBody .wzTableType1 tbody td {
+			line-height: 140%;
+		}
+		#webzineBody .wzTableType1 tbody th,
+		#webzineBody .wzTableType1 tbody td {
+			text-align: center;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/dot_4x1_gray1.gif') repeat-x left bottom;
+			padding: 7px 0 5px;
+		}
+		#webzineBody .wzTableType1 th,
+		#webzineBody .wzTableType1 th a,
+		#webzineBody .wzTableType1 td,
+		#webzineBody .wzTableType1 td a {
+			color: #252525;
+		}
+		#webzineBody .wzTableType1 th.left,
+		#webzineBody .wzTableType1 td.left,
+		#webzineBody .wzTableType1 left th,
+		#webzineBody .wzTableType1 left td {
+			text-align: left;
+			padding-left: 10px;
+		}
+		#webzineBody .wzTableType1 th.center,
+		#webzineBody .wzTableType1 td.center {
+			text-align: center;
+			padding-left: 0;
+		}
+		#webzineBody .wzTableType1 th.nopad,
+		#webzineBody .wzTableType1 td.nopad {
+			padding-top: 0px;
+			padding-bottom: 1px;
+		}
+		#webzineBody .wzTableType1 tbody th.image,
+		#webzineBody .wzTableType1 tbody td.image {
+			padding-top: 9px;
+			padding-bottom: 5px;
+		}
+	/* TABLE Type 1 : L-1 */
+		#webzineBody .tableType1 {
+			overflow: hidden;
+		}
+		#webzineBody .tableType1 table {
+			float: left;
+			display: inline;
+			margin-left: -1px;
+			margin-top: -1px;
+			table-layout: fixed;
+		}
+		#webzineBody .tableType1 table th,
+		#webzineBody .tableType1 table td {
+			line-height: 140%;
+			text-align: center;
+			border-top: solid 1px #A0A0A0;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/dot_1x4_gray1.gif') repeat-y left 3px;
+			padding: 5px 0 2px 1px;
+			color: #261800;
+		}
+		#webzineBody .tableType1 table th {
+		}
+		#webzineBody .tableType1 table th, 
+		#webzineBody .tableType1 table th a {
+			font-weight: bold;
+			letter-spacing: -1px;
+			color: #B74900;
+		}
+		#webzineBody .tableType1 table td,
+		#webzineBody .tableType1 table td a {
+		}
+		#webzineBody .tableType1 table td.nopad { padding: 0 0 0 1px; }
+		#webzineBody .tableType1 table td.left { text-align: left; padding-left: 8px; }
+	/* TEMP */
+	/* TABLE TYPE 2 */
+		#webzineBody .tableType2 {
+			overflow: hidden;
+			border-bottom: 2px solid #a1a1a2;
+		}
+		#webzineBody .tableType2 table {
+			float: left;
+			display: inline;
+			table-layout: fixed;
+			margin-bottom: -1px;
+		}
+		#webzineBody .tableType2 thead th {
+			height: 28px;
+			overflow: hidden;
+			line-height: 117.5%;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/bg_gray2.gif') repeat-x left top;
+			padding-top: 3px;
+		}
+		#webzineBody .tableType2 thead th.first {
+			border-left: 1px solid #c1c1c1;
+		}
+		#webzineBody .tableType2 thead th.last {
+			border-right: 1px solid #c1c1c1;
+		}
+		#webzineBody .tableType2 thead th span {
+			display: inline;
+			float: left;
+			width: 100%;
+			font-weight: bold;
+			letter-spacing: -1px;
+			text-indent: 2px;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/sep_2x12_gray1.gif') no-repeat left top;
+		}
+		#webzineBody .tableType2 thead th.first span {
+			background: none;
+		}
+		#webzineBody .tableType2 tbody td {
+			line-height: 140%;
+		}
+		#webzineBody .tableType2 tbody th,
+		#webzineBody .tableType2 tbody td {
+			text-align: center;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/dot_4x1_gray1.gif') repeat-x left bottom;
+			padding: 7px 0 5px;
+		}
+		#webzineBody .tableType2 th,
+		#webzineBody .tableType2 th a,
+		#webzineBody .tableType2 td,
+		#webzineBody .tableType2 td a {
+			color: #252525;
+		}
+		#webzineBody .tableType2 th.left,
+		#webzineBody .tableType2 td.left,
+		#webzineBody .tableType2 left th,
+		#webzineBody .tableType2 left td {
+			text-align: left;
+			padding-left: 10px;
+		}
+		#webzineBody .tableType2 th.center,
+		#webzineBody .tableType2 td.center {
+			text-align: center;
+			padding-left: 0;
+		}
+		#webzineBody .tableType2 th.nopad,
+		#webzineBody .tableType2 td.nopad {
+			padding-top: 0px;
+			padding-bottom: 1px;
+		}
+		#webzineBody .tableType2 tbody th.image,
+		#webzineBody .tableType2 tbody td.image {
+			padding-top: 9px;
+			padding-bottom: 5px;
+		}
+	/* TABLE TYPE 3 */
+		#webzineBody .tableType3 {
+			overflow: hidden;
+			border-bottom: 1px solid #1c4fa1;
+		}
+		#webzineBody .tableType3 table {
+			float: left;
+			display: inline;
+			table-layout: fixed;
+			margin-bottom: -1px;
+		}
+		#webzineBody .tableType3 thead th {
+		}
+		#webzineBody .tableType3 thead th span {
+		}
+		#webzineBody .tableType3 tbody th,
+		#webzineBody .tableType3 tbody td {
+			text-align: center;
+			background: white url('http://static.inven.co.kr/image/webzine/s3/common/dot_4x1_gray1.gif') repeat-x left bottom;
+			padding: 8px 0 6px;
+			line-height: 140%;
+		}
+		#webzineBody .tableType3 tbody th {
+			background-color: #f6f6f6;
+		}
+		#webzineBody .tableType3 th,
+		#webzineBody .tableType3 th a {
+			color: #1c4fa1;
+		}
+		#webzineBody .tableType3 td,
+		#webzineBody .tableType3 td a {
+			color: black;
+		}
+		#webzineBody .tableType3 th.left,
+		#webzineBody .tableType3 td.left,
+		#webzineBody .tableType3 left th,
+		#webzineBody .tableType3 left td {
+			text-align: left;
+			padding-left: 10px;
+		}
+		#webzineBody .tableType3 th.center,
+		#webzineBody .tableType3 td.center {
+			text-align: center;
+			padding-left: 0;
+		}
+		#webzineBody .tableType3 tbody th.image,
+		#webzineBody .tableType3 tbody td.image {
+			padding-top: 10px;
+			padding-bottom: 6px;
+		}
+
+/* LIST */
+	/* LIST TYPE 1 : UL- */
+		#webzineBody .listType1 ul {
+			padding-bottom: 10px;
+		}
+		#webzineBody .listType1 ul li {
+			clear: both;
+			height: 15px;
+			overflow: hidden;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/icon_rect_gray2.gif') no-repeat left 6px;
+			margin-top: 10px;
+		}
+		#webzineBody .listType1 ul li span {
+			display: inline;
+			float: left;
+			margin-left: 10px;
+		}
+		#webzineBody .listType1 ul li span a {
+			font-size: 10pt;
+			color: #254882;
+			font-weight: bold;
+			letter-spacing: -1px;
+		}
+		#webzineBody .listType1 ul li span span {
+			float: none;
+			width: auto;
+			margin: 0;
+		}
+		#webzineBody .listType1 ul li span span.category {
+			color: #8b0000;
+		}
+	/* LIST TYPE 2 : UL- */
+		#webzineBody .listType2 ul {
+			padding-bottom: 10px;
+		}
+		#webzineBody .listType2 ul li {
+			clear: both;
+			height: 15px;
+			overflow: hidden;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/icon_rect_blue1.gif') no-repeat left 3px;
+			margin-top: 6px;
+		}
+		#webzineBody .listType2 ul li span {
+			display: inline;
+			float: left;
+			margin-left: 10px;
+		}
+		#webzineBody .listType2 ul li span a {
+			color: #145daa;
+			font-weight: bold;
+			letter-spacing: -1px;
+		}
+	/* LIST TYPE 3 : UL- */
+		#webzineBody .listType3 ul li {
+			clear: both;
+			height: 15px;
+			overflow: hidden;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/icon_nav_gray1_3.gif') no-repeat left 2px;
+			margin-top: 4px;
+		}
+		#webzineBody .listType3 ul li span {
+			display: inline;
+			float: left;
+			margin-left: 10px;
+		}
+		#webzineBody .listType3 ul li span a {
+			color: #484747;
+		}
+	/* LIST TYPE 4 : UL- */
+		#webzineBody .listType4 ul li {
+			clear: both;
+			height: 15px;
+			overflow: hidden;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/icon_rect_gray2.gif') no-repeat left 5px;
+			margin-top: 5px;
+		}
+		#webzineBody .listType4 ul li span {
+			display: inline;
+			float: left;
+			margin-left: 9px;
+		}
+		#webzineBody .listType4 ul li span a {
+			color: #403f3f;
+		}
+	/* LIST TYPE 5 : UL>LI>A */
+		#webzineBody .listType5 ul li {
+			clear: both;
+			height: 15px;
+			overflow: hidden;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/icon_rect_gray2.gif') no-repeat left 5px;
+			margin-top: 8px;
+			text-indent: 10px;
+			font-weight: normal;
+			letter-spacing: 0px;
+		}
+		#webzineBody .listType5 ul li a {
+			color: #403f3f;
+			font-weight: normal;
+			letter-spacing: 0px;
+		}
+	/* LIST TYPE 6 : UL- */
+		#webzineBody .listType6 {
+			overflow: hidden;
+		}
+		#webzineBody .listType6 ul {
+			margin-top: -1px;
+		}
+		#webzineBody .listType6 ul li {
+			clear: both;
+			height: 25px;
+			overflow: hidden;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/dot_4x1_gray1.gif') repeat-x left top;
+		}
+		#webzineBody .listType6 ul li span {
+			display: inline;
+			float: left;
+			overflow: hidden;
+			line-height: 15px;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/icon_rect_gray2.gif') no-repeat left 12px;
+			padding-top: 7px;
+			margin-left: 10px;
+			padding-left: 10px;
+			white-space: nowrap;
+		}
+		#webzineBody .listType6 ul li span a {
+			color: #403f3f;
+		}
+	/* LIST TYPE 7 : UL- */
+		#webzineBody .listType7 {
+			overflow: hidden;
+		}
+		#webzineBody .listType7 ul {
+			margin-top: -1px;
+		}
+		#webzineBody .listType7 ul li {
+			clear: both;
+			overflow: hidden;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/icon_rect_gray2.gif') no-repeat left 5px;
+			padding-left: 9px;
+		}
+		#webzineBody .listType7 ul li span {
+			line-height: 117.5%;
+		}
+	/* LIST TYPE 8 : UL>LI */
+		#webzineBody .listType8 {
+			overflow: hidden;
+		}
+		#webzineBody .listType8 ul li {
+			clear: both;
+			padding: 4px 0 1px 0;
+			text-indent: 8px;
+			white-space: nowrap;
+			line-height: 117.5%;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/icon_rect_silver2.gif') no-repeat left 8px;
+		}
+		#webzineBody .listType8 ul li,
+		#webzineBody .listType8 ul li a {
+			color: #3e3e3e;
+			font-weight: normal;
+			letter-spacing: 0px;
+		}
+		#webzineBody .listType8.listType8T1 ul li { padding-top: 3px; padding-bottom: 0px; }
+	/* LIST TYPE 9 : UL- */
+		#webzineBody .listType9 ul li {
+			clear: both;
+			height: 15px;
+			overflow: hidden;
+			line-height: 15px;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/icon_rect_gray8.gif') no-repeat left 5px;
+			margin-top: 5px;
+		}
+		#webzineBody .listType9 ul li a {
+			display: inline;
+			float: left;
+			color: black;
+			white-space: nowrap;
+			margin-left: 8px;
+		}
+		#webzineBody .listType9 ul li .comment {
+			color: #0072ff;
+			font-size: 11px;
+			font-family: µ¸¿ò, dotum, ±¼¸², gulim, Helvetica;
+			font-weight: normal;
+			letter-spacing: normal;
+		}
+
+/* TAB STYLE */
+	/* TAB 80 BLUE 1 */
+		#webzineBody .tab80BU1 {
+			display: inline;
+			float: left;
+			width: 80px;
+			height: 17px;
+			_height: 24px;
+			overflow: hidden;
+			color: white;
+			font-weight: bold;
+			letter-spacing: -1px;
+			text-align: center;
+			text-decoration: none;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/tab_80x24_blue1.gif') no-repeat left top;
+			padding-top: 7px;
+			line-height: 117.5%;
+		}
+		#webzineBody a.tab80BU1 {
+			color: #737373;
+			background-position: left -24px;
+		}
+		#webzineBody a:hover.tab80BU1 {
+			background-position: left top;
+		}
+	/* TAB 96 GRAY 1 */
+		#webzineBody .tab96GR1 {
+			display: inline;
+			float: left;
+			width: 96px;
+			height: 22px;
+			_height: 31px;
+			overflow: hidden;
+			font-weight: bold;
+			letter-spacing: -1px;
+			text-align: center;
+			text-decoration: none;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/tab_96x31_gray1.gif') no-repeat left top;
+			padding-top: 9px;
+			line-height: 117.5%;
+		}
+		#webzineBody a.tab96GR1 {
+			color: #9a9999;
+			background-position: left -31px;
+		}
+		#webzineBody a:hover.tab96GR1 {
+			color: #145daa;
+			background-position: left top;
+		}
+	/* TAB 99 GRAY 1 */
+		#webzineBody .tab99GR1 {
+			display: inline;
+			float: left;
+			width: 99px;
+			height: 22px;
+			_height: 32px;
+			overflow: hidden;
+			color: #797878;
+			text-align: center;
+			font-weight: bold;
+			letter-spacing: -1px;
+			text-decoration: none;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/tab_99x32_gray1.gif') no-repeat left -32px;
+			padding: 10px 0 0;
+		}
+		#webzineBody a.tab99GR1-Selected,
+		#webzineBody a.tab99GR1:hover {
+			color: #006dc5;
+			background-position: left top;
+		}
+	/* TAB 100 GRAY 1 */
+		#webzineBody .tab100GR1 {
+			display: inline;
+			float: left;
+			width: 100px;
+			height: 22px;
+			_height: 32px;
+			overflow: hidden;
+			color: #797878;
+			text-align: center;
+			font-weight: bold;
+			letter-spacing: -1px;
+			text-decoration: none;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/tab_100x32_gray1.gif') no-repeat left -32px;
+			padding: 10px 0 0;
+		}
+		#webzineBody a.tab100GR1-Selected,
+		#webzineBody a.tab100GR1:hover {
+			color: #006dc5;
+			background-position: left top;
+		}
+
+/* BUTTON */
+	/* BUTTON 107 BLUE 1 */
+		#webzineBody .bttn107BU1 {
+			display: inline;
+			float: left;
+			width: 107px;
+			height: 17px;
+			_height: 22px;
+			overflow: hidden;
+			color: white;
+			font-weight: bold;
+			letter-spacing: -1px;
+			text-align: center;
+			text-decoration: none;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/bttn_107x22_blue1.gif') no-repeat left top;
+			padding-top: 5px;
+			line-height: 117.5%;
+		}
+	/* TEMP */
+	/* BUTTON 93x23 GRAY 1 */
+		#webzineBody .bttn93GR1 {
+			display: inline;
+			float: left;
+			width: 93px;
+			height: 18px;
+			_height: 23px;
+			overflow: hidden;
+			color: white;
+			text-align: center;
+			text-decoration: none;
+			line-height: 117.5%;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/bttn_93x23_gray1.gif') no-repeat left top;
+			padding-top: 5px;
+			border: none;
+		}
+		#webzineBody input.bttn93GR1 {
+			height: 23px;
+			cursor: pointer;
+			padding-top: 0;
+			_padding-top: 4px;
+		}
+	/* BUTTON 84x19 BLUE 1 */
+		#webzineBody .bttn63BU1 {
+			width: 84px;
+			height: 15px;
+			_height: 19px;
+			overflow: hidden;
+			color: #ffffff;
+			font-size: 8pt;
+			font-family: µ¸¿ò, dotum, ±¼¸², gulim;
+			text-align: center;
+			line-height: 120%;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/bttn_84x19_blue1.gif') no-repeat left top;
+			padding-top: 4px;
+			text-decoration: none;
+		}
+		#webzineBody input.bttn63BU1 {
+			height: 19px;
+			cursor: pointer;
+			padding-top: 0;
+			_padding-top: 3px;
+		}
+	/* BUTTON 80x19 BLUE 1 */
+		#webzineBody .bttn80BU1 {
+			float: left;
+			display: inline;
+			width: 80px;
+			height: 16px;
+			_height: 21px;
+			overflow: hidden;
+			color: #ffffff;
+			font-size: 11px;
+			font-family: µ¸¿ò, dotum, ±¼¸², gulim, Helvetica;
+			text-align: center;
+			line-height: 14px;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/bttn_80x21_blue1.gif') no-repeat left top;
+			padding-top: 5px;
+			text-decoration: none;
+		}
+		#webzineBody input.bttn80BU1 {
+			height: 21px;
+			cursor: pointer;
+			padding-top: 0;
+			_padding-top: 3px;
+		}
+	/* BUTTON 63x19 GRAY 1 */
+		#webzineBody .bttn63GR1 {
+			width: 63px;
+			height: 15px;
+			_height: 19px;
+			overflow: hidden;
+			color: #505050;
+			font-size: 8pt;
+			font-family: µ¸¿ò, dotum, ±¼¸², gulim;
+			text-align: center;
+			line-height: 120%;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/bttn_63x19_gray1.gif') no-repeat left top;
+			padding-top: 4px;
+			text-decoration: none;
+		}
+		#webzineBody input.bttn63GR1 {
+			height: 19px;
+			cursor: pointer;
+			padding-top: 0;
+			_padding-top: 3px;
+		}
+	/* BUTTON 62x47 BLUE 1 */
+		#webzineBody .bttn62BU1 {
+			display: inline;
+			float: left;
+			width: 62px;
+			height: 19px;
+			_height: 47px;
+			overflow: hidden;
+			color: white;
+			text-align: center;
+			text-decoration: none;
+			line-height: 117.5%;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/bttn_62x47_blue1.gif') no-repeat left top;
+			padding-top: 17px;
+			border: none;
+			font-weight: bold;
+			letter-spacing: -1px;
+		}
+		#webzineBody input.bttn62BU1 {
+			height: 47px;
+			cursor: pointer;
+			padding-top: 0;
+			_padding-top: 5px;
+		}
+	/* BUTTON 52x24 BLUE 1 */
+		#webzineBody .bttn52BU1 {
+			display: inline;
+			float: left;
+			width: 52px;
+			height: 19px;
+			_height: 24px;
+			overflow: hidden;
+			color: white;
+			text-align: center;
+			text-decoration: none;
+			line-height: 117.5%;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/bttn_52x24_blue1.gif') no-repeat left top;
+			padding-top: 5px;
+			border: none;
+			font-weight: bold;
+			letter-spacing: -1px;
+		}
+		#webzineBody input.bttn52BU1 {
+			height: 24px;
+			cursor: pointer;
+			padding-top: 0;
+			_padding-top: 3px;
+		}
+	/* BUTTON 52x24 BLACK 1 */
+		#webzineBody .bttn52BL1 {
+			display: inline;
+			float: left;
+			width: 52px;
+			height: 19px;
+			_height: 24px;
+			overflow: hidden;
+			color: white;
+			text-align: center;
+			text-decoration: none;
+			line-height: 117.5%;
+			background: url('http://static.inven.co.kr/image_2011/webzine/common/bttn_52x24_black1.png') no-repeat left top;
+			padding-top: 5px;
+			border: none;
+			font-weight: bold;
+			letter-spacing: -1px;
+		}
+		#webzineBody input.bttn52BL1 {
+			height: 24px;
+			cursor: pointer;
+			padding-top: 0;
+			_padding-top: 3px;
+		}
+	/* BUTTON 39x20 ORANGE 1 */
+		body .bttn39OR1,
+		#webzineBody .bttn39OR1 {
+			display: inline;
+			float: left;
+			width: 39px;
+			height: 16px;
+			_height: 20px;
+			overflow: hidden;
+			color: white;
+			text-align: center;
+			text-decoration: none;
+			line-height: 117.5%;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/bttn_39x20_orange1.gif') no-repeat left top;
+			padding-top: 4px;
+			border: none;
+			font-weight: bold;
+			letter-spacing: -1px;
+		}
+		body input.bttn39OR1,
+		#webzineBody input.bttn39OR1 {
+			height: 20px;
+			cursor: pointer;
+			padding-top: 0;
+			_padding-top: 3px;
+		}
+	/* BUTTON 16x13 BLUE 1 */
+		#webzineBody .bttn16BU1 {
+			display: inline;
+			float: left;
+			width: 16px;
+			height: 13px;
+			overflow: hidden;
+			color: #edf3fb;
+			text-align: center;
+			text-decoration: none;
+			line-height: 117.5%;
+			padding-top: 0px;
+			font-family: dotum, µ¸¿ò, Helvetica;
+			text-indent: -1px;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/bttn_16x13_blue1.gif') no-repeat left top;
+			border: none;
+		}
+		#webzineBody a.bttn16BU1:hover,
+		#webzineBody .bttn16BU1.bttn16BU1-Selected {
+			background-position: 0 -13px;
+		}
+		#webzineBody input.bttn16BU1 {
+			height: 13px;
+			cursor: pointer;
+			padding-top: 0;
+		}
+	/* BUTTON 16x16 BLACK 1 */
+		#webzineBody .bttn16BL1 {
+			display: inline;
+			float: left;
+			width: 16px;
+			height: 16px;
+			overflow: hidden;
+			color: #edf3fb;
+			text-align: center;
+			text-decoration: none;
+			line-height: 1.5;
+			font-family: dotum, µ¸¿ò, Helvetica;
+			text-indent: -1px;
+			background: url('http://static.inven.co.kr/image_2011/webzine/common/bttn_16x16_black1.png') no-repeat left top;
+			border: none;
+		}
+		#webzineBody a.bttn16BL1:hover,
+		#webzineBody .bttn16BL1.bttn16BL1-Selected {
+			background-position: 0 -16px;
+		}
+		#webzineBody input.bttn16BL1 {
+			height: 16px;
+			cursor: pointer;
+			padding-top: 0;
+		}
+	/* BUTTON 33x16 OLIVE 1 : Register Only */
+		#webzineBody .bttn33BU1 { float: left; display: inline; width: 33px; height: 16px; overflow: hidden; background: none no-repeat left top; }
+		#webzineBody .bttn33BU1.bttn33BU1-Register { background: url('http://static.inven.co.kr/image/webzine/s3/common/bttn_33x16_blue1_register.gif'); text-indent: -1000em; }
+		#webzineBody .bttn33BU1 { text-align: center; text-decoration: none; cursor: pointer; font-weight: bold; letter-spacing: -1px; line-height: 15px; border: none; }
+		#webzineBody input.bttn33BU1 { height: 16px; padding-top: 0px; _padding-top: 1px; }
+	/* ADD WITH HOME4.CSS */
+	/* BUTTON 122x34 AQUA 1 */
+		#webzineBody .tab122AQ1 {
+			display: inline;
+			float: left;
+			width: 122px;
+			height: 34px;
+			overflow: hidden;
+			text-indent: -10000em;
+		}
+		#webzineBody .tab122AQ1-ReadTop {
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/bttn_122x34_aqua1_read.gif') no-repeat left top;
+		}
+		#webzineBody .tab122AQ1-CommentTop {
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/bttn_122x34_aqua1_comment.gif') no-repeat left top;
+		}
+		#webzineBody a.tab122AQ1-ReadTop:hover,
+		#webzineBody .tab122AQ1-ReadTop-Selected, 
+		#webzineBody a.tab122AQ1-CommentTop:hover,
+		#webzineBody .tab122AQ1-CommentTop-Selected {
+			background-position: left -34px;
+		}
+
+/* COMMON STYLES */
+	/* COMMON RATING BAR */
+		#webzineBody .webzineCommonRatingBar {
+			width: 70px;
+			height: 12px;
+			overflow: hidden;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/bg_star_yellow1.gif') no-repeat left top;
+		}
+		#webzineBody .webzineCommonRatingBar div {
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/bg_star_yellow1.gif') no-repeat left -12px;
+			height:12px;
+			text-indent: -1000em;
+			overflow: hidden;
+		}
+	/* COMMON PAGING */
+		#webzineBody .webzineCommonPaging {
+			width: 100%;
+			clear: both;
+			text-align: center;
+			padding-top: 1px;
+		}
+		#webzineBody .webzineCommonPaging .basetext { color: #cccccc; padding-top: 1px; }
+		#webzineBody .webzineCommonPaging a { color: #333333; padding-top: 1px; }
+		#webzineBody .webzineCommonPaging a:hover { text-decoration: underline; }
+		#webzineBody .webzineCommonPaging .currentpg { color: #ff9600; font-weight: bold; letter-spacing: -1px; padding-top: 1px; color: red; font-size: 14pt; }
+		#webzineBody .webzineCommonPaging .prevtext {
+			background: url('http://static.inven.co.kr/image/wow/common2/icon_nav_white1_w.gif') no-repeat left top;
+			padding-top: 1px;
+			padding-left: 18px;
+		}
+		#webzineBody .webzineCommonPaging a.prevtext { padding: 0; background: none; }
+		#webzineBody .webzineCommonPaging a.nexttext { padding: 0; background: none; }
+		#webzineBody .webzineCommonPaging .nexttext {
+			background: url('http://static.inven.co.kr/image/wow/common2/icon_nav_white1_e.gif') no-repeat right top;
+			padding-top: 1px;
+			padding-right: 18px;
+		}
+
+/* LAYERS */
+	/* GAME LAYER */
+		/* Basic */
+			div#webzineGameLayers { z-index: 999; }
+			div.webzineGameLayer { background: #f0f0f0; border: solid 1px #c8c8c8; position: absolute; display: none; z-index: 999; padding: 12px 12px 12px; }
+			div.webzineGameLayer_inner { width: 281px; }
+			div.webzineGameLayer_loading { width: 100px; height: 100px; position: absolute; z-index:999; padding: 0; margin: 0; display: none; }
+			div.webzineGameLayer_loading { background:url('http://static.inven.co.kr/image/wow/dataninfo/edb_item/loading.gif') left top no-repeat; }
+			div.webzineGameLayer dl,
+			div.webzineGameLayer a,
+			div.webzineGameLayer a:hover { color: #4c4b4b; text-decoration: none !important; line-height: 17px; }
+			div.webzineGameLayer hr { display: none; }
+			div.webzineGameLayer dl { float: left; width: 192px; overflow: hidden; margin-top: 3px; }
+			div.webzineGameLayer dl dt { float: none; padding-left: 7px; padding-right: 6px; color: #0089c9; }
+			div.webzineGameLayer dl dt { background: url('http://static.inven.co.kr/image/webzine/s3/common/dot_1x1_c0089c9.gif') no-repeat left 5px; }
+			div.webzineGameLayer dl dd { float: none; }
+		/* No Title */
+			div.webzineGameLayer dl.gamename dt,
+			div.webzineGameLayer dl.gamelogo dt { display: none; }
+		/* Special : gamelogo */
+			div.webzineGameLayer dl.gamelogo { width: 80px; height: 56px; overflow: hidden;  }
+			div.webzineGameLayer dl.gamelogo dd { float: left; display: inline; border: solid 1px #dcdcdc; }
+			div.webzineGameLayer dl.gamelogo dd img { width: 78px; height: 54px; border: 0; vertical-align: top; }
+			div.webzineGameLayer dl.gamelogo dd div.noimage { width: 78px; height: 54px; overflow: hidden; text-indent: -1000em; background: white; }
+		/* Special : gamename */
+			div.webzineGameLayer dl.gamename { padding: 1px 0 4px; font-size: 14px; color: #000; font-weight: bold; letter-spacing: -1px; font-family: dotum, µ¸¿ò, Helvetica;  }
+		/* Special : avgrating */
+			div.webzineGameLayer dl.avgrating dt, 
+			div.webzineGameLayer dl.avgrating dd { float: left; display: inline; }
+			div.webzineGameLayer dl.avgrating span { float: left; display: inline; }
+			div.webzineGameLayer dl.avgrating span.ratingNum { white-space: nowrap; }
+			div.webzineGameLayer dl.avgrating span.ratingBar { width: 55px; margin-right: 8px; margin-top: 2px; }
+			div.webzineGameLayer dl.avgrating span.ratingBar,
+			div.webzineGameLayer dl.avgrating span.ratingBar span { height: 11px; overflow: hidden; background: url('http://static.inven.co.kr/image/webzine/s3/common/icon_pic_stars1.gif') no-repeat left top; }
+			div.webzineGameLayer dl.avgrating span.ratingBar span { background-position: 0 -11px; }
+		/* Group */
+			div.webzineGameLayer dl.gameinfo { width: 192px; margin-left: 9px; overflow: hidden; }
+			div.webzineGameLayer dl.gameinfo dt.gameinfo { display: none; }
+			div.webzineGameLayer dl.gameinfo dd.gameinfo { float: left; display: inline; width: 192px; }
+		/* Color */
+			div.webzineGameLayer dl.seteffects { color: #a0a0a0; }
+		/* Spacing */
+			div.webzineGameLayer dl.description { margin-top: 6px; }
+		/* Clear */
+			div.webzineGameLayer dl.nothing dd { float: left; clear: both; }
+		/* Listing */
+			div.webzineGameLayer dl.setitems dd ul { margin-left: 3px; }
+			div.webzineGameLayer dl.setitems dd ul li { width: 267px; clear: both; }
+			div.webzineGameLayer dl.setitems dd ul li img { vertical-align: middle; margin-bottom: 3px; }
+			div.webzineGameLayer dl.seteffects dd ul { margin-left: 0px; }
+			div.webzineGameLayer dl.seteffects dd ul li { width: 270px; clear: both; }
+		/* Name */
+			div.webzineGameLayer dl.itemname { font-weight: bold; letter-spacing: -1px; padding-bottom: 2px; font-size: 14px; }
+		/* Cardslots */
+			div.webzineGameLayer dl.cardslots img { float: left; display: inline; margin-right: 3px; vertical-align: top; }
+

@@ -187,7 +187,7 @@ exports.checkNPNproto = function(){
 	};
 
 	var socket = tls.connect(port, host, options, function () {
-
+		//console.log(host);
 		var npn = 'http/1';
 		console.log('check host name : '+host);
 		console.log('npn data : ' + this.npnProtocol);
@@ -203,8 +203,8 @@ exports.checkNPNproto = function(){
 			}
 		}
 
-		var ajax_message = 'This host using '+npn+'(origin : '+this.npnProtocol+')';
-		console.log(ajax_message);
+		var ajax_message = npn;
+		console.log('This host using '+npn+'(origin : '+this.npnProtocol+')');
 
 		mResponse.send(ajax_message);
 	});
@@ -215,3 +215,10 @@ exports.checkNPNproto = function(){
 	})
 
 }
+
+exports.getRedirectURL = function(){
+
+
+
+}
+

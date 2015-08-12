@@ -1,0 +1,3048 @@
+#webzineHome {
+	width: 915px;
+	overflow: hidden;
+	background: url('http://static.inven.co.kr/image/webzine/s3/common/bg_gray5.gif') repeat-y 700px top;
+	padding-bottom: 10px;
+}
+ /* FOR IE DUPLICATE BUG FIX */
+	#webzineHome .ieFix,
+	#webzineHome .hidden {
+		clear: both;
+		margin: 0 -3px 0 0;
+	}
+/* topBanner PART */
+    #webzineMain .topBannerPart li {padding-bottom: 8px;}
+    #webzineMain .topBannerPart li img {width: 915px;display: inline;float:left;}
+/* topBanner2 PART */
+    #webzineMain .topBannerPart2 {width: 915px; padding-bottom: 4px;}
+    #webzineMain .topBannerPart2 ul {padding:0;margin:0;}
+    #webzineMain .topBannerPart2 li {padding-bottom: 8px; width:457px; overflow: hidden; float:left;margin:0;}
+    #webzineMain .topBannerPart2 li a {display:inline;float:left;}
+    #webzineMain .topBannerPart2 li img {width: 457px;display: inline;float:left;margin:0;padding:0;}
+/* HOME PART */
+	#homePart {
+		width: 693px;
+		overflow: hidden;
+		margin: 0 7px 0 0;
+	}
+	/* GROUPS */
+		#webzineHome .homeGroups {
+			clear: both;
+			width: 693px;
+			overflow: hidden;
+			margin: -8px 0 0;
+		}
+		#webzineHome .homeGroups .homeGroup {
+			clear: both;
+			width: 693px;
+			overflow: hidden;
+			margin: 8px 0 0;
+		}
+
+
+        #webzineHome #gstar .wrapGR3Outer {
+            border:1px solid #cbcbcb;
+        }
+
+        #webzineHome #gstar .wrap693GR3 {
+            width:691px;
+        }
+
+        #webzineHome #gstar .videoNPhoto {
+            margin-bottom:10px;
+        }
+
+        #webzineHome #gstar .header,
+        #webzineHome #gstar .header h2 {
+            display:block;
+            float:none; 
+        }
+        #webzineHome #gstar .header {
+            border:1px solid #fff;
+            border-right:none;
+            border-bottom:1px solid #cbcbcb;
+            background:url(http://static.inven.co.kr/image_2011/webzine/module/121016_gstar/gstar_common_title_bg.png) top left repeat-x;
+        }
+
+        #webzineHome #gstar .header h2 {
+            height:31px;
+            text-indent:-10000em;
+        }
+
+        #webzineHome #gstar .videoNPhoto h2 {
+            background:url(http://static.inven.co.kr/image_2011/webzine/module/121016_gstar/gstar_photo_video_title.png) top left no-repeat;
+        }
+
+        #webzineHome #gstar .videoNPhoto h2 a{
+            background:url(http://static.inven.co.kr/image_2011/webzine/module/121016_gstar/more.png) 650px 11px no-repeat;
+            height:31px;
+            display:block;
+        }
+
+        #webzineHome #gstar .videoNPhoto ul {
+            margin-right:-1px;
+            padding:7px 0 9px;
+        }
+        #webzineHome #gstar .videoNPhoto ul li {
+            margin:0 12px 0 11px;
+        }
+        #webzineHome #gstar .videoNPhoto ul li a {
+            border:1px solid #cbcbcb;
+            display:block;
+        }
+        #webzineHome #gstar .videoNPhoto ul li img {
+            display:block;
+            width:148px;
+            height:98px;
+        }
+
+        #webzineHome #gstar a.gotoSpecialPage {
+            display:block;
+            width:693px;
+            height:50px;
+            background:url(http://static.inven.co.kr/image_2011/webzine/module/121016_gstar/goto_gstar_special_page.png) top left no-repeat;
+            clear:both;
+            text-indent:-10000em;
+        }
+
+        #webzineHome #gstar .booth {
+            border:1px solid #000;
+            border-top:0px;
+            padding:0 4px 4px;
+            background:#4b4949;
+            margin-bottom:4px;
+        }
+        #webzineHome #gstar .booth .wrap693GR3 {
+            width:683px;
+            background:#fff;
+        }
+        #webzineHome #gstar .booth .tabWrap {
+            border:1px solid #cbcbcb;
+            margin:0 4px;
+            background:#f0f0f0;
+        }
+
+        #webzineHome #gstar .booth .tabContent {
+            padding:5px 0 0 6px;
+        }
+
+        #webzineHome #gstar .booth .boothHotissue {
+            width:331px;
+        }
+
+		#webzineHome #gstar .hotIssueWrap {
+			width: 331px;
+			_width: 333px;
+			height: 245px;
+			_height: 247px;
+			overflow: hidden;
+			border: 1px solid #101010;
+			background-color: #c9c9c9;
+		}
+		#webzineHome #gstar .hotIssueWrap .hotIssueBody{
+			position: relative;
+		}
+		#webzineHome #gstar .hotIssueWrap .hotIssueBody .image {
+			position: absolute;
+			left:0px;
+			top:0px;
+			width: 1800px;
+			height: 245px;
+		}
+		#webzineHome #gstar .hotIssueWrap .hotIssueBody .image img{
+			width: 331px;
+			height: 245px;
+		}
+		#webzineHome #gstar .hotIssueWrap .hotIssueBody div.content {
+			position: absolute;
+			overflow: hidden;
+			z-index: 9999;
+			background: url('http://static.inven.co.kr/image_2011/webzine/module/121016_gstar/tran_bg_black1.png') repeat left top transparent;
+			top: 184px;
+			left: 0px;
+			width: 331px;
+			height: 61px;
+		}
+		#webzineHome #gstar .hotIssueWrap .hotIssueBody .text {
+			width: 300px;
+			_width: 302px;
+			padding-left: 6px;
+			padding-right: 2px;
+			overflow: hidden;
+		}
+		#webzineHome #gstar .hotIssueWrap .hotIssueBody .text dl{
+			height: 61px;
+		}
+		#webzineHome #gstar .hotIssueWrap .hotIssueBody .text dl dt a{
+			width: 280px;
+			height: 20px;
+			_height: 21px;
+			color: #fffc00;
+			font-weight: bold;
+			overflow: hidden;
+			font-size: 15px;
+			font-family: 'Malgun Gothic' !important;
+			padding-top: 3px;
+			display:block;
+			text-decoration: none;
+		}
+		#webzineHome #gstar .hotIssueWrap .hotIssueBody .text dl dd {
+			width: 280px;
+			height: 37px;
+			overflow: hidden;
+		}
+		#webzineHome #gstar .hotIssueWrap .hotIssueBody .text dl dd a{
+			width: 280px;
+			height: 37px;
+			overflow: hidden;
+			color: white;
+			font-family: 'Malgun Gothic' !important;
+            line-height:16px;
+            margin-top:3px;
+			display:block;
+			text-decoration: none;
+		}
+		#webzineHome #gstar .hotIssueWrap .hotIssueBody .text dl dd a:hover {
+			color: red;
+		}
+		#webzineHome #gstar .hotIssueWrap .hotIssueBody .navigation {
+			width: 30px;
+            position:absolute;
+            bottom:13px;
+            right:11px;
+		}
+		#webzineHome #gstar .hotIssueWrap .hotIssueBody .navigation span.list {
+			width: 28px;
+			display: block;
+			text-align: right;
+			color: #b5b5b6;
+			margin-top: 28px;
+			margin-bottom: 2px;
+		}
+		#webzineHome #gstar .hotIssueWrap .hotIssueBody .arrowWrap {
+			_margin-left: 0;
+		}
+		#webzineHome #gstar .hotIssueWrap .hotIssueBody .navigation span.prev {
+			width: 15px;
+			height: 13px;
+			display:block;
+			background: url('http://static.inven.co.kr/image_2011/webzine/module/121016_gstar/icon_arrow_bttn.png') no-repeat left top;
+			text-indent: -10000em;
+			float: left;
+			cursor: pointer;
+		}
+		#webzineHome #gstar .hotIssueWrap .hotIssueBody .navigation span.next {
+			width: 15px;
+			height: 13px;
+			display:block;
+			background: url('http://static.inven.co.kr/image_2011/webzine/module/121016_gstar/icon_arrow_bttn.png') no-repeat -15px top;
+			text-indent: -10000em;
+			float: left;
+			cursor: pointer;
+		}
+
+		/* TAB */
+					#boothTab {
+						clear: both;
+						height: 60px;
+						overflow: hidden;
+						margin: 3px 0;
+					}
+					#boothTab ul {
+						width: 673px;
+						clear: both;
+						height: 60px;
+						overflow: hidden;
+					}
+					#boothTab ul li{
+						margin-right: 8px;
+					}
+					#boothTab ul li.nexon {
+						margin-left: 6px;
+					}
+					#boothTab ul li.lnk {
+						margin-right: 0px;
+					}
+					#boothTab ul li a {
+						display: inline;
+						float: left;
+						height: 60px;
+						overflow: hidden;
+						text-indent: -10000em;
+					}
+					#boothTab ul li a {
+						background: url('http://static.inven.co.kr/image_2011/webzine/module/121016_gstar/tab_118x60_gray1.png') no-repeat left top;
+					}
+					#boothTab ul li.nexon a { width: 103px; background-position: 0px -60px; }
+					#boothTab ul li.wemade a { width: 103px; background-position: -103px -60px; }
+					#boothTab ul li.neowiz a { width: 103px; background-position: -206px -60px; }
+					#boothTab ul li.hangame a { width: 103px; background-position: -309px -60px; }
+					#boothTab ul li.sk a { width: 103px; background-position: -515px -60px; }
+					#boothTab ul li.lnk a { width: 103px; background-position: -412px -60px; }
+
+					#boothTab ul li.nexon a:hover,
+					#boothTab ul li.nexon a.selected { width: 103px; background-position: 0px 0px; }
+					#boothTab ul li.wemade a:hover,
+					#boothTab ul li.wemade a.selected { width: 103px; background-position: -103px 0px; }
+					#boothTab ul li.neowiz a:hover,
+					#boothTab ul li.neowiz a.selected { width: 103px; background-position: -206px 0px; }
+					#boothTab ul li.hangame a:hover,
+					#boothTab ul li.hangame a.selected { width: 103px; background-position: -309px 0px; }
+					#boothTab ul li.sk a:hover,
+					#boothTab ul li.sk a.selected { width: 103px; background-position: -515px 0px; }
+					#boothTab ul li.lnk a:hover,
+					#boothTab ul li.lnk a.selected { width: 103px; background-position: -412px 0px; }
+
+
+                #webzineHome #gstar .booth .boothFocus {
+                    width:332px;                    
+                    margin-left:9px;
+                }
+
+
+		
+                #webzineHome #gstar .booth .boothFocus h2 {
+                    border-bottom:2px solid #c8c8c8;
+                    background:url(http://static.inven.co.kr/image_2011/webzine/module/121016_gstar/gstar_report_title.png) top left no-repeat;
+                    text-indent:-10000em;
+                    display:block;
+                    float:none;
+                    line-height:26px;
+                }
+
+                #webzineHome #gstar .booth .boothFocus a.thumb {
+                    display:block;
+                    float:left;
+                    border:1px solid #d6d6d6;
+                    margin:0 5px;
+                }
+
+                #webzineHome #gstar .booth .boothFocus a.thumb img {
+                    width:88px;
+                    height:60px;
+                }
+
+                #webzineHome #gstar .booth .boothFocus .focusList {
+                    padding:5px 0 10px;
+                    background:url(http://static.inven.co.kr/image_2011/webzine/module/121016_gstar/gstar_dotted.png) bottom left repeat-x;
+                }
+                #webzineHome #gstar .booth .boothFocus .focus {
+                    width:332px;
+                }
+                #webzineHome #gstar .booth .boothFocus .focus h3,
+                #webzineHome #gstar .booth .boothFocus .focus p {
+                    display:block;
+                    float:none;
+                    margin:0;
+                }
+
+                #webzineHome #gstar .booth .boothFocus .focus p {
+                    height:30px;
+                    overflow:hidden;
+                }
+                #webzineHome #gstar .booth .boothFocus .focus h3 {
+                    margin:6px 0 8px;
+                }
+                #webzineHome #gstar .booth .boothFocus .focus h3 a {
+                    font:bold 13px/15px ±¼¸²,gulim;
+                }
+                #webzineHome #gstar .booth .boothFocus .focus p a {
+                    font:11px/15px ±¼¸²,gulim;
+                    color:#6d6c6c;
+                }
+
+                #webzineHome #gstar .booth .boothFocus .boardList {
+                    padding-top:7px;
+                    margin:0 0 -7px 5px;
+                }
+
+                #webzineHome #gstar .booth .boothFocus .boardList ul,
+                #webzineHome #gstar .booth .boothFocus .boardList li {
+                    float:none;
+                    display:block;
+                    margin:0;
+                }
+
+                #webzineHome #gstar .booth .boothFocus .boardList li {
+                    height:24px;
+                    background:url(http://static.inven.co.kr/image_2011/webzine/module/121016_gstar/gstar_bullet.png) 0 6px no-repeat;
+                    padding:0;
+                }
+                #webzineHome #gstar .booth .boothFocus .boardList li a {
+                    font:12px/14px ±¼¸²,gulim;
+                    color:#333333;
+                }
+
+                #webzineHome #gstar .booth .boothNews {
+                    padding:18px 0 6px;
+                    width:692px;
+                    margin-right:-23px;
+                }
+                #webzineHome #gstar .booth .boothNews ul {
+                    margin-right:-23px;
+                }
+                #webzineHome #gstar .booth .boothNews li {
+                    width:150px;
+                    margin:0 23px 0 0;
+                }
+                #webzineHome #gstar .booth .boothNews li a.thumb {
+                    border:1px solid #cbcbcb;
+                    display:block;
+                }
+                #webzineHome #gstar .booth .boothNews li img {
+                    display:block;
+                    width:148px;
+                    height:94px;
+                }
+
+                #webzineHome #gstar .booth .boothNews li h3,
+                #webzineHome #gstar .booth .boothNews li p {
+                    display:block;
+                    float:none;
+                    margin:0;
+                    text-align:center;
+                }
+
+                #webzineHome #gstar .booth .boothNews li h3 {
+                    margin:6px 0;
+                }
+
+                #webzineHome #gstar .booth .boothNews li h3 a,
+                #webzineHome #gstar .booth .boothNews li p a {
+                    font:12px/14px ±¼¸²,gulim;
+                }
+                #webzineHome #gstar .booth .boothNews li h3 a {
+                    font-weight:bold;
+                }
+
+                #webzineHome #gstar .overviewSplit {
+                    width:342px;    
+                    overflow:hidden;
+                }
+                /*ÀÎÅÍºä*/
+                #webzineHome #gstar .wrap342GR3 {
+                    width:340px;
+                }
+                #webzineHome #gstar .wrap342GR3 h2 a{
+                    background:url(http://static.inven.co.kr/image_2011/webzine/module/121016_gstar/more.png) 298px 11px no-repeat;
+                    height:31px;
+                    display:block;
+                }
+                #webzineHome #gstar .gstarNewsList {
+				}
+	#webzineHome #gstar .interview {
+		/* margin-bottom: 6px;*/
+		/*_margin-bottom: 28px;*/
+	}
+                #webzineHome #gstar .interview h2 {
+                    background:url(http://static.inven.co.kr/image_2011/webzine/module/121016_gstar/gstar_interview_title2.png) top left no-repeat;
+                }
+                #webzineHome #gstar.gstar2013 .interview h2 {
+                    background:url(http://static.inven.co.kr/image_2011/webzine/module/121016_gstar/gstar_interview_title_2013.png) top left no-repeat;
+                }
+                #webzineHome #gstar .interview a.thumb {
+                    border:1px solid #d6d6d6;
+                    display:block;
+                    float:left;
+                    margin-right:6px;
+                }
+                #webzineHome #gstar .interview a.thumb img {
+                    display:block;
+                    width:88px;
+                    height:58px;
+                }
+
+                #webzineHome #gstar .interview .focusList {
+                    padding:8px 10px 0px;
+                }
+                #webzineHome #gstar .interview .focus {
+                    width:320px;
+                    padding-bottom:8px;
+                }
+
+                #webzineHome #gstar .interview h3,
+                #webzineHome #gstar .interview p {
+                    display:block;
+                    float:none;
+                    margin:0;
+                }
+                #webzineHome #gstar .interview h3 {
+                    margin:6px 0;
+                }
+                #webzineHome #gstar .interview h3 a {
+                    font:bold 12px/14px ±¼¸²;
+                    color:#3b6ccf;
+                }
+                #webzineHome #gstar .interview p a {
+                    font:12px/16px ±¼¸²;
+                    color:#747474;
+                }
+
+                /*¸®ºä*/
+                #webzineHome #gstar .review h2 {
+                    background:url(http://static.inven.co.kr/image_2011/webzine/module/121016_gstar/gstar_review_title.png) top left no-repeat;
+                }
+                #webzineHome #gstar.gstar2013 .review h2 {
+                    background:url(http://static.inven.co.kr/image_2011/webzine/module/121016_gstar/gstar_review_title_2013a.png) top left no-repeat;
+                }
+                #webzineHome #gstar .review .focusList {
+                    padding:10px 0 4px;
+                }
+                #webzineHome #gstar .review .focus {
+                    width:100px;
+                    margin-left:10px;
+                    padding-bottom: 11px;
+                    overflow: hidden;
+                }
+                #webzineHome #gstar .review .focus a.thumb  {
+                    border:1px solid #d6d6d6;
+                    margin-bottom:3px;
+                    display:block;
+                }
+
+                #webzineHome #gstar .review .focus img {
+                    width:98px;
+                    height:58px;
+                    display:block;
+                }
+
+                #webzineHome #gstar .review .focus h3,
+                #webzineHome #gstar .review .focus p {
+                    margin:0;
+                    float:none;
+                    text-align:center;
+                    display:block;
+                    white-space: nowrap;
+                }
+                #webzineHome #gstar .review .focus h3 a {
+                    font:bold 12px/14px ±¼¸²,gulim;
+                    letter-spacing: -1px;
+                }
+                #webzineHome #gstar .review .focus p a {
+                    font:11px/13px ±¼¸²,gulim;
+                    color:#747474;
+                    white-space: nowrap;
+                }
+                #webzineHome #gstar .gstarRealTime {
+                    width:342px;
+                    margin-right:9px;
+                }
+                #webzineHome #gstar .gstarRealTime h2.title {
+                    display:block;
+                    text-indent:-1000em;
+                    float:none;
+                    height:34px;
+                    background:url(http://static.inven.co.kr/image_2011/webzine/module/121016_gstar/gstar_realtime_news_title.png) top left no-repeat;
+                }
+                #webzineHome #gstar .gstarRealTime h2.title a { background:url(http://static.inven.co.kr/image_2011/webzine/module/121016_gstar/more.png) 298px 13px no-repeat; display:block; height:34px;}
+                #webzineHome #gstar .gstarRealTime .boardList,
+                #webzineHome #gstar .gstarRealTime .boardListWrap,
+                #webzineHome #gstar .gstarRealTime .boardList li,
+                #webzineHome #gstar .gstarRealTime .boardList ul {
+                    display:block;
+                    float:none;
+                }
+                #webzineHome #gstar .gstarRealTime .boardListWrap {
+                    border:1px solid #aebfd0;
+                    border-top:none;
+                    padding:0px 1px 1px;
+                }
+                #webzineHome #gstar .gstarRealTime .boardList {
+                    border:2px solid #c9d2db;
+                    border-top:0;
+                }
+                #webzineHome #gstar .gstarRealTime .boardList ul {
+                    border:1px solid #cbcbcb;
+                    padding:2px 0 0 0px;
+                    list-style:none;
+                }
+                #webzineHome #gstar .gstarRealTime .boardList li {
+                    position:relative;
+                    padding:0;
+                    height:auto;
+                    margin: 0px;  
+                    padding-left:6px;
+                    background:url(http://static.inven.co.kr/image_2011/webzine/module/121016_gstar/gstar_bullet.png) 6px 10px no-repeat;
+                    height:26px;
+                    _height:27px;
+                    border-bottom:1px dotted #b1b1b1;
+                }
+                #webzineHome #gstar .gstarRealTime .boardList li.shrink {
+                    border-bottom:none;
+                }
+                #webzineHome #gstar .gstarRealTime .boardList li a {
+                    font:bold 13px/25px ±¼¸²,gulim;
+                    color:#4e4c4c;
+                }
+                #webzineHome #gstar .gstarRealTime .boardList li a.today {
+                    color:#1265e2;
+                }
+                #webzineHome #gstar .gstarRealTime .boardList li a:hover {
+                    color:#1265e2;
+                }
+                #webzineHome #gstar .gstarRealTime .boardList span.howlong {
+                    position:absolute;
+                    right:10px;
+                    top:0;
+                    /*background:url(http://static.inven.co.kr/image_2011/webzine/module/121016_gstar/gstar_clock.png) top left no-repeat;*/
+                    padding-left:0;
+                    text-indent:0;
+                    font:11px/25px ±¼¸²,gulim;
+                    color:#7c7c7c;
+                    display:block;
+                }
+                #webzineHome #gstar .gstarRealTime .boardList span.cmtnum {
+                    color: #0072ff;
+                    font-size: 11px;
+                    font-family: µ¸¿ò, dotum, ±¼¸², gulim, Helvetica;
+                    line-height: 25px;
+                    padding: 0 0 0 0;
+                }
+                #webzineHome #gstar .gstarRealTime .boardList span.hotcmt {
+                    color: #ff6484;
+                }
+                #webzineHome #gstar .gstarRealTime .boardList span.boldcmt {
+                    color: #ff6484;
+                    font-weight: bold;
+                    letter-spacing: -1px;
+                }
+                #webzineHome #gstar .gstarRealTime .boardList ul.hot {
+                    padding-top: 1px;
+                    border-bottom: none;
+                    padding-bottom: 1px;
+                }
+                #webzineHome #gstar .gstarRealTime .boardList ul.hot li {
+                    margin-left: 1px;
+                    width: 324px;
+                    _width: 330px;
+                    height: 25px;
+                    _height: 26px;
+                    _padding-top: 5px;
+                    background-color: #f3e7e7;
+                }
+                #webzineHome #gstar .gstarRealTime .boardList ul.recom li {
+                    background-color: #e7f2f3;
+                }
+                #webzineHome #gstar .wrap693GR1 {
+                    border:1px solid #cbcbcb;
+                    border-right:0;
+                    border-left:0;
+                    background: url('http://static.inven.co.kr/image/webzine/s3/common/wrap_693_gray1_mid.jpg') repeat-y left top;
+                    margin-top:10px;
+                    padding-top:10px;
+                }
+
+                #overviewWide.gstarRealTime {width: 693px;}
+                #overviewWide.gstarRealTime h2 { width: 693px;background: url('http://static.inven.co.kr/image_2011/webzine/module/121016_gstar/gstar_realtime_news_title_693.png') top left no-repeat;}
+                #overviewWide.gstarRealTime .overviewWideMid {width: 693px;background: url('http://static.inven.co.kr/image_2011/webzine/module/121016_gstar/gstar_realtime_news_mid_693.png') top left repeat-y;}
+                #overviewWide.gstarRealTime .overviewWideBot {width: 693px;height:5px;overflow:hidden;background: url('http://static.inven.co.kr/image_2011/webzine/module/121016_gstar/gstar_realtime_news_bot_693.png') top left no-repeat;}
+                #overviewWide.gstarRealTime h2.title a {background-position: 645px 13px;}
+                #overviewWide.gstarRealTime .boardListWrap {display:inline;float:left;border:none;}
+                #overviewWide.gstarRealTime .boardListWrapLeft {width:342px;}
+                #overviewWide.gstarRealTime .boardListWrapRight {width:343px;}
+                #overviewWide.gstarRealTime .boardListWrap .boardList {display:inline;float:left;width:337px;border:none;}
+                #overviewWide.gstarRealTime .boardListWrapLeft .boardList {margin:1px 0 0 5px;}
+                #overviewWide.gstarRealTime .boardListWrapRight .boardList {margin:1px 0 0 4px;}
+                #overviewWide.gstarRealTime .boardListWrap .boardList ul {border:none;}
+                #overviewWide.gstarRealTime .boardList ul.hot li {width:330px; _width:336px;}
+                #overviewWide.gstarRealTime .boardList li.shrink {border-bottom: 1px dotted #b1b1b1;}
+
+                #overviewWideSpecial {margin-top:8px; width: 701px; overflow:hidden; margin-left:-8px;}
+                #overviewWideSpecial .special {margin-left: 8px;}
+
+	/* BOARD LIST */
+		#webzineHome .boardList {
+			overflow: hidden;
+		}
+		#webzineHome .boardList ul {
+			overflow: hidden;
+		}
+		#webzineHome .boardList ul li {
+			clear: both;
+			height: 15px;
+			_height: 17px;
+			overflow: hidden;
+			text-indent: 9px;
+			white-space: nowrap;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/icon_rect_gray8.gif') no-repeat left 7px;
+			_background-position: left 6px;
+			margin: 5px 0 0 0;
+			padding: 2px 0 0;
+		}
+		#webzineHome .boardList ul li img {
+			vertical-align: middle;
+			margin: -2px 0 0;
+		}
+		#webzineHome .boardList ul li a {
+			color: #333333;
+		}
+		#webzineHome .boardList ul li a span.category {
+			font-weight: bold;
+			letter-spacing: -1px;
+			padding-right: 5px;
+		}
+		#webzineHome .boardList ul li span.comment {
+			color: #0072ff;
+			font-size: 11px;
+			font-family: µ¸¿ò, dotum, ±¼¸², gulim, Helvetica;
+			line-height: 14px;
+			background: url('http://static.inven.co.kr/image/webzine/s3/common/icon_image_talk1.gif') no-repeat left top;
+			padding: 0 0 0 15px;
+		}
+	/* HOTISSUE PART */
+		/* TODAY HOTISSUE */
+			#webzineHome .todayHotissue {}
+			#webzineHome .todayHotissue .hotissueWrap { width: 693px; height: 332px; overflow: hidden; padding: 9px 0 9px 9px; background: url('http://static.inven.co.kr/image_2011/webzine/s3/common/wrap_693_blue1.png') no-repeat left top; }
+			#webzineHome .todayHotissue .issueFocus { width: 226px; height: 312px; _height: 315px; overflow: hidden; border: #1b64a8 1px solid; cursor: pointer; }
+			#webzineHome .todayHotissue .focusTitle { cursor: pointer; }
+			#webzineHome .todayHotissue .focusImg { margin: 3px 6px; _margin: 0 6px; width: 214px; height: 131px; overflow: hidden; cursor: pointer; }
+			#webzineHome .todayHotissue .focusSubject { 
+				width: 214px; 
+				margin: 0 6px;
+				padding: 6px 0 0;
+				overflow: hidden; 
+				color: #0078ff; 
+				cursor: pointer; 
+				font: 20px µ¸¿ò, dotum, ±¼¸², gulim, Helvetica;
+				font-weight: bold;
+				line-height: 22px;
+				letter-spacing: -1px;
+			}
+			#webzineHome .todayHotissue .focusContent { 
+				width: 214px;
+				height: 60px; 
+				_height: 69px; 
+				margin: 0 6px; 
+				padding: 4px 0 6px; 
+				overflow: hidden; 
+				cursor: pointer; 
+				color: #707070;
+				font: 13px µ¸¿ò, dotum, ±¼¸², gulim, Helvetica;
+				line-height: 16px;
+			}
+
+			#webzineHome .todayHotissue .issueList { width: 456px; height: 314px; overflow: hidden; cursor: pointer; }
+			#webzineHome .todayHotissue .listBody { width: 456px; height: 299px; overflow: hidden; cursor: pointer; }
+			#webzineHome .todayHotissue a.list { width: 136px; height: 299px; display: none; margin: 0 9px 0 7px; float:left; cursor: pointer; }
+			#webzineHome .todayHotissue a.list .listTitle { cursor: pointer; }
+			#webzineHome .todayHotissue a.list .listImg { width: 136px; height: 131px; margin: 3px 0; _margin: 0; overflow: hidden; cursor: pointer; }
+			#webzineHome .todayHotissue a.list .listSubject { 
+				width: 136px;
+				height: 49px;
+				margin-top: 3px;
+				overflow: hidden; 
+				cursor: pointer; 
+				color: #0078ff;
+				font: 14px µ¸¿ò, dotum, ±¼¸², gulim, Helvetica;
+				font-weight: bold;
+				line-height: 17px;
+				letter-spacing: -1px;
+			}
+			#webzineHome .todayHotissue a.list .listContent { 
+				width: 136px; 
+				height: 65px; 
+				margin-top: 10px;
+				overflow: hidden; 
+				cursor: pointer; 
+				font-size: 13px;
+				color: #707070;
+				font-family: µ¸¿ò, dotum, ±¼¸², gulim, Helvetica;
+				line-height: 16px;
+			}
+
+			#webzineHome .todayHotissue .navigation { width: 456px; height: 15px; display: inline; }
+			#webzineHome .todayHotissue .navigation .left { float: left; }
+			#webzineHome .todayHotissue .navigation .right { float: right; margin-right: 10px; }
+			#webzineHome .todayHotissue .navigation a { text-indent: -10000em; overflow: hidden; display: inline; }
+			#webzineHome .todayHotissue .topArticle { width: 96px; height: 14px; margin: 1px 0 0 7px; float: left; background: url('http://static.inven.co.kr/image_2011/webzine/s3/common/bttn_96x14_navy1.png') no-repeat left top; }
+			#webzineHome .todayHotissue .allowleft { width: 18px; height: 14px; margin: 1px 0 0 0; float: left; background: url('http://static.inven.co.kr/image_2011/webzine/s3/common/bttn_18x14_blue1_left.png') no-repeat left top; }
+			#webzineHome .todayHotissue .allowright { width: 18px; height: 14px; margin: 1px 0 0 0; float: left; background: url('http://static.inven.co.kr/image_2011/webzine/s3/common/bttn_18x14_blue1_right.png') no-repeat left top; }
+
+		/* WIDE HOTISSUE */
+			#webzineHome .wideHotissue {}
+			#webzineHome .wideHotissue .hotissueWrap { border: solid 1px #3d4869; }
+			#webzineHome .wideHotissue .hotissueBody { width: 691px; overflow: hidden; }
+			#webzineHome .wideHotissue .selectorWrap { border-left: solid 1px #93a0bd; border-top: solid 1px #93a0bd; }
+			#webzineHome .wideHotissue .selectorBody { width: 218px; height: 255px; overflow: hidden; background: url('http://static.inven.co.kr/image/webzine/s3/common/wrap_218_blue1_mid.gif') repeat-y left top; }
+			#webzineHome .wideHotissue .selectors { width: 206px; height: 213px; overflow: hidden; margin: 2px 0 0 8px; }
+			#webzineHome .wideHotissue a.selectorOne { float: left; display: inline; width: 206px; margin-top: 6px; overflow: hidden; }
+			#webzineHome .wideHotissue a.selectorOne span { float: left; display: inline; }
+			#webzineHome .wideHotissue a.selectorOne span.selectorOver { padding: 2px; }
+			#webzineHome .wideHotissue a.selectorOne span.selectBorder { border: solid 1px #262f49; }
+			#webzineHome .wideHotissue a.selectorOne img { width: 194px; height: 59px; vertical-align: top; }
+			#webzineHome .wideHotissue a.selectorOne.selectorOne-Selected,
+			#webzineHome .wideHotissue a:hover.selectorOne { background: url('http://static.inven.co.kr/image/webzine/s3/common/icon_arrow_yellow1.gif') no-repeat right center; }
+			#webzineHome .wideHotissue a.selectorOne.selectorOne-Selected span.selectorOver { padding: 0px; border: solid 2px #ffea00; }
+			#webzineHome .wideHotissue a:hover.selectorOne span.selectorOver { padding: 0px; border: solid 2px #ffea00; }
+			#webzineHome .wideHotissue .navigation { width: 196px; margin: 8px 0 0 10px; }
+			#webzineHome .wideHotissue .navigation a { float: left; display: inline; width: 22px; height: 21px; overflow: hidden; text-indent: -1000em; background: none no-repeat left top; margin-top: 1px; }
+			#webzineHome .wideHotissue .navigation a.left { background-image: url('http://static.inven.co.kr/image/webzine/s3/common/bttn_22x21_blue1_left.gif'); }
+			#webzineHome .wideHotissue .navigation a.right { background-image: url('http://static.inven.co.kr/image/webzine/s3/common/bttn_22x21_blue1_right.gif'); margin-left: -1px; }
+			#webzineHome .wideHotissue .navigation span.sep {
+				display: inline;
+				float: left;
+				width: 2px;
+				height: 9px;
+				overflow: hidden;
+				background: url('http://static.inven.co.kr/image/webzine/s3/common/sep_2x9_blue2.gif') no-repeat left top;
+				margin: 7px 0 0 7px;
+			}
+			#webzineHome .wideHotissue .navigation a.topArticle {
+				width: 127px;
+				_width: 137px;
+				height: 17px;
+				_height: 23px;
+				text-indent: 0;
+				color: white;
+				font-weight: bold;
+				letter-spacing: -1px;
+				text-decoration: none;
+				background: url('http://static.inven.co.kr/image/webzine/s3/common/bttn_137x23_navy1.gif') no-repeat left top;
+				margin-top: 0;
+				margin-left: 7px;
+				padding: 6px 0 0 10px;
+			}
+			#webzineHome .wideHotissue .navigation a.topArticle:hover {
+				background-position: left top;
+			}
+			#webzineHome .wideHotissue .navigation a:hover { background-position: 0 -21px; }
+			#webzineHome .wideHotissue .navigation div.current { margin-top: 1px; border-top: solid 1px #323d5a; border-bottom: solid 1px #99a7c5; background: #000000; padding-top: 1px; padding-left: 1px; }
+			#webzineHome .wideHotissue .navigation div.current span { float: left; display: inline; text-align: center; width: 116px; _width: 117px; border-right: solid 1px #2a334e; background: #222a42; }
+			#webzineHome .wideHotissue .navigation div.current span { height: 16px; _height: 17px; overflow: hidden; padding-top: 1px; color: #ffffff; font-family: tahoma, dotum, µ¸¿ò, Helvetica; font-size: 11px; line-height: 14px; }
+			#webzineHome .wideHotissue .hotissueImage img { width: 472px; height: 256px; border: none; vertical-align: top; }
+
+		/* SLIDE HOTISSUE */
+			#webzineHome .hotissuePart {
+				width: 693px;
+				height: 265px;
+				overflow: hidden;
+			}
+			#webzineHome .slideHotissue {
+				width: 691px;
+				height: 263px;
+				border: 1px solid #000009;
+			}
+			#webzineHome .slideHotissue .hotissueWrap {
+				width: 689px;
+				_width: 691px;
+				height: 261px;
+				border: 1px solid #2b3045;
+			}
+			#webzineHome .slideHotissue .hotissueBody .hotissueImage {
+				width: 689px;
+				height: 198px;
+				overflow: hidden;
+				background-color: #424242;
+			}
+			#webzineHome .slideHotissue .hotissueBody .selectors {
+				width: 689px;
+				height: 61px;
+				overflow: hidden;
+				background-color: #494c5e;
+				border-top: 2px solid #2b3045;
+			}
+			#webzineHome .slideHotissue .hotissueBody .selectors .leftArrowPart a{
+				width: 26px;
+				height: 61px;
+				display:block;
+				background: url('http://static.inven.co.kr/image_2011/webzine/common/hotissue_left_arrow1.png') no-repeat left top;
+			}
+			#webzineHome .slideHotissue .hotissueBody .selectors .leftArrowPart a.lock {
+				background-position: 0 -61px;
+			}
+			#webzineHome .slideHotissue .hotissueBody .selectors .rightArrowPart a{
+				width: 25px;
+				height: 61px;
+				display:block;
+				background: url('http://static.inven.co.kr/image_2011/webzine/common/hotissue_right_arrow1.png') no-repeat left top;
+			}
+			#webzineHome .slideHotissue .hotissueBody .selectors .rightArrowPart a.lock{
+				background-position: 0 -61px;
+			}
+			#webzineHome .slideHotissue .hotissueBody .selectors .centerPart {
+				width: 638px;
+				height: 61px;
+				overflow: hidden;
+			}
+			#webzineHome .slideHotissue .hotissueBody .selectors .centerPart ul {
+				width: 1500px;
+				height: 61px;
+				overflow: hidden;
+			}
+			#webzineHome .slideHotissue .hotissueBody .selectors .centerPart ul li{
+				width: 92px;
+				height: 51px;
+				margin: 4px 7px 0 7px;
+			}
+			#webzineHome .slideHotissue .hotissueBody .selectors .centerPart ul li a{
+				width: 92px;
+				height: 51px;
+				display: block;
+				background: url('http://static.inven.co.kr/image_2011/webzine/common/frame_92x51_orange1.png') no-repeat left top;
+			}
+            #webzineHome .slideHotissue .hotissueBody .selectors .centerPart ul li a.slideHotissueAd {
+                width: 92px;
+                height: 51px;
+                display: block;
+                background: url('http://static.inven.co.kr/image_2011/event/2015/07/150729_angelstone/frame_92x51_blue2_angelstone.png') no-repeat left top;
+            }
+			#webzineHome .slideHotissue .hotissueBody .selectors .centerPart ul li a.selected,
+			#webzineHome .slideHotissue .hotissueBody .selectors .centerPart ul li a:hover {
+				background-position: 0 -51px;
+			}
+			#webzineHome .slideHotissue .hotissueBody .selectors .centerPart ul li a img {
+				width: 88px;
+				height: 43px;
+				margin:6px 0 0 2px;
+			}
+
+	/* FOCUS PART */
+		/* TODAY FOCUS */
+			#webzineHome .todayFocus {
+				clear: both;
+				width: 686px;
+				overflow: hidden;
+				margin: 0 0 0 7px;
+				padding-bottom: 12px;
+			}
+			#webzineHome .todayFocus dl {
+				width: 340px;
+				height: 62px;
+				overflow: hidden;
+				margin: 11px 0 0 3px;
+			}
+			#webzineHome .todayFocus dl dt {
+				float: right;
+				width: 233px;
+				height: 22px;
+				overflow: hidden;
+				white-space: nowrap;
+				background: url('http://static.inven.co.kr/image/webzine/s3/common/dot_4x1_cc2c2c2.gif') repeat-x 1px bottom;
+				margin: 2px 10px 0 0;
+			}
+			#webzineHome .todayFocus dl dt a {
+				color: black;
+				font-family: µ¸¿ò, dotum, ±¼¸², gulim, Helvetica;
+				font-size: 14px;
+				line-height: 17px;
+				font-weight: bold;
+				letter-spacing: -1px;
+				white-space: nowrap;
+			}
+			#webzineHome .todayFocus dl dt a:hover {
+				color: #0067dd;
+			}
+			#webzineHome .todayFocus dl dd.image {
+				width: 90px;
+				height: 62px;
+				overflow: hidden;
+			}
+			#webzineHome .todayFocus dl dd.image a {
+				display: inline;
+				float: left;
+				border: 1px solid #d6d6d6;
+			}
+			#webzineHome .todayFocus dl dd.image a img {
+				width: 88px;
+				height: 60px;
+				overflow: hidden;
+				border: 0;
+			}
+			#webzineHome .todayFocus dl dd.desc {
+				float: right;
+				width: 233px;
+				height: 32px;
+				overflow: hidden;
+				margin: 4px 10px 0 0;
+			}
+			#webzineHome .todayFocus dl dd.desc a {
+				color: #707070;
+				font-size: 11px;
+				font-family: µ¸¿ò, dotum, ±¼¸², gulim, Helvetica;
+				line-height: 16px;
+			}
+			#webzineHome .todayFocus .loadError {
+				color: black;
+				font-size: 14px;
+				line-height: 17px;
+				font-weight: bold;
+				letter-spacing: -1px;
+				white-space: nowrap;
+				margin: 11px 0 0 3px;
+			}
+			#webzineHome .todayFocusPg .focusList { margin-left: -4px;width:808px;}
+			#webzineHome .todayFocusPg .focusList dl {margin-left:8px;width:340px;}
+		/* REALTIME NEWS */
+			#webzineHome .realtimeNews {
+				clear: both;
+				width: 686px;
+				overflow: hidden;
+				margin: 6px 0 0 7px;
+				padding: 0 0 11px;
+			}
+			#webzineHome .realtimeNews .boardList {
+				clear: both;
+				width: 686px;
+			}
+			#webzineHome .realtimeNews .boardList ul {
+				width: 337px;
+				margin: 0 0 0 6px;
+			}
+			#webzineHome .realtimeNews .loadError {
+				color: black;
+				margin: 11px 0 0 6px;
+			}
+			#webzineHome .realtimeNews .boardList.boardList-Pg ul {
+				width: 686px;
+			}
+			#webzineHome .realtimeNews .boardList.boardList-Pg ul li {
+				width: 343px;
+				clear: none;
+			}
+	/* Fav Mobile */
+		#webzineHome .favMobile .dls {
+			width: 581px;
+			margin: 0 0 0 112px;
+			overflow: hidden;
+		}
+		#webzineHome .favMobile dl {
+			width: 73px;
+			overflow: hidden;
+			margin: 5px 0 0 10px;
+		}
+		#webzineHome .favMobile dl dt {
+			clear: both;
+			width: 73px;
+			height: 47px;
+			overflow: hidden;
+		}
+		#webzineHome .favMobile dl dt a {
+			display: inline;
+			float: left;
+			margin-left: 13px;
+		}
+		#webzineHome .favMobile dl dt a img {
+			width: 47px;
+			height: 47px;
+			border: none;
+			vertical-align: top;
+		}
+		#webzineHome .favMobile dl dd.subject {
+			clear: both;
+			width: 73px;
+			height: 15px;
+			overflow: hidden;
+			margin: 3px 0 0;
+			text-align:center;
+		}
+		#webzineHome .favMobile dl dd.subject,
+		#webzineHome .favMobile dl dd.subject a {
+			color: #0f0f0f;
+			font-size: 11px;
+			line-height: 15px;
+			font-weight: bold;
+			letter-spacing: -1px;
+		}
+	/* OVERVIEW PART */
+		/* GROUPS */
+			#webzineHome .overviewPartLines {
+				clear: both;
+				width: 693px;
+				margin: -7px 0 0;
+			}
+			#webzineHome .overviewPartLines .overviewPartLine {
+				clear: both;
+				width: 702px;
+				overflow: hidden;
+				margin: 0 0 0 -9px;
+			}
+			#webzineHome .overviewPartLines .overviewPartOne {
+				width: 693px;
+				overflow: hidden;
+				margin: 8px 0 0 9px;
+			}
+			#webzineHome .overviewPartLines .overviewPartSplit {
+				width: 342px;
+				overflow: hidden;
+				margin: 0 0 0 9px;
+			}
+			#webzineHome .overviewPartLines .overviewPartSplit .overviewPartOne {
+				width: 342px;
+				margin-left: 0;
+			}
+		/* POWER BLOGGER */
+			#webzineHome .powerblogger .bloggerFocus {
+				clear: both;
+				width: 342px;
+				overflow: hidden;
+				background: url('http://static.inven.co.kr/image/webzine/s3/common/dot_4x1_cc2c2c2.gif') repeat-x 3px bottom;
+				padding: 0 0 8px;
+			}
+			#webzineHome .powerblogger .bloggerFocus dl {
+				clear: both;
+				width: 332px;
+				height: 60px;
+				overflow: hidden;
+				margin: 8px 0 0 10px;
+			}
+			#webzineHome .powerblogger .bloggerFocus dl dt {
+				float: right;
+				width: 225px;
+				height: 32px;
+				overflow: hidden;
+				margin: 2px 10px 0 0;
+			}
+			#webzineHome .powerblogger .bloggerFocus dl dt a {
+				color: black;
+				font-size: 13px;
+				line-height: 16px;
+				font-weight: bold;
+				letter-spacing: -1px;
+			}
+			#webzineHome .powerblogger .bloggerFocus dl dd.image {
+				width: 90px;
+				height: 60px;
+				overflow: hidden;
+			}
+			#webzineHome .powerblogger .bloggerFocus dl dd.image a {
+				display: inline;
+				float: left;
+				border: 1px solid #d6d6d6;
+			}
+			#webzineHome .powerblogger .bloggerFocus dl dd.image a img {
+				width: 88px;
+				height: 58px;
+				overflow: hidden;
+				border: 0;
+			}
+			#webzineHome .powerblogger .bloggerFocus dl dd.desc {
+				float: right;
+				width: 225px;
+				height: 16px;
+				overflow: hidden;
+				margin: 3px 10px 0 0;
+			}
+			#webzineHome .powerblogger .bloggerFocus dl dd.desc a {
+				color: #999999;
+				font-size: 11px;
+				font-family: µ¸¿ò, dotum, ±¼¸², gulim, Helvetica;
+				line-height: 16px;
+			}
+			#webzineHome .powerblogger .bloggerFocus .loadError {
+				color: black;
+				font-size: 14px;
+				line-height: 17px;
+				font-weight: bold;
+				letter-spacing: -1px;
+				white-space: nowrap;
+				margin: 11px 0 0 10px;
+			}
+			#webzineHome .powerblogger .boardList {
+				clear: both;
+				width: 329px;
+				margin: 5px 0 0 13px;
+				padding: 0 0 11px;
+			}
+			#webzineHome .powerblogger .boardList .loadError {
+				color: black;
+				margin: 11px 0 0 10px;
+			}
+		/* GAMER FOCUS */
+			#webzineHome .gamerFocus .bloggerFocus {
+				clear: both;
+				width: 342px;
+				overflow: hidden;
+				background: url('http://static.inven.co.kr/image/webzine/s3/common/dot_4x1_cc2c2c2.gif') repeat-x 3px bottom;
+				padding: 0 0 11px;
+			}
+			#webzineHome .gamerFocus .bloggerFocus dl {
+				clear: both;
+				width: 320px;
+				height: 34px;
+				overflow: hidden;
+				margin: 10px 11px 0;
+			}
+			#webzineHome .gamerFocus .bloggerFocus dl dt {
+				clear: both;
+				width: 317px;
+				height: 17px;
+				overflow: hidden;
+				margin: 0 0 0 3px;
+			}
+			#webzineHome .gamerFocus .bloggerFocus dl dt a {
+				color: black;
+				font-family: µ¸¿ò, dotum, ±¼¸², gulim, Helvetica;
+				font-size: 14px;
+				line-height: 17px;
+				font-weight: bold;
+				letter-spacing: -1px;
+			}
+			#webzineHome .gamerFocus .bloggerFocus dl dd {
+				clear: both;
+				width: 317px;
+				height: 14px;
+				overflow: hidden;
+				margin: 3px 0 0 3px;
+			}
+			#webzineHome .gamerFocus .bloggerFocus dl dd a {
+				color: black;
+				font-size: 11px;
+				font-family: µ¸¿ò, dotum, ±¼¸², gulim, Helvetica;
+				line-height: 14px;
+			}
+			#webzineHome .gamerFocus .bloggerFocus .loadError {
+				color: black;
+				font-size: 14px;
+				line-height: 17px;
+				font-weight: bold;
+				letter-spacing: -1px;
+				white-space: nowrap;
+				margin: 11px 0 0 10px;
+			}
+			#webzineHome .gamerFocus .boardList {
+				clear: both;
+				width: 329px;
+				margin: 5px 0 0 13px;
+				padding: 0 0 11px;
+			}
+		/* TOP ARTICLE */
+			#webzineHome .topArticle .tabGroup .tabGroup1,
+			#webzineHome .topArticle .tabGroup .tabGroup2 {
+				display: none;
+			}
+			#webzineHome .topArticle .tabGroup1 .tabGroup1,
+			#webzineHome .topArticle .tabGroup2 .tabGroup2 {
+				display: inline;
+			}
+			#webzineHome .topArticle .tab122AQ1-ReadTop {
+				margin: 0 0 0 4px;
+			}
+			#webzineHome .topArticle .rankList {
+				clear: both;
+				width: 317px;
+				margin: 1px 12px 0 13px;
+				padding: 0 0 8px;
+			}
+			#webzineHome .topArticle .rankList ul {
+				clear: both;
+				width: 317px;
+			}
+			#webzineHome .topArticle .rankList ul li {
+				clear: both;
+				width: 317px;
+				height: 15px;
+				overflow: hidden;
+				margin: 7px 0 0;
+			}
+			#webzineHome .topArticle .rankList ul li.rank1 {
+				height: 25px;
+				background: url('http://static.inven.co.kr/image/webzine/s3/common/dot_4x1_cc2c2c2.gif') repeat-x 1px bottom;
+			}
+			#webzineHome .topArticle .rankList ul li span.rank {
+				display: inline;
+				float: left;
+				width: 290px;
+				_width: 315px;
+				height: 15px;
+				overflow: hidden;
+				white-space: nowrap;
+				margin: 0 0 0 2px;
+				padding: 0 0 0 25px;
+			}
+			#webzineHome .topArticle .rankList ul li.rank1 span.rank {
+				height: 17px;
+				background: url('http://static.inven.co.kr/image/webzine/s3/common/icon_rank1_1.gif') no-repeat left top;
+			}
+			#webzineHome .topArticle .rankList ul li.rank2 span.rank {
+				background: url('http://static.inven.co.kr/image/webzine/s3/common/icon_rank1_2.gif') no-repeat 1px top;
+			}
+			#webzineHome .topArticle .rankList ul li.rank3 span.rank {
+				background: url('http://static.inven.co.kr/image/webzine/s3/common/icon_rank1_3.gif') no-repeat 1px top;
+			}
+			#webzineHome .topArticle .rankList ul li.rank4 span.rank {
+				background: url('http://static.inven.co.kr/image/webzine/s3/common/icon_rank1_4.gif') no-repeat 1px top;
+			}
+			#webzineHome .topArticle .rankList ul li.rank5 span.rank {
+				background: url('http://static.inven.co.kr/image/webzine/s3/common/icon_rank1_5.gif') no-repeat 1px top;
+			}
+			#webzineHome .topArticle .rankList ul li.rank6 span.rank {
+				background: url('http://static.inven.co.kr/image_2011/webzine/s3/common/icon_rank1_6.png') no-repeat 1px top;
+			}
+			#webzineHome .topArticle .rankList ul li.rank7 span.rank {
+				background: url('http://static.inven.co.kr/image_2011/webzine/s3/common/icon_rank1_7.png') no-repeat 1px top;
+			}
+			#webzineHome .topArticle .rankList ul li.rank8 span.rank {
+				background: url('http://static.inven.co.kr/image_2011/webzine/s3/common/icon_rank1_8.png') no-repeat 1px top;
+			}
+			#webzineHome .topArticle .rankList ul li.rank9 span.rank {
+				background: url('http://static.inven.co.kr/image_2011/webzine/s3/common/icon_rank1_9.png') no-repeat 1px top;
+			}
+			#webzineHome .topArticle .rankList ul li.rank10 span.rank {
+				background: url('http://static.inven.co.kr/image_2011/webzine/s3/common/icon_rank1_10.png') no-repeat 1px top;
+			}
+			#webzineHome .topArticle .rankList ul li span.rank a {
+				color: #333333;
+				line-height: 15px;
+			}
+			#webzineHome .topArticle .rankList ul li.rank1 span.rank a {
+				white-space: nowrap;
+				font-size: 14px;
+				line-height: 17px;
+				font-weight: bold;
+				letter-spacing: -1px;
+			}
+			#webzineHome .topArticle .rankList ul li span.rank span.comment {
+				/*color: #0072ff;*/
+                                            color: darkred;
+				font-size: 11px;
+				font-family: µ¸¿ò, dotum, ±¼¸², gulim, Helvetica;
+				line-height: 14px;
+				background: url('http://static.inven.co.kr/image/webzine/s3/common/icon_image_talk1.gif') no-repeat left top;
+				padding: 0 0 0 15px;
+			}
+			#webzineHome .topArticle .rankList .loadError {
+				color: black;
+				font-size: 14px;
+				line-height: 17px;
+				font-weight: bold;
+				letter-spacing: -1px;
+				white-space: nowrap;
+				margin: 11px 0 0 7px;
+			}
+		/* E-Sports */
+			#webzineBody .webzineEsportsList {
+				clear: both;
+				width: 661px;
+				overflow: hidden;
+				border-bottom: none;
+				margin: 0 0 0 15px;
+			}
+			#webzineHome .webzineEsportsList {
+				overflow: hidden;
+			}
+			#webzineHome .webzineEsportsList table {
+				width: 661px;
+			}
+			#webzineHome .webzineEsportsList table col.news {
+				width: 661px;
+			}
+			#webzineHome .webzineEsportsList table td.name {
+				line-height: 17px;
+				padding-left: 2px;
+			}
+			#webzineHome .webzineEsportsList table td.name span.title,
+			#webzineHome .webzineEsportsList table td.name span.title a {
+				font-size: 14px;
+				font-family: µ¸¿ò, dotum, ±¼¸², gulim, Helvetica;
+				line-height: 17px;
+				color: #002c66;
+				font-weight: bold;
+			}
+			#webzineHome .webzineEsportsList table td.name span.info,
+			#webzineHome .webzineEsportsList table td.name span.info a {
+				color: #999999;
+				font-size: 11px;
+				font-family: µ¸¿ò, dotum, ±¼¸², gulim, Helvetica;
+				line-height: 18px;
+			}
+			#webzineHome .webzineEsportsList table td.name span.title span.category {
+				color: #8b0000;
+			}
+			#webzineHome .webzineEsportsList table td.name span.title span.cmtnum {
+				color: #2dbb00;
+				font-size: 11px;
+				font-family: µ¸¿ò, dotum, ±¼¸², gulim, Helvetica;
+				font-weight: normal;
+				line-height: 14px;
+			}
+			#webzineHome .webzineEsportsList table td.name .banner {
+				float: left;
+				margin-right: 10px;
+				border: solid 1px #c3c2c2;
+			}
+			#webzineHome .webzineEsportsList table td.name .banner img {
+				width: 88px;
+				height: 58px;
+				border: 0;
+			}
+			#webzineHome .webzineEsportsList table td div.content {
+				display: block;
+				width: 100%;
+				color: #4c4c4c;
+				padding: 5px 0;
+			}
+			#webzineHome .webzineEsportsList table td.date {
+				color: #999999;
+				vertical-align: bottom;
+				text-align: right;
+			}
+	/* OPENISSUE PART */
+		#webzineHome #comModOpenIssue .openIssuePart .focusWrap { width: 678px; }
+		#webzineHome #comModOpenIssue .openIssuePart .tabContent { width: 678px;}
+		#webzineHome #comModOpenIssue .openIssuePart .tabContent .partLeft { margin-left:10px; width: 330px;}
+		#webzineHome #comModOpenIssue .openIssuePart .tabContent .partLeft dl { width: 155px;}
+		#webzineHome #comModOpenIssue .openIssuePart .tabContent .partRight { margin-right: 15px; width: 320px;}
+	/* ITFOCUS PART */
+		#webzineHome .overviewGameNews { padding-bottom:0; }
+		#webzineHome #comModItFocus { width:691px; _width:693px; margin-left: 0px; margin-top: 0px;}
+		#webzineHome #comModItFocus #itFocusList { width: 678px; }
+		#webzineHome #comModItFocus .itfocusPart .tabContent {width: 665px; }
+		#webzineHome #comModItFocus .itfocusPart .tabContent .partLeft { width: 665px; }
+		#webzineHome #comModItFocus .itfocusPart .tabContent .partLeft.partLeft-half { width: 320px; }
+		#webzineHome #comModItFocus .itfocusPart .tabContent .partLeft dl { margin-left: 14px; }
+		#webzineHome #comModItFocus #itFocusList .tabContent { margin-left: 1px;}
+		#webzineHome #comModItFocus .itfocusPart .tabContent .partRight { width: 310px;}
+	/* GAMERZONE PART */
+		#webzineHome .gamerzonePart {
+			margin-top: 10px;
+		}
+		/* GROUPS */
+			#webzineHome .gamerzonePartLines {
+				clear: both;
+				width: 693px;
+				margin: -8px 0 0;
+				padding: 0 0 16px;
+			}
+			#webzineHome .gamerzonePartLines .gamerzonePartLine {
+				clear: both;
+				width: 702px;
+				overflow: hidden;
+				margin: 0 0 0 -9px;
+			}
+			#webzineHome .gamerzonePartLines .gamerzonePartSplit {
+				width: 342px;
+				overflow: hidden;
+				margin: 0 0 0 9px;
+			}
+			#webzineHome .gamerzonePartLines .gamerzonePartLink {
+				width: 255px;
+				height: 81px;
+				float: left;
+				display: inline;
+				overflow: hidden;
+				text-indent: -1000em;
+				margin: 16px 0 0 18px;
+			}
+			#webzineHome .gamerzonePartLines .gamerzonePartSplitRight {
+				float: right;
+			}
+			#webzineHome .gamerzonePartLines .gamerzonePartOne {
+				width: 342px;
+				overflow: hidden;
+				margin: 20px 0 0;
+			}
+			#webzineHome .gamerzonePartLines .gamerzonePartOneSplit {
+				width: 693px;
+				margin-left: 9px;
+			}
+		/* BEST DISCUSSION */
+			#webzineHome .bestDiscussion .wrapping {
+				width: 332px;
+				height: 76px;
+				overflow: hidden;
+				background: url('http://static.inven.co.kr/image/webzine/s3/common/wrap_332_beige1_whole.gif') no-repeat left top;
+			}
+			#webzineHome .bestDiscussion dl {
+				width: 332px;
+				height: 76px;
+				overflow: hidden;
+			}
+			#webzineHome .bestDiscussion dl dt {
+				width: 230px;
+				height: 17px;
+				overflow: hidden;
+				margin: 14px 12px 0;
+			}
+			#webzineHome .bestDiscussion dl dt a {
+				color: black;
+				font-family: µ¸¿ò, dotum, ±¼¸², gulim, Helvetica;
+				font-size: 14px;
+				line-height: 17px;
+				font-weight: bold;
+				letter-spacing: -1px;
+			}
+			#webzineHome .bestDiscussion dl dd.desc {
+				width: 230px;
+				height: 30px;
+				overflow: hidden;
+				margin: 5px 12px 0;
+			}
+			#webzineHome .bestDiscussion dl dd.desc a {
+				color: black;
+				font-size: 11px;
+				font-family: µ¸¿ò, dotum, ±¼¸², gulim, Helvetica;
+				line-height: 15px;
+			}
+			#webzineHome .bestDiscussion dl dd.comment {
+				float: right;
+				width: 72px;
+				overflow: hidden;
+				text-align: center;
+				color: #e10d0d;
+				font-size: 21px;
+				font-family: Tahoma, µ¸¿ò, dotum, ±¼¸², gulim, Helvetica;
+				font-weight: bold;
+				letter-spacing: -1px;
+				margin: 0 0 0 6px;
+			}
+		/* BOARD LIST */
+			#webzineHome .gamerzonePartOne .title321BR1 {
+				clear: both;
+				margin: 0 8px 0 13px;
+			}
+			#webzineHome .gamerzonePartOne .boardList {
+				clear: both;
+				width: 319px;
+				overflow: hidden;
+				margin: 5px 8px 0 15px;
+			}
+		/* OPEN GALLERY */
+			#webzineHome .openGallery .title667BR1 {
+				clear: both;
+				margin: 0 13px 0;
+			}
+			#webzineHome .openGallery .boardListGallery {
+				clear: both;
+				width: 675px;
+				overflow: hidden;
+				margin: 2px 0 0 5px;
+			}
+			#webzineHome .openGallery .boardListGallery ul {
+				clear: both;
+				width: 675px;
+			}
+			#webzineHome .openGallery .boardListGallery ul li {
+				width: 127px;
+				height: 91px;
+				overflow: hidden;
+				background: #d1d1d1;
+				margin: 8px 0 0 8px;
+			}
+			#webzineHome .openGallery .boardListGallery ul li a {
+				display: inline;
+				float: left;
+				background: white;
+				margin: 1px;
+				padding: 3px;
+			}
+			#webzineHome .openGallery .boardListGallery ul li a img {
+				width: 119px;
+				height: 83px;
+				border: 0;
+			}
+/* SPECIAL : COMMON */
+	#webzineHome .todayFocus .todayFocusLeft {
+		width: 343px;
+		overflow: hidden;
+	}
+	#webzineHome .todayFocus .todayFocusRight {
+		width: 343px;
+		overflow: hidden;
+	}
+	#webzineHome .todayFocus .todayFocusRight2 {
+		width: 343px;
+		background:url("http://static.inven.co.kr/image/webzine/s3/common/bar_155x1_dark1.gif") no-repeat scroll left center transparent;
+		overflow: hidden;
+	}
+	#webzineHome .todayFocus .todayFocusAdd {
+		margin: 0px 9px 0 5px;
+	}
+/* SPECIAL : ¾ÆÀÌ¿Â 3.0 */
+	#webzineHome .todayFocus .aion3 .focusBody {
+		width: 326px;
+		margin: 15px 9px 0 8px;
+	}
+	#webzineHome .todayFocus .aion3 .focusBody .focusTitle {
+		clear: both;
+		display: inline;
+		float: left;
+		width: 326px;
+		height: 32px;
+		overflow: hidden;
+		text-indent: -10000em;
+		background: url('http://static.inven.co.kr/image_2011/webzine/module/111118_aion/wrap_326_aion_111118_head.png') no-repeat left top;
+	}
+	#webzineHome .todayFocus .aion3 .focusBody .focusBodyInner {
+		clear: both;
+		width: 326px;
+		overflow: hidden;
+		background: url('http://static.inven.co.kr/image_2011/webzine/module/111118_aion/wrap_326_aion_111118_mid.png') repeat-y left top;
+	}
+	#webzineHome .todayFocus .aion3 .focusBody .focusBodyEnd {
+		clear: both;
+		width: 326px;
+		height: 4px;
+		overflow: hidden;
+		background: url('http://static.inven.co.kr/image_2011/webzine/module/111118_aion/wrap_326_aion_111118_bot.png') no-repeat left top;
+	}
+	#webzineHome .todayFocus .aion3 .focusBody .partFocus {
+		width: 308px;
+		height:66px;
+		_height:68px;
+		overflow: hidden;
+		margin:8px 9px 0 9px;
+		background-color:white;
+		border: 1px solid #9c9687;
+	}
+	#webzineHome .todayFocus .aion3 .focusBody .partFocus dl {
+		width: 314px;
+		height: auto;
+		overflow: hidden;
+		margin: 4px 0 0 4px;
+	}
+	#webzineHome .todayFocus .aion3 .focusBody .partFocus dl dt {
+		float: right;
+		width: 201px;
+		height: 20px;
+		overflow: hidden;
+		white-space: nowrap;
+		font-size: 13px;
+		line-height: 16px;
+		background: none;
+		margin: 4px 19px 0 0;
+		background: url('http://static.inven.co.kr/image_2011/webzine/module/110503_tera/dot_4x1_c59f9f.png') repeat-x left 18px;
+	
+	}
+	#webzineHome .todayFocus .aion3 .focusBody .partFocus dl dt a {
+		color: #d30000;
+		white-space: nowrap;
+	}
+	#webzineHome .todayFocus .aion3 .focusBody .partFocus dl dd.desc {
+		float: right;
+		width: 201px;
+		height: 32px;
+		overflow: hidden;
+		font-size: 11px;
+		font-family: µ¸¿ò, dotum, ±¼¸², gulim, Helvetica;
+		letter-spacing: -1px;
+		line-height: 16px;
+		margin: 4px 18px 0 0;
+	}
+	#webzineHome .todayFocus .aion3 .focusBody .partFocus dl dd.desc a {
+		color: #3f434a;
+		letter-spacing: -1px;
+	}
+	#webzineHome .todayFocus .aion3 .focusBody .partFocus dl dd.image {
+		width: 88px;
+		height: 58px;
+		overflow: hidden;
+	}
+	#webzineHome .todayFocus .aion3 .focusBody .partFocus dl dd.image a {
+		display: inline;
+		float: left;
+		border: 1px solid #dddfe2;
+	}
+	#webzineHome .todayFocus .aion3 .focusBody .partFocus dl dd.image a img {
+		width: 86px;
+		height: 56px;
+		border: 0;
+	}
+	#webzineHome .todayFocus .aion3 .focusBody .partList {
+		clear: both;
+		width: 306px;
+		margin: 7px 0 0 13px;
+	}
+	#webzineHome .todayFocus .aion3 .focusBody .partList ul {
+		width: 306px;
+		overflow: hidden;
+		padding: 0 0 6px;
+	}
+	#webzineHome .todayFocus .aion3 .focusBody .partList ul li {
+		clear: both;
+		width: 306px;
+		height: 15px;
+		overflow: hidden;
+		text-indent: 10px;
+		white-space: nowrap;
+		line-height: 15px;
+		background: url('http://static.inven.co.kr/image_2011/webzine/module/111118_aion/rect_2x2_green1_235300.png') no-repeat left 5px;
+		margin: 5px 0 0;
+	}
+	#webzineHome .todayFocus .aion3 .focusBody .partList ul li a {
+		color: #212328;
+		white-space: nowrap;
+	}
+	#webzineHome .todayFocus .aion3 .focusBody .partList ul li a span.comment {
+		color: #0072ff;
+		font-size: 11px;
+		font-family: µ¸¿ò, dotum, ±¼¸², gulim, Helvetica;
+		line-height: 14px;
+	}
+/* SPECIAL : ¸íÇ° */
+	#webzineHome .todayFocus .mp .focusBody {
+		width: 326px;
+		margin: 15px 9px 0 8px;
+	}
+	#webzineHome .todayFocus .mp .focusBody .focusTitle {
+		clear: both;
+		display: inline;
+		float: left;
+		width: 326px;
+		height: 32px;
+		overflow: hidden;
+		text-indent: -10000em;
+		background: url('http://static.inven.co.kr/image_2011/webzine/module/111123_mp/wrap_326_mp_111123_head.png') no-repeat left top;
+	}
+	#webzineHome .todayFocus .mp .focusBody .focusBodyInner {
+		clear: both;
+		width: 326px;
+		overflow: hidden;
+		background: url('http://static.inven.co.kr/image_2011/webzine/module/111123_mp/wrap_326_mp_111123_mid.png') repeat-y left top;
+	}
+	#webzineHome .todayFocus .mp .focusBody .focusBodyEnd {
+		clear: both;
+		width: 326px;
+		height: 4px;
+		overflow: hidden;
+		background: url('http://static.inven.co.kr/image_2011/webzine/module/111123_mp/wrap_326_mp_111123_bot.png') no-repeat left top;
+	}
+	#webzineHome .todayFocus .mp .focusBody .partFocus {
+		width: 308px;
+		height:66px;
+		_height:68px;
+		overflow: hidden;
+		margin:8px 9px 0 9px;
+		background-color:white;
+		border: 1px solid #9c9687;
+	}
+	#webzineHome .todayFocus .mp .focusBody .partFocus dl {
+		width: 314px;
+		height: auto;
+		overflow: hidden;
+		margin: 4px 0 0 4px;
+	}
+	#webzineHome .todayFocus .mp .focusBody .partFocus dl dt {
+		float: right;
+		width: 201px;
+		height: 20px;
+		overflow: hidden;
+		white-space: nowrap;
+		font-size: 13px;
+		line-height: 16px;
+		background: none;
+		margin: 4px 19px 0 0;
+		background: url('http://static.inven.co.kr/image_2011/webzine/module/110503_tera/dot_4x1_c59f9f.png') repeat-x left 18px;
+	
+	}
+	#webzineHome .todayFocus .mp .focusBody .partFocus dl dt a {
+		color: #d30000;
+		white-space: nowrap;
+	}
+	#webzineHome .todayFocus .mp .focusBody .partFocus dl dd.desc {
+		float: right;
+		width: 201px;
+		height: 32px;
+		overflow: hidden;
+		font-size: 11px;
+		font-family: µ¸¿ò, dotum, ±¼¸², gulim, Helvetica;
+		letter-spacing: -1px;
+		line-height: 16px;
+		margin: 4px 18px 0 0;
+	}
+	#webzineHome .todayFocus .mp .focusBody .partFocus dl dd.desc a {
+		color: #3f434a;
+		letter-spacing: -1px;
+	}
+	#webzineHome .todayFocus .mp .focusBody .partFocus dl dd.image {
+		width: 88px;
+		height: 58px;
+		overflow: hidden;
+	}
+	#webzineHome .todayFocus .mp .focusBody .partFocus dl dd.image a {
+		display: inline;
+		float: left;
+		border: 1px solid #dddfe2;
+	}
+	#webzineHome .todayFocus .mp .focusBody .partFocus dl dd.image a img {
+		width: 86px;
+		height: 56px;
+		border: 0;
+	}
+	#webzineHome .todayFocus .mp .focusBody .partList {
+		clear: both;
+		width: 306px;
+		margin: 7px 0 0 13px;
+	}
+	#webzineHome .todayFocus .mp .focusBody .partList ul {
+		width: 306px;
+		overflow: hidden;
+		padding: 0 0 6px;
+	}
+	#webzineHome .todayFocus .mp .focusBody .partList ul li {
+		clear: both;
+		width: 306px;
+		height: 15px;
+		overflow: hidden;
+		text-indent: 10px;
+		white-space: nowrap;
+		line-height: 15px;
+		background: url('http://static.inven.co.kr/image_2011/webzine/module/111123_mp/rect_2x2_blue1_0054d3.png') no-repeat left 5px;
+		margin: 5px 0 0;
+	}
+	#webzineHome .todayFocus .mp .focusBody .partList ul li a {
+		color: #212328;
+		white-space: nowrap;
+	}
+	#webzineHome .todayFocus .mp .focusBody .partList ul li a span.comment {
+		color: #0072ff;
+		font-size: 11px;
+		font-family: µ¸¿ò, dotum, ±¼¸², gulim, Helvetica;
+		line-height: 14px;
+	}
+/* SPECIAL : KUF2 */
+	#webzineHome .todayFocus .kuf2 .focusBody {
+		width: 326px;
+		margin: 15px 9px 0 8px;
+	}
+	#webzineHome .todayFocus .kuf2 .focusBody .focusTitle {
+		clear: both;
+		display: inline;
+		float: left;
+		width: 326px;
+		height: 33px;
+		overflow: hidden;
+		text-indent: -10000em;
+		background: url('http://static.inven.co.kr/image_2011/webzine/module/111130_kuf2/wrap_326_kuf2_111130_head.png') no-repeat left top;
+	}
+	#webzineHome .todayFocus .kuf2 .focusBody .focusBodyInner {
+		clear: both;
+		width: 326px;
+		overflow: hidden;
+		background: url('http://static.inven.co.kr/image_2011/webzine/module/111130_kuf2/wrap_326_kuf2_111130_mid.png') repeat-y left top;
+	}
+	#webzineHome .todayFocus .kuf2 .focusBody .focusBodyEnd {
+		clear: both;
+		width: 326px;
+		height: 3px;
+		overflow: hidden;
+		background: url('http://static.inven.co.kr/image_2011/webzine/module/111130_kuf2/wrap_326_kuf2_111130_bot.png') no-repeat left top;
+	}
+	#webzineHome .todayFocus .kuf2 .focusBody .partFocus {
+		width: 308px;
+		height:66px;
+		_height:68px;
+		overflow: hidden;
+		margin:8px 9px 0 9px;
+		background-color:white;
+		border: 1px solid #9c9687;
+	}
+	#webzineHome .todayFocus .kuf2 .focusBody .partFocus dl {
+		width: 314px;
+		height: auto;
+		overflow: hidden;
+		margin: 4px 0 0 4px;
+	}
+	#webzineHome .todayFocus .kuf2 .focusBody .partFocus dl dt {
+		float: right;
+		width: 201px;
+		height: 20px;
+		overflow: hidden;
+		white-space: nowrap;
+		font-size: 13px;
+		line-height: 16px;
+		background: none;
+		margin: 4px 19px 0 0;
+		background: url('http://static.inven.co.kr/image_2011/webzine/module/111130_kuf2/dot_4x1_brown1_84786c.png') repeat-x left 18px;
+	
+	}
+	#webzineHome .todayFocus .kuf2 .focusBody .partFocus dl dt a {
+		color: #d30000;
+		white-space: nowrap;
+	}
+	#webzineHome .todayFocus .kuf2 .focusBody .partFocus dl dd.desc {
+		float: right;
+		width: 201px;
+		height: 32px;
+		overflow: hidden;
+		font-size: 11px;
+		font-family: µ¸¿ò, dotum, ±¼¸², gulim, Helvetica;
+		letter-spacing: -1px;
+		line-height: 16px;
+		margin: 4px 18px 0 0;
+	}
+	#webzineHome .todayFocus .kuf2 .focusBody .partFocus dl dd.desc a {
+		color: #3f434a;
+		letter-spacing: -1px;
+	}
+	#webzineHome .todayFocus .kuf2 .focusBody .partFocus dl dd.image {
+		width: 88px;
+		height: 58px;
+		overflow: hidden;
+	}
+	#webzineHome .todayFocus .kuf2 .focusBody .partFocus dl dd.image a {
+		display: inline;
+		float: left;
+		border: 1px solid #dddfe2;
+	}
+	#webzineHome .todayFocus .kuf2 .focusBody .partFocus dl dd.image a img {
+		width: 86px;
+		height: 56px;
+		border: 0;
+	}
+	#webzineHome .todayFocus .kuf2 .focusBody .partList {
+		clear: both;
+		width: 306px;
+		margin: 7px 0 0 13px;
+	}
+	#webzineHome .todayFocus .kuf2 .focusBody .partList ul {
+		width: 306px;
+		overflow: hidden;
+		padding: 0 0 6px;
+	}
+	#webzineHome .todayFocus .kuf2 .focusBody .partList ul li {
+		clear: both;
+		width: 306px;
+		height: 15px;
+		overflow: hidden;
+		text-indent: 10px;
+		white-space: nowrap;
+		line-height: 15px;
+		background: url('http://static.inven.co.kr/image_2011/webzine/module/111130_kuf2/rect_2x2_brown1_84786c.png') no-repeat left 5px;
+		margin: 5px 0 0;
+	}
+	#webzineHome .todayFocus .kuf2 .focusBody .partList ul li a {
+		color: #212328;
+		white-space: nowrap;
+	}
+	#webzineHome .todayFocus .kuf2 .focusBody .partList ul li a span.comment {
+		color: #0072ff;
+		font-size: 11px;
+		font-family: µ¸¿ò, dotum, ±¼¸², gulim, Helvetica;
+		line-height: 14px;
+	}
+/* SPECIAL : ¾ÆÀÌ¿Â 3.0 */
+	#webzineHome .todayFocus .lineage .focusBody {
+		width: 326px;
+		margin: 15px 9px 0 8px;
+	}
+	#webzineHome .todayFocus .lineage .focusBody .focusTitle {
+		clear: both;
+		display: inline;
+		float: left;
+		width: 326px;
+		height: 32px;
+		overflow: hidden;
+		text-indent: -10000em;
+		background: url('http://static.inven.co.kr/image_2011/webzine/module/111205_lineage/wrap_326_lineage_111205_head.png') no-repeat left top;
+	}
+	#webzineHome .todayFocus .lineage .focusBody .focusBodyInner {
+		clear: both;
+		width: 326px;
+		overflow: hidden;
+		background: url('http://static.inven.co.kr/image_2011/webzine/module/111205_lineage/wrap_326_lineage_111205_mid.png') repeat-y left top;
+	}
+	#webzineHome .todayFocus .lineage .focusBody .focusBodyEnd {
+		clear: both;
+		width: 326px;
+		height: 4px;
+		overflow: hidden;
+		background: url('http://static.inven.co.kr/image_2011/webzine/module/111205_lineage/wrap_326_lineage_111205_bot.png') no-repeat left top;
+	}
+	#webzineHome .todayFocus .lineage .focusBody .partFocus {
+		width: 308px;
+		height:66px;
+		_height:68px;
+		overflow: hidden;
+		margin:8px 9px 0 9px;
+		background-color:white;
+		border: 1px solid #9c9687;
+	}
+	#webzineHome .todayFocus .lineage .focusBody .partFocus dl {
+		width: 314px;
+		height: auto;
+		overflow: hidden;
+		margin: 4px 0 0 4px;
+	}
+	#webzineHome .todayFocus .lineage .focusBody .partFocus dl dt {
+		float: right;
+		width: 201px;
+		height: 20px;
+		overflow: hidden;
+		white-space: nowrap;
+		font-size: 13px;
+		line-height: 16px;
+		background: none;
+		margin: 4px 19px 0 0;
+		background: url('http://static.inven.co.kr/image_2011/webzine/module/111205_lineage/dot_4x1_brown1_84786c.png') repeat-x left 18px;
+	
+	}
+	#webzineHome .todayFocus .lineage .focusBody .partFocus dl dt a {
+		color: #d30000;
+		white-space: nowrap;
+	}
+	#webzineHome .todayFocus .lineage .focusBody .partFocus dl dd.desc {
+		float: right;
+		width: 201px;
+		height: 32px;
+		overflow: hidden;
+		font-size: 11px;
+		font-family: µ¸¿ò, dotum, ±¼¸², gulim, Helvetica;
+		letter-spacing: -1px;
+		line-height: 16px;
+		margin: 4px 18px 0 0;
+	}
+	#webzineHome .todayFocus .lineage .focusBody .partFocus dl dd.desc a {
+		color: #3f434a;
+		letter-spacing: -1px;
+	}
+	#webzineHome .todayFocus .lineage .focusBody .partFocus dl dd.image {
+		width: 88px;
+		height: 58px;
+		overflow: hidden;
+	}
+	#webzineHome .todayFocus .lineage .focusBody .partFocus dl dd.image a {
+		display: inline;
+		float: left;
+		border: 1px solid #dddfe2;
+	}
+	#webzineHome .todayFocus .lineage .focusBody .partFocus dl dd.image a img {
+		width: 86px;
+		height: 56px;
+		border: 0;
+	}
+	#webzineHome .todayFocus .lineage .focusBody .partList {
+		clear: both;
+		width: 306px;
+		margin: 7px 0 0 13px;
+	}
+	#webzineHome .todayFocus .lineage .focusBody .partList ul {
+		width: 306px;
+		overflow: hidden;
+		padding: 0 0 6px;
+	}
+	#webzineHome .todayFocus .lineage .focusBody .partList ul li {
+		clear: both;
+		width: 306px;
+		height: 15px;
+		overflow: hidden;
+		text-indent: 10px;
+		white-space: nowrap;
+		line-height: 15px;
+		background: url('http://static.inven.co.kr/image_2011/webzine/module/111205_lineage/rect_2x2_brown1_84786c.png') no-repeat left 5px;
+		margin: 5px 0 0;
+	}
+	#webzineHome .todayFocus .lineage .focusBody .partList ul li a {
+		color: #212328;
+		white-space: nowrap;
+	}
+	#webzineHome .todayFocus .lineage .focusBody .partList ul li a span.comment {
+		color: #0072ff;
+		font-size: 11px;
+		font-family: µ¸¿ò, dotum, ±¼¸², gulim, Helvetica;
+		line-height: 14px;
+	}
+
+/* SPECIAL : Å×¶ó */
+	#webzineHome .todayFocus .tera .focusBody {
+		width: 326px;
+		margin: 15px 9px 0 8px;
+	}
+	#webzineHome .todayFocus .tera .focusBody .focusTitle {
+		clear: both;
+		display: inline;
+		float: left;
+		width: 326px;
+		height: 32px;
+		overflow: hidden;
+		text-indent: -10000em;
+		background: url('http://static.inven.co.kr/image_2011/webzine/module/120222_tera/wrap_326_tera_120222_top.png') no-repeat left top;
+	}
+	#webzineHome .todayFocus .tera .focusBody .focusBodyInner {
+		clear: both;
+		width: 326px;
+		overflow: hidden;
+		padding: 6px 0 6px 0;
+		background: url('http://static.inven.co.kr/image_2011/webzine/module/120222_tera/wrap_326_tera_120222_mid.png') repeat-y left top;
+	}
+	#webzineHome .todayFocus .tera .focusBody .focusBodyEnd {
+		clear: both;
+		width: 326px;
+		height: 4px;
+		overflow: hidden;
+		background: url('http://static.inven.co.kr/image_2011/webzine/module/120222_tera/wrap_326_tera_120222_bot.png') no-repeat left top;
+	}
+	#webzineHome .todayFocus .tera .focusBody .partFocus {
+		width: 308px;
+		height:66px;
+		_height:68px;
+		overflow: hidden;
+		margin:8px 9px 0 9px;
+		background-color:white;
+		border: 1px solid #9c9687;
+	}
+	#webzineHome .todayFocus .tera .focusBody .partFocus dl {
+		width: 314px;
+		height: auto;
+		overflow: hidden;
+		margin: 4px 0 0 4px;
+	}
+	#webzineHome .todayFocus .tera .focusBody .partFocus dl dt {
+		float: right;
+		width: 201px;
+		height: 20px;
+		overflow: hidden;
+		white-space: nowrap;
+		font-size: 13px;
+		line-height: 16px;
+		background: none;
+		margin: 4px 19px 0 0;
+		background: url('http://static.inven.co.kr/image_2011/webzine/module/120222_tera/dot_4x1_c59f9f.png') repeat-x left 18px;
+	
+	}
+	#webzineHome .todayFocus .tera .focusBody .partFocus dl dt a {
+		color: #d30000;
+		white-space: nowrap;
+	}
+	#webzineHome .todayFocus .tera .focusBody .partFocus dl dd.desc {
+		float: right;
+		width: 201px;
+		height: 32px;
+		overflow: hidden;
+		font-size: 11px;
+		font-family: µ¸¿ò, dotum, ±¼¸², gulim, Helvetica;
+		letter-spacing: -1px;
+		line-height: 16px;
+		margin: 4px 18px 0 0;
+	}
+	#webzineHome .todayFocus .tera .focusBody .partFocus dl dd.desc a {
+		color: #3f434a;
+		letter-spacing: -1px;
+	}
+	#webzineHome .todayFocus .tera .focusBody .partFocus dl dd.image {
+		width: 88px;
+		height: 58px;
+		overflow: hidden;
+	}
+	#webzineHome .todayFocus .tera .focusBody .partFocus dl dd.image a {
+		display: inline;
+		float: left;
+		border: 1px solid #dddfe2;
+	}
+	#webzineHome .todayFocus .tera .focusBody .partFocus dl dd.image a img {
+		width: 86px;
+		height: 56px;
+		border: 0;
+	}
+	#webzineHome .todayFocus .tera .focusBody .partList {
+		clear: both;
+		width: 306px;
+		margin: 7px 0 0 13px;
+	}
+	#webzineHome .todayFocus .tera .focusBody .partList ul {
+		width: 306px;
+		overflow: hidden;
+		padding: 0 0 6px;
+	}
+	#webzineHome .todayFocus .tera .focusBody .partList ul li {
+		clear: both;
+		width: 306px;
+		height: 15px;
+		overflow: hidden;
+		text-indent: 10px;
+		white-space: nowrap;
+		line-height: 15px;
+		background: url('http://static.inven.co.kr/image_2011/webzine/module/120222_tera/rect_2x2_pink_tera.png') no-repeat left 5px;
+		margin: 5px 0 0;
+	}
+	#webzineHome .todayFocus .tera .focusBody .partList ul li a {
+		color: #212328;
+		white-space: nowrap;
+	}
+	#webzineHome .todayFocus .tera .focusBody .partList ul li a span.comment {
+		color: #0072ff;
+		font-size: 11px;
+		font-family: µ¸¿ò, dotum, ±¼¸², gulim, Helvetica;
+		line-height: 14px;
+	}
+/* SPECIAL : ¸®ÇÁÆ® */
+	#webzineHome .todayFocus .rift .focusBody {
+		width: 326px;
+		margin: 15px 9px 0 8px;
+	}
+	#webzineHome .todayFocus .rift .focusBody .focusTitle {
+		clear: both;
+		display: inline;
+		float: left;
+		width: 326px;
+		height: 32px;
+		overflow: hidden;
+		text-indent: -10000em;
+		background: url('http://static.inven.co.kr/image_2011/webzine/module/120416_rift/wrap_326_rift_120416_top_b.png') no-repeat left top;
+	}
+	#webzineHome .todayFocus .rift .focusBody .focusBodyInner {
+		clear: both;
+		width: 326px;
+		overflow: hidden;
+		padding: 6px 0 6px 0;
+		background: url('http://static.inven.co.kr/image_2011/webzine/module/120416_rift/wrap_326_rift_120416_mid.png') repeat-y left top;
+	}
+	#webzineHome .todayFocus .rift .focusBody .focusBodyEnd {
+		clear: both;
+		width: 326px;
+		height: 4px;
+		overflow: hidden;
+		background: url('http://static.inven.co.kr/image_2011/webzine/module/120416_rift/wrap_326_rift_120416_bot.png') no-repeat left top;
+	}
+	#webzineHome .todayFocus .rift .focusBody .partFocus {
+		width: 308px;
+		overflow: hidden;
+		margin:1px 9px 0 9px;
+		background-color:white;
+		border: 1px solid #9c9687;
+	}
+	#webzineHome .todayFocus .rift .focusBody .partFocus dl {
+		width: 314px;
+		height: auto;
+		overflow: hidden;
+		margin: -1px 0 0 4px;
+		padding-top: 5px;
+		padding-bottom: 3px;
+		background: url('http://static.inven.co.kr/image_2011/webzine/module/120416_rift/dot_4x1_000000.png') repeat-x left top;
+	}
+	#webzineHome .todayFocus .rift .focusBody .partFocus dl dt {
+		float: right;
+		width: 201px;
+		height: 20px;
+		overflow: hidden;
+		white-space: nowrap;
+		font-size: 13px;
+		line-height: 16px;
+		background: none;
+		margin: 4px 19px 0 0;
+	}
+	#webzineHome .todayFocus .rift .focusBody .partFocus dl dt a {
+		color: #274013;
+		white-space: nowrap;
+	}
+	#webzineHome .todayFocus .rift .focusBody .partFocus dl dd.desc {
+		float: right;
+		width: 201px;
+		height: 32px;
+		overflow: hidden;
+		font-size: 11px;
+		font-family: µ¸¿ò, dotum, ±¼¸², gulim, Helvetica;
+		letter-spacing: -1px;
+		line-height: 16px;
+		margin: 4px 18px 0 0;
+	}
+	#webzineHome .todayFocus .rift .focusBody .partFocus dl dd.desc a {
+		color: #3f434a;
+		letter-spacing: -1px;
+	}
+	#webzineHome .todayFocus .rift .focusBody .partFocus dl dd.image {
+		width: 88px;
+		height: 58px;
+		overflow: hidden;
+	}
+	#webzineHome .todayFocus .rift .focusBody .partFocus dl dd.image a {
+		display: inline;
+		float: left;
+		border: 1px solid #dddfe2;
+	}
+	#webzineHome .todayFocus .rift .focusBody .partFocus dl dd.image a img {
+		width: 86px;
+		height: 56px;
+		border: 0;
+	}
+	#webzineHome .todayFocus .rift .focusBody .partList {
+		clear: both;
+		width: 306px;
+		margin: 7px 0 0 13px;
+	}
+	#webzineHome .todayFocus .rift .focusBody .partList ul {
+		width: 306px;
+		overflow: hidden;
+		padding: 0 0 6px;
+	}
+	#webzineHome .todayFocus .rift .focusBody .partList ul li {
+		clear: both;
+		width: 306px;
+		height: 15px;
+		overflow: hidden;
+		text-indent: 10px;
+		white-space: nowrap;
+		line-height: 15px;
+		background: url('http://static.inven.co.kr/image_2011/webzine/module/120416_rift/rect_2x2_green_rift.png') no-repeat left 5px;
+		margin: 5px 0 0;
+	}
+	#webzineHome .todayFocus .rift .focusBody .partList ul li a {
+		color: #212328;
+		white-space: nowrap;
+	}
+	#webzineHome .todayFocus .rift .focusBody .partList ul li a span.comment {
+		color: #0072ff;
+		font-size: 11px;
+		font-family: µ¸¿ò, dotum, ±¼¸², gulim, Helvetica;
+		line-height: 14px;
+	}
+
+
+/* SPECIAL : ¿Ï¹Ì */
+	#webzineHome .todayFocus .wanmi .focusBody {
+		width: 326px;
+		margin: 10px 9px 0 8px;
+	}
+	#webzineHome .todayFocus .wanmi .focusBody .focusTitle {
+		clear: both;
+		display: inline;
+		float: left;
+		width: 326px;
+		height: 32px;
+		overflow: hidden;
+		text-indent: -10000em;
+		background: url('http://static.inven.co.kr/image_2011/webzine/module/120611_wanmi/wrap_326_wanmi_120611_top.png') no-repeat left top;
+	}
+	#webzineHome .todayFocus .wanmi .focusBody .focusBodyInner {
+		clear: both;
+		width: 326px;
+		overflow: hidden;
+		padding: 15px 0;
+		background: url('http://static.inven.co.kr/image_2011/webzine/module/120611_wanmi/wrap_326_wanmi_120611_mid.png') repeat-y left top;
+	}
+	#webzineHome .todayFocus .wanmi .focusBody .focusBodyEnd {
+		clear: both;
+		width: 326px;
+		height: 4px;
+		overflow: hidden;
+		background: url('http://static.inven.co.kr/image_2011/webzine/module/120611_wanmi/wrap_326_wanmi_120611_bot.png') no-repeat left top;
+	}
+	#webzineHome .todayFocus .wanmi .focusBody .partFocus {
+		width: 308px;
+		overflow: hidden;
+		margin:1px 9px 0 9px;
+		background-color:white;
+		border: 1px solid #dddfe2;
+	}
+	#webzineHome .todayFocus .wanmi .focusBody .partFocus dl {
+		width: 314px;
+		height: auto;
+		overflow: hidden;
+		margin: -1px 0 0 4px;
+		padding-top: 5px;
+		padding-bottom: 3px;
+		background: url('http://static.inven.co.kr/image_2011/webzine/module/120611_wanmi/dot_4x1_000000.png') repeat-x left top;
+	}
+	#webzineHome .todayFocus .wanmi .focusBody .partFocus dl dt {
+		float: right;
+		width: 201px;
+		height: 20px;
+		overflow: hidden;
+		white-space: nowrap;
+		font-size: 13px;
+		line-height: 16px;
+		background: none;
+		margin: 4px 19px 0 0;
+	}
+	#webzineHome .todayFocus .wanmi .focusBody .partFocus dl dt a {
+		color: #274013;
+		white-space: nowrap;
+	}
+	#webzineHome .todayFocus .wanmi .focusBody .partFocus dl dd.desc {
+		float: right;
+		width: 201px;
+		height: 32px;
+		overflow: hidden;
+		font-size: 11px;
+		font-family: µ¸¿ò, dotum, ±¼¸², gulim, Helvetica;
+		letter-spacing: -1px;
+		line-height: 16px;
+		margin: 4px 18px 0 0;
+	}
+	#webzineHome .todayFocus .wanmi .focusBody .partFocus dl dd.desc a {
+		color: #3f434a;
+		letter-spacing: -1px;
+	}
+	#webzineHome .todayFocus .wanmi .focusBody .partFocus dl dd.image {
+		width: 88px;
+		height: 58px;
+		overflow: hidden;
+	}
+	#webzineHome .todayFocus .wanmi .focusBody .partFocus dl dd.image a {
+		display: inline;
+		float: left;
+		border: 1px solid #dddfe2;
+	}
+	#webzineHome .todayFocus .wanmi .focusBody .partFocus dl dd.image a img {
+		width: 86px;
+		height: 56px;
+		border: 0;
+	}
+	#webzineHome .todayFocus .wanmi .focusBody .partList {
+		clear: both;
+		width: 306px;
+		margin: 7px 0 0 13px;
+	}
+	#webzineHome .todayFocus .wanmi .focusBody .partList ul {
+		width: 306px;
+		overflow: hidden;
+		padding: 0 0 6px;
+	}
+	#webzineHome .todayFocus .wanmi .focusBody .partList ul li {
+		clear: both;
+		width: 306px;
+		height: 15px;
+		overflow: hidden;
+		text-indent: 10px;
+		white-space: nowrap;
+		line-height: 15px;
+		background: url('http://static.inven.co.kr/image_2011/webzine/module/120611_wanmi/rect_2x2_green_wanmi.png') no-repeat left 5px;
+		margin: 5px 0 0;
+	}
+	#webzineHome .todayFocus .wanmi .focusBody .partList ul li a {
+		color: #212328;
+		white-space: nowrap;
+	}
+	#webzineHome .todayFocus .wanmi .focusBody .partList ul li a span.comment {
+		color: #0072ff;
+		font-size: 11px;
+		font-family: µ¸¿ò, dotum, ±¼¸², gulim, Helvetica;
+		line-height: 14px;
+	}
+
+/* SPECIAL : ºí¾Ø¼Ò */
+	#webzineHome .todayFocus .bns .focusBody {
+		width: 326px;
+		margin: 8px 9px 0 8px;
+	}
+	#webzineHome .todayFocus .bns .focusBody .focusTitle {
+		clear: both;
+		display: inline;
+		float: left;
+		width: 326px;
+		height: 40px;
+		overflow: hidden;
+		text-indent: -10000em;
+		background: url('http://static.inven.co.kr/image_2011/webzine/module/120618_bns/wrap_326_bns_top.png') no-repeat left top;
+	}
+	#webzineHome .todayFocus .bns .focusBody .focusBodyInner {
+		clear: both;
+		width: 326px;
+		overflow: hidden;
+		padding: 12px 0 6px 0;
+		background: url('http://static.inven.co.kr/image_2011/webzine/module/120618_bns/wrap_326_bns_mid.png') repeat-y left top;
+	}
+	#webzineHome .todayFocus .bns .focusBody .focusBodyEnd {
+		clear: both;
+		width: 326px;
+		height: 2px;
+		overflow: hidden;
+		background: url('http://static.inven.co.kr/image_2011/webzine/module/120618_bns/wrap_326_bns_bot.png') no-repeat left top;
+	}
+	#webzineHome .todayFocus .bns .focusBody .partFocus {
+		width: 308px;
+		overflow: hidden;
+		margin:1px 9px 0 9px;
+		background-color:white;
+		border: 1px solid #dddfe2;
+	}
+	#webzineHome .todayFocus .bns .focusBody .partFocus dl {
+		width: 314px;
+		height: auto;
+		overflow: hidden;
+		margin: -1px 0 0 4px;
+		padding-top: 5px;
+		padding-bottom: 3px;
+		background: url('http://static.inven.co.kr/image_2011/webzine/module/120611_wanmi/dot_4x1_000000.png') repeat-x left top;
+	}
+	#webzineHome .todayFocus .bns .focusBody .partFocus dl dt {
+		float: right;
+		width: 201px;
+		height: 20px;
+		overflow: hidden;
+		white-space: nowrap;
+		font-size: 13px;
+		line-height: 16px;
+		background: none;
+		margin: 4px 19px 0 0;
+	}
+	#webzineHome .todayFocus .bns .focusBody .partFocus dl dt a {
+		color: #de1414;
+		white-space: nowrap;
+	}
+	#webzineHome .todayFocus .bns .focusBody .partFocus dl dd.desc {
+		float: right;
+		width: 201px;
+		height: 32px;
+		overflow: hidden;
+		font-size: 11px;
+		font-family: µ¸¿ò, dotum, ±¼¸², gulim, Helvetica;
+		letter-spacing: -1px;
+		line-height: 16px;
+		margin: 4px 18px 0 0;
+	}
+	#webzineHome .todayFocus .bns .focusBody .partFocus dl dd.desc a {
+		color: #3f434a;
+		letter-spacing: -1px;
+	}
+	#webzineHome .todayFocus .bns .focusBody .partFocus dl dd.image {
+		width: 88px;
+		height: 58px;
+		overflow: hidden;
+	}
+	#webzineHome .todayFocus .bns .focusBody .partFocus dl dd.image a {
+		display: inline;
+		float: left;
+		border: 1px solid #dddfe2;
+	}
+	#webzineHome .todayFocus .bns .focusBody .partFocus dl dd.image a img {
+		width: 86px;
+		height: 56px;
+		border: 0;
+	}
+	#webzineHome .todayFocus .bns .focusBody .partList {
+		clear: both;
+		width: 306px;
+		margin: 7px 0 0 13px;
+	}
+	#webzineHome .todayFocus .bns .focusBody .partList ul {
+		width: 306px;
+		overflow: hidden;
+		padding: 0 0 6px;
+	}
+	#webzineHome .todayFocus .bns .focusBody .partList ul li {
+		clear: both;
+		width: 306px;
+		height: 15px;
+		overflow: hidden;
+		text-indent: 10px;
+		white-space: nowrap;
+		line-height: 15px;
+		background: url('http://static.inven.co.kr/image_2011/webzine/module/120611_wanmi/rect_2x2_green_wanmi.png') no-repeat left 5px;
+		margin: 5px 0 0;
+	}
+	#webzineHome .todayFocus .bns .focusBody .partList ul li a {
+		color: #212328;
+		white-space: nowrap;
+	}
+	#webzineHome .todayFocus .bns .focusBody .partList ul li a span.comment {
+		color: #0072ff;
+		font-size: 11px;
+		font-family: µ¸¿ò, dotum, ±¼¸², gulim, Helvetica;
+		line-height: 14px;
+	}
+
+/* SPECIAL : ºí¾Ø¼Ò Á¤½Ä¼­ºñ½º  */
+	#webzineHome .todayFocus .bnsStable {
+        width:326px;
+        margin:15px 0 0 8px;
+    }
+	#webzineHome .todayFocus .bnsStable h2 a {
+        display:block;
+        width:326px;
+        height:34px;
+		background: url(http://static.inven.co.kr/image_2011/webzine/module/120629_bns/wrap_326_bns_top.png) no-repeat top left;
+        text-indent:-1000em;
+    }
+	#webzineHome .todayFocus .bnsStable .focusBodyOuter {
+        border:2px solid #d5979e;
+        border-top:none;
+        margin-bottom:1px;
+    }
+	#webzineHome .todayFocus .bnsStable .focusBodyInner {
+        width:322px;
+    }
+	#webzineHome .todayFocus .bnsStable .partFocus .thumb img {
+        width:86px;
+        height:56px;
+    }
+	#webzineHome .todayFocus .bnsStable .partFocus {
+        margin:6px;
+        border:1px solid #dddfe2;
+        padding:4px 4px 0;
+    }
+	#webzineHome .todayFocus .bnsStable .partFocus .focus {
+        background:url(http://static.inven.co.kr/image_2011/webzine/module/120611_wanmi/dot_4x1_000000.png) bottom left repeat-x;
+        padding:0 0 6px 0;
+        margin-bottom:4px;
+    }
+	#webzineHome .todayFocus .bnsStable .partFocus .thumb {
+        border:1px solid #dddfe2;
+        margin:0 8px 0 0px;
+    }
+	#webzineHome .todayFocus .bnsStable .partFocus .desc {
+        width:204px;
+    }
+	#webzineHome .todayFocus .bnsStable .partFocus .desc h3,
+	#webzineHome .todayFocus .bnsStable .partFocus .desc p,
+	#webzineHome .todayFocus .bnsStable .partFocus .lastHepler,
+	#webzineHome .todayFocus .bnsStable .partList ul,
+	#webzineHome .todayFocus .bnsStable .partList li {
+        display:block;    
+        float:none;
+        padding:0;
+        margin:0;
+    }
+	#webzineHome .todayFocus .bnsStable .partFocus .desc h3 {
+        margin:2px 0 10px;
+    }
+	#webzineHome .todayFocus .bnsStable .partFocus .desc h3 a {
+        font:bold 13px/15px ±¼¸²,gulim;
+        color:#de1414;
+    }
+	#webzineHome .todayFocus .bnsStable .partFocus .desc p {
+        font:12px/15px ±¼¸²,gulim;
+    }
+	#webzineHome .todayFocus .bnsStable .partFocus .lastHelper {
+        overflow:hidden;
+        height:1px;  
+        width:100%;
+        position:relative;
+        top:-5px;
+        background:#fff;
+    }
+	#webzineHome .todayFocus .bnsStable .partList ul {
+        margin-left:10px;
+    }
+	#webzineHome .todayFocus .bnsStable .partList li {
+        height:21px;
+        background:url(http://static.inven.co.kr/image_2011/webzine/module/120611_wanmi/rect_2x2_green_wanmi.png) 0 4px no-repeat;
+        padding-left:8px;
+    }
+	#webzineHome .todayFocus .bnsStable .partList li a {
+        font:12px/14px ±¼¸²,gulim;
+    }
+
+
+/* SPECIAL : ¾ÆÅ°¿¡ÀÌÁö Á¤½Ä¼­ºñ½º  */
+	#webzineHome .todayFocus .archeage {
+        width:326px;
+        margin:15px 0 0 8px;
+    }
+	#webzineHome .todayFocus .archeage h2 a {
+        display:block;
+        width:326px;
+        height:34px;
+		background: url(http://static.inven.co.kr/image_2011/webzine/module/120723_archeage/wrap_326_archeage_top.png) no-repeat top left;
+        text-indent:-1000em;
+    }
+	#webzineHome .todayFocus .archeage .focusBodyOuter {
+        border:2px solid #85b762;
+        border-top:none;
+        margin-bottom:1px;
+    }
+	#webzineHome .todayFocus .archeage .focusBodyInner {
+        width:322px;
+    }
+	#webzineHome .todayFocus .archeage .partFocus .thumb img {
+        width:86px;
+        height:56px;
+    }
+	#webzineHome .todayFocus .archeage .partFocus {
+        margin:6px;
+        border:1px solid #dddfe2;
+        padding:4px 4px 0;
+    }
+	#webzineHome .todayFocus .archeage .partFocus .focus {
+        background:url(http://static.inven.co.kr/image_2011/webzine/module/120611_wanmi/dot_4x1_000000.png) bottom left repeat-x;
+        padding:0 0 6px 0;
+        margin-bottom:4px;
+    }
+	#webzineHome .todayFocus .archeage .partFocus .thumb {
+        border:1px solid #dddfe2;
+        margin:0 8px 0 0px;
+    }
+	#webzineHome .todayFocus .archeage .partFocus .desc {
+        width:204px;
+    }
+	#webzineHome .todayFocus .archeage .partFocus .desc h3,
+	#webzineHome .todayFocus .archeage .partFocus .desc p,
+	#webzineHome .todayFocus .archeage .partFocus .lastHepler,
+	#webzineHome .todayFocus .archeage .partList ul,
+	#webzineHome .todayFocus .archeage .partList li {
+        display:block;    
+        float:none;
+        padding:0;
+        margin:0;
+    }
+	#webzineHome .todayFocus .archeage .partFocus .desc h3 {
+        margin:2px 0 10px;
+    }
+	#webzineHome .todayFocus .archeage .partFocus .desc h3 a {
+        font:bold 13px/15px ±¼¸²,gulim;
+        color:#de1414;
+    }
+	#webzineHome .todayFocus .archeage .partFocus .desc p {
+        font:12px/15px ±¼¸²,gulim;
+    }
+	#webzineHome .todayFocus .archeage .partFocus .lastHelper {
+        overflow:hidden;
+        height:1px;  
+        width:100%;
+        position:relative;
+        top:-5px;
+        background:#fff;
+    }
+	#webzineHome .todayFocus .archeage .partList ul {
+        margin-left:10px;
+    }
+	#webzineHome .todayFocus .archeage .partList li {
+        height:21px;
+        background:url(http://static.inven.co.kr/image_2011/webzine/module/120611_wanmi/rect_2x2_green_wanmi.png) 0 4px no-repeat;
+        padding-left:8px;
+    }
+	#webzineHome .todayFocus .archeage .partList li a {
+        font:12px/14px ±¼¸²,gulim;
+    }
+
+
+
+
+/* SPECIAL : ·¹ÀÌ´õÁî Á¤½Ä¼­ºñ½º  */
+	#webzineHome .todayFocus .raiderz {
+        width:326px;
+        margin:15px 0 7px 8px;
+    }
+	#webzineHome .todayFocus .raiderz h2 a {
+        display:block;
+        width:326px;
+        height:34px;
+		background: url(http://static.inven.co.kr/image_2011/webzine/module/120629_bns/wrap_326_raiderz_top.png) no-repeat top left;
+        text-indent:-1000em;
+    }
+	#webzineHome .todayFocus .raiderz .focusBodyOuter {
+        border:2px solid #7492b9;
+        border-top:none;
+    }
+	#webzineHome .todayFocus .raiderz .focusBodyInner {
+        width:322px;
+    }
+	#webzineHome .todayFocus .raiderz .partFocus .thumb img {
+        width:86px;
+        height:56px;
+    }
+	#webzineHome .todayFocus .raiderz .partFocus {
+        margin:6px;
+        border:1px solid #dddfe2;
+        padding:4px 4px 0;
+    }
+	#webzineHome .todayFocus .raiderz .partFocus .focus {
+        background:url(http://static.inven.co.kr/image_2011/webzine/module/120611_wanmi/dot_4x1_000000.png) bottom left repeat-x;
+        padding:0 0 5px 0;
+        margin-bottom:3px;
+    }
+	#webzineHome .todayFocus .raiderz .partFocus .thumb {
+        border:1px solid #dddfe2;
+        margin:0 8px 0 0px;
+    }
+	#webzineHome .todayFocus .raiderz .partFocus .desc {
+        width:204px;
+    }
+	#webzineHome .todayFocus .raiderz .partFocus .desc h3,
+	#webzineHome .todayFocus .raiderz .partFocus .desc p,
+	#webzineHome .todayFocus .raiderz .partFocus .lastHepler,
+	#webzineHome .todayFocus .raiderz .partList ul,
+	#webzineHome .todayFocus .raiderz .partList li {
+        display:block;    
+        float:none;
+        padding:0;
+        margin:0;
+    }
+	#webzineHome .todayFocus .raiderz .partFocus .desc h3 {
+        margin:2px 0 10px;
+    }
+	#webzineHome .todayFocus .raiderz .partFocus .desc h3 a {
+        color:#de1414;
+        font:bold 13px/15px ±¼¸²,gulim;
+    }
+	#webzineHome .todayFocus .raiderz .partFocus .desc p {
+        font:12px/15px ±¼¸²,gulim;
+    }
+	#webzineHome .todayFocus .raiderz .partFocus .lastHelper {
+        overflow:hidden;
+        height:1px;  
+        width:100%;
+        position:relative;
+        top:-4px;
+        background:#fff;
+    }
+	#webzineHome .todayFocus .raiderz .partList ul {
+        margin-left:10px;
+    }
+	#webzineHome .todayFocus .raiderz .partList li {
+        height:21px;
+        background:url(http://static.inven.co.kr/image_2011/webzine/module/120611_wanmi/rect_2x2_green_wanmi.png) 0 4px no-repeat;
+        padding-left:8px;
+    }
+	#webzineHome .todayFocus .raiderz .partList li a {
+        font:12px/14px ±¼¸²,gulim;
+    }
+
+/* SPECIAL : °Å¿ïÀüÀï Á¤½Ä¼­ºñ½º  */
+	#webzineHome .todayFocus .mirror {
+        width:326px;
+        margin:15px 0 0 8px;
+    }
+	#webzineHome .todayFocus .mirror h2 a {
+        display:block;
+        width:326px;
+        height:34px;
+		background: url(http://static.inven.co.kr/image_2011/webzine/module/120808_mirror/wrap_326_mirror_top.png) no-repeat top left;
+        text-indent:-1000em;
+    }
+	#webzineHome .todayFocus .mirror .focusBodyOuter {
+        border:2px solid #85b762;
+        border-top:none;
+        margin-bottom:1px;
+    }
+	#webzineHome .todayFocus .mirror .focusBodyInner {
+        width:322px;
+    }
+	#webzineHome .todayFocus .mirror .partFocus .thumb img {
+        width:86px;
+        height:56px;
+    }
+	#webzineHome .todayFocus .mirror .partFocus {
+        margin:6px;
+        border:1px solid #dddfe2;
+        padding:4px 4px 0;
+    }
+	#webzineHome .todayFocus .mirror .partFocus .focus {
+        background:url(http://static.inven.co.kr/image_2011/webzine/module/120611_wanmi/dot_4x1_000000.png) bottom left repeat-x;
+        padding:0 0 6px 0;
+        margin-bottom:4px;
+    }
+	#webzineHome .todayFocus .mirror .partFocus .thumb {
+        border:1px solid #dddfe2;
+        margin:0 8px 0 0px;
+    }
+	#webzineHome .todayFocus .mirror .partFocus .desc {
+        width:204px;
+    }
+	#webzineHome .todayFocus .mirror .partFocus .desc h3,
+	#webzineHome .todayFocus .mirror .partFocus .desc p,
+	#webzineHome .todayFocus .mirror .partFocus .lastHepler,
+	#webzineHome .todayFocus .mirror .partList ul,
+	#webzineHome .todayFocus .mirror .partList li {
+        display:block;    
+        float:none;
+        padding:0;
+        margin:0;
+    }
+	#webzineHome .todayFocus .mirror .partFocus .desc h3 {
+        margin:2px 0 10px;
+    }
+	#webzineHome .todayFocus .mirror .partFocus .desc h3 a {
+        font:bold 13px/15px ±¼¸²,gulim;
+        color:#de1414;
+    }
+	#webzineHome .todayFocus .mirror .partFocus .desc p {
+        font:12px/15px ±¼¸²,gulim;
+    }
+	#webzineHome .todayFocus .mirror .partFocus .lastHelper {
+        overflow:hidden;
+        height:1px;  
+        width:100%;
+        position:relative;
+        top:-5px;
+        background:#fff;
+    }
+	#webzineHome .todayFocus .mirror .partList ul {
+        margin-left:10px;
+    }
+	#webzineHome .todayFocus .mirror .partList li {
+        height:21px;
+        background:url(http://static.inven.co.kr/image_2011/webzine/module/120611_wanmi/rect_2x2_green_wanmi.png) 0 4px no-repeat;
+        padding-left:8px;
+    }
+	#webzineHome .todayFocus .mirror .partList li a {
+        font:12px/14px ±¼¸²,gulim;
+    }
+
+/* SPECIAL : ¸ð³ªÅ© ½ºÆä¼È  */
+	#webzineHome .todayFocus .monarch {
+        width:326px;
+        margin:15px 0 0 8px;
+    }
+	#webzineHome .todayFocus .monarch h2 a {
+        display:block;
+        width:326px;
+        height:32px;
+		background: url(http://static.inven.co.kr/image_2011/webzine/module/120822_monarch/wrap_326_monarch_top.png) no-repeat top left;
+        text-indent:-1000em;
+    }
+	#webzineHome .todayFocus .monarch .focusBodyOuter {
+        border:2px solid #542d13;
+        border-top:none;
+        margin-bottom:1px;
+    }
+	#webzineHome .todayFocus .monarch .focusBodyInner {
+        width:322px;
+		background-color: #eff3f5;
+    }
+	#webzineHome .todayFocus .monarch .partFocus .thumb img {
+        width:86px;
+        height:56px;
+    }
+	#webzineHome .todayFocus .monarch .partFocus {
+        margin:6px;
+        border:1px solid #dddfe2;
+        padding:4px 4px 0;
+		background-color: #fff;
+    }
+	#webzineHome .todayFocus .monarch .partFocus .focusDummy {
+		overflow: hidden;
+	}
+	#webzineHome .todayFocus .monarch .partFocus .focusWrap {
+		overflow: hidden;
+		margin-top: -5px;
+	}
+	#webzineHome .todayFocus .monarch .partFocus .focus {
+		border-top:1px solid #dddfe2;
+        padding:5px 0 6px 0;
+    }
+	#webzineHome .todayFocus .monarch .partFocus .thumb {
+        border:1px solid #dddfe2;
+        margin:0 8px 0 0px;
+    }
+	#webzineHome .todayFocus .monarch .partFocus .desc {
+        width:204px;
+    }
+	#webzineHome .todayFocus .monarch .partFocus .desc h3,
+	#webzineHome .todayFocus .monarch .partFocus .desc p,
+	#webzineHome .todayFocus .monarch .partFocus .lastHepler,
+	#webzineHome .todayFocus .monarch .partList ul,
+	#webzineHome .todayFocus .monarch .partList li {
+        display:block;    
+        float:none;
+        padding:0;
+        margin:0;
+    }
+	#webzineHome .todayFocus .monarch .partFocus .desc h3 {
+        margin:2px 0 5px;
+    }
+	#webzineHome .todayFocus .monarch .partFocus .desc h3 a {
+        font:bold 13px/15px ±¼¸²,gulim;
+        color:#ff0000;
+    }
+	#webzineHome .todayFocus .monarch .partFocus .desc p {
+        font:12px/15px ±¼¸²,gulim;
+    }
+	#webzineHome .todayFocus .monarch .partFocus .desc p {
+		padding-top: 5px;
+		background:url(http://static.inven.co.kr/image_2011/webzine/module/120822_monarch/dot_4x1_c59f9f.png) top left repeat-x;
+	}
+	#webzineHome .todayFocus .monarch .partFocus .lastHelper {
+        overflow:hidden;
+        height:1px;  
+        width:100%;
+        position:relative;
+        top:-5px;
+        background:#fff;
+    }
+	#webzineHome .todayFocus .monarch .partList ul {
+        margin-left:10px;
+    }
+	#webzineHome .todayFocus .monarch .partList li {
+        height:21px;
+        background:url(http://static.inven.co.kr/image_2011/webzine/module/120611_wanmi/rect_2x2_green_wanmi.png) 0 4px no-repeat;
+        padding-left:8px;
+    }
+	#webzineHome .todayFocus .monarch .partList li a {
+        font:12px/14px ±¼¸²,gulim;
+    }
+
+/* SPECIAL : ·¹Àüµå ¿Àºê ¼Ò¿ïÁî ½ºÆä¼È  */
+	#webzineHome .todayFocus .ls {
+        width:326px;
+        margin:15px 0 0 8px;
+    }
+	#webzineHome .todayFocus .ls h2 a {
+        display:block;
+        width:326px;
+        height:32px;
+		background: url('http://static.inven.co.kr/image_2011/webzine/module/120914_ls/wrap_326_ls_top_1a.png') no-repeat top left;
+        text-indent:-1000em;
+    }
+	#webzineHome .todayFocus .ls .focusBodyOuter {
+        border:2px solid #52425b;
+        border-top:none;
+        margin-bottom:1px;
+    }
+	#webzineHome .todayFocus .ls .focusBodyInner {
+        width:322px;
+		background-color: #eff3f5;
+    }
+	#webzineHome .todayFocus .ls .partFocus .thumb img {
+        width:86px;
+        height:56px;
+    }
+	#webzineHome .todayFocus .ls .partFocus {
+        margin:6px;
+        border:1px solid #dddfe2;
+        padding:4px 4px 0;
+		background-color: #fff;
+    }
+	#webzineHome .todayFocus .ls .partFocus .focusDummy {
+		overflow: hidden;
+	}
+	#webzineHome .todayFocus .ls .partFocus .focusWrap {
+		overflow: hidden;
+		margin-top: -5px;
+	}
+	#webzineHome .todayFocus .ls .partFocus .focus {
+		border-top:1px solid #dddfe2;
+        padding:5px 0 6px 0;
+    }
+	#webzineHome .todayFocus .ls .partFocus .thumb {
+        border:1px solid #dddfe2;
+        margin:0 8px 0 0px;
+    }
+	#webzineHome .todayFocus .ls .partFocus .desc {
+        width:204px;
+    }
+	#webzineHome .todayFocus .ls .partFocus .desc h3,
+	#webzineHome .todayFocus .ls .partFocus .desc p,
+	#webzineHome .todayFocus .ls .partFocus .lastHepler,
+	#webzineHome .todayFocus .ls .partList ul,
+	#webzineHome .todayFocus .ls .partList li {
+        display:block;    
+        float:none;
+        padding:0;
+        margin:0;
+    }
+	#webzineHome .todayFocus .ls .partFocus .desc h3 {
+        margin:2px 0 5px;
+    }
+	#webzineHome .todayFocus .ls .partFocus .desc h3 a {
+        font:bold 13px/15px ±¼¸²,gulim;
+        color:#ff0000;
+    }
+	#webzineHome .todayFocus .ls .partFocus .desc p {
+        font:12px/15px ±¼¸²,gulim;
+    }
+	#webzineHome .todayFocus .ls .partFocus .desc p {
+		padding-top: 5px;
+		background:url(http://static.inven.co.kr/image_2011/webzine/module/120822_ls/dot_4x1_c59f9f.png) top left repeat-x;
+	}
+	#webzineHome .todayFocus .ls .partFocus .lastHelper {
+        overflow:hidden;
+        height:1px;  
+        width:100%;
+        position:relative;
+        top:-5px;
+        background:#fff;
+    }
+	#webzineHome .todayFocus .ls .partList ul {
+        margin-left:10px;
+    }
+	#webzineHome .todayFocus .ls .partList li {
+        height:21px;
+        background:url(http://static.inven.co.kr/image_2011/webzine/module/120611_wanmi/rect_2x2_green_wanmi.png) 0 4px no-repeat;
+        padding-left:8px;
+    }
+	#webzineHome .todayFocus .ls .partList li a {
+        font:12px/14px ±¼¸²,gulim;
+    }
+
+/* Top Banner */
+    #webzineHomeBanner { width: 915px; margin-bottom: 8px; overflow:hidden;}
+
+/* GamerZone */
+    #webzineHome #comModGamerZone .wrapComMod1,
+    #webzineHome #comModGamerZone .gamerzonePartLines,
+    #webzineHome #comModGamerZone .gamerzonePartLines .gamerzonePartLine {width:702px !important;}
+    #webzineHome #comModGamerZone .gamerzonePartLines .gamerzonePartSplitRight {margin-right: 15px !important;}
+    #webzineHome #comModGamerZone .gamerzonePartLines .gamerzonePartSplit,
+    #webzineHome #comModGamerZone .gamerzonePartLines .gamerzonePartOne { width: 342px !important;}
+    #webzineHome #comModGamerZone .title280BR1,
+    #webzineHome #comModGamerZone .gamerzonePartOne .boardList { width: 321px !important;}
