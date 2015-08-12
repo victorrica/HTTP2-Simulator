@@ -1,0 +1,195 @@
+/* tables */
+IMG { vertical-align:middle; }
+table.tablesorter {
+        font-family:arial;
+        background-color: #CDCDCD;
+        margin:10px 0pt 15px;
+        font-size: 11px;
+        width: 690px;
+        text-align: left;
+}
+table.tablesorter thead tr th, table.tablesorter tfoot tr th {
+        background-color: #e6EEEE;
+        border: 1px solid #FFF;
+        font-size: 11px;
+        padding: 4px;
+}
+table.tablesorter thead tr .header {
+        background-image: url(bg.gif);
+        background-repeat: no-repeat;
+        background-position: center right;
+        cursor: pointer;
+}
+TD.t_blue { background-color: #DDF !important; }
+TD.t_purple { background-color: #FDF !important; }
+
+table.tablesorter tbody td {
+        color: #3D3D3D;
+        padding: 4px;
+        background-color: #FFF;
+        vertical-align: top;
+}
+table.tablesorter tbody tr.odd td {
+        background-color:#F0F0F6;
+}
+table.tablesorter thead tr .headerSortUp {
+        background-image: url(asc.gif);
+}
+table.tablesorter thead tr .headerSortDown {
+        background-image: url(desc.gif);
+}
+table.tablesorter thead tr .headerSortDown, table.tablesorter thead tr .headerSortUp {
+background-color: #8dbdd8;
+}
+
+th
+{
+        text-align: left;
+}
+img
+{
+        border: 1px solid white;
+}
+
+/* by NHN (developers@xpressengine.com) */
+
+a.sbtn,
+a.sbtn span { position:relative; display:inline-block; text-decoration:none !important; background:url(http://fow.kr/img/buttonWhite.gif) no-repeat; cursor:pointer; white-space:nowrap; vertical-align:middle;}
+a.sbtn { padding:0; background-position:left top; overflow:visible;}
+a.sbtn span { left:2px; padding:6px 10px 5px 8px; color:#000; font:12px/12px Guilim, "굴림", Sans-serif; background-position:right top; *vertical-align:top;}
+/* Large Size */
+a.sbtn.large { background-position:left -30px; }
+a.sbtn.large span { padding:7px 10px 6px 8px; font:16px/16px Guilim, "굴림", Sans-serif; background-position:right -30px;}
+/* xLarge Size */
+a.sbtn.xLarge { background-position:left -65px; }
+a.sbtn.xLarge span { padding:8px 10px 7px 8px; font:20px/20px Guilim, "굴림", Sans-serif; background-position:right -65px;}
+/* Small Size */
+a.sbtn.small { background-position:left -107px; }
+a.sbtn.small span { padding:4px 6px 3px 4px; font:11px/11px Guilim, "굴림", Sans-serif; background-position:right -107px;}
+
+/* Control Button + Submit Button */
+span.sbtn,
+span.sbtn button,
+span.sbtn input { position:relative; margin:0; display:inline-block; border:0; font:12px Guilim, "굴림", Sans-serif; white-space:nowrap; background:url(http://fow.kr/img/buttonWhite.gif) no-repeat; vertical-align:middle;}
+span.sbtn { padding:0; background-position:left top;}
+span.sbtn button,
+span.sbtn input { height:23px; left:2px; *vertical-align:top; padding:0 10px 0 8px; line-height:24px; background-position:right top; cursor:pointer; *overflow:visible;}
+/* Large Size */
+span.sbtn.large { background-position:left -30px;}
+span.sbtn.large button,
+span.sbtn.large input { height:30px; padding:0 10px 0 8px; font:16px/30px Guilim, "굴림", Sans-serif; background-position:right -30px;}
+/* xLarge Size */
+span.sbtn.xLarge { background-position:left -65px;}
+span.sbtn.xLarge button,
+span.sbtn.xLarge input { height:35px; padding:0 10px 0 8px; font:20px/36px Guilim, "굴림", Sans-serif; background-position:right -65px;}
+/* Small Size */
+span.sbtn.small { background-position:left -107px;}
+span.sbtn.small button,
+span.sbtn.small input { height:18px; padding:0 6px 0 4px; font:11px/18px Guilim, "굴림", Sans-serif; background-position:right -107px;}
+
+/* Strong Button */
+a.sbtn.strong *,
+span.sbtn.strong * { font-weight:bold !important;}
+
+/* Icon Add */
+a.sbtn .icon { position:relative; border:0; vertical-align:middle;}
+span.sbtn .icon { position:relative; left:10px; margin-right:8px; vertical-align:middle;}
+
+/* Color Preset */
+a.sbtn.green,
+a.sbtn.green span,
+span.sbtn.green,
+span.sbtn.green button,
+span.sbtn.green input { background-image:url(http://fow.kr/img/buttonGreen.gif); color:#fff;}
+a.sbtn.black,
+a.sbtn.black span,
+span.sbtn.black,
+span.sbtn.black button,
+span.sbtn.black input { background-image:url(http://fow.kr/img/buttonBlack.gif); color:#fff;}
+a.sbtn.red,
+a.sbtn.red span,
+span.sbtn.red,
+span.sbtn.red button,
+span.sbtn.red input { background-image:url(http://fow.kr/img/buttonRed.gif); color:#fff;}
+a.sbtn.blue,
+a.sbtn.blue span,
+span.sbtn.blue,
+span.sbtn.blue button,
+span.sbtn.blue input { background-image:url(http://fow.kr/img/buttonBlue.gif); color:#fff;}
+a.sbtn.fow,
+a.sbtn.fow span,
+span.sbtn.fow,
+span.sbtn.fow button,
+span.sbtn.fow input { background-image:url(http://fow.kr/img/buttonFow.gif); color:#fff;}
+
+/* Offset Debug */
+a.sbtn,
+span.sbtn{ margin-right:2px;}
+
+.spec_blueteam {
+background-color: #DDF;
+background-image: -webkit-gradient(linear, 0 0, 0 100%, color-stop(0, #AAC), color-stop(0.01, #EEF), color-stop(1, #DDF));
+background-image: -moz-linear-gradient(top, #AAC, #DDF 2%, #BBD);
+background-image: -o-linear-gradient(top, #AAC, #DDF 2%, #BBD);
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#DDDDFF', endColorstr='#BBBBDD', GradientType=0);
+}
+
+.spec_purpleteam {
+background-color: #FDF;
+background-image: -webkit-gradient(linear, 0 0, 0 100%, color-stop(0, #CAC), color-stop(0.01, #FEF), color-stop(1, #FDF));
+background-image: -moz-linear-gradient(right, #CAC, #FDF 2%, #DBD);
+background-image: -o-linear-gradient(right, #CAC, #FDF 2%, #DBD);
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFDDFF', endColorstr='#DDBBDD', GradientType=1);
+}
+
+.spec_l { width:100%; height:36px; position:relative; }
+.spec_l1 { position:absolute; top:0px; right:0px; }
+.spec_l2 { position:absolute; top:0px; right:32px; }
+.spec_l3 { position:absolute; top:16px; right:32px; }
+.spec_l4 { position:absolute; top:2px; right:52px; text-align:right; color:gray; }
+.spec_r { width:100%; height:36px; position:relative; }
+.spec_r1 { position:absolute; top:0px; left:0px; }
+.spec_r2 { position:absolute; top:0px; left:32px; }
+.spec_r3 { position:absolute; top:16px; left:32px; }
+.spec_r4 { position:absolute; top:2px; left:52px; color:gray; }
+
+.penta_background
+{
+background-color: #FFF;
+background-image: -webkit-gradient(linear, 0 0, 0 100%, color-stop(0, #888), color-stop(0.02, #CCC), color-stop(1, #FFF));
+background-image: -moz-linear-gradient(right, #888, #CCC 2%, #FFF);
+background-image: -o-linear-gradient(right, #888, #CCC 2%, #FFF);
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#CCCCCC', endColorstr='#FFFFFF', GradientType=1);
+border:1px solid silver;
+}
+
+.colorFF8C00{color:#FF8C00;}
+.colorF88017{color:#FF8C00;}
+.color99FF99{color:#1ec91a;}
+.colorFFFF00{color:#baab07;}
+.color5555FF{color:#5555FF;}
+.colorFF9900{color:#E18200;}
+.colorFF3300{color:#CC3300;}
+.colorCC3300{color:#CC3300;}
+.colorFFD700{color:#baab07;}
+.colorFF0000{color:#FF0000;}
+.color0000FF{color:#0000FF;}
+
+#subtype_radio .ui-button
+{
+	float: left;
+}
+
+.btn_subtype
+{
+	width:96px;
+	font-size:11px;
+	float: left;
+}
+
+.mastery_title { position:relative; width:200px; background-color:white; border:1px solid black; padding:3px; margin-bottom:3px; }
+.mastery_current { color:red; background-color:white; border:1px solid red; padding:3px; }
+.mastery_select { background-color:#222; color:#DDD; }
+.mastery_info { color:black; text-align:center; position:absolute; right:1px; top:1px; width:50px; height:16px; border:1px solid green; background-color:white; }
+.mastery_op { opacity: 0.2; filter: alpha(opacity=20); }
+.mastery_hide { display:none; }
