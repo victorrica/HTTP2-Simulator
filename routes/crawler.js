@@ -1,3 +1,4 @@
+var path = require('path')
 var phantomjs = require('phantomjs');
 var process = require("child_process");
 var spawn = process.spawn;
@@ -17,18 +18,25 @@ if (system.args.length === 1) {
 		URL = res.url;
 		parsedURL = parseURL(res.url).path;
 		
+		//index 처리
 		if(parsedURL == null)
 			parsedURL = "index.html";
+			
+		//?date 처리
+		var datedata = parsedURL.indexOf("?")
+		if(datedata > -1) {
+			parsedURL = (1,parsedURL(datedata));
+		}
 		
 		child = spawn("node", ["download.js", URL, parsedURL]);
 		
-		console.log(JSON.stringify(res, undefined, 4));
+		//console.log(JSON.stringify(res, undefined, 4));
 		//console.log(res.url + "\n" + parsedURL);
 		
 		child.stdout.on("data", function (data) {
-			console.log("Download Start " + parseURL(res.url).path);
+			console.log(data);
 		});
-		
+		/*
 		child.stderr.on("data", function (data) {
 		    console.log("Download Error : " + parseURL(res.url).path);
 		});
@@ -36,6 +44,7 @@ if (system.args.length === 1) {
 		child.on("exit", function (code) {
 		  	console.log("Download Done : " + parseURL(res.url).path);
 		});
+		*/
     };
 
     page.open(address, function (status) {
