@@ -18,23 +18,23 @@ var options = {
 	port: 80,
 	range: '0-100',
 	onStart: function(meta) {
-		console.log("Download Started :", url + " - " + filepath);		
+		//console.log("Download Started :", url + " - " + filepath);		
 	},
 	onEnd: function(err, result) {
 		stats = fs.statSync(filepath)
 		fileSize = stats["size"];
 		if(fileSize == 0)
 		{
-			console.log("Download Started [ ITS FUCKIN CHUNKED FILE. ] :", url + " - " + filepath);
+			//console.log("Download Started [ ITS FUCKIN CHUNKED FILE. ] :", url + " - " + filepath);
 			var file = fs.createWriteStream(filepath);
 			var request = http.get(url, function(response) {
 				response.pipe(file);
 			});
 		}
-		
+		/*
 		else
 			console.log("Download Complete :", url + " - " + filepath);
-			
+		*/	
 	}
 };
 

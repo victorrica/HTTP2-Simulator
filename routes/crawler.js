@@ -22,11 +22,11 @@ if (system.args.length === 1) {
 			parsedURL = "index.html";
 			
 		//?date 처리
-		/*
+		
 		if(parsedURL.indexOf("?") > -1) {
 			parsedURL = parsedURL.slice(0,parsedURL.indexOf("?"));
 		}
-		*/
+		
 		
 		child = spawn("node", ["download.js", URL, parsedURL]);
 		
