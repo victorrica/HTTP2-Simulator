@@ -25,8 +25,12 @@ function check_tls(url){
 		//data: "hostname=" + url.substring(8, url.length).replace("/", "") + "&public=true",
 		success: function(result){
 
-			alert(result);
+			//alert(result);
 			$("#protocol_result").text(result);
+			$("#one").css("visibility","visible");
+			$("#one").css("display","block");
+			$(location).attr('href',"/#one");
+
 
 		},
 		error:function(e){
@@ -44,6 +48,12 @@ $(document).ready(function(){
 
 	$("#start").click(function(){
 		var json = check_tls($("#url").val());
+	});
+
+	$("#next").click(function(){
+		$("#two").css("visibility","visible");
+		$("#two").css("display","block");
+		$(location).attr('href',"/#two");
 	});
 
 });
