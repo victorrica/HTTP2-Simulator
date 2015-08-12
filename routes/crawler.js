@@ -18,14 +18,11 @@ if (system.args.length === 1) {
 		parsedURL = parseURL(res.url).path;
 		
 		if(parsedURL == null)
-		{
-			URL += "index.html";
 			parsedURL = "index.html";
-		}
 		
 		child = spawn("node", ["download.js", URL, parsedURL]);
 		
-		//console.log(JSON.stringify(res, undefined, 4));
+		console.log(JSON.stringify(res, undefined, 4));
 		//console.log(res.url + "\n" + parsedURL);
 		
 		child.stdout.on("data", function (data) {
