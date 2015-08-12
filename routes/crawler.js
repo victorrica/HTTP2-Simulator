@@ -29,12 +29,12 @@ if (system.args.length === 1) {
 		child = spawn("node", ["download.js", URL, parsedURL]);
 		
 		//console.log(JSON.stringify(res, undefined, 4));
-		//console.log(res.url + "\n" + parsedURL);
+		console.log(res.url + "\n" + parsedURL);
 		
 		child.stdout.on("data", function (data) {
 			console.log(data);
 		});
-		/*
+		
 		child.stderr.on("data", function (data) {
 		    console.log("Download Error : " + parseURL(res.url).path);
 		});
@@ -42,7 +42,7 @@ if (system.args.length === 1) {
 		child.on("exit", function (code) {
 		  	console.log("Download Done : " + parseURL(res.url).path);
 		});
-		*/
+		
     };
 
     page.open(address, function (status) {
