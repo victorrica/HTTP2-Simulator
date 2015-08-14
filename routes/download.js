@@ -8,6 +8,8 @@ var filepath = process.argv[3];
 
 // this is for test
 filepath = "./download/" + filepath;
+if(filepath.lastIndexOf('/') != -1)
+  mkdirp.sync(filepath.substring(0,filepath.lastIndexOf('/')));
 
 var file = fs.createWriteStream(filepath);
 
@@ -15,10 +17,3 @@ var request = http.get(url, function(response) {
 	console.log("Download Start - " + url);
 	response.pipe(file);
 });
-			
-if(filepath.lastIndexOf('/') != -1)
-	folder = filepath.substring(0,filepath.lastIndexOf('/'));
-
-if(folder){
-	mkdirp(folder);
-}

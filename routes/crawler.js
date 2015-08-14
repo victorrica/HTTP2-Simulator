@@ -1,10 +1,10 @@
-var phantomjs = require('phantomjs');
 var process = require("child_process");
 var spawn = process.spawn;
 var page = require('webpage').create(),
     system = require('system'),
     address;
-    
+var fs = require('fs');
+var folders = [];
 if (system.args.length === 1) {
     console.log('Usage: netlog.js <some URL>');
     phantom.exit(1);
@@ -30,12 +30,15 @@ if (system.args.length === 1) {
 		
 		//Domain Sharding 처리
 		if(originURL.replace("www.", "") != parsedURL.domain.replace("www.", ""))
+        {
 			localPath = parsedURL.domain + "/" + localPath;
+            folders.push(localPath);
+        }
 		
 		var child = spawn("node", ["download.js", URL, localPath]);
 		
-		//console.log(JSON.stringify(res, undefined, 4));
-		//console.log(res.url + "\n" + parsedURL);
+	//	console.log(JSON.stringify(res, undefined, 4));
+	//	console.log(res.url + "\n" + localPath);
 		
 		child.stdout.on("data", function (data) {
 			console.log(data);
@@ -61,7 +64,23 @@ if (system.args.length === 1) {
 }
 
 function exit(code) {
-	setTimeout(function(){ phantom.exit(code); }, 0);
+  
+    data = fs.read('./download/index.html');
+    for(var i=0;i<folders.length;i++)
+    {
+        var find = 'http://' + folders[i];
+        var re = new RegExp(find, 'g');
+        data = data.replace(re, '/' + folders[i]);
+        find = '//' + folders[i];
+        re = new RegExp(find,'g');
+        data = data.replace(re, '/' + folders[i]);
+    }
+    find = 'http://' + originURL;
+    re = new RegExp(find,'g');
+    data = data.replace(re, '');
+    fs.write('./download/index.html',data,'w');
+    
+    setTimeout(function(){ phantom.exit(code); }, 0);
 	phantom.onError = function(){};
 }
 
