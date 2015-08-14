@@ -4,39 +4,43 @@ var spawn = process.spawn;
 var page = require('webpage').create(),
     system = require('system'),
     address;
-var URL,parsedURL,child;
     
 if (system.args.length === 1) {
     console.log('Usage: netlog.js <some URL>');
     phantom.exit(1);
 } else {
     address = system.args[1];
-
-    page.onResourceReceived = function (res) {			
+    originURL = parseURL(address).domain;
+    
+    page.onResourceReceived = function (res) {
 		
-		URL = res.url;
-		parsedURL = parseURL(res.url).path;
+		var URL = res.url;
+		var parsedURL = parseURL(res.url);
+		
+		var localPath = parsedURL.path;
 		
 		//index 처리
-		if(parsedURL == null)
-			parsedURL = "index.html";
+		if(localPath == null)
+			localPath = "index.html";
 			
 		//?date 처리
-		
-		if(parsedURL.indexOf("?") > -1) {
-			parsedURL = parsedURL.slice(0,parsedURL.indexOf("?"));
+		if(localPath.indexOf("?") > -1) {
+			localPath = localPath.slice(0,localPath.indexOf("?"));
 		}
 		
+		//Domain Sharding 처리
+		if(originURL.replace("www.", "") != parsedURL.domain.replace("www.", ""))
+			localPath = parsedURL.domain + "/" + localPath;
 		
-		child = spawn("node", ["download.js", URL, parsedURL]);
+		var child = spawn("node", ["download.js", URL, localPath]);
 		
 		//console.log(JSON.stringify(res, undefined, 4));
-		console.log(res.url + "\n" + parsedURL);
+		//console.log(res.url + "\n" + parsedURL);
 		
 		child.stdout.on("data", function (data) {
 			console.log(data);
 		});
-		
+		/*
 		child.stderr.on("data", function (data) {
 		    console.log("Download Error : " + parseURL(res.url).path);
 		});
@@ -44,6 +48,7 @@ if (system.args.length === 1) {
 		child.on("exit", function (code) {
 		  	console.log("Download Done : " + parseURL(res.url).path);
 		});
+		*/
 		
     };
 
@@ -51,8 +56,13 @@ if (system.args.length === 1) {
         if (status !== 'success') {
             console.log('FAIL to load the address');
         }
-        phantom.exit();
+        exit(0);
     });
+}
+
+function exit(code) {
+	setTimeout(function(){ phantom.exit(code); }, 0);
+	phantom.onError = function(){};
 }
 
 function parseURL(url){
@@ -66,7 +76,7 @@ function parseURL(url){
 
     remaining_url = url.substr(protocol_i + 3, url.length);
     domain_i = remaining_url.indexOf('/');
-    domain_i = domain_i == -1 ? remaining_url.length - 1 : domain_i;
+    domain_i = domain_i == -1 ? remaining_url.length : domain_i;
     parsed_url.domain = remaining_url.substr(0, domain_i);
     parsed_url.path = domain_i == -1 || domain_i + 1 == remaining_url.length ? null : remaining_url.substr(domain_i + 1, remaining_url.length);
 
