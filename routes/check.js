@@ -8,6 +8,7 @@ var htmlparser = require("htmlparser2");*/
 var body,file,url = "https://patenthelper.kr";
 var chunked = false;
 var spdy = require('spdy');
+var util = require('util');
 var http = require('https');
 
 // Add by Kolnidur
@@ -167,6 +168,12 @@ exports.checkSpdy = function(callback) {
 exports.checkNPNproto = function(){
 	var port = 443;
 	var host = url.spdy;
+	if(host.charAt(host.length-1)=='/'){
+		//console.log(host);
+		host = host.substring(0,host.length-1);
+		//console.log(host);
+
+	}
 	var options = {
 		// Chain of certificate autorities
 		// Client and server have these to authenticate keys
@@ -188,14 +195,22 @@ exports.checkNPNproto = function(){
 
 	var socket = tls.connect(port, host, options, function () {
 		//console.log(host);
-		var npn = 'http/1';
+		var npn = 'HTTP/1';
 		console.log('check host name : '+host);
 		console.log('npn data : ' + this.npnProtocol);
 		if(this.npnProtocol == 'h2')  {
-			npn = 'http/2(npn)';
+			npn = 'HTTP/2(npn)';
 		}
 		else if(this.npnProtocol == undefined){
-			npn = 'http/2(alpn)';
+			//npn = 'HTTP/2(alpn)';
+			//console.log('ssss'+host);
+			require('http2').get(host, function(response) {
+				npn='HTTP/';
+				console.log("httpversion");
+				console.log(response.httpVersion);
+				npn += util.inspect(response.httpVersion);
+
+			});
 		}
 		else if(this.npnProtocol != false) {
 			if(/spdy\/[0-9\.]+/.test(this.npnProtocol)) {
@@ -211,7 +226,7 @@ exports.checkNPNproto = function(){
 
 	socket.on('error', function(error) {
 		console.log("This host not support TSL connection or wrong host name");
-		mResponse.send('This host not support TSL connection or wrong host name');
+		mResponse.send('Not TLS');
 	})
 
 }
