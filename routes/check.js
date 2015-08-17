@@ -117,13 +117,13 @@ exports.checkHttp2 = function() {
 
 
 		if(version.spdy != undefined && (version.http2 == undefined || version.http2 == '1.1')) {
-			console.log(version.spdy);
+			//console.log(version.spdy);
 			ajaxResponse.status = OK;
 			ajaxResponse.value = version.spdy;
 			mResponse.send(ajaxResponse);
 		} else {
 			var resHttp2 = "http" + version.http2;
-			console.log(resHttp2);
+			//console.log(resHttp2);
 			ajaxResponse.status = OK;
 			ajaxResponse.value = resHttp2;
 			mResponse.send(ajaxResponse);
@@ -143,7 +143,7 @@ exports.fillUrl = function(aUrl, aResponse){
 	url.spdy = url.http2.substring(8, Buffer.byteLength(url.http2));
 }
 exports.checkSpdy = function(callback) {
-	console.log(spdy);
+	//console.log(spdy);
 	var agent = spdy.createAgent({
 		host: url.spdy,
 		port: 443,
@@ -206,8 +206,8 @@ exports.checkNPNproto = function(){
 			//console.log('ssss'+host);
 			require('http2').get(host, function(response) {
 				npn='HTTP/';
-				console.log("httpversion");
-				console.log(response.httpVersion);
+				//console.log("httpversion");
+				//console.log(response.httpVersion);
 				npn += util.inspect(response.httpVersion);
 
 			});

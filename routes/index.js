@@ -28,3 +28,7 @@ exports.check_result = function(req, res){
 exports.progress_page = function(req, res){
   res.render('progress_page', { title: 'HTTP2-Simulator::Progress Page' });
 };
+
+exports.mysql = function(req, res){
+  res.render('mysql', { title: 'HTTP2-Simulator::Mysql test page' });
+};

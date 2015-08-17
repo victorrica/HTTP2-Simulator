@@ -27,9 +27,11 @@ function check_tls(url){
 
 
 			if($("#protocol_result").length==1){
+				alert("두번째 검사");
 				$("#protocol_result").text(result);
 
 			}else{
+				alert("첫번째 검사");
 				get_check_result(result);
 			}
 
@@ -40,31 +42,17 @@ function check_tls(url){
 	});
 }
 
-function click_next(){
 
-	get_progress_page();
-
-}
-
-function get_progress_page(){
-
-	$.ajax({
-		url: "/progress_page",
-		success: function (data) { $('body').append(data); },
-		dataType: 'html'
-	});
-}
-
-function get_check_result(result){
+function get_check_result(protocol){
 
 	$.ajax({
 		url: "/check_result",
+		dataType: 'html',
 		success: function (data) {
 			$('body').append(data);
-			$("#protocol_result").text(result);
+			$("#protocol_result").text(protocol);
 
-		},
-		dataType: 'html'
+		}
 	});
 }
 
@@ -72,18 +60,9 @@ function get_check_result(result){
 $(document).ready(function(){
 
 
-	//$("#start").click(function(){
-	//	var json = checkh2($("#hostname").val());
-	//});
-
 	$("#start").click(function(){
 		check_tls($("#url").val());
 	});
 
-	$("#next").click(function(){
-
-		click_next();
-
-	});
 
 });
