@@ -17,7 +17,8 @@ if (system.args.length === 1) {
 
 		//console.log('received: ' + JSON.stringify(res, undefined, 4));
 		var URL = res.url;
-
+        if(res.redirectURL)
+          URL = res.redirectURL;
 		if(res.redirectURL && parseURL(res.redirectURL).host == parseURL(URL).host)
 			originURL = parseURL(res.redirectURL).domain;
 
@@ -33,14 +34,16 @@ if (system.args.length === 1) {
 		if(localPath.indexOf("?") > -1) {
 			localPath = localPath.slice(0,localPath.indexOf("?"));
 		}
-
+  
+            console.log(originURL.replace("www.", "") + "\n" +
+                parsedURL.domain.replace("www.", ""));
 		//Domain Sharding 처리
 		if(originURL.replace("www.", "") != parsedURL.domain.replace("www.", ""))
         {
 			localPath = parsedURL.domain + "/" + localPath;
             folders.push(localPath);
         }
-
+  
 		var child = spawn("node", ["download.js", URL, localPath, path]);
 
 	//	console.log(JSON.stringify(res, undefined, 4));
