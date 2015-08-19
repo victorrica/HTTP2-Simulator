@@ -85,7 +85,7 @@ function exit(code) {
     data = data.replace(re, '');
     re = new RegExp('https://' + originURL,'g');
     data = data.replace(re, '');
-    fs.write('./download/index.html',data,'w');
+    fs.write('/usr/local/nginx/html/' + path + '/index.html',data,'w');
 }
 function parseURL(url){
     parsed_url = {}
