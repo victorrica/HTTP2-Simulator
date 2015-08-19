@@ -7,6 +7,7 @@ var express = require('express');
 var routes = require('./routes');
 var http = require('http');
 var path = require('path');
+var wpt = require('./routes/webpagetest');
 var bodyParser = require('body-parser');
 var checker = require('./routes/check');
 var cookieParser = require('cookie-parser');
@@ -16,6 +17,13 @@ var crypto = require('crypto');
 var date_utils = require('date-utils');
 
 //console.log(date);
+
+var keyCount=0;
+
+var key = [
+  "A.4c4149b53488c09ce7ee8f7e8cc637b6", "A.a66edbb10b50e156ebf63dccda3e938d", "A.cfbefb5968dacd324d3ce4426ff593ce",
+  "A.81570d0c6da5ed737e21f766e7a89655", "A.4f498e8fdf15d820545af9a0ced88431"
+];
 
 var app = express();
 
@@ -56,6 +64,7 @@ app.get('/rank', routes.rank);
 app.get('/contactus', routes.contactus);
 app.get('/check_result', routes.check_result);
 app.get('/progress_page', routes.progress_page);
+app.get('/result', routes.result);
 app.get('/mysql', routes.mysql);
 
 
@@ -99,6 +108,18 @@ function callback(path2) {
   });
 
 }
+
+app.post('/webpagetest', function(req, res) {
+  wpt.run(key[keyCount++], function(aResData) {
+    console.log(key[keyCount++]);
+    console.log("aaaaaaaaaaa");
+    console.log(aResData);
+    res.send(aResData);
+
+  });
+  if(keyCount >= 4)
+      keyCount = 0;
+});
 
 //Add by Kolnidur
 app.post('/tls', function(req, res) {
