@@ -12,14 +12,15 @@ var path = process.argv[4];
 var URLprotocal = options.port;
 
 
-filepath = "/usr/local/nginx/html/" + path + "/" + filepath;
+filepath = "./download/" + path + "/" + filepath;
 
 if(filepath.lastIndexOf('/') != -1)
   mkdirp.sync(filepath.substring(0,filepath.lastIndexOf('/')));
 
 var file = fs.createWriteStream(filepath);
 
-var req = (URLprotocal=="http"?https:http).request(options, function(response) {
+console.log(options);
+var req = (URLprotocal=="80"?http:https).request(options, function(response) {
 	console.log("Download Start - " + options.hostname + options.path + "\n");
 	response.pipe(file,{end: false});
 });

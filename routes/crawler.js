@@ -17,8 +17,10 @@ if (system.args.length === 1) {
 
 		var URL = res.url;
 
-        if(res.redirectURL)
-          URL = res.redirectURL;
+        if(res.redirectURL && parseURL(res.redirectURL).host == parseURL(URL).host)
+        	URL = res.redirectURL;
+
+        console.log(URL);
 
 		if(res.redirectURL && parseURL(res.redirectURL).host == parseURL(URL).host)
 			originURL = parseURL(res.redirectURL).domain;
@@ -28,7 +30,7 @@ if (system.args.length === 1) {
 		var localPath = parsedURL.path;
 
 		//index 처리
-		if(localPath == null || localPath.substr(-1) == "/")
+		if(localPath == null || localPath.substr(-1) == "/" || res.redirectURL)
 			localPath = "index.html";
 
 		//?date 처리
@@ -76,7 +78,7 @@ function exit(code) {
     setTimeout(function(){ phantom.exit(code); }, 0);
 	phantom.onError = function(){};
 
-	data = fs.read('/usr/local/nginx/html/' + path + '/index.html');
+	data = fs.read('./download/' + path + '/index.html');
     for(var i=0;i<folders.length;i++)
     {
         var re = new RegExp('http://' + folders[i], 'g');
@@ -88,7 +90,7 @@ function exit(code) {
     data = data.replace(re, '');
     re = new RegExp('https://' + originURL,'g');
     data = data.replace(re, '');
-    fs.write('/usr/local/nginx/html/' + path + '/index.html',data,'w');
+    fs.write('./download/' + path + '/index.html',data,'w');
 }
 function parseURL(url){
     parsed_url = {}
