@@ -19,6 +19,7 @@ var date_utils = require('date-utils');
 
 var keyCount=0;
 
+//WebPageTest Keys
 var key = [
   "A.a66edbb10b50e156ebf63dccda3e938d", "A.cfbefb5968dacd324d3ce4426ff593ce",
   "A.81570d0c6da5ed737e21f766e7a89655", "A.4f498e8fdf15d820545af9a0ced88431","A.4c4149b53488c09ce7ee8f7e8cc637b6"
@@ -39,6 +40,7 @@ process.on('uncaughtException', function (err) {
     }
   }
 });
+
 // all environments
 app.set('port', process.env.PORT || 80);
 app.set('views', __dirname + '/views');
@@ -91,9 +93,7 @@ function callback(path2) {
       console.log("LOTTO");
       callback(path2);
     }
-
   });
-
 }
 
 app.post('/webpagetest',  function(req, res) {
@@ -135,8 +135,6 @@ app.post('/tls', function(req, res) {
   });
 
 });
-
-
 
 connection.connect(function(err) {
   if (err) {
