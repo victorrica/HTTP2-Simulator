@@ -10,43 +10,51 @@ if (system.args.length === 1) {
     phantom.exit(1);
 } else {
     address = system.args[1];
+    path = system.args[2];
     originURL = parseURL(address).domain;
 
-    page.onResourceRequested  = function (req) {
+    page.onResourceReceived  = function (res) {
 
-		var URL = req.url;
+		//console.log('received: ' + JSON.stringify(res, undefined, 4));
+		var URL = res.url;
+        if(res.redirectURL)
+          URL = res.redirectURL;
+		if(res.redirectURL && parseURL(res.redirectURL).host == parseURL(URL).host)
+			originURL = parseURL(res.redirectURL).domain;
 
-		var parsedURL = parseURL(req.url);
+		var parsedURL = parseURL(res.url);
 
 		var localPath = parsedURL.path;
 
 		//index 처리
-		if(localPath.substr(-1) == "/")
+		if(localPath == null || localPath.substr(-1) == "/")
 			localPath = "index.html";
 
 		//?date 처리
 		if(localPath.indexOf("?") > -1) {
 			localPath = localPath.slice(0,localPath.indexOf("?"));
 		}
-		//console.log(URL + "\n" + originURL.replace("www.", ""));
+  
+            console.log(originURL.replace("www.", "") + "\n" +
+                parsedURL.domain.replace("www.", ""));
 		//Domain Sharding 처리
 		if(originURL.replace("www.", "") != parsedURL.domain.replace("www.", ""))
         {
 			localPath = parsedURL.domain + "/" + localPath;
             folders.push(localPath);
         }
-
-		var child = spawn("node", ["download.js", URL, localPath]);
+  
+		var child = spawn("node", ["download.js", URL, localPath, path]);
 
 	//	console.log(JSON.stringify(res, undefined, 4));
-		//console.log(res.url + "\n" + localPath);
+		console.log(res.url + "\n" + localPath);
 /*
 		child.stdout.on("data", function (data) {
 			console.log(data);
 		});
-*/
-		child.stderr.on("data", function (data) {
-		    console.log("Download Error : " + parseURL(req.url).path);
+
+		child.stderr.on("data", function (err,data) {
+		    console.log("Download Error : " + err);
 		});
 /*
 		child.on("exit", function (code) {
@@ -68,7 +76,7 @@ function exit(code) {
     setTimeout(function(){ phantom.exit(code); }, 0);
 	phantom.onError = function(){};
 
-	data = fs.read('./download/index.html');
+	data = fs.read('/usr/local/nginx/html/' + path + '/index.html');
     for(var i=0;i<folders.length;i++)
     {
         var re = new RegExp('http://' + folders[i], 'g');
@@ -78,7 +86,9 @@ function exit(code) {
     }
     re = new RegExp('http://' + originURL,'g');
     data = data.replace(re, '');
-    fs.write('./download/index.html',data,'w');
+    re = new RegExp('https://' + originURL,'g');
+    data = data.replace(re, '');
+    fs.write('/usr/local/nginx/html/' + path + '/index.html',data,'w');
 }
 function parseURL(url){
     parsed_url = {}

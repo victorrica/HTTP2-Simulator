@@ -9,7 +9,7 @@ exports.index = function(req, res){
 
 
 exports.Webpagetest = function(req, res){
-  res.render('Webpagetest', { title: 'HTTP2-Simulator::Webpagetest' });
+  res.render('wpt_result', { title: 'HTTP2-Simulator::Webpagetest' });
 };
 
 exports.contactus = function(req, res){
@@ -18,6 +18,10 @@ exports.contactus = function(req, res){
 
 exports.rank = function(req, res){
   res.render('rank', { title: 'HTTP2-Simulator::Rank' });
+};
+
+exports.result = function(req, res){
+  res.render('result', { title: 'HTTP2-Simulator::Result' });
 };
 
 exports.check_result = function(req, res){

@@ -5,6 +5,8 @@
 function click_next(){
 
     get_progress_page();
+    get_result_page();
+
 
 }
 
@@ -17,7 +19,9 @@ function get_progress_page(){
     });
 }
 
-
+function get_result_page(){
+    window.location.replace("/result");
+}
 
 $(document).ready(function(){
 

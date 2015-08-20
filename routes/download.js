@@ -6,10 +6,11 @@ var https = require("https");
 var url = require("url");
 var URL = process.argv[2];
 var filepath = process.argv[3];
+var path = process.argv[4];
 var URLprotocal = url.parse(URL).protocol;
 
 // this is for test
-filepath = "./download/" + filepath;
+filepath = "/usr/local/nginx/html/" + path + "/" + filepath;
 if(filepath.lastIndexOf('/') != -1)
   mkdirp.sync(filepath.substring(0,filepath.lastIndexOf('/')));
 

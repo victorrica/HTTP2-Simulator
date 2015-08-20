@@ -149,7 +149,7 @@
 		height: 0% !important;	
 	}
 /* Section/Article */
-	section#one , section#two{
+	section#one , section#two , section#three{
 		height: 100%;
 	}
 	#top{
