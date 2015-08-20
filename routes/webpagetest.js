@@ -8,12 +8,13 @@ var compare_extrUrl = "&embed=1&width=904&height=400"
 var WebPageTest = require('webpagetest');
 var async = require('async');
 var mysql = require('mysql');
+var mysql_module = require('./mysql');
 var mWpt;
 
 const LEFT_VIEW = 1;
 const RIGHT_VIEW = 2;
 
-var mysql_connection;
+//var mysql_connection;
 
 
 
@@ -72,13 +73,15 @@ var task = function(mResFunction) {
                 'performance':(resData.rightLoadTime/resData.leftLoadTime)*100
             };
 
-            var query = mysql_connection.query('insert into result set ?',sql_data,function(err,result){
-                if (err) {
-                    console.error(err);
-                    throw err;
-                }
-                console.log('Query execute : '+query.sql);
-            });
+            mysql_module.insert_result(sql_data);
+
+            //var query = mysql_connection.query('insert into result set ?',sql_data,function(err,result){
+            //    if (err) {
+            //        console.error(err);
+            //        throw err;
+            //    }
+            //    console.log('Query execute : '+query.sql);
+            //});
 
 
             console.log('error : ', result);
@@ -114,9 +117,9 @@ var resData = {
     rightLoadTime : undefined
 }
 
-exports.run = function(key, connection, aRcvFun) {
+exports.run = function(key, aRcvFun) {
     mWpt = new WebPageTest('www.webpagetest.org', key);
-    mysql_connection = connection;
+    //mysql_connection = connection;
     console.log(key);
     task(aRcvFun);
 }
