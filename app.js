@@ -14,14 +14,12 @@ var cookieParser = require('cookie-parser');
 var mysql = require('mysql');
 var crypto = require('crypto');
 var url_module = require('url');
-
-
 var date_utils = require('date-utils');
 
-//console.log(date);
 
 var keyCount=0;
 
+//WebPageTest Keys
 var key = [
   "A.a66edbb10b50e156ebf63dccda3e938d", "A.cfbefb5968dacd324d3ce4426ff593ce",
   "A.81570d0c6da5ed737e21f766e7a89655", "A.4f498e8fdf15d820545af9a0ced88431","A.4c4149b53488c09ce7ee8f7e8cc637b6"
@@ -42,6 +40,7 @@ process.on('uncaughtException', function (err) {
     }
   }
 });
+
 // all environments
 app.set('port', process.env.PORT || 80);
 app.set('views', __dirname + '/views');
@@ -74,8 +73,8 @@ var connection = mysql.createConnection({
   host    :'localhost',
   port : 3306,
   user : 'root',
-  password : 'soma123123!',
-  database:'HTTP2Simulator'
+  password : '1234',
+  database:'test'
 });
 
 
@@ -84,20 +83,8 @@ function randomValueHex (len) {
       .toString('hex') // convert to hexadecimal format
       .slice(0,len);   // return required number of characters
 }
-/*
-app.post('/check', function(req, res) {
-  //console.log(req.body.hostName);
-  checker.fillUrl(req.body.hostName, res);
-  checker.checkSpdy(function() {
-    checker.checkHttp2();
-  })
-
-
-});
-*/
 
 function callback(path2) {
-  //console.log("callback start");
   connection.query("select `path2` from sites where `path2` = '" + path2 + "' limit 1",function(err,result){
 
     if(result.length==1){
@@ -106,9 +93,7 @@ function callback(path2) {
       console.log("LOTTO");
       callback(path2);
     }
-
   });
-
 }
 
 app.post('/webpagetest',  function(req, res) {
@@ -123,9 +108,7 @@ app.post('/webpagetest',  function(req, res) {
       keyCount = 0;
 });
 
-//Add by Kolnidur
 app.post('/tls', function(req, res) {
-  //console.log(req.body.hostName);
   checker.fillUrl(req.body.hostName, res);
   checker.checkNPNproto();
 
@@ -135,9 +118,8 @@ app.post('/tls', function(req, res) {
   var url = req.body.hostName;
   var path1 = crypto.createHash('md5').update(date+url).digest("hex");
   var path2 = randomValueHex(6);
-  //var temp = "b5c569";
   callback(path2);
-  //insert mysql
+
   var user = {'url':url,
     'path1':path1,
     'path2':path2,
@@ -154,8 +136,6 @@ app.post('/tls', function(req, res) {
 
 });
 
-
-
 connection.connect(function(err) {
   if (err) {
     console.error('mysql connection error');
@@ -163,21 +143,7 @@ connection.connect(function(err) {
     throw err;
   }
 });
-/*
-app.post('/mysql_send', function(req, res) {
-  var user = {'name':req.body.name,
-    'grade':req.body.grade};
-  var query = connection.query('insert into teacher set ?',user,function(err,result){
-    if (err) {
-      //console.error(err);
-      throw err;
-    }
-    console.log(query);
-    res.send(200,'success');
-  });
 
-});
-*/
 http.createServer(app).listen(app.get('port'), function(){
     console.log("Start H2Perf.org Server!");
 });
