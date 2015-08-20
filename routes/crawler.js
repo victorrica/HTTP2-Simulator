@@ -62,6 +62,13 @@ if (system.args.length === 1) {
 		child.stdout.on("data", function (data) {
 			console.log(data);
 		});
+		child.stderr.on("data", function (err, data) {
+		    console.log("Download Error : " + err);
+		});
+
+		child.on("exit", function (code) {
+            	    console.log("onExit:"+code);
+		});
     };
 
     page.open(address, function (status) {

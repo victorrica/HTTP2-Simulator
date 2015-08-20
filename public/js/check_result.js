@@ -5,9 +5,25 @@
 function click_next(){
 
     get_progress_page();
+    runCrawler();
     get_result_page();
 
 
+}
+function runCrawler() {
+    $.ajax({
+        url: '/crawler',
+        success: function(result){
+            if(result==0) {
+                get_result_page();
+            } else {
+                //fail message
+            }
+        },
+        error:function(e){
+            alert(e.responseText);
+        }
+    });
 }
 
 function get_progress_page(){

@@ -7,13 +7,18 @@ var express = require('express');
 var routes = require('./routes');
 var http = require('http');
 var path = require('path');
+var childProcess = require("child_process");
+var spawn = childProcess.spawn;
 var wpt = require('./routes/webpagetest');
 var bodyParser = require('body-parser');
 var checker = require('./routes/check');
 var cookieParser = require('cookie-parser');
-var mysql_module = require('./routes/mysql');
+var mysql = require('mysql');
+var crypto = require('crypto');
 
 
+var date_utils = require('date-utils');
+var mUrl;
 var keyCount=0;
 
 //WebPageTest Keys
@@ -78,8 +83,32 @@ app.post('/webpagetest',  function(req, res) {
       keyCount = 0;
 });
 
+app.get('/crawler', function(req, res) {
+  var child = spawn("phantomjs", ["--ssl-protocol=any", "--ignore-ssl-errors=yes", "./routes/crawler.js",
+    mUrl, "download"]);
+  child.stdout.on("data", function (data) {
+    console.log(data);
+  });
+
+  child.stderr.on("data", function (err,data) {
+    console.log("Download Error : " + err);
+  });
+
+  child.on("exit", function (code) {
+    console.log("app:"+code);
+    const SUCCESS = 0;
+    const FAIL = 1;
+    if(code == SUCCESS) {
+      res.send(SUCCESS);
+    } else {
+      res.send(FAIL);
+    }
+  });
+});
 app.post('/tls', function(req, res) {
-  checker.fillUrl(req.body.hostName, res);
+  //console.log(req.body.hostName);
+  mUrl = req.body.hostName;
+  checker.fillUrl(mUrl, res);
   checker.checkNPNproto();
 
   mysql_module.insert_sites(req.body.hostName);
