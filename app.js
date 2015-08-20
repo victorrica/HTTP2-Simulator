@@ -43,7 +43,7 @@ process.on('uncaughtException', function (err) {
   }
 });
 // all environments
-app.set('port', process.env.PORT || 3000);
+app.set('port', process.env.PORT || 80);
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 app.use(express.favicon());
@@ -74,8 +74,8 @@ var connection = mysql.createConnection({
   host    :'localhost',
   port : 3306,
   user : 'root',
-  password : '1234',
-  database:'test'
+  password : 'soma123123!',
+  database:'HTTP2Simulator'
 });
 
 
@@ -178,7 +178,7 @@ app.post('/mysql_send', function(req, res) {
 
 });
 */
-
 http.createServer(app).listen(app.get('port'), function(){
-  console.log('HTTP2-Simulator server listening on port ' + app.get('port'));
+    console.log("Start H2Perf.org Server!");
 });
+
