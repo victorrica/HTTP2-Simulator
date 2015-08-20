@@ -14,8 +14,8 @@ exports.start_connection = function(){
         host    :'localhost',
         port : 3306,
         user : 'root',
-        password : 'soma123123!',
-        database:'HTTP2Simulator'
+        password : '1234',
+        database:'test'
     });
 
     connection.connect(function(err) {
