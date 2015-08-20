@@ -17,8 +17,10 @@ if (system.args.length === 1) {
 
 		var URL = res.url;
 
-        if(res.redirectURL)
-          URL = res.redirectURL;
+        if(res.redirectURL && parseURL(res.redirectURL).host == parseURL(URL).host)
+        	URL = res.redirectURL;
+
+        console.log(URL);
 
 		if(res.redirectURL && parseURL(res.redirectURL).host == parseURL(URL).host)
 			originURL = parseURL(res.redirectURL).domain;
@@ -28,7 +30,7 @@ if (system.args.length === 1) {
 		var localPath = parsedURL.path;
 
 		//index 처리
-		if(localPath == null || localPath.substr(-1) == "/")
+		if(localPath == null || localPath.substr(-1) == "/" || res.redirectURL)
 			localPath = "index.html";
 
 		//?date 처리
@@ -61,6 +63,13 @@ if (system.args.length === 1) {
 
 		child.stdout.on("data", function (data) {
 			console.log(data);
+		});
+		child.stderr.on("data", function (err, data) {
+		    console.log("Download Error : " + err);
+		});
+
+		child.on("exit", function (code) {
+            	    console.log("onExit:"+code);
 		});
     };
 
