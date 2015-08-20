@@ -78,7 +78,7 @@ function exit(code) {
     setTimeout(function(){ phantom.exit(code); }, 0);
 	phantom.onError = function(){};
 
-	data = fs.read('./download/' + path + '/index.html');
+	data = fs.read('/usr/local/nginx/html/' + path + '/index.html');
     for(var i=0;i<folders.length;i++)
     {
         var re = new RegExp('http://' + folders[i], 'g');
@@ -90,7 +90,7 @@ function exit(code) {
     data = data.replace(re, '');
     re = new RegExp('https://' + originURL,'g');
     data = data.replace(re, '');
-    fs.write('./download/' + path + '/index.html',data,'w');
+    fs.write('/usr/local/nginx/html/' + path + '/index.html',data,'w');
 }
 function parseURL(url){
     parsed_url = {}

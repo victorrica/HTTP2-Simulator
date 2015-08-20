@@ -12,7 +12,7 @@ var path = process.argv[4];
 var URLprotocal = options.port;
 
 
-filepath = "./download/" + path + "/" + filepath;
+filepath = "/usr/local/nginx/html/" + path + "/" + filepath;
 
 if(filepath.lastIndexOf('/') != -1)
   mkdirp.sync(filepath.substring(0,filepath.lastIndexOf('/')));
