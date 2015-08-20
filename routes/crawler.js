@@ -4,7 +4,7 @@ var page = require('webpage').create(),
     system = require('system'),
     address;
 var fs = require('fs');
-var folders = [];
+var folders = [],header = [];
 if (system.args.length === 1) {
     console.log('Usage: netlog.js <some URL>');
     phantom.exit(1);
