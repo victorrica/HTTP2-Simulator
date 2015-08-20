@@ -13,6 +13,8 @@ var checker = require('./routes/check');
 var cookieParser = require('cookie-parser');
 var mysql = require('mysql');
 var crypto = require('crypto');
+var url_module = require('url');
+
 
 var date_utils = require('date-utils');
 
@@ -21,8 +23,8 @@ var date_utils = require('date-utils');
 var keyCount=0;
 
 var key = [
-  "A.4c4149b53488c09ce7ee8f7e8cc637b6", "A.a66edbb10b50e156ebf63dccda3e938d", "A.cfbefb5968dacd324d3ce4426ff593ce",
-  "A.81570d0c6da5ed737e21f766e7a89655", "A.4f498e8fdf15d820545af9a0ced88431"
+  "A.a66edbb10b50e156ebf63dccda3e938d", "A.cfbefb5968dacd324d3ce4426ff593ce",
+  "A.81570d0c6da5ed737e21f766e7a89655", "A.4f498e8fdf15d820545af9a0ced88431","A.4c4149b53488c09ce7ee8f7e8cc637b6"
 ];
 
 var app = express();
@@ -95,7 +97,7 @@ app.post('/check', function(req, res) {
 */
 
 function callback(path2) {
-  console.log("callback start");
+  //console.log("callback start");
   connection.query("select `path2` from sites where `path2` = '" + path2 + "' limit 1",function(err,result){
 
     if(result.length==1){
@@ -109,8 +111,8 @@ function callback(path2) {
 
 }
 
-app.post('/webpagetest', function(req, res) {
-  wpt.run(key[keyCount++], function(aResData) {
+app.post('/webpagetest',  function(req, res) {
+  wpt.run(key[keyCount++], connection, function(aResData) {
     console.log(key[keyCount++]);
     console.log("aaaaaaaaaaa");
     console.log(aResData);
@@ -129,8 +131,8 @@ app.post('/tls', function(req, res) {
 
   var dt = new Date();
   var date = dt.toFormat('YYYYMMDDHHMMSS');
-
-  var url = req.body.hostName
+  var domain = url_module.parse(req.body.hostName).hostname;
+  var url = req.body.hostName;
   var path1 = crypto.createHash('md5').update(date+url).digest("hex");
   var path2 = randomValueHex(6);
   //var temp = "b5c569";
@@ -138,7 +140,8 @@ app.post('/tls', function(req, res) {
   //insert mysql
   var user = {'url':url,
     'path1':path1,
-    'path2':path2
+    'path2':path2,
+    'domain':domain
   };
 
   var query = connection.query('insert into sites set ?',user,function(err,result){
@@ -146,7 +149,7 @@ app.post('/tls', function(req, res) {
       console.error(err);
       throw err;
     }
-    console.log(query.sql);
+    console.log('Query execute : '+query.sql);
   });
 
 });

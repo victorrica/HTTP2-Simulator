@@ -7,10 +7,15 @@ var compare_url = 'http://www.webpagetest.org/video/view.php?id='
 var compare_extrUrl = "&embed=1&width=904&height=400"
 var WebPageTest = require('webpagetest');
 var async = require('async');
+var mysql = require('mysql');
 var mWpt;
 
 const LEFT_VIEW = 1;
 const RIGHT_VIEW = 2;
+
+var mysql_connection;
+
+
 
 var task = function(mResFunction) {
     var leftId;
@@ -33,14 +38,14 @@ var task = function(mResFunction) {
         },
         function(callback) {
             console.log("left Id : " + leftId);
-            result(leftId, function(aContent) {
+            result(LEFT_VIEW, leftId, function(aContent) {
                 leftContent = aContent;
                 callback(null);
             });
         },
         function(callback) {
             console.log("right Id : " + rightId);
-            result(rightId, function(aContent) {
+            result(RIGHT_VIEW, rightId, function(aContent) {
                 var compareId = leftId+','+rightId;
                 rightContent = aContent;
                 createVideo(compareId);
@@ -56,7 +61,29 @@ var task = function(mResFunction) {
             getWaterfallImg(leftId, LEFT_VIEW);
             getWaterfallImg(rightId, RIGHT_VIEW);
             mResFunction(resData);
+
+            var sql_data = {
+                'compare_url':resData.compareVideo,
+                'graph_url':resData.leftContentUrl,
+                'h1_waterfall_url':resData.leftWaterfallImg,
+                'h2_waterfall_url':resData.rightWatefFallImg,
+                'http1_time':resData.leftLoadTime,
+                'http2_time':resData.rightLoadTime,
+                'performance':(resData.rightLoadTime/resData.leftLoadTime)*100
+            };
+
+            var query = mysql_connection.query('insert into result set ?',sql_data,function(err,result){
+                if (err) {
+                    console.error(err);
+                    throw err;
+                }
+                console.log('Query execute : '+query.sql);
+            });
+
+
             console.log('error : ', result);
+
+
         }, 3000);
     });
 }
@@ -82,11 +109,14 @@ var resData = {
     rightWatefFallImg : undefined,
     compareVideo : undefined,
     leftContentUrl : undefined,
-    rightContentUrl : undefined
+    rightContentUrl : undefined,
+    leftLoadTime : undefined,
+    rightLoadTime : undefined
 }
 
-exports.run = function(key, aRcvFun) {
+exports.run = function(key, connection, aRcvFun) {
     mWpt = new WebPageTest('www.webpagetest.org', key);
+    mysql_connection = connection;
     console.log(key);
     task(aRcvFun);
 }
@@ -116,22 +146,30 @@ createVideo = function(compareId) {
     });
 }
 
-result = function(aId, callback) {
+result = function(aLocation, aId, callback) {
     mWpt.getTestResults(aId, { breakdown: true, requests: true, "location":"ec2-ap-northeast-1:Chrome"}, function(err, data) {
         console.log("statscode : "+data.data.statusCode);
         if(data.statusCode == 200) {
+            if(aLocation==LEFT_VIEW){
+                resData.leftLoadTime = data.data.average.firstView.loadTime;
+            }else{
+                resData.rightLoadTime = data.data.average.firstView.loadTime;
+            }
+
             var leftContent = data.data.median.firstView.breakdown;
+
             callback(leftContent);
         } else {
-            result(aId, callback);
+            result(aLocation,aId, callback);
         }
     });
 }
 
 getWaterfallImg = function(aId, aLocation) {
-    mWpt.getWaterfallImage(aId, { dryRun:true, chartWidth: 450, repeatView:true,  mime:true, colorByMime: true }, function (err, aData) {
+    mWpt.getWaterfallImage(aId, { dryRun:true, chartWidth: 450, mime:true, colorByMime: true }, function (err, aData) {
         if(aLocation == LEFT_VIEW) {
             resData.leftWaterfallImg = aData.url;
+
         }
         else {
             resData.rightWatefFallImg = aData.url;

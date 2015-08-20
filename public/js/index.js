@@ -27,11 +27,11 @@ function check_tls(url){
 
 
 			if($("#protocol_result").length==1){
-				alert("두번째 검사");
+				//alert("두번째 검사");
 				$("#protocol_result").text(result);
 
 			}else{
-				alert("첫번째 검사");
+				//alert("첫번째 검사");
 				get_check_result(result);
 			}
 
