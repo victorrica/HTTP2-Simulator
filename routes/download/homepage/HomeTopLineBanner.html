@@ -1,0 +1,76 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="ko">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=euc-kr">
+	<title>G마켓 - 홈메인 배너</title>
+	<style type="text/css">
+		body, html { margin: 0; padding: 0; text-align: center; }
+		img { display: block; border: 0; margin: 0 auto; }
+		a { display: block; text-align: center; }
+	</style>
+</head>
+<body marginheight="0" marginwidth="0" leftmargin="0" topmargin="0" onclick="javascript:linkRedirect();">
+	<div style="display: none;">
+		<iframe id="statsIframe" src="about:blank" frameborder="0" width="0" height="0" title="빈페이지">
+		</iframe>
+	</div>
+	<div id="top-line-banner-t" style="display: none">
+		<a href="http://promotion.gmarket.co.kr/planview/plan.asp?sid=136964" target="_blank" style="background-color:#f1eaf2;"><img src="http://image.gmarket.co.kr/challenge/gmarket_event/2015/07/CD_Mart/0713_caremom/mainbar_0817.jpg" target="_blank" alt="베이비 슈퍼위크 하루1만명 20% 할인쿠폰 + 최대 4천 마일리지 적립" width="980" height="70"></a>
+<script type="text/javascript">
+ document.title = "G마켓 - 베이비슈퍼위크";
+</script>
+	</div>
+	<div id="top-line-banner-u" style="display: none">
+		test
+	</div>
+	<script type='text/javascript' src='http://script.gmarket.co.kr/jQuery/1.8.3/jquery-1.8.3.min.js'></script>
+	<script type="text/javascript" src="http://script.gmarket.co.kr/js/common/gmktCommon.js"></script>
+	<script type="text/javascript" src="http://script.gmarket.co.kr/js/header/StatSNA.js"></script>
+	<script type="text/javascript">
+		function linkRedirect() {
+			try {
+				var obj = event.srcElement;
+				if (obj.tagName == "IMG") {
+					var tags = document.getElementsByTagName('area');
+
+					if (tags.length > 0) {
+						for (var i = 0; i < tags.length; i++) {
+							tags[i].target = "_blank";
+						}
+					}
+				}
+
+				if (obj.tagName == "IMG" && obj.parentElement.tagName == "A") {
+					obj = obj.parentElement;
+				}
+
+				if (obj.tagName == "A" || obj.tagName == "AREA") {
+					if (obj.href.indexOf("javascript:") < 0) {
+
+						if (obj.href.indexOf("#") < 0) {
+							if (obj.href.indexOf(document.location.href) < 0) {
+								if (obj.target == undefined || obj.target == "_self" || !obj.target || obj.target == "") {
+									obj.target = "_blank";
+								}
+							}
+						}
+					}
+				}
+
+				GoSNAChannelNoUrl("CHM1Z001");
+			} catch (e) {
+				window.status = "현재 브라우저에서 해당 기능을 지원하지 않습니다.";
+			}
+		}
+	</script>
+	<script type="text/javascript">
+		var isSfc = (GetCookie("isSFC") != null) ? (GetCookie("isSFC") == "Y") : false;
+		$("#top-line-banner-t").toggle(!isSfc);
+		$("#top-line-banner-u").toggle(isSfc);
+	</script>
+</body>
+</html>
+
+
+<!--2015-08-20 09:00:03-->

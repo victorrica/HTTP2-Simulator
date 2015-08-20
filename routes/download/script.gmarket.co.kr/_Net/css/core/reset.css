@@ -1,0 +1,36 @@
+@charset "euc-kr";
+
+/* reset */
+html, body{height:100%; font-size:12px; font-family:"µ¸¿ò", Dotum, Tahoma, Arial}
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video, input{margin:0; padding:0}
+body, table, input, textarea, select, button, th, td, input, select, textarea, th, td, p, dl, dt, dd, li, pre{color:#676767; font-family:dotum, "µ¸¿ò"}
+h1, h2, h3, h4, h5, h6{font-size:100%}
+fieldset, img{border:0}
+ul, ol, li, dl, dt, dd{list-style:none}
+address, var, em, dfn{font-style:normal}
+.blind, legend{display:block; overflow:hidden; position:absolute; top:-1000em; left:0; font-size:0; line-height:0; text-indent:-1000em}
+caption, hr{display:none !important}
+a:link, a:visited, a:active{color:#676767; text-decoration:none}
+a:hover{color:#1179ea; text-decoration:underline; cursor:pointer}
+button{border:0; cursor:pointer}
+label{cursor:pointer}
+
+/* Basic Style */
+.float_left{float:left !important}
+.float_right{float:right !important}
+.clear{*zoom:1}
+.clear:after{content:""; display:block; clear:both}
+.clear_left{clear:left}
+.clear_right{clear:right}
+.clear_both{clear:both}
+.txt_center{text-align:center !important}
+.txt_left{text-align:left !important}
+.txt_right{text-align:right !important}
+.bg_none{background:none !important}
+.border_none{border:none !important}
+.show, .block{display:block !important}
+.hide, .dp_none{display:none !important}
+table.fixed{table-layout:fixed}
+.bold{font-weight:bold}
+.hidden{visibility:hidden}
+.lsc0{letter-spacing:0}

@@ -1,0 +1,1276 @@
+@charset "utf-8";
+
+@media all{IE\:homePage{behavior:url(#default#homepage)}} 
+
+/* reset */
+html, body{height:100%;font-size:12px;font-family:"돋움", Dotum, Tahoma, Arial}
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video, input{margin:0;padding:0}
+body, table, input, textarea, select, button, th, td, input, select, textarea, th, td, p, dl, dt, dd, li, pre{color:#676767;font-family:dotum, "돋움"}
+h1, h2, h3, h4, h5, h6{font-size:100%}
+fieldset, img{border:0}
+ul, ol, li, dl, dt, dd{list-style:none}
+address, var, em, dfn{font-style:normal}
+.blind, legend{display:block;overflow:hidden;position:absolute;top:-999em;left:0;font-size:0;line-height:0;text-indent:-999em}
+caption, hr{display:none !important}
+a:link, a:visited, a:active{color:#676767;text-decoration:none}
+a:hover{color:#1179ea;text-decoration:underline;cursor:pointer}
+button{border:0;cursor:pointer}
+label{cursor:pointer}
+
+/* Basic Style */
+.float_left{float:left !important}
+.float_right{float:right !important}
+.clear{*zoom:1}
+.clear:after{content:"";display:block;clear:both}
+.clear_left{clear:left}
+.clear_right{clear:right}
+.clear_both{clear:both}
+.txt_center{text-align:center !important}
+.txt_left{text-align:left !important}
+.txt_right{text-align:right !important}
+.bg_none{background:none !important}
+.border_none{border:none !important}
+.show, .block{display:block !important}
+.hide, .dp_none{display:none !important}
+table.fixed{table-layout:fixed}
+.bold{font-weight:bold}
+.hidden{visibility:hidden}
+.lsc0{letter-spacing:0} 
+
+/* layout */
+/* skipnavi */
+#skipnavi{margin:0;padding:0}
+#skipnavi li{font-size:0;line-height:0}
+#skipnavi li a{position:absolute;left:0;top:-100px;z-index:5000;display:block;padding:8px 0 7px;width:100%;background:#1179ea;color:#fff;text-align:center;text-decoration:none}
+#skipnavi li a:active, #skipnavi li a:focus{top:0;font-size:12px;font-weight:bold;line-height:1.5}
+
+.tight{padding-right:100px !important}/* 2014-06-25 추가(wing)*/
+.wrap{position:relative;margin:0 auto;width:980px;*zoom:1}
+.wrap:after{content:"";display:block;clear:both}
+
+#miniHeader.simple{min-width:980px}
+#miniHeader.simple .wrap{width:100%}
+#miniHeader{position:relative;z-index:3000;width:100%;height:31px;background:url(http://pics.gmarket.co.kr/pc/ko/common/common.png) 0 -370px repeat-x;_text-align:center;*zoom:1}
+#miniHeader:after{content:"";display:block;clear:both}
+#miniHeader .utill{float:left;*zoom:1;margin:0;padding:0}
+#miniHeader .utill:after{content:"";display:block}
+#miniHeader .utill li{position:relative;float:left;background:url(http://image.gmarket.co.kr/_Net/corecom/common/layout/sprite_icon2.gif) no-repeat 0 0;letter-spacing:-1px;_zoom:1}
+#miniHeader .utill div, #miniHeader .utill li, #miniHeader .utill dt, #miniHeader .utill dd, #miniHeader .utill a{font-size:11px}
+#miniHeader .utill li.logo, #miniHeader li.search, #miniHeader .utill li.sign{background:none}
+/* SFC Mall 20150804 */
+#miniHeader .utill li.sfc_logo{position:relative; float:left; background:none; letter-spacing:-1px; _zoom:1}
+/* SFC Mall 20150804 */
+#miniHeader li a{position:relative;display:block;margin-top:4px;padding:5px 9px 4px 10px;padding-top:6px \0/IE8+9;line-height:16px;vertical-align:top;color:#777}
+#miniHeader a:hover, #miniHeader .utill ul li.active a{color:#1179ea}
+#miniHeader li div.layer{position:absolute;left:0;top:-999em;z-index:3000;_text-align:left}
+#miniHeader li.direct{background-position:0 -100px;position:relative;padding-left:1px}
+#miniHeader li.direct a{width:91px;overflow:hidden;display:block;height:30px;background:url(http://pics.gmarket.co.kr/pc/ko/common/common.png) no-repeat;text-indent:-999em;text-decoration:none;padding:0;margin:0}
+#miniHeader li.direct a.on{background-position:0 -150px}
+#miniHeader li.direct a.off{background-position:-100px -150px}
+#miniHeader li.direct div.layer{left:0;width:625px;border:3px solid #1179ea;background:#fff;font-size:11px;letter-spacing:-1px;line-height:18px}
+#miniHeader li.direct div.layer a{}
+#miniHeader li.direct div.layer .layer_head{padding:13px 0 0 15px;height:31px;background:url(http://image.gmkt.kr/_Net/core/common/g_layer.png) repeat-x 0 -50px}
+#miniHeader li.direct div.layer div>span{overflow:hidden;display:block;width:516px;height:19px;text-indent:-999em}
+#miniHeader li.direct div.layer .layer_body{}
+#miniHeader li.direct div.layer .layer_body ul{overflow:hidden}
+#miniHeader li.direct div.layer .layer_body li{overflow:hidden;background:none;text-indent:-999em}
+#miniHeader li.direct div.off .layer_head span{width:516px;background:url(http://pics.gmarket.co.kr/pc/ko/common/utill_direct_off.png) no-repeat}
+#miniHeader li.direct div.off .layer_body .case{overflow:hidden;height:207px;border-bottom:1px solid #b6cbd6;background:#ecf8ff url(http://pics.gmarket.co.kr/pc/ko/common/utill_direct_off.png) no-repeat 0 -80px;font-size:0;line-height:0}
+#miniHeader li.direct div.off .layer_body .how_direct{padding:20px 0 0 15px;height:36px;border-bottom:1px solid #dfdfdf}
+#miniHeader li.direct div.off .layer_body .how_direct span{background:url(http://pics.gmarket.co.kr/pc/ko/common/utill_direct_off.png) no-repeat 0 -20px}
+#miniHeader li.direct div.off .layer_body ul{background:url(http://pics.gmarket.co.kr/pc/ko/common/utill_direct_off.png) no-repeat 0 -290px}
+#miniHeader li.direct div.off .layer_body li{width:147px}
+#miniHeader li.direct div.off .layer_body li.how_direct3{width:172px}
+#miniHeader li.direct div.off .layer_body li a{margin:136px auto 0;width:auto;height:auto;background:none;text-align:center;text-indent:0}
+#miniHeader li.direct div.off .layer_body li a span{padding-right:10px;background:url(http://image.gmkt.kr/_Net/core/common/icon_arrow.png) no-repeat 100% 0}
+#miniHeader li.direct div.off .layer_body .button_change{display:block;margin:30px auto 22px;width:252px;height:33px;background:url(http://pics.gmarket.co.kr/pc/ko/common/utill_direct_off.png) no-repeat 0 -40px}
+#miniHeader li.direct div.on .layer_head span{width:535px;background:url(http://image.gmkt.kr/_Net/core/common/layout/utill_direct_on.png) no-repeat}
+#miniHeader li.direct div.on .layer_body{padding:28px 0;background:#e9f8f3}
+#miniHeader li.direct div.on .layer_body ul{margin-left:25px;width:591px;background:url(http://image.gmkt.kr/_Net/core/common/layout/utill_direct_on.png) no-repeat 0 -70px}
+#miniHeader li.direct div.on .layer_body li{width:197px}
+#miniHeader li.direct div.on .layer_body li a{margin:153px auto 0;width:127px;height:34px;background:url(http://image.gmkt.kr/_Net/core/common/layout/utill_direct_on.png) no-repeat}
+#miniHeader li.direct div.on .layer_body li.direct_benefit1 a{background-position:0 -30px}/* 룰렛 돌리러 GO */
+#miniHeader li.direct div.on .layer_body li.direct_benefit2 a{background-position:-130px -30px}/* 쿠폰받기 GO */
+#miniHeader li.direct div.on .layer_body li.direct_benefit3 a{background-position:-260px -30px}/* 상품평쓰러 GO */
+#miniHeader li.direct div.layer a.button_close{overflow:hidden;position:absolute;right:0;top:0;display:block;width:45px;height:45px;background:url(http://image.gmkt.kr/_Net/core/common/g_layer.png) no-repeat -50px -100px;text-indent:-999em}
+#miniHeader li.direct div.layer a.button_link{margin:10px auto 0;_margin-left:80px;padding:0;width:155px;height:25px;background:url(http://pics.gmarket.co.kr/pc/ko/common/utill_direct_off.png) no-repeat;color:#fff;text-align:center;text-indent:0;line-height:28px}
+
+#miniHeader li.g9{background-position:0 -100px;position:relative;padding-left:1px}
+#miniHeader li.g9 a{width:77px;overflow:hidden;display:block;height:30px;_height:30px;background:url(http://pics.gmarket.co.kr/pc/ko/common/common.png) -200px -150px no-repeat;text-indent:-999em;text-decoration:none;padding:0;margin:0}
+#miniHeader li.app{background-position:0 -100px;position:relative;padding-left:1px}
+#miniHeader li.app a{width:79px;overflow:hidden;display:block;height:30px;_height:30px;background:url(http://pics.gmarket.co.kr/pc/ko/common/common.png) -300px -150px no-repeat;text-indent:-999em;text-decoration:none;padding:0;margin:0}
+#miniHeader .utill.type_block li.direct div.layer .cont .baro_txt li{height:80px;border-bottom:none;border-right:none}
+#miniHeader .utill.type_block li.direct div.layer .cont .baro_txt li.txt{height:95px}
+#miniHeader .utill.type_block li.direct div.on .cont .baro_txt  li{width:115px;height:97px;padding:15px 10px 12px 30px;text-align:left}
+#miniHeader .utill.type_block li.direct div.layer .cont li{height:auto}
+#miniHeader li.sign a.grade_new, #miniHeader li.sign a.grade_silver, #miniHeader li.sign a.grade_gold, #miniHeader li.sign a.grade_vip, #miniHeader li.sign a.grade_svip{padding:0;width:49px;height:23px;background:url(http://pics.gmarket.co.kr/pc/ko/common/common.png) no-repeat}
+#miniHeader li.sign a.grade_new{background-position:-200px -194px}
+#miniHeader li.sign a.grade_silver{background-position:-250px -194px}
+#miniHeader li.sign a.grade_gold{background-position:-300px -194px}
+#miniHeader li.sign a.grade_vip{background-position:-350px -194px}
+#miniHeader li.sign a.grade_svip{background-position:-400px -194px}
+#miniHeader li.sign a.grade_svip{background-position:-400px -194px}
+#miniHeader li.sign a{float:left}
+#miniHeader .float_right li.sign a.login{margin-left:-10px}
+#miniHeader li.sign a span{overflow:hidden;position:absolute;text-indent:-999em}
+#miniHeader li.sign a.myinfo{padding-right:0;padding-left:3px;font-weight:bold;color:#444}
+#miniHeader li.sign a.myinfo.h900{padding-right:0;padding-left:3px;font-weight:bold;color:#444;max-width:200px;text-overflow:ellipsis;white-space:nowrap;overflow:hidden} /*2014-04-07 900헤더부분 글자수제한  */
+#miniHeader li.sign a.mynote{overflow:hidden;background:url(http://pics.gmarket.co.kr/pc/ko/common/common.png) no-repeat;text-indent:-999em}
+#miniHeader li.sign a.mynote{padding:0;margin-left:3px;width:16px;height:23px;background-position:-450px -194px}
+#miniHeader li.myg{position:relative}
+#miniHeader li.myg a{padding-right:19px}
+#miniHeader li.myg a.arrow{position:absolute;right:3px;top:3px;padding:0;width:17px;height:16px;background:url(http://pics.gmarket.co.kr/pc/ko/common/common.png) no-repeat 5px -243px;text-indent:-999em}
+#miniHeader li.myg a.arrow.active{background-position:5px -263px}
+#miniHeader li.myg div.layer{position:absolute;z-index:1;top:30px;left:1px;padding:7px 0 4px;width:88px;background:#fff;border:1px solid #777;display:none}
+#miniHeader li.myg div.layer a{margin:0;padding:0 10px;background:none;line-height:22px;*zoom:1}
+#miniHeader li.myg div.layer a:hover{text-decoration:underline}
+#miniHeader li.myg div.layer a.button_close{overflow:hidden;position:absolute;right:-1px;bottom:-1px;display:block;padding:0;margin:0;width:17px;height:17px;background:url(http://pics.gmarket.co.kr/pc/ko/common/common.png) no-repeat -200px -250px;text-indent:-999em}
+#miniHeader li.global a{font:bold 11px Verdana, Tahoma, sans-serif;color:#0082f0;letter-spacing:-1px}
+#miniHeader li.global.china a{font:bold 11px PMingLiU, Tahoma, Verdana;margin-top:5px}
+#miniHeader li.cart a{background:url(http://pics.gmarket.co.kr/pc/ko/common/common.png) no-repeat -92px -243px;padding-left:25px}
+
+/** SFC Mall 20150717 **/
+#miniHeader .utill li.logo, #miniHeader .utill li.src_logo, #miniHeader .utill li.view_cate, #miniHeader .utill li.sign{background:none}
+#miniHeader li.sfc_logo a{overflow:hidden; margin:0 0 0 10px; padding:0; width:92px; height:31px; background:url(//pics.gmarket.co.kr/pc/ko/common/common.png) no-repeat -300px -532px; text-indent:-1000em}
+/** SFC Mall 20150717 **/
+
+/* Header */
+#topHeader{position:relative;width:auto;min-width:inherit;height:auto;line-height:normal !important;background:none;z-index:2010}
+#header{width:100%;border-bottom:3px solid #0082f0;_text-align:center;height:auto}
+#header *{_text-align:left}
+#header .inner{position:relative;margin:0 auto;min-height:109px;width:980px;max-width:980px;min-width:980px;*zoom:1;padding:0;z-index:1000}
+#header .inner:after{content:"";display:block;clear:both}
+#header h1{float:left;margin:31px 0 0 16px;padding:0}
+#header h1 a.book, #header h1 a.tour, #header h1 a.ticket, #header h1 a.contents{display:none}/* v2 추가 */
+#header h1 a{display:block;width:179px;height:44px;background:url(http://pics.gmarket.co.kr/pc/ko/common/common.png) 0 0 no-repeat;text-indent:-999em}
+#header h1.type2{margin:0 0 0 -95px}
+#header h1.type2 a{width:325px;height:109px;background:none;text-indent:0}
+#header h1.type3{margin:0}
+#header h1.type3 a{width:230px;height:109px;background:none;text-indent:0}
+/** SFC Mall 20150717 **/
+#header h1.sfc {float:left; margin:23px 0 0 8px;padding:0}
+#header h1.sfc a.book, #header h1 a.tour, #header h1 a.ticket, #header h1 a.contents{display:none}
+#header h1.sfc a{display:block; width:173px; height:51px; background:url(//pics.gmarket.co.kr/pc/ko/common/common.png) 0 -532px no-repeat; text-indent:-1000em}
+#header h1.sfc.type2{margin:0 0 0 -95px}
+#header h1.sfc.type2 a{width:325px; height:109px; background:none; text-indent:0}
+#header h1.sfc.type3{margin:0}
+#header h1.sfc.type3 a{width:230px; height:109px; background:none; text-indent:0}
+/** SFC Mall 20150717 **/
+#header .search{position:absolute;z-index:2200;left:265px;top:38px;width:480px;height:40px;padding:5px;background:url(http://pics.gmarket.co.kr/pc/ko/common/common.png) no-repeat 0 -50px;font-weight:normal}
+#header .search .search-area{position:static}
+#header .search .search-txt{float:left;width:300px}
+#header .search .search-txt .form{overflow:hidden;height:40px}
+#header .search .search-txt .sch{float:left;width:285px;padding:3px 0 0 15px;margin-top:10px;font-size:14px;font-weight:bold;border:0;color:#000;background:#fff}
+
+#header .search .search-auto{position:absolute;top:45px;left:117px;width:371px;border:1px solid #0082f0;background:#fff;display:none}
+#header .search .search-auto ul{padding:10px 0;margin:0}
+#header .search .search-auto ul li{color:#444}
+#header .search .search-auto ul li.none{padding-left:15px;height:21px;line-height:21px}
+#header .search .search-auto ul li a{display:block;height:12px;padding:2px 15px 7px 15px;color:#444;overflow:hidden;line-height:160%}
+#header .search .search-auto ul li a:hover{display:block;background:#f6f6f6;text-decoration:none}
+#header .search .search-auto ul li strong{color:#0082f0;font-weight:bold}
+#header .search .search-auto .powerItem{overflow:hidden}
+#header .search .search-auto .powerItem ul{float:left;width:220px}
+#header .search .search-auto .powerItem .power{display:block}
+#header .search .search-auto .power{display:none;float:left;width:150px;padding:23px 0 0;text-align:center;height:207px;border-left:1px solid #ddd}
+#header .search .search-auto .power .tit{height:26px;font-weight:bold;color:#000}
+#header .search .search-auto .power .prd{width:100px;margin:0 auto}
+#header .search .search-auto .power .prd a{display:block;color:#777}
+#header .search .search-auto .power .prd a:hover{color:#0082f0}
+#header .search .search-auto .power .prd  img{width:100px;height:100px;vertical-align:top}
+#header .search .search-auto .power .prd .name{display:block;padding:12px 5px 0;line-height:14px;font-size:11px;letter-spacing:-1px;overflow:hidden;height:28px}
+#header .search .search-auto .power .prd .price strong{display:block;padding-top:3px;color:#000}
+#header .search .search-auto .power .prd .price strong em{display:inline;font:bold 12px Tahoma;padding:0}
+#header .search .search-cate{float:left;width:113px;height:34px}
+#header .search .search-cate .select{border:none}
+#header .search .search-cate .select a{display:block;width:100px;height:26px;padding:14px 0 0 13px;color:#444;background:url(http://pics.gmarket.co.kr/pc/ko/common/common.png) 96px -481px no-repeat;letter-spacing:-1px}
+#header .search .search-cate .on a{background:url(http://image.gmarket.co.kr/_Net/corecom/common/layout/bg_search_selectOn2.gif) 96px 19px no-repeat}
+#header .search .search-cate .select a:hover{text-decoration:none}
+#header .search .search-cate .list{display:none;position:absolute;left:5px;top:45px;z-index:10004;width:111px;border:1px solid #0082f0;background:#fff;overflow:hidden;zoom:1}
+#header .search .search-cate .list ul{width:111px;margin:0;padding:0}
+#header .search .search-cate .list li{width:100%;float:left;height:30px}
+#header .search .search-cate .list .cate a{font-weight:bold;background:#f5f5f5;background-image:none}
+#header .search .search-cate .list .cate a:hover{background-image:none}
+#header .search .search-cate .list .all a{font-weight:bold}
+#header .search .search-cate .list a{display:block;zoom:1;padding:9px 0 7px 12px;border-bottom:1px solid #eee;font:12px/15px Dotum;letter-spacing:-1px;color:#444}
+#header .search .search-cate .list a:hover, #header .search .search-cate .list a.on{display:block;border-bottom:1px solid #0082f0;color:#fff;text-decoration:none;background:#0082f0}
+#header .search .search-btn{float:right;margin-right:3px}
+#header .search .search-btn .btn{display:block;padding:0;margin:0;border:0;width:61px;height:40px;overflow:hidden;zoom:1;background-color:transparent;cursor:pointer}
+#header .search .search-btn .btn span{display:block;padding-top:100px;cursor:pointer}
+
+*html #header .search .search-btn{float:none;position:absolute;right:0;top:0}
+#header .detail-search{position:absolute;z-index:1000;left:50%;top:53px;margin-left:227px;display:none}
+#header .detail-search .detail-btn{display:block;width:90px;height:23px;overflow:hidden}
+#header .detail-search .on img{margin-top:-23px}
+#header .detail-search .g-layer{position:absolute;padding-bottom:11px;border:2px solid #676767;background:#fff;display:none}
+#header .detail-search .g-layer h3{height:23px;_height:34px;padding:10px 0 0 15px;border-bottom:1px solid #d7d7d7;background:#f5f5f5}
+#header .detail-search .g-layer .cont{padding-top:11px}
+#header .detail-search .detail{width:510px;right:0;margin:14px 5px 0 0}
+#header .detail-search .detail .cont{width:480px;margin:0 auto;_padding-left:17px}
+#header .detail-search .detail table{width:100%;border-collapse:collapse;border-spacing:0}
+#header .detail-search .detail caption{display:block;overflow:hidden;position:absolute;top:-999em;left:0}
+#header .detail-search .detail table th{text-align:left;padding:9px 0 0 7px;vertical-align:top;font-weight:bold;color:#363636;font-size:11px;border-bottom:1px solid #eee;background:url(http://image.gmarket.co.kr/_Net/corecom/common/layout/bg_dot.gif) 0 14px no-repeat}
+#header .detail-search .detail table td{height:30px;font-size:11px;border-bottom:1px solid #eee}
+#header .detail-search .detail input{vertical-align:middle;margin:0}
+#header .detail-search .detail label{display:inline-block;width:55px;padding:2px 0 0 5px;letter-spacing:-1px}
+#header .detail-search .detail .chk{width:13px;height:13px;margin-top:-2px}
+#header .detail-search .detail .sch{height:17px;padding:3px 5px 0;border:1px solid #c9c9c9}
+#header .detail-search .detail .sch-b{width:217px;height:15px;padding:3px 5px 0;border:2px solid #a0a0a0}
+#header .detail-search .detail .sch-r{height:17px;padding:3px 5px 0;border:1px solid #c9c9c9;text-align:right}
+#header .detail-search .detail .btnR{text-align:right;margin-top:11px}
+#header .detail-search .detail .btnR img{vertical-align:top}
+#header .detail-search .detail .close{position:absolute;right:3px;top:3px}
+#header .link{position:absolute;left:265px;top:16px;width:490px;text-align:center}
+#header .link span{overflow:hidden;display:inline-block;vertical-align:top;background:url(http://image.gmarket.co.kr/_Net/corecom/common/layout/sprite_icon2.gif) no-repeat 0 -9px}
+#header .link span.first{background:none}
+#header .link a{display:block;padding:0 12px 0 17px;height:14px}
+#header .link a img{vertical-align:bottom}
+/* SFC Mall 20150720 */
+#header .sfc_link {position:absolute; left:275px; top:19px; width:480px; text-align:center; text-indent:-30000px;}
+#header .sfc_link span {position:relative; display:block; float:left; vertical-align:top; background:url(//image.gmkt.kr/_Net/core/common/layout/bg_foot_bar1.gif) no-repeat right top}
+#header .sfc_link span.sfc { width:113px; height:13px;}
+#header .sfc_link span.superdeal { width:91px; height:13px;}
+#header .sfc_link span.pluszone {width:91px; height:13px;}
+#header .sfc_link span.couponzone {width:91px; height:13px;}
+#header .sfc_link span.dutyfree {width:94px; height:13px; background:none}
+
+#header .sfc_link span a { background:url(//pics.gmarket.co.kr/pc/ko/common/common.png) no-repeat; float:left; display:block; position:relative;} 
+#header .sfc_link span.sfc a.a_sfc { width:97px; height:13px; background-position:0 -590px; }
+#header .sfc_link span.superdeal a.a_superdeal { left:29px; width:31px; height:13px; background-position:-260px -590px; }
+#header .sfc_link span.pluszone a.a_pluszone { left:24px; width:43px; height:13px; background-position:-170px -590px; }
+#header .sfc_link span.couponzone a.a_couponzone { left:29px; width:32px; height:13px; background-position:-220px -590px; }
+#header .sfc_link span.dutyfree a.a_dutyfree { left:22px; width:62px; height:13px; background-position:-300px -590px; }
+/* SFC Mall 20150720 */
+#header .banner{overflow:hidden;float:right;height:109px}
+#header .banner img{vertical-align:top}
+#header .banner-contents{position:relative;float:right;padding-top:40px}
+#header .banner-ticket{position:relative;float:right;padding-top:47px;z-index:1}
+#header .ad-banner{position:absolute;right:-90px;top:53px;display:none}
+#header .ad-banner iframe{border:0}
+#header .ad-banner-contents{position:absolute;right:-89px;top:40px}
+#header .ad-banner-contents iframe{width:80px;height:35px}
+.header-contents{height:126px !important;background:url(http://image.gmarket.co.kr/_Net/corecom/common/layout/bg_header_contents.gif) repeat-x 0 bottom !important}
+.hidden_obj{position:absolute;visibility:hidden;overflow:hidden;line-height:0;margin:0;padding:0}
+
+/* 전체 카테고리 */
+#header .cateWarp{position:absolute;left:0;top:109px;z-index:2100;*zoom:1;width:100%}
+#header .cateWarp h2{overflow:hidden;position:absolute;left:49px;top:-23px;height:20px}
+/** SFC Mall 20150717 **/
+#header .cateWarp h2.sfc{overflow:hidden; position:absolute; left:35px; top:-23px; height:20px}
+/** SFC Mall 20150717 **/
+#header .cateWarp h2 a{width:88px;_width:103px;padding:0 0 5px 15px;height:20px;display:block;background:url(http://pics.gmarket.co.kr/pc/ko/common/common.png) no-repeat -485px -150px;text-indent:-999em}
+#header .cateWarp h2 a.selected{background-position:-485px -150px}
+#header .cateWarp .allCateCont{width:100%;top:0;display:none}
+#header .cateWarp .allCate{display:block;position:relative;top:0;left:0;width:976px;_width:980px;letter-spacing:-1px;border:2px solid #0082f0;border-top:0;background:#fff url(http://image.gmarket.co.kr/_Net/corecom/common/layout/bg_allCate_tit.gif) 0 -2px repeat-x}
+#header .cateWarp .allCate .cateTop{width:100%;overflow:hidden}
+#header .cateWarp .allCate .cateEtc{float:left;width:157px}
+#header .cateWarp .allCate .cate{width:163px;float:left;height:403px;background:url(http://image.gmarket.co.kr/_Net/corecom/common/layout/bg_allCate_list2.gif) right 0 repeat-y}
+#header .cateWarp .allCate .cate h3{height:26px;_height:38px;padding-left:23px;padding-top:12px;font-weight:bold;letter-spacing:-2px;text-align:left !important;background:#0082f0 url(http://image.gmarket.co.kr/_Net/corecom/common/layout/bg_allCate_tit.gif) right 0 no-repeat;color:#fff}
+#header .cateWarp .allCate .cate h3 span{padding-left:6px;margin-left:3px;display:inline-block;background:url(http://image.gmarket.co.kr/_Net/corecom/common/layout/bg_allcate_dot.gif) 1px 5px no-repeat}
+#header .cateWarp .allCate .cate h3 span.fir{margin-left:-3px;padding-left:0;background:none}
+#header .cateWarp .allCate .cate h4{height:20px;padding:8px 0 0 21px;letter-spacing:-1px;font-weight:bold;color:#444}
+#header .cateWarp .allCate .cate ul{padding:0 0 10px 21px;margin:0}
+#header .cateWarp .allCate .cate ul.bdN{border:0}
+#header .cateWarp .allCate .cate li{line-height:16px}
+#header .cateWarp .allCate .cate li a{color:#777}
+#header .cateWarp .allCate .cate a:hover{color:#0082f0;text-decoration:underline}
+#header .cateWarp .allCate .n6{width:161px;background-image:none}
+#header .cateWarp .allCate .n6 h3{background:#0082f0 url(http://image.gmarket.co.kr/_Net/corecom/common/layout/bg_allCate_tit.gif) left 0 no-repeat}
+#header .cateWarp .allCate .cate .corner a{display:block;padding:3px 0 0 21px;height:17px;line-height:17px;margin-right:1px;color:#6288d2;background:url(http://image.gmarket.co.kr/_Net/corecom/common/layout/bg_corner_arrow3.gif) 145px 7px no-repeat}
+#header .cateWarp .allCate .cate .corner a:hover{text-decoration:none;background:url(http://image.gmarket.co.kr/_Net/corecom/common/layout/bg_corner_arrow3.gif) #eef4ff 145px 7px no-repeat}
+#header .cateWarp .allCate .cate a.lsm2{letter-spacing:-2px !important}
+#header .cateWarp .allCate .close{position:relative;clear:both}
+#header .cateWarp .allCate .close a.button_close{overflow:hidden;position:absolute;right:0;bottom:0;display:block;padding:0;margin:0;width:19px;height:19px;background:url(http://pics.gmarket.co.kr/pc/ko/common/common.png) no-repeat -300px -250px;text-indent:-999em}
+.cateWarp-type2{top:95px}
+.cateWarp-type2 .allCate{top:31px}
+
+/* Footer */
+#footer{clear:both;overflow:hidden;margin-top:20px;padding-bottom:20px;background:url(http://image.gmkt.kr/_Net/core/common/layout/bg_sub_footer.gif) repeat-x 0 0;font-size:11px;letter-spacing:-1px;_text-align:center}
+#footer *{_text-align:left}
+#footer.main{background:none}
+#footer .inner{position:relative;margin:0 auto;width:980px}
+#footer.min .inner{width:900px}
+#footer .inner{overflow:hidden}
+#footer img{vertical-align:middle}
+#footer .link{overflow:hidden;width:100%;height:41px;margin-left:0;border-top:0;border-bottom:0;background:transparent}
+#footer .link li{float:left;padding:0 20px 0 19px;*padding-right:19px;background:url(http://image.gmarket.co.kr/_Net/corecom/common/layout/sprite_icon2.gif) 0 4px no-repeat;line-height:41px}
+#footer .link li.first{padding-left:23px;background:none}
+#footer .link li.last{padding-right:23px;*padding-right:21px}
+#footer .link a{display:inline-block;margin-top:1px;margin-top:2px \0/IE8+9;color:#666;font-size:12px}
+#footer .address{overflow:hidden;display:block;*zoom:1;margin:13px 0;color:#666}
+#footer .address p{font-size:11px;line-height:15px}
+#footer .address .click{position:relative;top:-1px}
+#footer .address .fax{padding-left:5px;letter-spacing:0}
+#footer .address em{display:block;padding:6px 0 7px;font-weight:bold;font-size:12px;color:#464646;line-height:15px}
+#footer .address .cscenter{float:left;padding-left:24px;width:302px;_width:326px;height:90px;line-height:15px}
+#footer .address .cscenter a, #footer .address .e-banking a, #footer .address .e-banking p a{display:inline-block;padding:6px 15px 7px 0;background:url(http://image.gmkt.kr/_Net/core/common/layout/arrow_blt_cs.gif) no-repeat 100% 6px;color:#464646;font-size:12px;font-weight:bold}/* WPR-361 */
+#footer .address .cscenter a.cs{width:100%;font-weight:normal;padding:0;background:none;font-size:11px;text-decoration:none}
+#footer .address .cscenter .mail{font-weight:normal;font-size:11px;background:none;padding:0}
+#footer .address .cscenter strong{color:#186fde}
+#footer .address .ebaykorea, #footer .address .e-banking{float:left;padding-left:25px;width:302px;_width:327px;height:90px;background:url(http://image.gmkt.kr/_Net/core/common/layout/sprite_icon2.gif) no-repeat 0 -170px}
+#footer .address .e-banking .mail{padding:0;background:none;font-weight:normal;font-size:11px}
+#footer .address .e-banking .btn{margin-top:17px}
+
+#footer .award{position:relative;*zoom:1;border-top:1px solid #d7d7d7}
+#footer .award a.prev, #footer .award a.next, #footer .award a.prev_on, #footer .award a.next_on{position:absolute;top:19px;width:16px;height:29px;background:url(http://pics.gmarket.co.kr/pc/ko/common/common.png) no-repeat;text-indent:-10000px}
+#footer .award a.prev{left:15px;background-position:-500px -440px}
+#footer .award a.next{right:15px;background-position:-516px -440px}
+#footer .award a.prev_on{left:15px;background-position:-500px -469px}
+#footer .award a.next_on{right:15px;background-position:-516px -469px}
+#footer .award ul{overflow:hidden;margin:18px auto 17px;width:865px;height:34px}
+/* WPR-1104 */
+#footer .award li{float:left;display:block;width:115px;height:30px;margin:0 0 0 10px;padding:4px 0 0 45px;background:url(http://pics.gmarket.co.kr/pc/ko/common/layout/img_prize.png) no-repeat;color:#999;font-size:11px;text-indent:0}
+#footer .award li.link1{background-position:0 -385px}
+#footer .award li.link2{background-position:0 -35px}
+#footer .award li.link3{background-position:0 0}
+#footer .award li.link4{background-position:0 -70px}
+#footer .award li.link5{background-position:0 -105px;width:118px;padding-left:40px}
+#footer .award li.link6{background-position:0 -140px}
+#footer .award li.link7{background-position:0 -175px}
+#footer .award li.link8{background-position:0 -210px}
+#footer .award li.link9{background-position:0 -245px}
+#footer .award li.link10{background-position:0 -280px}
+#footer .award li.link11{background-position:0 -315px;width:116px}
+#footer .award li.link12{background-position:0 -350px}
+/* //WPR-1104 */
+
+#footer .company{overflow:hidden;height:63px;margin-bottom:22px;border:1px solid #e7e7e7}
+#footer .company .marks{position:relative;float:left;margin-top:15px;width:446px;border-right:1px solid #ddd}
+#footer .company .marks a, #footer .company .marks span{overflow:hidden;display:block;float:left;height:34px;margin-left:14px;background:url(http://image.gmkt.kr/_Net/core/common/layout/mark_v1.png) no-repeat;text-indent:-999em}
+#footer .company .marks .link1{width:88px;margin-left:10px}/* 소비자중심경영우수기업 */
+#footer .company .marks .link2{width:73px;background-position:-104px 0}/* 개인정보보호우수사이트 */
+#footer .company .marks .link3{width:87px;background-position:-193px 0}/* KOLSA온라인쇼핑협회회원 */
+#footer .company .marks .link4{width:54px;background-position:-224px -34px}/* KCP */
+#footer .company .marks .link5{width:54px;background-position:-284px -34px}/* NICE */
+#footer .company .marks .link6{width:54px;background-position:-358px -34px}/* KSNET */
+#footer .company .marks .link7{width:63px;background-position:-296px 0}/* 제품안전 협력매장 */
+#footer .company .svcs{position:relative;float:left;margin-top:15px;width:530px}
+#footer .company .svcs span{display:block;float:left}
+#footer .company .svcs a{overflow:hidden;display:block;float:left;height:34px;margin:0 8px;background:url(http://image.gmkt.kr/_Net/core/common/layout/mark_v1.png) -464px 0 no-repeat;text-indent:-999em}
+#footer .company .svcs .link1{margin-left:14px;width:88px;height:17px}/* 오픈마켓 자율준수규약 */
+#footer .company .svcs .link2{width:70px;height:17px;background-position:-570px 0}	/* GMAP */
+#footer .company .svcs .link3{position:absolute;left:110px;top:18px;width:70px;height:17px;background-position:-570px -17px}/* VeRO Program */
+#footer .company .svcs .link4{width:72px;background-position:-650px 0}/* Gmarket Security Center */
+#footer .company .svcs .link5{width:104px;background-position:-730px 0}/* 사이버범죄 예방 정보 알림/사이버안전국 */
+#footer .company .svcs .link6{width:95px;background-position:-850px 0}/* E.R(eBay Resolution) 자율분쟁조정센터 */
+#footer .company .svcs .link7{position:absolute;float:none;top:18px;left:6px;overflow:hidden;width:40px;height:17px;background-position:-464px -17px}/* 윤리경영 */
+#footer .logo-caution{overflow:hidden}
+#footer .caution{float:left;margin-left:22px;text-align:left;color:#aaa;letter-spacing:-1px;font-size:11px;line-height:15px}
+#footer .caution .point-blue{color:#6e85a0;font-weight:bold}
+#footer .foot-log{float:right}
+#footer .copy{clear:both;padding:8px 0 0 23px;color:#aaa;font-family:tahoma;letter-spacing:0;text-align:left;font-size:11px;line-height:15px}
+
+/* Main */
+#footer.main .link{border-top:1px solid #d7d7d7;border-bottom:1px solid #d7d7d7;background:#f5f5f5;height:39px}
+#footer.main .link li{line-height:39px}
+#company_mark_ftc .layer_type2, #company_mark_opa .layer_type2{width:484px}
+
+/* Footer SFC 20150716 */
+#sfc_footer{clear:both; overflow:hidden; margin-top:20px; text-align:center}
+#sfc_footer .top { background:url(//image.gmkt.kr/_Net/core/common/layout/bg_sub_footer.gif) repeat-x 0 0; font-size:11px; letter-spacing:0px; }
+#sfc_footer * {_text-align:left}
+#sfc_footer .top .inner {position:relative; background:url(//image.gmkt.kr/_Net/core/common/layout/bg_sub_footer.gif) repeat-x 0 0; margin:0 auto 35px; width:980px;overflow:hidden;}
+
+#sfc_footer .top .inner .link{overflow:hidden;width:100%;height:41px;text-align:center}
+#sfc_footer .top .inner .link li{display:inline-block;width:400px;line-height:41px;text-align:center}
+#sfc_footer .top .inner .link li.last{background:url(//image.gmkt.kr/_Net/core/common/layout/bg_foot_bar1.gif) 0 15px no-repeat}
+#sfc_footer .top .inner .link a{display:inline-block; margin-top:1px; margin-top:2px \0/IE8+9; color:#666; font-size:12px}
+
+#sfc_footer .top .inner .logo { float:left; width:195px; margin-left:28px; height:175px; margin-top:35px; border-right: #d7d7d7 1px solid;}
+#sfc_footer .top .inner .logo li {float:top; height:50px;}
+#sfc_footer .top .inner .logo li.first {float:top; height:74px;}
+#sfc_footer .top .inner .logo li.last {float:top;height:53px;}
+#sfc_footer .top .inner .logo li a span.sfcmall { float:left; display:block; text-indent:-3000px; margin-top:4px; width:146px; height:50px; background:url(//pics.gmarket.co.kr/pc/ko/common/layout/img_sfc_logo.png) no-repeat; background-position:0 0 }
+#sfc_footer .top .inner .logo li a span.gmarket { float:left; display:block; text-indent:-3000px; margin-left:26px; margin-top:0; width:120px; height:30px; background:url(//pics.gmarket.co.kr/pc/ko/common/layout/img_sfc_logo.png) no-repeat; background-position:0 -50px }
+#sfc_footer .top .inner .logo li a span.shilla_dutyfree { float:left; display:block; text-indent:-3000px; margin-left:34px; margin-top:0; width:103px; height:45px; background:url(//pics.gmarket.co.kr/pc/ko/common/layout/img_sfc_logo.png) no-repeat; background-position:0 -85px }
+
+#sfc_footer .top .inner .address { *zoom:1; float:left; margin:51px 0 0 42px; width:365px; line-height:16px;}
+#sfc_footer .top .inner .address em {display:block; padding:6px 0 7px; font-weight:bold; font-size:12px; color:#464646; text-align:left}
+#sfc_footer .top .inner .address p {font-size:11px; padding-top:2px; text-align:left}
+#sfc_footer .top .inner .address .ebaykorea { height:92px }
+#sfc_footer .top .inner .address .hotelshilla { height:61px}
+#sfc_footer .top .inner .address .lsc0 { display:inline-block; height:15px; padding-right:15px; background:url(//image.gmkt.kr/_Net/core/common/layout/bg_foot_bar1.gif) no-repeat right top; line-height:14px;}
+#sfc_footer .top .inner .address .lsc1 { padding-left:10px; line-height:14px;}
+
+#sfc_footer .top .inner .cscenter { float:left; height:153px; margin:54px 0 0 38px; text-align:left; line-height:16px;  }
+#sfc_footer .top .inner .cscenter a {display:inline-block;padding:6px 15px 7px 0;background:url(//image.gmkt.kr/_Net/core/common/layout/arrow_blt_cs.gif) no-repeat 100% 6px;color:#464646;font-size:12px;font-weight:bold}/* WPR-361 */
+#sfc_footer .top .inner .cscenter a.cs{width:100%; font-weight:normal; padding:0; background:none; font-size:11px; text-decoration:none}
+#sfc_footer .top .inner .cscenter .mail{font-weight:normal; font-size:11px; background:none; padding:0;}
+#sfc_footer .top .inner .cscenter strong{color:#186fde}
+
+#sfc_footer .bottom { font-size:11px; letter-spacing:0px; background-color:#f5f5f5 }
+#sfc_footer .bottom .logo-caution{overflow:hidden;margin:0 auto; padding-top:21px; background-color:#f5f5f5; width:980px}
+#sfc_footer .bottom .caution{float:left; margin-left:180px; text-align:left; color:#999; letter-spacing:-1px; font-size:11px; line-height:18px}
+#sfc_footer .bottom .caution .point-blue{color:#6991be; font-weight:bold}
+#sfc_footer .bottom .copy{clear:both; padding:11px 0 15px 180px; color:#6991be; font-family:Arial; letter-spacing:0; text-align:left; font-size:11px; line-height:15px}
+
+/* Main */
+#sfc_footer.main .top{background:none}
+#sfc_footer.main .bottom { font-size:11px; letter-spacing:0px; background-color:#fff;}
+#sfc_footer.main .link{border-top:1px solid #d7d7d7; border-bottom:1px solid #d7d7d7; background:#f5f5f5; height:39px}
+#sfc_footer.main .link li{line-height:39px}
+
+/* Min */
+#sfc_footer.min .top .inner {position:relative; margin:0 auto; width:900px;}
+#sfc_footer.min .top .inner .link {overflow:hidden; width:100%; height:41px; margin-left:0; border-top:0; border-bottom:0; background:transparent}
+
+#sfc_footer.min .top .inner .logo { float:left; width:175px; height:175px; margin: 35px 0 35px 8px; border-right: #d7d7d7 1px solid; }
+#sfc_footer.min .top .inner .logo li {float:top; width:175px; height:50px; }
+#sfc_footer.min .top .inner .logo li.first {float:top; width:175px; height:74px;}
+#sfc_footer.min .top .inner .logo li.last {float:top; width:175px; height:53px;}
+#sfc_footer.min .top .inner .address { *zoom:1; float:left; margin:47px 0 15px 22px; height:175px; width:365px;}
+#sfc_footer.min .top .inner .cscenter { float:left; height:153px; width:303px; margin:47px 0 15px 8px; text-align:left; line-height:15px;  }
+
+#sfc_footer.min .bottom .logo-caution{overflow:hidden;margin:0 auto; padding-top:21px; width:900px}
+#sfc_footer.min .bottom .caution{float:left; margin-left:140px; text-align:left; color:#999; letter-spacing:-1px; font-size:11px; line-height:18px}
+#sfc_footer.min .bottom .copy{clear:both; padding:11px 0 20px 140px; color:#6991be; font-family:Arial; letter-spacing:0; text-align:left; font-size:11px; line-height:15px}
+
+/*  */
+/* 왼쪽 광고 wing */
+#adwing{position:absolute;top:142px;left:50%;width:85px;margin-left:-585px;z-index:1600}
+#adwing ul li{border-bottom:1px solid #ddd}
+#adwing ul li.g9{padding:7px 0}
+#daum_ad{overflow:hidden;width:90px;height:140px;margin-top:10px}
+#wing{position:absolute;right:50%;top:142px;margin-right:-590px;width:90px;height:auto;z-index:0;z-index:1600;background:#fff} 
+
+/* sprite 이미지 */
+.sp_wing{display:block;overflow:hidden;background:url(http://image.gmkt.kr/_Net/core/common/layout/sprite_wing.png) no-repeat 0 -999em;text-indent:-999em}
+.sp_wing_list span{display:inline-block;overflow:hidden;height:11px;background:url(http://image.gmkt.kr/_Net/core/common/layout/sprite_wing.png) no-repeat 0 -999em;text-indent:-999em;vertical-align:top;*display:inline;*zoom:1;*text-indent:0;*line-height:0}
+.sp_wing_list strong{display:inline-block;width:22px;font-size:11px;color:#777;text-align:right;line-height:15px;line-height:17px \0/IE9}
+
+/* 로그인 전 리스트 타이틀 */
+.sp_wing_list strong{display:none}
+.wing_cart .sp_wing_list span{width:40px;background-position:0 0}/* 장바구니 */
+.wing_coupon .sp_wing_list span{width:40px;background-position:0 -50px}/* 내쿠폰함 */
+.wing_lately .sp_wing_list span{width:49px;background-position:0 -100px}/* 최근본상품 */
+.wing_plus .sp_wing_list span{width:70px;background-position:0 -150px}/* 플러스상품 */
+/* 로그인 후 리스트 타이틀 */
+.wing_login .sp_wing_list strong{display:inline-block}
+.wing_login .wing_cart .sp_wing_list span{width:40px}/* 장바구니 */
+.wing_login .wing_coupon .sp_wing_list span{width:40px}/* 내쿠폰함 */
+.wing_login .wing_lately .sp_wing_list span{width:49px}/* 최근본상품 */
+.wing_login .wing_plus .sp_wing_list span{width:70px}/* 플러스상품 */
+
+/* 버튼 */
+.sp_wing.button_del{display:none;position:absolute;top:0;right:0;width:13px;height:13px;background-position:100% 100%}/* 삭제 */
+.sp_wing.button_top{width:39px;height:9px;margin:0 auto;background-position:0 -200px}/* TOP */
+.sp_wing.button_prev{left:0px;width:21px;height:19px;background-position:-158px -50px}/* 최근본상품 롤링 - 이전 */
+.sp_wing.button_next{right:0px;width:21px;height:19px;background-position:100% -50px}/* 최근본상품 롤링 - 다음 */
+.wing_plus .sp_wing.button_prev{left:3px;width:33px;height:19px;background-position:-134px -200px}/* 플러스상품 롤링 - 이전 */
+.wing_plus .sp_wing.button_next{right:3px;width:33px;height:19px;background-position:100% -200px}/* 플러스상품 롤링 - 다음 */
+#wing .sp_wing.button_plus{position:absolute;top:15px;right:10px;width:11px;height:11px;padding:0;background-position:100% 0;z-index:10}/* 펼치기 + */
+#wing .sp_wing.button_minus{position:absolute;top:15px;right:10px;width:11px;height:11px;padding:0;background-position:-178px 0;z-index:10}/* 접기 - */
+
+#wing a{font-size:11px;color:#999;line-height:13px}
+#wing a:hover{text-decoration:none}
+#wing>ul>li>a, #wing .ly_wrap a{display:block;width:88px;height:25px;padding-top:15px}
+#wing ul li{position:relative;text-align:center;border:solid #ddd;border-width:1px 1px 0 1px}
+#wing ul li img{display:block;width:70px;height:70px;margin-bottom:5px}
+#wing ul li.wing_plus img{width:65px;height:50px;padding-left:2px}
+#wing>ul>li>a.sp_wing{display:none}/* 3번째 리스트 + , - 버튼 none */
+#wing>ul>li + li + li + li>a.sp_wing{display:block}/* 4번째 리스트 + , - 버튼 block */
+
+/* 상품이 없을 경우 wing renewal */
+#wing li.ad_list_none{z-index:100}
+#wing li.ad_list_none .ly_layer{display:none}
+#wing li.ad_list_none:hover .ly_layer{display:block}
+
+/* 최근 보신 상품이 없습니다. 레이어 */
+#wing .ly_wrap{position:relative;left:0;top:-1px;display:inline-block;*display:inline;*zoom:1;vertical-align:middle}
+#wing .ly_layer{position:absolute;top:32px;left:-1px;width:90px;padding-top:5px;background:url(http://image.gmkt.kr/_Net/core/common/layout/sprite_wing.png) no-repeat 100% -100px}
+#wing .ly_wrap .ly_layer p{width:88px;padding:7px 0 5px 0;font-size:11px;color:#222;border:solid #000;border-width:0 1px 1px 1px;background:#fff;letter-spacing:-1px;cursor:pointer}
+
+/* 플러스상품,최근본상품 리스트 */
+#wing .wing_ad_list{/*display:none;*/}
+#wing .wing_ad_list a.txt{display:block;overflow:hidden;max-height:24px;padding-top:1px} 
+#wing ul li ul{width:70px;margin:0 auto}
+#wing ul li ul li{position:relative;height:auto;padding-bottom:5px;border:none 0;zoom:1}
+#wing ul li ul li>a>span{display:block;overflow:hidden;height:24px;padding-top:1px}
+#wing ul li ul li.active .overview, #wing ul li ul li.active .sp_wing.button_del{display:block}
+#wing ul li ul li:hover .overview, #wing ul li ul li:hover .sp_wing.button_del{display:block}
+#wing .overview{display:none;position:absolute;top:0px;right:0px;width:198px;height:68px;padding:0;color:#222;text-align:left;border:1px solid #222}
+#wing .overview span, #wing .overview strong{display:block;width:102px;padding:0 13px;background:#f6f6f6}
+#wing .overview span{height:25px;padding-top:14px;line-height:13px;overflow:hidden}
+#wing .overview strong{height:24px;padding-top:5px;font-family:Tahoma;font-size:12px}
+#wing .overview strong span{display:inline;padding:0;font-family:dotum, "돋움";font-size:12px}
+#wing .wing_plus a:hover{text-decoration:underline}
+
+.button_roll{position:relative;height:15px;padding:7px 8px 11px 8px;font-size:11px;font-family:Tahoma;color:#777}
+.button_roll a{position:absolute;top:5px;margin:0 5px}
+.button_roll sapn{}
+.button_roll strong{color:#222}
+
+#wing .wing_top{display:block;width:88px;height:23px;padding-top:15px;border:1px solid #ddd}
+#topbanner ~ #wing{top:213px}  
+#topbanner ~ #adwing{top:213px}  
+
+/* mobile go */
+.mobile-go{padding-bottom:30px}
+.mobile-go a{display:block;width:100%;height:75px;padding-top:25px;background:#F5F5F5;border-top:1px solid #D7D7D7;border-bottom:1px solid #D7D7D7;text-align:center;font-size:55px;line-height:57px;color:#8598AB;font-weight:bold}
+.mobile-go a:active, .mobile-go a:focus, .mobile-go a:hover{text-decoration:none}
+.mobile-go span{padding-right:43px;background:url(http://image.gmkt.kr/_Net/core/common/layout/mobile_go.png) no-repeat right 13px}
+
+div.address div p a span.btn_footer{overflow:hidden;display:inline-block;width:75px;height:15px;background:url(http://pics.gmarket.co.kr/pc/ko/common/common.png) no-repeat 0 -290px;text-indent:-999em;text-indent:-999em;vertical-align:text-bottom;vertical-align:middle\0/IE9}
+div.address div p a span.lsc0 span.btn_telclick{overflow:hidden;display:inline-block;width:65px;height:15px;background:url(http://pics.gmarket.co.kr/pc/ko/common/common.png) no-repeat -100px -290px;text-indent:-999em;vertical-align:text-bottom}
+
+/* container */
+#main #container{position:relative;z-index:50;margin:0 auto;width:980px;clear:both;*zoom:1}
+#main #container div.section{*zoom:1;width:100%}
+#main #container div.section:after{content:"";display:block;clear:both}
+
+/* Common */
+h3.sprite_title span{overflow:hidden;display:block;background:url(//pics.gmarket.co.kr/pc/ko/main/title.png) no-repeat;text-indent:-999em;color:#8e8e8e}
+div.section .best h3 span{width:65px;height:15px;background-position:0 0}
+div.section .oteuk h3 span{width:86px;height:15px;background-position:-70px 0}
+div.section .service h3 span{width:70px;height:15px;background-position:-160px 0}
+div.section .superdeal h3 a{display:block;width:292px;height:42px}
+div.section .superdeal h3 span{width:292px;height:42px;background-position:0 -60px}
+div.section .focus h3 span,
+div.section .power h3 span,
+div.section .minishop h3 span,
+div.section .market h3 span{display:inline-block;*display:inline;*zoom:1;margin-right:5px;background:none;text-indent:0}
+div.section .g_partners h3 span{width:88px;background-position:-190px -30px}
+div.section .noticeNew h3 span.info_w{width:50px;background-position:-130px -30px}
+div.section .sponsor h3 span.info_w{margin:-4px 10px 0 0;width:87px;height:22px;background-position:-300px -60px}
+div.section .item .page{position:absolute;right:5px;top:5px;padding:0}
+div.section .g9section h3 span{width:110px;height:25px;background-position:-290px -30px}
+
+div.page span.num{float:left;margin:10px -2px 0}
+/*div.page a.prev, div.page a.next{background:url(//pics.gmarket.co.kr/pc/ko/main/sprite_button.png) no-repeat;font-size:0;text-indent:-999em;line-height:0}*/
+em.btnsNew{display:block;width:12px;height:12px;background:url(//pics.gmarket.co.kr/pc/ko/main/button.png) no-repeat -260px 0;font-size:0;text-indent:-999em;line-height:0}
+
+div.page a.prev, div.page a.next{display:block;float:left;width:33px;height:34px}
+div.page a.prev{background-position:-190px -90px}
+div.page a.next{margin-left:-1px;background-position:-240px -90px}
+
+div.page{padding:11px 10px 0 0;text-align:right;font-size:10px;font-family:verdana;color:#959595}
+div.page em{color:#005dc6}
+div.page img{vertical-align:middle;margin-top:-1px}
+/*div.button{position:absolute}
+div.button a.prev, div.button a.next{overflow:hidden;position:relative;display:block;width:39px;height:39px;background:url(//pics.gmarket.co.kr/pc/ko/main/sprite_button.png) no-repeat;text-indent:-999em}*/
+
+/*div.button a.prev{float:left;background-position:0 -200px}
+div.button a.next{float:right;background-position:-50px -200px}
+div.button a.prev:hover{_border:0;background-position:0 -250px}
+div.button a.next:hover{_border:0;background-position:-50px -250px}*/
+
+/* GNB */
+div.section .gnb{float:left;width:195px;height:338px}
+div.section .gnb h2{height:38px}
+div.section .gnb{position:relative;z-index:50}
+div.section .gnb .menu a.btn, div.section .gnb .menu a.lotte{display:block;overflow:hidden;height:48px;background:url(//pics.gmarket.co.kr/pc/ko/main/gnb.png) no-repeat;text-indent:-999em}
+div.section .gnb .menu a.btn.menu1{background-position:0 0}
+div.section .gnb .menu li.active a.btn.menu1{background-position:0 -50px}
+div.section .gnb .menu a.btn.menu2{background-position:-200px 0}
+div.section .gnb .menu li.active a.btn.menu2{background-position:-200px -50px}
+div.section .gnb .menu a.btn.menu3{background-position:-400px 0}
+div.section .gnb .menu li.active a.btn.menu3{background-position:-400px -50px}
+div.section .gnb .menu a.btn.menu4{background-position:-600px 0}
+div.section .gnb .menu li.active a.btn.menu4{background-position:-600px -50px}
+div.section .gnb .menu a.btn.menu5{background-position:-800px 0}
+div.section .gnb .menu li.active a.btn.menu5{background-position:-800px -50px}
+div.section .gnb .menu a.btn.menu6{background-position:-1000px 0}
+div.section .gnb .menu li.active a.btn.menu6{background-position:-1000px -50px}
+div.section .gnb .menu a.lotte{height:50px;background-position:-1200px 0}
+div.section .gnb .menu li.active a.lotte{background-position:-1200px -50px}
+div.section .gnb .menu a:hover{_border:0}
+div.section .gnb .menu a img{vertical-align:top}
+div.section .gnb .menu .smenu{display:none;position:absolute;top:-3px;z-index:20;width:781px;height:337px;margin:0 0 0 195px;border:2px solid #1d3563;background:#fff;font-size:11px;letter-spacing:-1px}
+div.section .gnb .menu .smenu a.close{display:block;position:absolute;top:0;right:0;width:32px;height:32px;background:url(http://pics.gmarket.co.kr/pc/ko/common/common.png) no-repeat -494px -240px;z-index:99;text-indent:-999em}
+div.section .gnb .menu .smenu h4{overflow:hidden;float:left;width:105px;padding:15px 0 0 0;color:#444;font-weight:bold;font-size:12px;line-height:16px}
+div.section .gnb .menu .smenu>span{display:block;position:absolute;left:-8px;width:9px;height:18px;background:url(http://image.gmarket.co.kr/_Net/corecom/main/sprite_icon.png) 0 -850px no-repeat;z-index:21}
+div.section .gnb .menu .smenu>span.p1{top:16px}
+div.section .gnb .menu .smenu>span.p2{top:64px}
+div.section .gnb .menu .smenu>span.p3{top:112px}
+div.section .gnb .menu .smenu>span.p4{top:160px}
+div.section .gnb .menu .smenu>span.p5{top:207px}
+div.section .gnb .menu .smenu>span.p6{top:255px}
+div.section .gnb .menu .smenu>span.p7{top:304px}
+div.section .gnb .menu .smenu .underline:active, div.section .gnb .menu .smenu .underline:focus, div.section .gnb .menu .smenu .underline:hover{text-decoration:underline}
+div.section .gnb .menu .smenu .brd{padding:0 0 0 9px;width:100%}
+div.section .gnb .menu .smenu .brd.first{padding:15px 0 0 9px}
+div.section .gnb .menu .smenu .brd a{display:block;height:25px;width:109px;color:#0082f0 !important;text-decoration:none}
+div.section .gnb .menu .smenu .brd a:hover span{text-decoration:underline !important}
+div.section .gnb .menu .smenu .brd a span{display:block;padding-right:8px;background:url(http://image.gmarket.co.kr/_Net/corecom/main/sprite_icon_arrow.png) no-repeat 100% -45px;color:#0082f0 !important;cursor:pointer}
+div.section .gnb .menu .smenu .cate_wrap{width:283px;height:337px;float:left;padding:0 23px;border-right:1px solid #ddd;font-size:12px}
+div.section .gnb .menu .smenu .favo_wrap{width:140px;height:337px;float:left;padding:0 15px;border-right:1px solid #ddd;background:#f9f9f9;font-size:12px}
+div.section .gnb .menu .smenu div{overflow:hidden}
+div.section .gnb .menu .smenu ul{float:left;margin:6px 0 0;padding-top:9px}
+div.section .gnb .menu .smenu ul li{width:150px;clear:both;line-height:14px;letter-spacing:-1px}
+div.section .gnb .menu .smenu ul li a{*zoom:1;padding-left:1px;color:#777;line-height:17px}
+div.section .gnb .menu .smenu ul li a:hover{color:#0082f0}
+div.section .gnb .menu .smenu div.fir{border-bottom:1px dashed #ddd;padding:0 0 12px 9px}
+div.section .gnb .menu .smenu div.fir2{border-bottom:0;padding:0 0 10px 8px}
+div.section .gnb .menu .smenu .cate-bn-list{right:0;*margin-left:329px;z-index:0;position:relative}
+div.section .gnb .menu .smenu.lotte-cate{width:330px}
+div.section .gnb .menu .smenu.lotte-cate .cate_wrap{width:284px;padding:0 23px;float:none;height:107px;border-right:0}
+div.section .gnb .menu .smenu.lotte-cate .cate-bn-list{margin:0}
+div.section .gnb .menu .smenu.lotte-cate .fir{padding:15px 0 10px}
+div.section .gnb .menu .smenu.lotte-cate .fir a{padding-top:0;width:108px}
+div.section .gnb .menu .smenu.lotte-cate .fir2{padding:15px 0 0}
+div.section .gnb .menu .smenu.lotte-cate .fir2 a{padding-top:0;width:108px}
+div.section .gnb .menu .smenu.lotte-cate .fir2 a span{padding-right:0}
+div.section .gnb .menu .smenu.lotte-cate .fir2.last{padding-bottom:40px;border-bottom:1px dashed #ddd}
+div.section .gnb .menu .smenu.lotte-cate .brd{height:15px}
+div.section .gnb .menu .smenu.lotte-cate .cate_wrap{border-right:0}
+.gnb_block{display:block!important}
+
+div.section .rolling .prev a, div.section .rolling .next a{display:block;position:absolute;top:87px;width:38px;height:38px;background:url(//pics.gmarket.co.kr/pc/ko/main/button.png) no-repeat;text-indent:-999em}
+div.section .rolling .prev a{left:10px;background-position:-100px 0}
+div.section .rolling .prev a:hover{background-position:-100px -50px}
+div.section .rolling .next a{right:10px;background-position:-150px 0}
+div.section .rolling .next a:hover{background-position:-150px -50px}
+
+/* EVENT */
+div.section .event{position:relative;float:left;width:785px;height:338px;background:#fff}
+div.section .event .rollingBox{height:295px;overflow:hidden;position:relative}
+div.section .event .rollingBox .prev a, div.section .event .rollingBox .next a{position:absolute;top:50%;margin-top:-30px;display:block;width:60px;height:60px;background:url(//pics.gmarket.co.kr/pc/ko/main/button.png) no-repeat;text-indent:-999em}
+div.section .event .rollingBox .prev a{left:0;background-position:0 -100px}
+div.section .event .rollingBox .next a{right:0;background-position:-80px -100px}
+div.section .event .rollingBox .prev a:hover{background-position:0 -170px}
+div.section .event .rollingBox .next a:hover{background-position:-80px -170px}
+div.section .event .rollingFrame{height:295px;overflow:hidden;border-right:1px solid #ddd}
+div.section .event .rollingControl{position:relative}
+div.section .event .rollingIcon{position:absolute;top:-23px;left:-25px;height:14px;z-index:10;display:none;width:180px;text-align:center;height:0;font-size:0;line-height:0;visibility:visible}
+div.section .event .rollingIcon li{display:inline-block;*display:inline;*zoom:1;float:none !important;margin:0 4px}
+div.section .event .rollingIcon li a{display:block;width:14px;height:14px;background:url(//pics.gmarket.co.kr/pc/ko/main/button.png) no-repeat -150px -100px;text-indent:-999em}
+div.section .event .rollingIcon li a.active{background-position:-170px -100px}
+div.section .event .tab2 .rollingIcon, div.section .event .tab2 .rollingIcon, div.section .event .tab2 .rollingIcon{}
+div.section .event .rollbtn{display:none}
+div.section .event .rollbtn a{display:block;position:absolute;width:23px;height:23px;overflow:hidden;text-indent:-999em;background:url(//pics.gmarket.co.kr/pc/ko/main/button.png) no-repeat}
+div.section .event .rollbtn a.prev{background-position:-200px 0;left:7px;top:11px}
+div.section .event .rollbtn a.prev:hover{background-position:-200px -30px}
+div.section .event .rollbtn a.next{background-position:-230px 0;right:7px;top:11px}
+div.section .event .rollbtn a.next:hover{background-position:-230px -30px}
+div.section .event .rolling_tab{height:43px}
+
+div.section .event .rolling_tab li{float:left;position:relative}
+div.section .event .rolling_tab li>a{display:block;height:43px;overflow:hidden}
+div.section .event .rolling_tab li a:hover img{margin-top:-53px}
+div.section .event .rolling_tab li.active .rollingIcon{display:block}
+div.section .event .rolling_tab li.active .rollingIcon li>a{height:14px}
+div.section .event .rolling_tab li.active .rollbtn{display:block}
+div.section .event .rolling_tab li.active a  img{margin-top:-53px}
+div.section .event .tab1 .rollingIcon{left:12px;margin:0;width:200%;text-align:left}
+
+/* B */
+/* AD */
+div.section .ad{position:relative;z-index:50;float:left;width:193px;border-right:1px solid #ddd;border-left:1px solid #ccc}
+div.section .ad a.prev, div.section .ad a.next{position:absolute;top:114px;display:block;width:38px;height:38px;background:url(//pics.gmarket.co.kr/pc/ko/main/button.png) no-repeat;text-indent:-999em}
+div.section .ad a.prev{left:0;background-position:0 0}
+div.section .ad a.next{right:0;background-position:-50px 0}
+div.section .ad a.prev:hover{background-position:0 -50px}
+div.section .ad a.next:hover{background-position:-50px -50px}
+div.section .ad .o-btn{position:absolute;left:13px;top:12px;font-size:0}
+div.section .ad .ad-s{position:absolute;right:0;bottom:0;margin-right:170px}
+div.section .ad .ad-b{position:absolute;right:0;bottom:0}
+div.section .ad img{vertical-align:top;width:193px;height:266px}
+div.section .ad div{overflow:hidden}
+div.section .ad .close{position:absolute;left:10px;top:10px;cursor:pointer}
+
+/* BEST */
+div.section .best{position:relative;float:left;width:615px;height:266px;background:#fff}
+div.section .best.extend{width:170px;background:#f8f8f8}
+div.section .best.extend .more a{display:block}
+div.section .best h3{padding:11px 0 12px 39px}
+div.section .best h3 a{display:block;width:55px;padding:8px 0 0 5px;height:22px}
+div.section .best .more a{display:none;position:absolute;top:0;right:-1px;width:35px;height:35px;background:#95A1B8 url(//pics.gmarket.co.kr/pc/ko/main/button.png) no-repeat -190px -120px;text-indent:-999em}
+div.section .best .best_cont{clear:both}
+div.section .best .best_cont .play a{display:block;width:21px;height:19px;position:absolute;bottom:15px;right:16px;background:url(//pics.gmarket.co.kr/pc/ko/main/button.png) no-repeat -200px -60px;text-indent:-999em}
+div.section .best .best_cont .play a:hover{background-position:-200px -90px}
+div.section .best .best_cont .play.pause a{background-position:-230px -60px}
+div.section .best .best_cont .play.pause a:hover{background-position:-230px -90px}
+div.section .best.extend .best_cont .play{display:none}
+div.section .best .best_cont .prev a, div.section .best .best_cont .next a{top:114px;}
+/*div.section .best .best_cont .prev a, div.section .best .best_cont .next a{display:block;position:absolute;top:50%;margin-top:-19px;width:38px;height:38px;background:url(//pics.gmarket.co.kr/pc/ko/main/button.png) no-repeat;text-indent:-999em}
+div.section .best .best_cont .prev a{left:5px;background-position:-100px 0}
+div.section .best .best_cont .prev a:hover{background-position:-100px -50px}
+div.section .best .best_cont .next a{right:5px;background-position:-150px 0}
+div.section .best .best_cont .next a:hover{background-position:-150px -50px}*/
+div.section .best .best_cont .rollingBox{position:relative;width:525px;overflow:hidden;margin-left:44px}
+div.section .best .best_cont .rollingBox ul{width:1000px}
+div.section .best .best_cont .rollingBox li{float:left;width:120px;margin-right:15px;position:relative}
+div.section .best .best_cont .rollingBox li .num{width:22px;height:22px;display:block;position:absolute;right:0;top:0;background:url(http://image.gmarket.co.kr/_Net/corecom/main/sprite_number2.png) no-repeat;text-indent:-999em}
+div.section .best .best_cont .rollingBox li .num1{background-position:0 0}
+div.section .best .best_cont .rollingBox li .num2{background-position:-25px 0}
+div.section .best .best_cont .rollingBox li .num3{background-position:-50px 0}
+div.section .best .best_cont .rollingBox li .num4{background-position:-75px 0}
+div.section .best .best_cont .rollingBox li .num5{background-position:-100px 0}
+div.section .best .best_cont .rollingBox li .num6{background-position:-125px 0}
+div.section .best .best_cont .rollingBox li .num7{background-position:-150px 0}
+div.section .best .best_cont .rollingBox li .num8{background-position:-175px 0}
+div.section .best .best_cont .rollingBox li .num9{background-position:-200px 0}
+div.section .best .best_cont .rollingBox li .num10{background-position:-225px 0}
+div.section .best .best_cont .rollingBox li .num11{background-position:0 -25px}
+div.section .best .best_cont .rollingBox li .num12{background-position:-25px -25px}
+div.section .best .best_cont .rollingBox li .num13{background-position:-50px -25px}
+div.section .best .best_cont .rollingBox li .num14{background-position:-75px -25px}
+div.section .best .best_cont .rollingBox li .num15{background-position:-100px -25px}
+div.section .best .best_cont .rollingBox li .num16{background-position:-125px -25px}
+div.section .best .best_cont .rollingBox li .num17{background-position:-150px -25px}
+div.section .best .best_cont .rollingBox li .num18{background-position:-175px -25px}
+div.section .best .best_cont .rollingBox li .num19{background-position:-200px -25px}
+div.section .best .best_cont .rollingBox li .num20{background-position:-225px -25px}
+div.section .best .best_cont .rollingBox li .num21{background-position:0 -50px}
+div.section .best .best_cont .rollingBox li .num22{background-position:-25px -50px}
+div.section .best .best_cont .rollingBox li .num23{background-position:-50px -50px}
+div.section .best .best_cont .rollingBox li .num24{background-position:-75px -50px}
+div.section .best .best_cont .rollingBox li .num25{background-position:-100px -50px}
+div.section .best .best_cont .rollingBox li .num26{background-position:-125px -50px}
+div.section .best .best_cont .rollingBox li .num27{background-position:-150px -50px}
+div.section .best .best_cont .rollingBox li .num28{background-position:-175px -50px}
+div.section .best .best_cont .rollingBox li .num29{background-position:-200px -50px}
+div.section .best .best_cont .rollingBox li .num30{background-position:-225px -50px}
+div.section .best .best_cont .rollingBox li .num31{background-position:0 -75px}
+div.section .best .best_cont .rollingBox li .num32{background-position:-25px -75px}
+div.section .best .best_cont .rollingBox li .num33{background-position:-50px -75px}
+div.section .best .best_cont .rollingBox li .num34{background-position:-75px -75px}
+div.section .best .best_cont .rollingBox li .num35{background-position:-100px -75px}
+div.section .best .best_cont .rollingBox li .num36{background-position:-125px -75px}
+div.section .best .best_cont .rollingBox li .num37{background-position:-150px -75px}
+div.section .best .best_cont .rollingBox li .num38{background-position:-175px -75px}
+div.section .best .best_cont .rollingBox li .num39{background-position:-200px -75px}
+div.section .best .best_cont .rollingBox li .num40{background-position:-225px -75px}
+div.section .best .best_cont .rollingBox .prd{text-align:center}
+div.section .best .best_cont .rollingBox .prd a span{color:#777}
+div.section .best .best_cont .rollingBox .prd a:hover span{color:#0082f0}
+div.section .best .best_cont .rollingBox .prd img{width:120px;height:120px;margin-bottom:14px}
+div.section .best .best_cont .rollingBox .prd span{overflow:hidden;display:block;margin:0 auto;width:100px;height:28px;font-size:11px;line-height:15px;zoom:1;letter-spacing:-1px}
+div.section .best .best_cont .rollingBox .prd del{display:block;padding-top:5px;color:#aaa;font:11px Tahoma}
+div.section .best .best_cont .rollingBox .prd strong{display:block;font-weight:bold;padding-top:3px;font-size:12px;letter-spacing:0;color:#000}
+div.section .best .best_cont .rollingBox .prd strong span{display:inline;margin:0;width:auto;height:auto;font:bold 12px Tahoma, Verdana;letter-spacing:0 !important}
+div.section .best.extend .best_cont .prev a, div.section .best.extend .best_cont .next a{display:none}
+div.section .best.extend h3{padding:11px 0 12px 20px}
+div.section .best.extend .best_cont .rollingBox{margin-left:25px;width:120px}
+div.section .best.extend .best_cont .rollingBox li{margin-right:0}
+
+/* 오늘만특가 */
+div.section .oteuk{position:relative;float:left;width:168px;height:266px;border-left:1px solid #ddd;border-right:1px solid #ccc;background:#f8f8f8}
+div.section .oteuk.extend{width:613px;background:#fff}
+div.section .oteuk h3{padding:11px 0 12px 20px}
+div.section .oteuk h3 a{display:block;width:77px;padding:8px 0 0 5px;height:22px}
+div.section .oteuk .more a{display:block;position:absolute;top:0;right:-1px;width:35px;height:35px;background:#95A1B8 url(//pics.gmarket.co.kr/pc/ko/main/button.png) no-repeat -150px -120px;text-indent:-999em;}
+div.section .oteuk .more a.active{background-position:-190px -120px}
+div.section .oteuk .oteuk_cont{clear:both}
+div.section .oteuk .oteuk_cont .prev a, div.section .oteuk .oteuk_cont .next a{display:none}
+/*div.section .oteuk .oteuk_cont .prev a, div.section .oteuk .oteuk_cont .next a{display:none;position:absolute;top:50%;margin-top:-22px;width:38px;height:38px;background:url(//pics.gmarket.co.kr/pc/ko/main/sprite_button.png) no-repeat;text-indent:-999em}
+div.section .oteuk .oteuk_cont .prev a{left:5px;background-position:0 -300px}
+div.section .oteuk .oteuk_cont .prev a:hover{background-position:0 -338px}
+div.section .oteuk .oteuk_cont .next a{right:5px;background-position:-38px -300px}
+div.section .oteuk .oteuk_cont .next a:hover{background-position:-38px -338px}*/
+div.section .oteuk .oteuk_cont .rolling{width:120px;margin-left:25px;overflow:hidden}
+div.section .oteuk .oteuk_cont .rollingBox{/* position:relative;*/width:525px;margin-left:-405px;overflow:hidden;zoom:1}
+div.section .oteuk .oteuk_cont .rollingBox ul{width:1000px}
+div.section .oteuk .oteuk_cont .rollingBox li{float:left;width:120px;margin-right:15px}
+div.section .oteuk .bnr{width:120px;margin:0 auto;text-align:center}
+div.section .oteuk .bnr a{color:#777}
+div.section .oteuk .bnr a:hover{color:#0082f0}
+div.section .oteuk .bnr a img{width:120px;height:120px;vertical-align:bottom;margin-bottom:14px}
+div.section .oteuk .bnr a span{overflow:hidden;display:block;width:121px;height:14px;font-size:11px;line-height:15px;*zoom:1;letter-spacing:-1px}
+div.section .oteuk .bnr .price-info del{display:block;padding-top:5px;color:#aaa;font:11px Tahoma;margin-bottom:3px}
+div.section .oteuk .bnr .price-info strong{font-weight:bold;padding-top:3px;font-size:12px;letter-spacing:0;color:#000;font:bold 12px Tahoma, Verdana}
+div.section .oteuk .bnr .price-info strong span{display:inline;margin:0;width:auto;height:auto;font:bold 12px Tahoma, Verdana;line-height:21px}
+div.section .oteuk .bnr .sale-per{display:inline-block;color:#0082f0;font:11px Tahoma;margin-right:7px;padding-top:4px}
+div.section .oteuk .bnr .sale-per strong{color:#0082f0;font:bold 11px Tahoma}
+div.section .oteuk .bnr .sale-per img{vertical-align:middle;padding-bottom:2px;margin-left:4px}
+div.section .oteuk.extend h3{padding:11px 0 12px 39px}
+div.section .oteuk.extend .oteuk_cont .rolling{width:100%;margin-left:0;overflow:hidden}
+div.section .oteuk.extend .oteuk_cont .prev a, div.section .oteuk.extend .oteuk_cont .next a{display:block}
+div.section .oteuk.extend .oteuk_cont .rollingBox{margin-left:44px;width:525px}
+div.section .oteuk.extend .oteuk_cont .rollingBox li{margin-right:15px}
+
+/* G마켓서비스 */
+div.section .service{position:relative;float:left;width:195px;height:330px;z-index:10}
+div.section .service .inner{background:#f8f8f8;width:193px;height:328px;position:absolute;left:0;top:0;border:1px solid #ccc;border-right:1px solid #ddd;overflow:hidden;z-index:2}
+div.section .service .inner.extend{width:462px}
+div.section .service h3{padding:9px 0 0 33px;margin-bottom:6px}
+div.section .service a.all_cate{display:none;width:47px;height:15px;font-size:11px;color:#666;letter-spacing:-1px;position:absolute;right:42px;top:8px;background:url(http://image.gmarket.co.kr/_Net/corecom/main/sprite_icon_arrow.png) 100% -791px no-repeat}
+div.section .service .extend a.all_cate{display:block}
+div.section .service .more a{display:block;position:absolute;top:-1px;right:-1px;width:35px;height:35px;background:#95A1B8 url(//pics.gmarket.co.kr/pc/ko/main/button.png) no-repeat -150px -120px;text-indent:-999em}
+div.section .service .more a.active{background-position:-190px -120px}
+div.section .service ul{position:relative;float:left;width:440px}
+div.section .service ul li{position:relative;float:left;margin:0 0 3px 18px}
+div.section .service ul li .new{display:block;position:absolute;width:16px;height:16px;background:url(http://image.gmarket.co.kr/_Net/corecom/main/sprite_icon.png) -34px -780px no-repeat;overflow:hidden;text-indent:-10000em;z-index:1;top:0px;right:3px}
+div.section .service ul a{display:block;overflow:hidden}
+div.section .service ul a img{width:70px;height:70px}
+
+/* WPR-1105 */
+/* FASHION SHOP */
+div.section .fashion{float:left;width:615px;height:328px;background:#fff;border-bottom:1px solid #ccc;border-top:1px solid #b9bec7;position:relative}
+div.section .fashion .fashion_tab{background-color:#EFF2F9;height:41px}
+div.section .fashion .fashion_tab li{float:left;width:154px;height:41px;position:relative}
+div.section .fashion .fashion_tab li a{display:block;width:154px;height:41px;overflow:hidden;z-index:1}
+div.section .fashion .fashion_tab li.active a img{margin-top:-41px}
+div.section .fashion .fashion_tab li.tab2.active a{position:absolute;margin-left:-1px;width:154px}
+div.section .fashion .fashion_tab li.tab3.active a{position:absolute;margin-left:-1px;width:154px}
+div.section .fashion .fashion_tab li.tab4.active a{position:absolute;margin-left:-1px;}
+div.section .fashion .fashion_tab li.tab4{width:153px}
+div.section .fashion .fashion_tab li.tab4.active{background-color:#FFF;}
+div.section .fashion .fashion_tab li.tab4 a{width:153px}
+div.section .fashion .fashion_cont{width:615px;height:287px;overflow:hidden}
+div.section .fashion .fashion_cont ul{position:relative;width:615px;height:272px;padding-top:15px}
+div.section .fashion .fashion_cont ul li{position:absolute}
+div.section .fashion .fashion_cont ul li.bnr1{left:190px}
+div.section .fashion .fashion_cont ul li.bnr2{left:20px}
+div.section .fashion .fashion_cont ul li.bnr3{left:20px;top:151px}
+div.section .fashion .fashion_cont ul li.bnr4{left:445px}
+div.section .fashion .fashion_cont ul li.bnr5{left:445px;top:151px}
+div.section .fashion .fashion_cont ul li img{width:150px;height:128px}
+div.section .fashion .fashion_cont ul li.bnr1 img{width:235px;height:272px}
+/* //WPR-1105 */
+
+/* MOD-AD */
+div.section .mod-ad{position:relative;z-index:40;float:left;width:168px;height:328px;border-top:1px solid #ccc;border-right:1px solid #ccc;border-bottom:1px solid #ccc;border-left:1px solid #ddd;overflow:hidden}
+div.section .mod-ad a img{width:168px;height:328px}
+
+/* D */
+/* 슈퍼딜 common */
+div.section .superdeal{position:relative;padding-top:35px;z-index:1;*zoom:1}
+div.section .superdeal:after{display:block;content:"";clear:both}
+div.section .superdeal h3{margin-bottom:10px}
+div.section .superdeal .btn_more{position:absolute;top:50px;right:0} 
+div.section .superdeal .btn_more a{display:block;width:148px;height:32px;background:url(//pics.gmarket.co.kr/pc/ko/main/button.png) no-repeat 0 -240px;text-indent:-999em} /* ### */
+div.section .superdeal ul{*zoom:1}
+div.section .superdeal ul:after{content:"";display:block;clear:both}
+div.section .superdeal ul.mini{border:1px solid #ddd;border-bottom-color:#ccc;height:321px;margin-bottom:12px;padding-left:10px}
+div.section .superdeal ul.mini li{position:relative}
+div.section .superdeal ul.mini .deal{margin-right:12px}
+div.section .superdeal .deal{float:left;position:relative;border:1px solid #ddd;border-bottom-color:#ccc}
+div.section .superdeal .deal a{position:relative;display:block;text-decoration:none}
+div.section .superdeal .sale-per strong{padding-right:2px}
+div.section .superdeal .deal a em.freedelev{position:absolute;bottom:0;right:0;width:27px;height:27px;*height:26px;height:26px\0/IE9;background:#009997;color:#fff;font-size:11px;line-height:12px;padding:5px 0 0 5px;*padding:6px 0 0 5px;padding:6px 0 0 5px\0/IE9}
+div.section .superdeal .deal a em.freedelev1{position:absolute;bottom:117px;right:0;width:27px;height:27px;*height:26px;height:26px\0/IE9;background:#009997;color:#fff;font-size:11px;line-height:12px;padding:5px 0 0 5px;*padding:6px 0 0 5px;padding:6px 0 0 5px\0/IE9}
+div.section .superdeal .deal a em.freedelev2{position:absolute;bottom:77px;right:0;width:27px;height:27px;*height:26px;height:26px\0/IE9;background:#009997;color:#fff;font-size:11px;line-height:12px;padding:5px 0 0 5px;*padding:6px 0 0 5px;padding:6px 0 0 5px\0/IE9}
+div.section .superdeal .icon_commingsoon{position:absolute;z-index:1;width:100%;height:100%;display:none}
+div.section .superdeal .icon_commingsoon span, div.section .superdeal .icon_commingsoon1 span{overflow:hidden;position:absolute;left:50%;top:50%;display:block;margin:-17px 0 0 -80px;width:175px;height:70px;z-index:3;background:url(//pics.gmarket.co.kr/pc/ko/main/tag.png) no-repeat -540px -70px;text-indent:-999em;}
+div.section .superdeal .icon_commingsoon1 span{margin:-10px 0 0 -73px;width:147px;height:52px;background-position:-540px -130px}
+div.section .superdeal .icon_commingsoon .bg_commingsoon,div.section .superdeal .icon_commingsoon1 .bg_commingsoon{position:absolute;z-index:2;width:100%;height:100%;background:#f5f5f5}
+div.section .superdeal .commingsoon .icon_commingsoon ,div.section .superdeal .commingsoon .icon_commingsoon1{display:block}
+div.section .icon_soldout{position:absolute;z-index:2;width:100%;height:100%;display:none}
+div.section .icon_soldout span{display:block;width:171px;height:171px;position:absolute;z-index:3;background:url(//pics.gmarket.co.kr/pc/ko/main/tag.png) no-repeat -200px 0;overflow:hidden;text-indent:-999em;left:50%;top:50%;margin:-85px 0 0 -85px}
+div.section .icon_soldout .bg_soldout{position:absolute;z-index:2;width:100%;height:100%;background:#222;opacity:0.2;-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=20)";filter:alpha(opacity=20)}
+div.section .soldout .icon_soldout{display:block;z-index:20}
+div.section .price-info .title>strong{display:block!important;height:18px!important;overflow:hidden!important;zoom:1;white-space:nowrap!important}
+div.section .type1 .icon_soldout span, div.section .superdeal .type4 .icon_soldout span{margin:-98px 0 0 -98px;width:197px;height:196px;background-position:0 0;}
+
+
+
+
+/*div.section .g9section .icon_soldout{position:absolute;z-index:1;width:100%;height:158px;display:none}
+div.section .icon_soldout span{display:block;width:148px;height:147px;position:absolute;z-index:3;background:url(http://pics.g9.co.kr/201403/icon/icon_soldout.png) 0 0 no-repeat;overflow:hidden;text-indent:-999em;left:50%;top:50%;margin:-73px 0 0 -73px}
+div.section .g9section .icon_soldout .bg_soldout{position:absolute;z-index:2;width:100%;height:100%;background:#222;opacity:0.2;-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=20)";filter:alpha(opacity=20)}
+div.section .g9section .soldout .icon_soldout{display:block}*/
+
+
+
+
+div.section .superdeal ul li:first-child{margin:0 12px 0 0;float:left}
+div.section .superdeal .type1{width:482px;height:406px;margin:12px 0 12px 0;float:right;z-index:5}
+div.section .superdeal .type1 .price-info{position:absolute;left:20px;top:30px}
+div.section .superdeal .type1 .sale-per{display:block;width:70px;height:55px;padding-top:6px;*height:53px;*padding-top:8px;overflow:hidden;background:url(//pics.gmarket.co.kr/pc/ko/main/tag.png) no-repeat -540px 0;color:#fff;text-align:center;font:18px/34px Tahoma;letter-spacing:-2px;margin-bottom:38px}
+div.section .superdeal .type1 .sale-per strong{font-size:34px;font-weight:bold}
+div.section .superdeal .type1 .sale-per span{display:block;text-indent:-999em}
+div.section .superdeal .type1 .title{font:bold 14px/130% Dotum;color:#777;display:block;width:181px;margin-bottom:15px;letter-spacing:-1px;height:36px;overflow:hidden}
+div.section .superdeal .type1 .persale{display:block;font:13px/100% Dotum;color:#f27669;margin-top:12px;width:190px;overflow:hidden;line-height:15px;vertical-align:middle;font-weight:bold}
+div.section .superdeal .type1 .money del{display:block;font:14px/100% Tahoma;color:#999}
+div.section .superdeal .type1 .money strong{display:block;font:bold 32px/100% Tahoma;color:#222;margin-top:-2px;padding-top:14px}
+div.section .superdeal .type1 .money strong.nomoney{display:block;font:bold 32px/100% Dotum,"돋움"}
+div.section .superdeal .type1 .money del+strong{padding-top:0px}
+div.section .superdeal .type1 a>img{width:482px;height:406px}
+div.section .superdeal ul li.type1 div.prd a{height:406px !important}
+div.section .superd6{margin:12px 0 20px 0;float:right}
+div.section .superdeal .type2{width:482px;height:196px}
+div.section .superdeal .type2 a{height:196px}
+div.section .superdeal .type2 img{float:right;width:268px;height:196px}
+div.section .superdeal .type2 .price-info{float:left;padding:87px 0 0 20px;width:184px}
+div.section .superdeal .type2 .title{font:bold 14px/130% Dotum;color:#777;display:block;width:181px;margin-bottom:9px;letter-spacing:-1px;height:36px;overflow:hidden}
+div.section .superdeal .type2 .persale{display:block;font:13px/100% Dotum;color:#f27669;margin-top:9px;width:190px;overflow:hidden;line-height:15px;font-weight:bold}
+div.section .superdeal .type2 .sale-per{float:left;color:#dd1500;font:18px/34px Tahoma, Verdana, sans-serif;letter-spacing:-2px; margin-right:6px; padding-right:4px} /* 2014-10-01_WPR-380 */
+div.section .superdeal .type2 .sale-per strong{font-size:34px;font-weight:bold}
+div.section .superdeal .type2 .money del{display:block;font:11px/100% Tahoma;color:#999}
+div.section .superdeal .type2 .money strong{display:block;font:bold 20px/100% Tahoma;color:#222;padding-top:11px}
+div.section .superdeal .type2 .money strong.nomoney{display:block;font:bold 20px/100% Dotum,"돋움"}
+div.section .superdeal .type2 .money del+strong{padding-top:0px}
+div.section .superdeal .group{ width:484px;float:left}
+div.section .superdeal .group1{margin:12px 12px 0 0!important;width:484px;float:left;padding-bottom:12px}
+div.section .superdeal .group ul li:first-child,div.section .superdeal .group1 ul li:first-child{margin-bottom:12px}
+div.section .superdeal span.money strong.nomoney img{float:none; width:78px; height:21px} /* 2014-10-01_WPR-380 */
+div.section .superdeal .type3{width:230px;height:321px;border:0}
+div.section .superdeal .type3:after{display:block;content:"";clear:both}
+div.section .superdeal .type3 a{padding-top:12px;height:309px;display:block;overflow:hidden}
+div.section .superdeal .type3 a>img{width:230px;height:192px}
+div.section .superdeal .type3 .price-info{margin-top:12px;padding:0 5px}
+div.section .superdeal .type3 .title{font:bold 14px/130% Dotum;color:#777;display:block;margin-bottom:9px;letter-spacing:-1px;height:15px;overflow:hidden;height:35px;width:210px} 
+div.section .superdeal .type3 .persale{display:block;font:13px/100% Dotum;color:#f27669;width:190px;overflow:hidden;line-height:15px;vertical-align:middle;font-weight:bold}
+div.section .superdeal .type3 .sale-per{float:left;color:#dd1500;font:18px/28px Tahoma, Verdana, sans-serif;letter-spacing:-2px;margin-right:6px; padding-right:4px} /* 2014-10-01_WPR-380 */
+div.section .superdeal .type3 .sale-per strong{display:inline-block;font-size:34px;font-weight:bold;margin-top:2px}
+div.section .superdeal .type3 .money del{display:block;font:11px/100% Tahoma;color:#999}
+div.section .superdeal .type3 .money strong{display:block;font:bold 20px/100% Tahoma;color:#222;padding-top:10px;height:22px}
+div.section .superdeal .type3 .money strong.nomoney{display:block;font:bold 20px/100% Dotum,"돋움"}
+div.section .superdeal .type3 .money del+strong{padding-top:0px} 
+div.section .superdeal ul.mini2_1{float:left;border:1px solid #ddd;border-bottom-color:#ccc;width:482px;height:321px;margin-bottom:12px;margin-right:12px}
+div.section .superdeal ul.mini2{float:right;border:1px solid #ddd;border-bottom-color:#ccc;width:482px;height:321px;margin-bottom:12px}
+div.section .superdeal .type5 .icon_soldout span, div.section .superdeal .type4 .icon_soldout span{width:197px;height:196px;background:url(http://image.gmarket.co.kr/_Net/corecom/main/icon_soldout1.png) 0 0 no-repeat;margin:-98px 0 0 -98px}
+div.section .superdeal .type5{width:482px;height:321px;border:0}
+div.section .superdeal .type5:after{display:block;content:"";clear:both}
+div.section .superdeal .type5 .price-info{position:absolute;left:20px;top:30px}
+div.section .superdeal .type5 .sale-per{display:block;width:70px;height:55px;padding-top:6px;*height:53px;*padding-top:8px;overflow:hidden;background:url(http://image.gmarket.co.kr/_Net/corecom/main/bg_superdeal_sale.png) 0 0 no-repeat;color:#fff;text-align:center;font:18px/34px Tahoma;letter-spacing:-2px;margin-bottom:38px}
+div.section .superdeal .type5 .sale-per strong{font-size:34px;font-weight:bold}
+div.section .superdeal .type5 .sale-per span{display:block;text-indent:-999em}
+div.section .superdeal .type5 .title{font:bold 14px/130% Dotum;color:#777;display:block;width:181px;margin-bottom:15px;letter-spacing:-1px;height:36px;overflow:hidden}
+div.section .superdeal .type5 .persale{display:block;font:13px/100% Dotum;color:#f27669;margin-top:12px;width:190px;overflow:hidden;line-height:15px;vertical-align:middle;font-weight:bold}
+div.section .superdeal .type5 .money del{display:block;font:14px/100% Tahoma;color:#999}
+div.section .superdeal .type5 .money strong{display:block;font:bold 32px/100% Tahoma;color:#222;margin-top:-2px;padding-top:14px}
+div.section .superdeal .type5 .money strong.nomoney{display:block;font:bold 32px/100% Dotum,"돋움"}
+div.section .superdeal .type5 .money del+strong{padding-top:0px} 
+div.section .superdeal .type5 a>img{width:482px;height:321px}
+div.section .superdeal ul.mini2 li.type5 div.prd a,div.section .superdeal ul.mini2_1 li.type5 div.prd a{height:321px !important}
+div.section .superdeal ul.mini1{float:left;border:1px solid #ddd;border-bottom-color:#ccc;width:472px;height:321px;margin-bottom:12px;padding-left:10px;margin-right:12px}
+div.section .superdeal ul.mini1_1{float:right;border:1px solid #ddd;border-bottom-color:#ccc;width:472px;height:321px;margin-bottom:12px;padding-left:10px}
+div.section .superdeal ul.mini1 li,div.section .superdeal ul.mini1_1 li{margin:0 12px 0 0;float:left}
+div.section .superdeal .type6{width:224px;height:321px;border:0;overflow:visible}
+div.section .superdeal .type6 a{padding-top:12px;height:309px;display:block}
+div.section .superdeal .type6 a>img{width:224px;height:192px}
+div.section .superdeal .type6 .price-info{margin-top:12px;padding:0 5px}
+div.section .superdeal .type6 .title{font:bold 14px/130% Dotum;color:#777;display:block;margin-bottom:9px;letter-spacing:-1px;height:15px;overflow:hidden;height:35px;width:210px;/* padding-right:10px;*/}
+div.section .superdeal .type6 .persale{display:block;font:13px/100% Dotum;color:#f27669;width:190px;overflow:hidden;line-height:15px;font-weight:bold}
+div.section .superdeal .type6 .sale-per{float:left;color:#dd1500;font:18px/28px Tahoma, Verdana, sans-serif;letter-spacing:-2px;margin-right:6px; padding-right:4px} /* 2014-10-01_WPR-380 */
+div.section .superdeal .type6 .sale-per strong{display:inline-block;font-size:34px;font-weight:bold;margin-top:2px}
+div.section .superdeal .type6 .money del{display:block;font:11px/100% Tahoma;color:#999}
+div.section .superdeal .type6 .money strong{display:block;font:bold 20px/100% Tahoma;color:#222;padding-top:10px;height:22px}
+div.section .superdeal .type6 .money strong.nomoney{display:block;font:bold 20px/100% Dotum,"돋움"}
+div.section .superdeal .type6 .money del+strong{padding-top:0px} 
+div.section .superdeal ul.mini1 .deal{margin-right:12px}
+div.section .superdeal ul.larg2{clear:both}
+div.section .superdeal .type4{width:482px;height:317px;margin-right:12px}
+div.section .superdeal ul.larg2 li.type4_1{width:482px;height:317px;margin-right:0!important}
+div.section .superdeal .type4 a ,div.section .superdeal .type4_1 a{height:317px}
+div.section .superdeal .type4 a>img,div.section .superdeal .type4_1 a>img{margin-bottom:13px;*margin-bottom:10px;width:482px;height:240px}
+div.section .superdeal .type4 .price-info,div.section .superdeal .type4_1 .price-info{padding-left:20px}
+div.section .superdeal .type4 .title,div.section .superdeal .type4_1 .title{float:left;display:block;width:210px;height:36px;font:bold 14px/130% Dotum;color:#777;display:block;margin-bottom:15px;letter-spacing:-1px;overflow:hidden;padding-top:7px}
+div.section .superdeal .type4 .persale{float:left;display:block;font:13px/100% Dotum;color:#f27669;width:190px;line-height:14px;margin-left:57px;font-weight:bold}
+div.section .superdeal .type4_1 .persale{float:left;display:block;font:13px/100% Dotum;color:#f27669;width:190px;line-height:14px;margin-left:57px;font-weight:bold}
+div.section .superdeal .type4 .sale-per , div.section .superdeal .type4_1 .sale-per{float:left;margin-left:57px;color:#dd1500;font:18px/30px Tahoma, Verdana, sans-serif;letter-spacing:-2px;margin-right:6px; padding-right:4px} /* 2014-10-01_WPR-380 */
+div.section .superdeal .type4 .sale-per strong, div.section .superdeal .type4_1 .sale-per strong{display:inline-block;font-size:34px;font-weight:bold;margin-top:4px}
+div.section .superdeal .type4 .money , div.section .superdeal .type4_1 .money{float:left;margin-left:58px;Display:inline}
+div.section .superdeal .type4 .sale-per + .money, div.section .superdeal .type4_1 .sale-per + .money{float:left;margin-left:0}
+div.section .superdeal .type4 .money del , div.section .superdeal .type4_1 .money del{float:none;width:115px;display:block;font:11px/100% Tahoma;color:#999;margin-top:4px}
+div.section .superdeal .type4 .money strong, div.section .superdeal .type4_1 .money strong{float:none;display:block;font:bold 20px/100% Tahoma;color:#222;padding-top:15px;padding-left:0;height:27px}
+div.section .superdeal .type4 .money strong.nomoney, div.section .superdeal .type4_1 .money strong.nomoney{float:none;display:block;font:bold 20px/100% Dotum,"돋움"}
+div.section .superdeal .type4 .money del+strong ,div.section .superdeal .type4_1 .money del+strong{padding-top:0px;padding-left:0}
+div.section .superdeal ul li.type1 div.prd a.smart_delivery{height:32px !important;bottom:0;padding:0}
+div.section .superdeal ul li.type1 div.prd a.btn_detail {display:block;text-align:right;height:auto !important;padding-top:10px !important}
+div.section .superdeal ul.mini .deal a.smart_delivery{top:172px}
+div.section .superdeal ul.mini .deal .smart-delivery-layer{bottom:-12px;right:0}
+div.section .superdeal .type4 a.smart_delivery, div.section .superdeal .type4_1 a.smart_delivery{top:208px}/* 2014-09-01 */
+div.section .superdeal .type4 .smart-delivery-layer, div.section .superdeal .type4_1 .smart-delivery-layer{bottom:-52px}
+div.section .superdeal .type6 a.smart_delivery{top:172px}
+div.section .superdeal .type6 .smart-delivery-layer{bottom:-12px;right:0}
+div.section .superdeal .type3.soldout .smart_delivery, div.section .superdeal .type6.soldout .smart_delivery{z-index:1}
+div.section .superdeal ul.mini2 li.type5 div.prd a.smart_delivery, div.section .superdeal ul.mini2_1 li.type5 div.prd a.smart_delivery{height:32px !important}
+div.section .superdeal a.smart_delivery{position:absolute;bottom:0;right:0;z-index:10;height:32px;margin-top:0;padding:0;zoom:1;display:block}
+div.section .superdeal a.smart_delivery em{display:block;width:32px;height:32px;text-indent:-999em;background:url(//pics.gmarket.co.kr/pc/ko/main/tag.png) no-repeat -620px 0}
+div.section .superdeal .smart-delivery-layer {position:absolute;bottom:-129px;right:-1px;width:230px;border:1px solid #444;background-color:#F0F0F0;z-index:11}
+div.section .superdeal .smart-delivery-layer p {padding:15px}
+div.section .superdeal .smart-delivery-layer p img{float:none;width:auto;height:auto;margin-bottom:0}
+div.section .superdeal .smart-delivery-layer p .btn_detail {display:block;text-align:right;height:auto;padding-top:10px !important}
+div.section .superdeal .smart-delivery-layer p .btn_detail img{float:none;width:auto;height:auto}
+div.section .superdeal .smart-delivery-layer a.smart_close {position:absolute !important;top:10px;right:10px;padding:0;height:12px !important}
+div.section .superdeal .smart-delivery-layer a.smart_close img{float:none;width:auto;height:auto}
+div.section .superdeal ul li.type1 div.prd .smart-delivery-layer a.smart_close{height:12px !important}
+div.section .superdeal ul>li {position:relative;z-index:200}
+div.section .superdeal ul.mini li {position:relative;z-index:10}
+div.section .superdeal ul li.deal.type1{z-index:100}
+div.section .superdeal ul li.group ul li:first-child {z-index:90}
+div.section .superdeal ul li.group ul li {z-index:80}
+div.section .superdeal ul li.group1 {z-index:70}
+div.section .superdeal ul li.group1 ul li:first-child {z-index:60}
+div.section .superdeal ul li.group1 ul li:first-child + li {z-index:50 !important}
+div.section .superdeal ul.mini1_1> li {z-index:40}
+div.section .superdeal ul.larg2> li {z-index:30}
+div.section .superdeal ul.mini2 li.type5 div.prd a.smart_close, div.section .superdeal ul.mini2_1 li.type5 div.prd a.smart_close{height:12px !important}
+div.section .superdeal ul.mini2 li.type5 div.prd a.btn_detail, div.section .superdeal ul.mini2_1 li.type5 div.prd a.btn_detail{height:auto !important}
+
+/* g9section */
+div.section .g9section{position:relative;margin-top:25px;border:1px solid #ddd;height:283px;background:#f3f5f8;overflow:hidden}
+div.section .g9section h3{margin:14px 0 6px 26px;width:110px;height:25px}
+div.section .g9section h3 a{display:block;width:110px;height:25px}
+div.section .g9section .btn_more{position:absolute;top:13px;right:15px;width:128px;height:26px;overflow:hidden}
+div.section .g9section .btn_more a{display:block;width:128px;height:16px;background:url(//pics.gmarket.co.kr/pc/ko/main/button.png) -150px -240px no-repeat;text-indent:-999em;padding:5px 0}
+div.section .g9section ul{*zoom:1;clear:both}
+div.section .g9section ul:after{content:"";display:block;clear:both}
+div.section .g9section ul.mini{height:239px}
+div.section .g9section ul.mini li{position:relative}
+div.section .g9section ul.mini .deal{margin-right:14px}
+div.section .g9section ul.mini li.type3_1{width:244px;height:239px;overflow:hidden;margin-right:0;border:0}
+div.section .g9section ul.mini li.type3_1 a{ width:231px;height:218px;margin:0 0 0 13px;display:block;padding-top:0}
+div.section .g9section ul.mini li.type3_1 a >img{width:231px;height:218px}
+div.section .g9section ul.mini li.type3_1 .price-info{position:absolute;top:30px;left:10px}
+div.section .g9section ul.mini li.type3_2{margin-left:14px;width:226px;height:239px;border:0;overflow:hidden}
+div.section .g9section ul.mini li.type3{width:226px;height:239px;border:0;overflow:hidden}
+div.section .g9section .type3 a ,div.section .g9section .type3_2 a{ height:239px;display:block;overflow:hidden}
+div.section .g9section .type3 a>img,div.section .g9section .type3_2 a>img{width:226px;height:158px}
+div.section .g9section .type3 .price-info,div.section .g9section .type3_2 .price-info{margin-top:8px;padding:0}
+div.section .g9section .type3 .title ,div.section .g9section .type3_2 .title{font:13px/130% Dotum;color:#777;display:block;letter-spacing:-1px;overflow:hidden;height:21px;width:234px;text-overflow:ellipsis;white-space:nowrap;/* padding-right:10px;*/} /* 2014-04-15 G9수정 */
+div.section .g9section .type3 .sale-per,div.section .g9section .type3_2 .sale-per{float:left;color:#8b00d4;font:18px/34px Tahoma;letter-spacing:-2px;margin-right:8px}
+div.section .g9section .type3 .sale-per strong ,div.section .g9section .type3_2 .sale-per strong{font-size:31px;font-weight:bold}
+div.section .g9section .type3 .money,div.section .g9section .type3_2 .money{float:left;margin-right:10px;height:33px}
+div.section .g9section .type3 .money del ,div.section .g9section .type3_2 .money del{display:block;font:11px/100% Tahoma;color:#999}
+div.section .g9section .type3 .money strong ,div.section .g9section .type3_2 .money strong{display:block;font:bold 20px/100% Tahoma;color:#222;padding-top:10px}
+div.section .g9section .type3 .money del+strong ,div.section .g9section .type3_2 .money del+strong{padding-top:1px}
+div.section .g9section .deal{float:left;position:relative;border:1px solid #ddd;border-bottom-color:#ccc}
+div.section .g9section .deal a{position:relative;display:block;text-decoration:none}
+div.section .g9section .sale-per strong{padding-right:2px}
+div.section .g9section .btn_freeD{float:left;display:block;width:47px;height:15px;margin-top:15px;*margin-top:13px;background:url(//pics.gmarket.co.kr/pc/ko/main/tag.png) no-repeat -620px -40px;text-indent:-999em}
+/* IE8 only */  
+@media \0screen{div.section .g9section .btn_freeD{margin-top:13px}}
+
+/* g9 soldout*/
+div.section .g9section .icon_soldout{height:158px;display:none}
+div.section .g9section .soldout .icon_soldout{display:block}
+div.section .g9section .icon_soldout span{margin:-73px 0 0 -73px;width:148px;height:147px;background-position:-380px 0}
+/*div.section .icon_soldout span{display:block;width:148px;height:147px;position:absolute;z-index:3;background:url(http://pics.g9.co.kr/201403/icon/icon_soldout.png) 0 0 no-repeat;overflow:hidden;text-indent:-999em;left:50%;top:50%;margin:-73px 0 0 -73px}
+div.section .g9section .icon_soldout .bg_soldout{position:absolute;z-index:2;width:100%;height:100%;background:#222;opacity:0.2;-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=20)";filter:alpha(opacity=20)}
+*/
+/* E */
+div.section .focus .title, div.section .power .title, div.section .minishop .title, div.section .market .title{position:relative;height:26px;border-bottom:1px solid #ccc;padding:14px 0 0 19px}
+div.section .focus .title .page, div.section .power .title .page, div.section .minishop .title .page, div.section .market .title .page{font:12px Tahoma;color:#777;position:absolute;right:19px;top:14px}
+div.section .focus .title .page strong, div.section .power .title .page strong, div.section .minishop .title .page strong, div.section .market .title .page strong{color:#222}
+/* 포커스 아이템 */
+div.section .focus{border:1px solid #ccc;margin-top:25px}
+div.section .focus .rolling{height:261px;position:relative}
+div.section .focus .rolling .play a{display:block;width:21px;height:19px;position:absolute;bottom:15px;right:20px;background:url(//pics.gmarket.co.kr/pc/ko/main/button.png) no-repeat -200px -60px;text-indent:-999em}
+div.section .focus .rolling .play a:hover{background-position:-200px -90px}
+div.section .focus .rolling .play.pause a{background-position:-230px -60px}
+div.section .focus .rolling .play.pause a:hover{background-position:-230px -90px}
+div.section .focus .rolling .prev a, div.section .focus .rolling .next a{top:112px}
+/*div.section .focus .rolling .prev a, div.section .focus .rolling .next a{display:block;position:absolute;top:50%;margin-top:-19px;width:38px;height:38px;background:url(//pics.gmarket.co.kr/pc/ko/main/sprite_button.png) no-repeat;text-indent:-999em}
+div.section .focus .rolling .prev a{left:10px;background-position:0 -300px}
+div.section .focus .rolling .prev a:hover{background-position:0 -338px}
+div.section .focus .rolling .next a{right:10px;background-position:-38px -300px}
+div.section .focus .rolling .next a:hover{background-position:-38px -338px}*/
+div.section .focus .rolling .rollingBox{margin-left:59px;width:860px;overflow:hidden;padding-top:20px}
+div.section .focus .rolling .rollingBox ul{width:1000px}
+div.section .focus .rolling .rollingBox ul li{float:left;width:200px;margin-right:20px;text-align:center}
+div.section .focus .rolling .rollingBox .prd a{display:block;color:#000;text-decoration:none}
+div.section .focus .rolling .rollingBox .prd a img{margin-bottom:10px;*margin-bottom:8px;width:200px;height:200px}
+div.section .focus .rolling .rollingBox .prd a .name{display:block;margin:0 auto;width:200px;overflow:hidden;white-space:nowrap}
+
+/* 오늘의 파워상품 */
+div.section .power{border:1px solid #ccc;border-width:0 1px 1px 1px}
+div.section .power .rolling{height:214px;position:relative}
+/*div.section .power .rolling .prev a, div.section .power .rolling .next a{display:block;position:absolute;top:50%;margin-top:-19px;width:38px;height:38px;background:url(//pics.gmarket.co.kr/pc/ko/main/sprite_button.png) no-repeat;text-indent:-999em}
+div.section .power .rolling .prev a{left:10px;background-position:0 -300px}
+div.section .power .rolling .prev a:hover{background-position:0 -338px}
+div.section .power .rolling .next a{right:10px;background-position:-38px -300px}
+div.section .power .rolling .next a:hover{background-position:-38px -338px}*/
+div.section .power .rolling .rollingBox{margin-left:52px;width:875px;overflow:hidden;padding-top:19px}
+div.section .power .rolling .rollingBox ul{width:1000px}
+div.section .power .rolling .rollingBox ul li{float:left;width:120px;margin-right:31px;text-align:center}
+div.section .power .rolling .rollingBox .prd{text-align:center}
+div.section .power .rolling .rollingBox .prd a span{color:#777}
+div.section .power .rolling .rollingBox .prd a:hover span{color:#0082f0}
+div.section .power .rolling .rollingBox .prd img{width:120px;height:120px}
+div.section .power .rolling .rollingBox .prd span{overflow:hidden;display:block;margin-top:8px;width:120px;height:28px;font-size:11px;line-height:14px;letter-spacing:-1px}
+div.section .power .rolling .rollingBox .prd strong{display:block;font-weight:bold;padding-top:4px;font-size:12px;letter-spacing:0;color:#000}
+div.section .power .rolling .rollingBox .prd strong span{display:inline;margin:0;width:auto;height:auto;font:bold 12px Tahoma, Verdana;letter-spacing:0 !important}
+
+/* 파워 미니샵 */
+div.section .minishop{border:1px solid #ccc;width:490px;border-width:0 0 1px 1px;height:254px;float:left}
+div.section .minishop .title{border-right:1px solid #ccc}
+div.section .minishop .rollingBox{position:relative}
+div.section .minishop .rollingBox ul{overflow:hidden;height:213px}
+div.section .minishop .rollingBox ul li{overflow:hidden;height:213px;border-right:1px solid #ccc}
+div.section .minishop .rollingBox ul li a>img{width:490px;height:213px}
+div.section .minishop .rollingBox .prev a, div.section .minishop .rollingBox .next a{position:absolute;top:87px;display:block;width:38px;height:38px;background:url(//pics.gmarket.co.kr/pc/ko/main/button.png) no-repeat;text-indent:-999em}
+div.section .minishop .rollingBox .prev a{left:10px;background-position:0 0}
+div.section .minishop .rollingBox .next a{right:10px;background-position:-50px 0}
+div.section .minishop .rollingBox .prev a:hover{background-position:0 -50px}
+div.section .minishop .rollingBox .next a:hover{background-position:-50px -50px}
+
+/* 특가마켓 */
+div.section .market{border:1px solid #ccc;border-width:0 1px 1px 0;width:488px;height:254px;float:left}
+div.section .market .rolling{position:relative;height:213px}
+div.section .market .rolling .rollingBox{margin-left:55px;width:380px;overflow:hidden;padding-top:19px}
+div.section .market .rolling .rollingBox ul{width:1000px}
+div.section .market .rolling .rollingBox ul li{float:left;width:120px;margin-right:12px;text-align:center}
+div.section .market .rolling .rollingBox .prd{text-align:center}
+div.section .market .rolling .rollingBox .prd a span{color:#777}
+div.section .market .rolling .rollingBox .prd a:hover span{color:#0082f0}
+div.section .market .rolling .rollingBox .prd img{width:120px;height:120px}
+div.section .market .rolling .rollingBox .prd span{overflow:hidden;display:block;margin-top:8px;width:100px;padding:0 10px;height:28px;font-size:11px;line-height:14px;letter-spacing:-1px}
+div.section .market .rolling .rollingBox .prd strong{display:block;font-weight:bold;padding-top:4px;font-size:12px;letter-spacing:0;color:#000}
+div.section .market .rolling .rollingBox .prd strong span{display:inline;margin:0;padding:0;width:auto;height:auto;font:bold 12px Tahoma, Verdana;letter-spacing:0}
+
+/* PARCEL */
+div.section .parcelNew{float:left;width:171px}
+div.section .parcelNew h3{padding:0;height:37px}
+div.section .parcelNew img{vertical-align:top}
+
+/* GLOBAL */
+div.section .globalNew{float:left;width:212px;border-top:1px solid #d7d7d7;border-bottom:1px solid #d3d3d3}
+div.section .globalNew img{vertical-align:top}
+
+/* SPONSOR */
+div.section .sponsorNew{float:left;width:213px;border:1px solid #d7d7d7;border-bottom:1px solid #d3d3d3}
+div.section .sponsorNew .tit{position:relative;overflow:hidden;_zoom:1}
+div.section .sponsorNew .tit span{display:block;padding:14px 12px 10px;position:absolute;top:0;right:0;text-align:right;font-size:11px;line-height:12px}
+div.section .sponsorNew .tit span *{vertical-align:top}
+div.section .sponsorNew .tit span img{margin-right:3px}
+div.section .sponsorNew .tit span em{padding-left:16px;background:url(http://image.gmarket.co.kr/_Net/corecom/main/sprite_icon.png) no-repeat 0 -200px;color:#167511;font-style:normal}
+
+/* SNS */
+div.section .snsNew{float:left;width:212px;border-top:1px solid #d7d7d7;border-bottom:1px solid #d3d3d3}
+div.section .snsNew img{vertical-align:top}
+
+/* MOBILE */
+div.section .mobileNew{float:right;width:170px}
+div.section .mobileNew h3{padding:0;height:37px}
+div.section .mobileNew img{vertical-align:top}
+
+/* G파트너스 */
+div.section .g_partners{overflow:hidden;position:relative;padding:14px 0}
+div.section .g_partners h3{float:left;margin:13px 0;padding:25px 0 0 21px;width:110px;height:41px;border-right:1px solid #ddd}
+div.section .g_partners ul.listNew{overflow:hidden;float:right;width:834px}
+div.section .g_partners ul.listNew li{float:left}
+div.section .g_partners ul.listNew li a img{vertical-align:bottom}
+
+/* 알립니다 */
+div.section .noticeNew{overflow:hidden;position:relative;float:left;margin-bottom:-8px;padding:14px 20px 0;width:620px;border-top:1px solid #ddd}
+div.section .noticeNew h3{float:left;width:152px}
+div.section .noticeNew .btnsNew{position:absolute;left:125px;top:15px;width:12px;font-size:4px;line-height:4px}
+div.section .noticeNew ul.listNew{overflow:hidden;float:left;padding-left:0;width:465px;height:14px;font-size:11px;line-height:14px}
+div.section .noticeNew ul.listNew li{padding:1px 0}
+div.section .noticeNew ul.listNew li a{color:#222;letter-spacing:-1px}
+div.section .noticeNew ul.listNew li span{margin-left:8px;padding-left:8px;background:url(http://image.gmarket.co.kr/_Net/corecom/main/bg_notice_bar.png) no-repeat 0 0;color:#aaa}
+
+/* 후원쇼핑 */
+div.section .sponsor{overflow:hidden;position:relative;float:right;margin-bottom:-8px;padding:8px 20px 0;width:280px;border-top:1px solid #ddd}
+div.section .sponsor h3{display:block;padding:7px 0 0 26px;height:21px;border-left:1px solid #ddd}
+div.section .sponsor span, div.section .sponsor em{float:left;color:#222;font-size:11px;font-weight:normal;letter-spacing:-1px}
+div.section .sponsor .btnsNew{margin:1px 0 0 7px}
+/*div.section .sponsor ul.listNew{float:left;width:600px;height:14px;padding-left:0px;overflow:hidden;font-size:11px;line-height:14px}
+div.section .sponsor ul.listNew li{padding:1px 0}
+div.section .sponsor ul.listNew li a{color:#222;letter-spacing:-1px}
+div.section .sponsor ul.listNew li span{margin-left:8px;padding-left:8px;background:url(http://image.gmarket.co.kr/_Net/corecom/main/bg_notice_bar.png) no-repeat 0 0;color:#aaa}*/
+
+/* 아이패드 앱 출시 2013-12-26 */
+.ipad_app{display:none;position:absolute;top:0;z-index:10000;width:100%;height:58px;background:url(http://image.gmarket.co.kr/_Net/corecom/main/ipad_app/bg.gif) repeat-x;text-align:center}
+.ipad_app img.txt_copy{margin:8px 22px 0 0}
+.ipad_app a img{margin:9px 0 0 10px;vertical-align:top}
+
+/* 아이패드 앱 팝업 */
+.popup_ipad_app{display:none;position:absolute;top:0;z-index:10000;width:100%;text-align:center}
+.popup_ipad_app img{vertical-align:top}
+.popup_ipad_app .popup_ipad_app_con{position:relative;width:536px;margin:0 auto}
+.popup_ipad_app .button_download{position:absolute;top:150px;left:207px}
+.popup_ipad_app .button_none{position:absolute;top:261px;left:24px}
+.popup_ipad_app .button_close{position:absolute;top:261px;right:24px}
+
+/* Set Start Page */
+.popup_startpage{position:absolute;left:50%;top:0;z-index:3001;margin-left:-490px;width:980px;height:40px;background:#eee url(http://pics.gmarket.co.kr/pc/ko/main/startpage/txt_startpage.png) no-repeat;text-align:center;text-indent:-999em}
+.popup_startpage a, .popup_startpage p.today{display:block;position:absolute;right:11px;top:8px;text-indent:0}
+.popup_startpage a.close{padding:6px}
+.popup_startpage a.button{right:215px;top:9px}
+.popup_startpage.after a.button{right:152px}
+.popup_startpage p.today{right:36px;top:12px;color:#7c8387;font-size:11px;letter-spacing:-1px}
+.popup_startpage p.today input{vertical-align:middle}
+.popup_startpage p.today label{line-height:20px}
+.popup_startpage.after{background-position:0 -50px}
+
+/* mac os 팝업 */
+.dimmed_popup{position:absolute;left:0;top:0;width:100%;z-index:3000}
+.dimmed_popup_bg{position:absolute;left:0;top:0;width:100%;height:2596px;background:url(http://image.gmarket.co.kr/_Net/corecom/main/global_ip/bg_modal_pop.png) repeat}
+.popup_mac{position:absolute;top:170px;width:100%;text-align:center}
+.popup_mac img{vertical-align:top}
+.popup_mac .popup_con{position:relative;width:723px;margin:0 auto;border:1px solid;border-color:#002258 #002258 #002258 #002258;background:#fff;box-shadow:0 0 3px 3px rgba(0,0,0,0.1);-webkit-box-shadow:0 0 3px 3px rgba(0,0,0,0.1);-moz-box-shadow:0 0 3px 3px rgba(0,0,0,0.1)}
+.popup_mac .popup_con p{width:723px;height:363px}
+.popup_mac div.popup_bot{position:absolute;bottom:0;left:0;height:24px;padding-left:15px;text-align:left}
+.popup_mac div.popup_bot label{padding:4px 0 0 28px;*padding:6px 0 0 28px;display:inline-block;color:#cddfff;font-size:11px}
+.popup_mac div.popup_bot label a{color:#666;font-size:11px;font-family:tahoma;text-decoration:none;padding-left:5px}
+.popup_mac div.popup_bot label input{position:relative;top:1px;*top:-1px;width:11px;height:11px;*vertical-align:top}
+.popup_mac a.close{position:absolute;top:-1px;right:-1px}
+
+/* 상단 아이프레임용 배너 */
+.adArea{top:0;left:0;height:70px;background:url('http://image.gmarket.co.kr/_Net/corecom/main/bg_iframe_top_bnn.png') repeat-x 0 bottom;padding-bottom:2px;position:relative;z-index:55}
+.adArea iframe{vertical-align:top}
+.adArea .linkContainer a.top_bnn_close{position:absolute;display:block;top:18px;left:50%;width:34px;height:34px;margin-left:455px;z-index:60;zoom:1}
+span.btn_bnn_close{overflow:hidden;display:block;width:35px;height:35px;background:url(http://image.gmarket.co.kr/_Net/corecom/common/layout/btn_banner_close.png) no-repeat 7px 8px;line-height:999em}
+
+/*  하단 배너   */
+.adAreaB{position:fixed;left:50%;margin-left:-490px;height:168px;background:none;bottom:0;z-index:55;text-align:center}
+.adAreaB div.event_box{width:980px;height:168px;background:#888;position:relative}
+.adAreaB div.event_box a.event{display:block;width:980px;height:168px;background:url(//pics.gmarket.co.kr/pc/ko/expire/main_surface.jpg) no-repeat;text-indent:-999em}
+.adAreaB div.event_box a.bnn_close{position:absolute;display:block;top:14px;right:14px;width:34px;height:34px;z-index:999;zoom:1}
+span.btn_banner_close{overflow:hidden;display:inline-block;width:35px;height:35px;background:url(//pics.gmarket.co.kr/pc/ko/main/button.png) -227px -114px;z-index:9990;line-height:999em}
+
+/* geo-ip */
+.layer_modal_pop_bg{position:absolute;left:0;top:0;width:100%;height:2596px;background:url(http://image.gmarket.co.kr/_Net/corecom/main/global_ip/bg_modal_pop.png) repeat}
+.modalPop3{position:absolute;left:0;top:0;width:100%;z-index:3000}
+.modalPop3 .pop3_modal{overflow:hidden;position:relative;left:50%;top:200px;margin:0 0 0 -286px;width:600px}
+.modalPop3 div.top{width:600px;height:460px;background:url(http://image.gmarket.co.kr/_Net/corecom/main/global_ip/lang_choose_top.gif) no-repeat #F2F2F2}
+.modalPop3 div.top a{float:left;width:230px;height:280px}
+.modalPop3 div.top a.ko{margin:111px 0 0 55px}
+.modalPop3 div.top div.ko{float:left;width:250px;margin:111px 0 0 42px}
+.modalPop3 div.top a.en{margin:111px 0 0 30px}
+.modalPop3 div.top div.en{float:left;width:250px;margin:111px 0 0 10px;position:relative;overflow:hidden}
+.modalPop3 div.top div.en div.modal_txt1{position:absolute;left:25px;top:190px;clear:both}
+.modalPop3 div.top div.en div.modal_txt2{position:absolute;left:25px;top:215px;clear:both}
+.modalPop3 div.top div.en div.modal_txt3{position:absolute;left:25px;top:240px;clear:both}
+.modalPop3 div.top div.en div h3{float:left;width:70px}
+.modalPop3 div.top div.en div div.sele{float:left;height:20px}
+.modalPop3 div.bot{width:600px;height:37px;background:#dfdfdf;position:relative}
+.modalPop3 div.bot label{padding:10px 0 0 15px;*padding:7px 0 0 15px;display:inline-block}
+.modalPop3 div.bot label a{color:#666;font-size:11px;font-family:tahoma;text-decoration:none;padding-left:5px}
+.modalPop3 div.bot label input{position:relative;top:2px}
+.modalPop3 div.bot a.close{position:absolute;top:12px;right:15px}
+div.modalPop3 div.pop3_modal div.top div.en div h3.bl_type1{background-position:0 -122px;font-size:12px;line-height:20px;height:20px;padding-left:15px;vertical-align:middle}
+
+/* layer */
+.layer_modal_popup_bg{position:fixed;top:0;left:0;width:100%;height:100%;background:#000;-ms-filter:alpha(opacity=60);filter:alpha(opacity=60);opacity:0.6}
+.modal_popup{position:fixed;top:0;left:0;width:100%;z-index:5000}
+.ly_wrap .title{padding-top:13px;background:url(http://image.gmkt.kr/_Net/core/common/layout/sprite_layer.png?20141110) repeat-x}
+.ly_wrap .title strong{display:block;height:19px;padding-top:2px;padding-left:19px;font-size:16px;color:#006bdf}
+.ly_wrap .layer_type{position:fixed;left:50%;top:50%;background:#fff;border:3px solid #1179ea}
+.ly_wrap .layer_type .title{height:32px;line-height:15px}
+.ly_wrap .layer_type .pop_cont{overflow:hidden;min-height:615px;margin:20px 0;padding:0 20px}
+.ly_wrap .layer_type .ly_close{display:block;position:absolute;top:0;right:0;width:15px;height:13px;padding:15px;background:url(http://image.gmkt.kr/_Net/core/common/layout/sprite_layer.png?20141110) no-repeat 15px -100px;text-indent:-999em} 
+#company_mark_ftc .ly_wrap .layer_type,
+#company_mark_opa .ly_wrap .layer_type{margin-left:-242px;;margin-top:-340px;width:484px}
+#bnr_main_super .ly_wrap .layer_type{position:fixed;left:50%;top:20%;width:570px;margin-left:-285px;margin-top:-90px;background:#000;border:none}
+#bnr_main_super .ly_wrap .layer_type>img {display:block}
+#bnr_main_super .ly_wrap .layer_type .ly_close{width:26px;height:23px;background-position:-57px -90px}
+/* SFC Mall 20150720 */
+.sfc_layer_popup {position:absolute; top:140px; left:50%; width:326px; height:401px; margin-left:160px; border:#000 2px solid; z-index:5000;}
+.sfc_layer_popup .sfc_layer_popup_img {top:0; left:0; width:326px; height:371px; margin:0; border:none;}
+.sfc_layer_popup .sfc_ly_wrap { width:326px; height:30px; background-color:#fff; margin:0; }
+.sfc_layer_popup .sfc_ly_wrap .ly_message { display:block; top:0; left:0; padding:8px 0 0 23px; }
+.sfc_layer_popup .sfc_ly_wrap .ly_message input { display:inline-block; vertical-align:-2px;}
+.sfc_layer_popup .sfc_ly_wrap .ly_message label { display:inline-block; margin-left:2px;}
+.sfc_layer_popup .sfc_ly_wrap .ly_close {display:block;position:absolute;bottom:0;right:0;width:27px;height:27px;padding:0; text-indent:-9999px }
+.sfc_layer_popup .sfc_ly_wrap .ly_close .close { display:block; margin-top:6px; margin-left:7px; background:url(http://pics.gmarket.co.kr/pc/ko/common/layout/img_sfc_logo.png) no-repeat 0px -130px; } 
+
+.sfc_main_banner { width:980px; height:130px; margin:20px 0 0 0; border:none; overflow:hidden }
+.sfc_main_banner2 { width:980px; height:130px; margin:20px 0 0 0; border:none; overflow:hidden }
+.sfc_main_banner2 span { width:490px; height:130px; float:left; border:none; overflow:hidden }
+.sfc_main_banner3 { width:980px; height:130px; margin:20px 0 0 0; border:none; overflow:hidden }
+.sfc_main_banner3 span { width:327px; height:130px; float:left; border:none; overflow:hidden }
+.sfc_main_banner3 span.first { width:326px; height:130px; float:left; border:none; overflow:hidden }
+
+.sfc_homeplus_layer {position:absolute; left:0; top:288px; width:195px; height:50px; z-index:9000; }
+.sfc_homeplus_layer .sfc_homeplus_layer_btn {display:block; width:195px; height:50px; background:url(http://pics.gmarket.co.kr/pc/ko/main/homeplus_btn.png) 0 0 no-repeat}
+/* SFC Mall 20150720 */
+
+
+/* dimmed layer :CSS 하단 유지할것 */
+div.poplayer{position:absolute;left:0;top:0;width:100%;height:100%;z-index:5000}
+div.dimmed{position:absolute;left:0;top:0;width:100%;height:100%;background:#000;filter:alpha(opacity=55);opacity:0.55;z-index:5000;-webkit-backface-visibility:hidden}
+div.dimmed iframe.blocker{width:100%;height:100%;filter:alpha(opacity=0);opacity:0}
+div.frame_setting{position:absolute;top:0;left:0;width:100%;text-align:center;z-index:5001}
+div.frame_setting iframe{margin:0 auto}
+div.dimmed_sub{background-position:0% 0%;background:#000;filter:alpha(opacity=55);opacity:0.55;margin-top:0px;margin-right:0px;margin-bottom:0px;position:fixed;top:0px;left:0px;background-attachment:scroll;background-repeat:repeat;background-image:none;background-size:auto;background-origin:padding-box;background-clip:border-box}
+
+/* 광고표기 */
+em.ad{overflow:hidden;display:inline-block;margin:0px;*margin-top:-1px;margin-top:-1px \0/IE9;width:20px;height:14px;background:url(//pics.gmarket.co.kr/pc/ko/item/list/cpp/tag.png) no-repeat;text-indent:-999em;vertical-align:top}
+h3.sprite_title em.ad{position:;float:none;width:20px;z-index:1;border:0;}
+#wing>ul>li em.ad{position: absolute;top: 14px;right: 5px;*text-indent:0;*line-height:4;}

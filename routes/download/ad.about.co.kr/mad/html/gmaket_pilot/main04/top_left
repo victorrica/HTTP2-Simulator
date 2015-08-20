@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "//www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="//www.w3.org/1999/xhtml" lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+<title>AdBay</title>
+<script type="text/javascript">
+if (typeof window.jQuery == 'undefined') { document.writeln('<scri'+'pt type="text/javascri'+'pt" src="http://scri'+'pt.about.co.kr/os2/common/js/jquery-1.8.2.min.js"></scri'+'pt>'); }
+document.writeln('<scr'+'ipt type="text/javascript" src="http://script.about.co.kr/templates/script/cm/jquery.base64.js"></scr'+'ipt>');
+document.writeln('<scr'+'ipt type="text/javascript" src="http://script.about.co.kr/templates/script/cm/adbay.controller.v1.7.js"></scr'+'ipt>');
+var _adbayInventoryData = { INV_WIDTH : 85, INV_HEIGHT : 205, GOODS_WIDTH : 0, GOODS_HEIGHT : 0, JSONP_URL : "http://adapi.about.co.kr/mad/jsonp/gmaket_pilot/main04/top_left", INV_UIS : "bn2" };
+</script>
+
+</head>
+<body>
+<div id="adbayHouseContent" style="display:none;"><iframe id="adbayHouseContentFrame" src="" frameborder="0" scrolling="no" topmargin="0" leftmargin="0" marginwidth="0" marginheight="0" width="85" height="205"></iframe></div>
+
+<!-- bn2 -->
+<script type='text/javascript'>
+function adbayBanner2Callback()
+{
+	var code		= '';
+	var extension	= adbayGetFileExtension(adbayAdsContents['creatives'][0]['src']);
+
+	if(extension == 'swf')
+		code	= adbayGetFlashBannerCode(adbayAdsContents['creatives'][0]['src'], adbayAdsContents['creatives'][0]['click'], adbayAdsContents['width'], adbayAdsContents['height']);
+	else
+		code	= '<a href="'+adbayAdsContents['creatives'][0]['click']+'" target="_blank"><img src="'+adbayAdsContents['creatives'][0]['src']+'" width="'+adbayAdsContents['width']+'" height="'+adbayAdsContents['height']+'" /></a>';
+
+	$("#adbay_bn2_layer").html(code);
+	$("#iBan2 span").css('border-color', adbayAdsContents['bg-color']);
+	$("#iBan2").show();
+layerAd();
+}
+// hp광고문구 레이어 노출
+		function layerAd(){
+			$(".ad_mark_wrap .ad_btn").each(function (index) {
+				$(".ad_layer").css({ display: "none" });		
+			});
+			$(".ad_mark_wrap .ad_btn").on("click keyup", function (e) {
+				e.preventDefault();
+				if ($(this).next(".ad_layer").css("display") == "none") {
+					$(".ad_mark_wrap .ad_layer").hide().css("z-index", "1");
+					$(this).next(".ad_layer").show().css("z-index", "9000");
+				} else {
+					$(this).next(".ad_layer").hide();
+					$(this).next(".ad_layer").css("z-index", "1");
+				}
+			});
+			$("div.ad_layer a.ad_layer_close").bind("click keyup", function (e) {
+				$(".ad_mark_wrap > .ad_layer").hide();
+				$(this).parent().parent().find(".ad_btn").focus();
+			});
+		}
+</script>
+<!--<link rel='stylesheet' type='text/css' href='http://script.about.co.kr/templates/css/bn/pc/v1/banner.css' />-->
+<style type="text/css">
+		*{margin:0;padding:0;border:0;}
+		#iBan2 {position:relative;display:inline-block;*display:inline;zoom:1;}
+		.iBan a,
+		.iBan img {border:0;vertical-align:top;}
+		.iBan span {position:absolute;}
+		.iBan .bt {top:0; left:0; width:100%; height:1px; border-top:1px solid red;}
+		.iBan .br {top:0; right:0; width:1px; height:100%; border-right:1px solid red;}
+		.iBan .bb {bottom:0; right:0; width:100%; height:1px; border-bottom:1px solid red;}
+		.iBan .bl {top:0; left:0; width:1px; height:100%; border-left:1px solid red;}
+
+		/* 광고배너 추가 */
+		.ad_mark_wrap {z-index:10050}
+		.ad_mark_wrap .ad_layer{display:none;position:absolute;top:17px;right:4px;z-index:9999;height:28px;padding-top:5px;background:none}
+		.ad_mark_wrap .ad_layer p{width:63px;height:23px;padding-left:10px;background:#fff;border:1px solid #777;line-height:25px;vertical-align:top;color:#000;font-size:11px;font-family:dotum; letter-spacing:-1px}
+		:root .ad_mark_wrap .ad_layer p{line-height:28px \0/IE9}
+		.ad_mark_wrap .ad_layer em{position:absolute; overflow:hidden;right:8px;top:2px;width:5px; height:4px; background:url('http://211.172.246.134/combineAdBanner/html/Img_banner/images/sprite_bnr.png') 0 -23px no-repeat;*zoom:1}
+		.ad_mark_wrap .ad_layer .ad_layer_close{position:absolute; display:block;overflow:hidden;*zoom:1;width:19px; height:19px; line-height:100px; top:8px; left:52px;margin:0;background:url('http://211.172.246.134/combineAdBanner/html/Img_banner/images/sprite_bnr.png') 5px -31px no-repeat}
+		.ad_mark_wrap .ad_btn{display:inline-block;position:absolute;top:6px;right:5px;z-index:9999;width:13px;height:13px;background:url('http://211.172.246.134/combineAdBanner/html/Img_banner/images/sprite_bnr.png') 0 0 no-repeat;font-size:0;text-indent:-999px}
+		/* //광고배너 추가 */
+	</style>
+
+<script src='http://script.about.co.kr/templates/script/bn/pc/v2/banner.controller.js'></script>
+<div class='iBan' id='iBan2' style='display:none;'>
+<div id='adbay_bn2_layer'></div>
+<span class='bt' style='border-color: red;'></span>
+<span class='br' style='border-color: red;'></span>
+<span class='bb' style='border-color: red;'></span>
+<span class='bl' style='border-color: red;'></span>
+<div class="ad_mark_wrap">
+			<a href="#link_none" class="ad_btn">광고배너 자세히보기</a>
+			<div class="ad_layer" style="z-index: 1; display: none;">
+				<em></em>
+				<p>광고배너</p>
+				<a href="#" onclick="this.parentNode.style.display = 'none'; return false;" class="ad_layer_close">닫기</a>
+			</div>
+</div>
+</div>
+</body>
+</html>
