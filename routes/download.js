@@ -3,20 +3,28 @@ var path = require('path');
 var mkdirp = require('mkdirp');
 var http = require("http");
 var https = require("https");
-var url = require("url");
-var URL = process.argv[2];
+var request = require("request");
+
+var options = JSON.parse(process.argv[2]);
 var filepath = process.argv[3];
 var path = process.argv[4];
-var URLprotocal = url.parse(URL).protocol;
 
-// this is for test
+var URLprotocal = options.port;
+
 filepath = "/usr/local/nginx/html/" + path + "/" + filepath;
+
 if(filepath.lastIndexOf('/') != -1)
   mkdirp.sync(filepath.substring(0,filepath.lastIndexOf('/')));
 
 var file = fs.createWriteStream(filepath);
 
-var request = (URLprotocal=="https:"?https:http).get(URL, function(response) {
-	console.log("Download Start - " + URL);
+var req = (URLprotocal=="http"?https:http).request(options, function(response) {
+	console.log("Download Start - " + options.hostname + options.path + "\n");
 	response.pipe(file);
 });
+
+req.on('error', function(error) {
+  console.log(error);
+});
+
+req.end();

@@ -15,10 +15,11 @@ if (system.args.length === 1) {
 
     page.onResourceReceived  = function (res) {
 
-		//console.log('received: ' + JSON.stringify(res, undefined, 4));
 		var URL = res.url;
+
         if(res.redirectURL)
           URL = res.redirectURL;
+
 		if(res.redirectURL && parseURL(res.redirectURL).host == parseURL(URL).host)
 			originURL = parseURL(res.redirectURL).domain;
 
@@ -34,34 +35,33 @@ if (system.args.length === 1) {
 		if(localPath.indexOf("?") > -1) {
 			localPath = localPath.slice(0,localPath.indexOf("?"));
 		}
-  
-            console.log(originURL.replace("www.", "") + "\n" +
-                parsedURL.domain.replace("www.", ""));
+
 		//Domain Sharding 처리
 		if(originURL.replace("www.", "") != parsedURL.domain.replace("www.", ""))
         {
 			localPath = parsedURL.domain + "/" + localPath;
             folders.push(localPath);
         }
-  
-		var child = spawn("node", ["download.js", URL, localPath, path]);
 
-	//	console.log(JSON.stringify(res, undefined, 4));
-		console.log(res.url + "\n" + localPath);
-/*
+        //header 처리
+		header["host"] = parsedURL.domain;
+		header["User-Agent"] = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.155 Safari/537.36";
+        for(var i=0;i<res.headers.length;i++)
+	       header[res.headers[i].name] = res.headers[i].value;
+        var options = {
+			hostname: parsedURL.domain,
+			port : parsedURL.protocol=="http"?parsedURL.protocol=80:parsedURL.protocol=443,
+			path: parsedURL.path==null?parsedURL.path="/":parsedURL.path="/"+parsedURL.path,
+			method: "GET",
+			headers: header
+		};
+
+		// 다운로드 호출
+		var child = spawn("node", ["download.js", JSON.stringify(options), localPath, path]);
+
 		child.stdout.on("data", function (data) {
 			console.log(data);
 		});
-
-		child.stderr.on("data", function (err,data) {
-		    console.log("Download Error : " + err);
-		});
-/*
-		child.on("exit", function (code) {
-		  	console.log("Download Done : " + parseURL(res.url).path);
-		});
-		*/
-
     };
 
     page.open(address, function (status) {
