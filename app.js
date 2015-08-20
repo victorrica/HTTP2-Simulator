@@ -13,11 +13,8 @@ var wpt = require('./routes/webpagetest');
 var bodyParser = require('body-parser');
 var checker = require('./routes/check');
 var cookieParser = require('cookie-parser');
-var mysql = require('mysql');
-var crypto = require('crypto');
+var mysql_module = require('./routes/mysql');
 
-
-var date_utils = require('date-utils');
 var mUrl;
 var keyCount=0;
 
@@ -74,7 +71,6 @@ app.get('/mysql', routes.mysql);
 app.post('/webpagetest',  function(req, res) {
   wpt.run(key[keyCount++], function(aResData) {
     console.log(key[keyCount++]);
-    console.log("aaaaaaaaaaa");
     console.log(aResData);
     res.send(aResData);
 
