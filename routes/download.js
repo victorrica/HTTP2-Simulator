@@ -19,7 +19,6 @@ if(filepath.lastIndexOf('/') != -1)
 
 var file = fs.createWriteStream(filepath);
 
-console.log(options);
 var req = (URLprotocal=="80"?http:https).request(options, function(response) {
 	console.log("Download Start - " + options.hostname + options.path + "\n");
 	response.pipe(file,{end: false});
