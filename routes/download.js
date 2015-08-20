@@ -11,6 +11,7 @@ var path = process.argv[4];
 
 var URLprotocal = options.port;
 
+
 filepath = "/usr/local/nginx/html/" + path + "/" + filepath;
 
 if(filepath.lastIndexOf('/') != -1)
