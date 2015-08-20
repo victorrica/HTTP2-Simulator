@@ -14,11 +14,8 @@ var cookieParser = require('cookie-parser');
 var mysql = require('mysql');
 var crypto = require('crypto');
 var url_module = require('url');
-
-
 var date_utils = require('date-utils');
 
-//console.log(date);
 
 var keyCount=0;
 
@@ -74,8 +71,8 @@ var connection = mysql.createConnection({
   host    :'localhost',
   port : 3306,
   user : 'root',
-  password : 'soma123123!',
-  database:'HTTP2Simulator'
+  password : '1234',
+  database:'test'
 });
 
 
@@ -84,20 +81,8 @@ function randomValueHex (len) {
       .toString('hex') // convert to hexadecimal format
       .slice(0,len);   // return required number of characters
 }
-/*
-app.post('/check', function(req, res) {
-  //console.log(req.body.hostName);
-  checker.fillUrl(req.body.hostName, res);
-  checker.checkSpdy(function() {
-    checker.checkHttp2();
-  })
-
-
-});
-*/
 
 function callback(path2) {
-  //console.log("callback start");
   connection.query("select `path2` from sites where `path2` = '" + path2 + "' limit 1",function(err,result){
 
     if(result.length==1){
@@ -123,9 +108,7 @@ app.post('/webpagetest',  function(req, res) {
       keyCount = 0;
 });
 
-//Add by Kolnidur
 app.post('/tls', function(req, res) {
-  //console.log(req.body.hostName);
   checker.fillUrl(req.body.hostName, res);
   checker.checkNPNproto();
 
@@ -135,9 +118,8 @@ app.post('/tls', function(req, res) {
   var url = req.body.hostName;
   var path1 = crypto.createHash('md5').update(date+url).digest("hex");
   var path2 = randomValueHex(6);
-  //var temp = "b5c569";
   callback(path2);
-  //insert mysql
+
   var user = {'url':url,
     'path1':path1,
     'path2':path2,
@@ -163,21 +145,7 @@ connection.connect(function(err) {
     throw err;
   }
 });
-/*
-app.post('/mysql_send', function(req, res) {
-  var user = {'name':req.body.name,
-    'grade':req.body.grade};
-  var query = connection.query('insert into teacher set ?',user,function(err,result){
-    if (err) {
-      //console.error(err);
-      throw err;
-    }
-    console.log(query);
-    res.send(200,'success');
-  });
 
-});
-*/
 http.createServer(app).listen(app.get('port'), function(){
     console.log("Start H2Perf.org Server!");
 });
