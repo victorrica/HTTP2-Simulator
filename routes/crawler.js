@@ -4,7 +4,7 @@ var page = require('webpage').create(),
     system = require('system'),
     address;
 var fs = require('fs');
-var folders = [];
+var folders = [],header = {};
 if (system.args.length === 1) {
     console.log('Usage: netlog.js <some URL>');
     phantom.exit(1);
@@ -23,7 +23,7 @@ if (system.args.length === 1) {
 		if(res.redirectURL && parseURL(res.redirectURL).host == parseURL(URL).host)
 			originURL = parseURL(res.redirectURL).domain;
 
-		var parsedURL = parseURL(res.url);
+		var parsedURL = parseURL(URL);
 
 		var localPath = parsedURL.path;
 

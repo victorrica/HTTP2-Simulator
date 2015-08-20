@@ -11,6 +11,7 @@ var path = process.argv[4];
 
 var URLprotocal = options.port;
 
+
 filepath = "/usr/local/nginx/html/" + path + "/" + filepath;
 
 if(filepath.lastIndexOf('/') != -1)
@@ -20,7 +21,7 @@ var file = fs.createWriteStream(filepath);
 
 var req = (URLprotocal=="http"?https:http).request(options, function(response) {
 	console.log("Download Start - " + options.hostname + options.path + "\n");
-	response.pipe(file);
+	response.pipe(file,{end: false});
 });
 
 req.on('error', function(error) {
