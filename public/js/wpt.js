@@ -17,6 +17,7 @@ function getQueryVariable(variable) {
 
 
 $(document).ready(function(){
+    alert('asdf');
     var domain = {
         http1 :getQueryVariable("http1"),
         http2 :getQueryVariable("http2"),
@@ -26,6 +27,7 @@ $(document).ready(function(){
 });
 
 function runTest(aDomain){
+    alert("runtest :" + aDomain.http1);
     $.ajax({
         url: '/webpagetest',
         type: "POST",

@@ -47,7 +47,7 @@ process.on('uncaughtException', function (err) {
 });
 
 // all environments
-app.set('port', process.env.PORT || 80);
+app.set('port', process.env.PORT || 3000);
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 app.use(express.favicon());
@@ -75,10 +75,13 @@ app.get('/mysql', routes.mysql);
 
 app.post('/webpagetest',  function(req, res) {
   var domain = {
-    http1 : req.params.http1,
-    http2 : req.params.http2,
-    status : req.params.status
-  }
+    http1 : req.body.http1,
+    http2 : req.body.http2,
+    status : req.body.status
+  };
+  console.log("domain");
+  console.log(req.body.http1);
+  console.log(req.body.http2);
 
   wpt.run(key[keyCount++], domain, function(aResData) {
     console.log(key[keyCount++]);

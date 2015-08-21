@@ -26,6 +26,8 @@ var task = function(mResFunction, aDomain) {
 
     async.series([
         function(callback) {
+            console.log(aDomain.http1);
+            console.log(aDomain.http2);
             runLeft(aDomain, function(aId) {
                 leftId = aId;
                 callback(null);
