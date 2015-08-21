@@ -43,7 +43,7 @@ process.on('uncaughtException', function (err) {
 });
 
 // all environments
-app.set('port', process.env.PORT || 80);
+app.set('port', process.env.PORT || 3000);
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 app.use(express.favicon());
@@ -95,16 +95,16 @@ app.get('/crawler', function(req, res) {
 
   child.on("exit", function (code) {
     console.log("app:"+code);
-    /*
-    const SUCCESS = 0;
-    const FAIL = 1;
+    const SUCCESS = "0";
+    const FAIL = "1";
     if(code == SUCCESS) {
-      res.send(SUCCESS);
+      console.log("exit : " + code);
+      res.send("0");
     } else {
+      console.log("exit else: " + code);
       res.send(FAIL);
     }
-    */
-    
+
   });
 
 });
