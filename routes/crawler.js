@@ -76,7 +76,6 @@ if (system.args.length === 1) {
 function exit(code) {
     setTimeout(function(){ phantom.exit(code); }, 0);
 	phantom.onError = function(){};
-    console.log("TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT");
 	data = fs.read('/usr/local/nginx/html/' + path + '/index.html');
     for(var i=0;i<folders.length;i++)
     {
