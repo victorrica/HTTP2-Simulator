@@ -128,7 +128,10 @@ exports.run = function(key, aDomain, aRcvFun) {
 
 runLeft = function(aDomain, callback) {
     var h1Domain = aDomain.http1;
-    mWpt.runTest(h1Domain, { "video":true,"player":true, breakdown: true, domains: true, pageSpeed: true, requests: true},
+    console.log("h1 url : "+h1Domain);
+    mWpt.runTest(h1Domain, { "video":true,"player":true, breakdown: true,
+        domains: true, pageSpeed: true, requests: true,
+        "location":"ec2-ap-northeast-1:Chrome"},
         function(err, aData) {
             console.log(aData);
             var leftTestId = aData.data.testId;
@@ -138,7 +141,10 @@ runLeft = function(aDomain, callback) {
 
 runRight = function(aDomain, callback) {
     var h2Domain = aDomain.http2;
-    mWpt.runTest(h2Domain, { "video":true,"player":true, breakdown: true, domains: true, pageSpeed: true, requests: true},
+    console.log("h2 url : "+h2Domain);
+    mWpt.runTest(h2Domain, { "video":true,"player":true, breakdown: true,
+        domains: true, pageSpeed: true, requests: true,
+        "location":"ec2-ap-northeast-1:Chrome"},
         function(err, aData) {
             console.log(aData);
             var rightTestId = aData.data.testId;
@@ -154,7 +160,7 @@ createVideo = function(compareId) {
 }
 
 result = function(aLocation, aId, callback) {
-    mWpt.getTestResults(aId, { breakdown: true, requests: true, "location":"ec2-ap-northeast-1:Chrome"}, function(err, data) {
+    mWpt.getTestResults(aId, { breakdown: true, requests: true}, function(err, data) {
         console.log("statusCode : "+data.data.statusCode);
         if(data.statusCode == 200) {
             if(aLocation==LEFT_VIEW){
