@@ -59,7 +59,7 @@ if (system.args.length === 1) {
 		};
 
 		// 다운로드 호출
-		var child = spawn("node", ["download.js", JSON.stringify(options), localPath, path]);
+        var child = spawn("node", ["./routes/download.js", JSON.stringify(options), localPath, path]);
 
 		child.stdout.on("data", function (data) {
 			console.log(data);
