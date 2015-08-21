@@ -36,8 +36,7 @@ function get_progress_page(){
 
 function get_result_page(aDomain) {
     var domain = "https://www.h2perf.org/result?http1=" + aDomain.http1 + "&http2=" + aDomain.http2 + "&status=" + aDomain.status;
-    window.open(domain);
-    //window.location.replace(domain);
+    window.location.replace(domain);
 }
 
 $(document).ready(function(){

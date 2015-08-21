@@ -77,15 +77,6 @@ var task = function(mResFunction, aDomain) {
 
             mysql_module.insert_result(sql_data);
 
-            //var query = mysql_connection.query('insert into result set ?',sql_data,function(err,result){
-            //    if (err) {
-            //        console.error(err);
-            //        throw err;
-            //    }
-            //    console.log('Query execute : '+query.sql);
-            //});
-
-
             console.log('error : ', result);
 
 
