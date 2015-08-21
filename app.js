@@ -28,6 +28,10 @@ var key = [
 
 var app = express();
 
+const HTTPS = "https://";
+const H1_DOMAIN = "-h1.h2perf.org:1234/";
+const H2_DOMAIN = "-h2.h2perf.org:12345/";
+
 process.on('uncaughtException', function (err) {
   console.log("error");
   console.log('Caught exception: ' + err);
@@ -69,9 +73,14 @@ app.get('/progress_page', routes.progress_page);
 app.get('/result', routes.result);
 app.get('/mysql', routes.mysql);
 
-
 app.post('/webpagetest',  function(req, res) {
-  wpt.run(key[keyCount++], function(aResData) {
+  var domain = {
+    http1 : req.params.http1,
+    http2 : req.params.http2,
+    status : req.params.status
+  }
+
+  wpt.run(key[keyCount++], domain, function(aResData) {
     console.log(key[keyCount++]);
     console.log(aResData);
     res.send(aResData);
@@ -81,10 +90,19 @@ app.post('/webpagetest',  function(req, res) {
       keyCount = 0;
 });
 
+
 app.get('/crawler', function(req, res) {
   var child = spawn("phantomjs", ["--ssl-protocol=any", "--ignore-ssl-errors=yes", "./routes/crawler.js",
     mUrl, user_data.path1]);
+
+  var domain = {
+    http1 : undefined,
+    http2 : undefined,
+    status : undefined
+  }
+
   console.log("**user_data.path1 : "+user_data.path1);
+
   child.stdout.on("data", function (data) {
     console.log(data);
   });
@@ -94,13 +112,17 @@ app.get('/crawler', function(req, res) {
   });
 
   child.on("exit", function (code) {
+    domain.http1 = HTTPS+user_data.path1+H1_DOMAIN;
+    domain.http2 = HTTPS+user_data.path1+H2_DOMAIN;
+    domain.status = code;
+
     console.log("app:"+code);
     const SUCCESS = "0";
     const FAIL = "1";
     if(code == SUCCESS) {
-      res.send(SUCCESS);
+      res.send(domain);
     } else {
-      res.send(FAIL);
+      res.send(domain);
     }
 
   });

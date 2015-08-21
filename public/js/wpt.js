@@ -3,15 +3,33 @@
  */
 
 
+function getQueryVariable(variable) {
+    var query = window.location.search.substring(1);
+    var vars = query.split("&");
+    for (var i=0;i<vars.length;i++) {
+        var pair = vars[i].split("=");
+        if (pair[0] == variable) {
+            return pair[1];
+        }
+    }
+}
+
+
+
 $(document).ready(function(){
-    runTest();
+    var domain = {
+        http1 :getQueryVariable("http1"),
+        http2 :getQueryVariable("http2"),
+        status :getQueryVariable("status")
+    }
+    runTest(domain);
 });
 
-function runTest(){
+function runTest(aDomain){
     $.ajax({
         url: '/webpagetest',
         type: "POST",
-        data:{ },
+        data: aDomain,
         success: function(result){
             $('#first-waterfall').attr("src", result.leftWaterfallImg);
             $('#repeat-waterfall').attr("src", result.rightWatefFallImg);

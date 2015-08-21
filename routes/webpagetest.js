@@ -18,7 +18,7 @@ const RIGHT_VIEW = 2;
 
 
 
-var task = function(mResFunction) {
+var task = function(mResFunction, aDomain) {
     var leftId;
     var rightId;
     var leftContent;
@@ -26,13 +26,13 @@ var task = function(mResFunction) {
 
     async.series([
         function(callback) {
-            runLeft(function(aId) {
+            runLeft(aDomain, function(aId) {
                 leftId = aId;
                 callback(null);
             });
         },
         function(callback) {
-            runRight(function(aId) {
+            runRight(aDomain, function(aId) {
                 rightId = aId;
                 callback(null);
             });
@@ -87,7 +87,7 @@ var task = function(mResFunction) {
             console.log('error : ', result);
 
 
-        }, 3000);
+        }, 5000);
     });
 }
 
@@ -117,15 +117,16 @@ var resData = {
     rightLoadTime : undefined
 }
 
-exports.run = function(key, aRcvFun) {
+exports.run = function(key, aDomain, aRcvFun) {
     mWpt = new WebPageTest('www.webpagetest.org', key);
     //mysql_connection = connection;
     console.log(key);
-    task(aRcvFun);
+    task(aRcvFun, aDomain);
 }
 
-runLeft = function(callback) {
-    mWpt.runTest('www.youtube.com', { "video":true,"player":true, breakdown: true, domains: true, pageSpeed: true, requests: true},
+runLeft = function(aDomain, callback) {
+    var h1Domain = aDomain.http1;
+    mWpt.runTest(h1Domain, { "video":true,"player":true, breakdown: true, domains: true, pageSpeed: true, requests: true},
         function(err, aData) {
             console.log(aData);
             var leftTestId = aData.data.testId;
@@ -133,8 +134,9 @@ runLeft = function(callback) {
         });
 }
 
-runRight = function(callback) {
-    mWpt.runTest('www.facebook.com', { "video":true,"player":true, breakdown: true, domains: true, pageSpeed: true, requests: true},
+runRight = function(aDomain, callback) {
+    var h2Domain = aDomain.http2;
+    mWpt.runTest(h2Domain, { "video":true,"player":true, breakdown: true, domains: true, pageSpeed: true, requests: true},
         function(err, aData) {
             console.log(aData);
             var rightTestId = aData.data.testId;
@@ -151,7 +153,7 @@ createVideo = function(compareId) {
 
 result = function(aLocation, aId, callback) {
     mWpt.getTestResults(aId, { breakdown: true, requests: true, "location":"ec2-ap-northeast-1:Chrome"}, function(err, data) {
-        console.log("statscode : "+data.data.statusCode);
+        console.log("statusCode : "+data.data.statusCode);
         if(data.statusCode == 200) {
             if(aLocation==LEFT_VIEW){
                 resData.leftLoadTime = data.data.average.firstView.loadTime;

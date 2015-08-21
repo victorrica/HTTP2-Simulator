@@ -6,16 +6,15 @@ function click_next(){
 
     get_progress_page();
     runCrawler();
-    //get_result_page();
-
 
 }
+
 function runCrawler() {
     $.ajax({
         url: '/crawler',
         success: function(result){
-            if(result==0) {
-                get_result_page();
+            if(result.status==0) {
+                get_result_page(result);
             } else {
                 //fail message
             }
@@ -34,9 +33,12 @@ function get_progress_page(){
         dataType: 'html'
     });
 }
+//x=x1&x=x2&x=x3
 
-function get_result_page(){
-    window.location.replace("https://h2perf.org/result");
+function get_result_page(aDomain){
+    var domain = "/result?http1=" + aDomain.http1 + "&http2=" + aDomain.http2 + "&status=" + aDomain.status;
+    alert(aDomain.http1 + ", " + aDomain.http2);
+    window.location.replace(domain);
 }
 
 $(document).ready(function(){
