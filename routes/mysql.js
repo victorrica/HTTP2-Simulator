@@ -51,6 +51,9 @@ exports.insert_sites = function(hostname){
         }
         console.log('Query execute : '+query.sql);
     });
+
+
+    return user;
 }
 
 exports.insert_result = function(data){

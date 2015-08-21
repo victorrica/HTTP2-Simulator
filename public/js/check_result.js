@@ -6,7 +6,7 @@ function click_next(){
 
     get_progress_page();
     runCrawler();
-    get_result_page();
+    //get_result_page();
 
 
 }

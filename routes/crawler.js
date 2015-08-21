@@ -13,24 +13,22 @@ if (system.args.length === 1) {
     path = system.args[2];
     originURL = parseURL(address).domain;
 
-    page.onResourceReceived  = function (res) {
+    page.onResourceRequested = function (req) {
 
-		var URL = res.url;
+		var URL = req.url;
 
-        if(res.redirectURL && parseURL(res.redirectURL).host == parseURL(URL).host)
-        	URL = res.redirectURL;
+        if(req.redirectURL)
+        	URL = req.redirectURL;
 
-        console.log(URL);
-
-		if(res.redirectURL && parseURL(res.redirectURL).host == parseURL(URL).host)
-			originURL = parseURL(res.redirectURL).domain;
+		if(req.redirectURL && parseURL(req.redirectURL).host == parseURL(URL).host)
+			originURL = parseURL(req.redirectURL).domain;
 
 		var parsedURL = parseURL(URL);
 
 		var localPath = parsedURL.path;
 
 		//index 처리
-		if(localPath == null || localPath.substr(-1) == "/" || res.redirectURL)
+		if(localPath == null || localPath.substr(-1) == "/" || req.redirectURL)
 			localPath = "index.html";
 
 		//?date 처리
@@ -39,7 +37,8 @@ if (system.args.length === 1) {
 		}
 
 		//Domain Sharding 처리
-		if(originURL.replace("www.", "") != parsedURL.domain.replace("www.", ""))
+		
+        if(originURL.replace("www.", "") != parsedURL.domain.replace("www.", ""))
         {
 			localPath = parsedURL.domain + "/" + localPath;
             folders.push(localPath);
@@ -48,8 +47,9 @@ if (system.args.length === 1) {
         //header 처리
 		header["host"] = parsedURL.domain;
 		header["User-Agent"] = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.155 Safari/537.36";
-        for(var i=0;i<res.headers.length;i++)
-	       header[res.headers[i].name] = res.headers[i].value;
+        for(var i=0;i<req.headers.length;i++)
+	       header[req.headers[i].name] = req.headers[i].value;
+        
         var options = {
 			hostname: parsedURL.domain,
 			port : parsedURL.protocol=="http"?parsedURL.protocol=80:parsedURL.protocol=443,
@@ -64,15 +64,7 @@ if (system.args.length === 1) {
 		child.stdout.on("data", function (data) {
 			console.log(data);
 		});
-		child.stderr.on("data", function (err, data) {
-		    console.log("Download Error : " + err);
-		});
-
-		child.on("exit", function (code) {
-            	    console.log("onExit:"+code);
-		});
     };
-
     page.open(address, function (status) {
         if (status !== 'success') {
             console.log('FAIL to load the address');
@@ -84,7 +76,7 @@ if (system.args.length === 1) {
 function exit(code) {
     setTimeout(function(){ phantom.exit(code); }, 0);
 	phantom.onError = function(){};
-
+    console.log("TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT");
 	data = fs.read('/usr/local/nginx/html/' + path + '/index.html');
     for(var i=0;i<folders.length;i++)
     {

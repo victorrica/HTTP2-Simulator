@@ -1,4 +1,5 @@
 
+
 /**
  * Module dependencies.
  */
@@ -17,6 +18,7 @@ var mysql_module = require('./routes/mysql');
 
 var mUrl;
 var keyCount=0;
+var user_data;
 
 //WebPageTest Keys
 var key = [
@@ -81,7 +83,8 @@ app.post('/webpagetest',  function(req, res) {
 
 app.get('/crawler', function(req, res) {
   var child = spawn("phantomjs", ["--ssl-protocol=any", "--ignore-ssl-errors=yes", "./routes/crawler.js",
-    mUrl, "download"]);
+    mUrl, user_data.path1]);
+  console.log("**user_data.path1 : "+user_data.path1);
   child.stdout.on("data", function (data) {
     console.log(data);
   });
@@ -92,6 +95,7 @@ app.get('/crawler', function(req, res) {
 
   child.on("exit", function (code) {
     console.log("app:"+code);
+    /*
     const SUCCESS = 0;
     const FAIL = 1;
     if(code == SUCCESS) {
@@ -99,7 +103,10 @@ app.get('/crawler', function(req, res) {
     } else {
       res.send(FAIL);
     }
+    */
+    
   });
+
 });
 app.post('/tls', function(req, res) {
   //console.log(req.body.hostName);
@@ -107,11 +114,12 @@ app.post('/tls', function(req, res) {
   checker.fillUrl(mUrl, res);
   checker.checkNPNproto();
 
-  mysql_module.insert_sites(req.body.hostName);
+  user_data = mysql_module.insert_sites(req.body.hostName);
 
 });
 
 mysql_module.start_connection();
+
 
 http.createServer(app).listen(app.get('port'), function(){
     console.log("Start H2Perf.org Server!");
