@@ -36,7 +36,7 @@ function get_progress_page(){
 }
 
 function get_result_page(){
-    window.location.replace("/result");
+    window.location.replace("https://h2perf.org/result");
 }
 
 $(document).ready(function(){
