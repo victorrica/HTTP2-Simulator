@@ -80,7 +80,7 @@ var task = function(mResFunction, aDomain) {
             console.log('error : ', result);
 
 
-        }, 5000);
+        }, 2000);
     });
 }
 
@@ -120,9 +120,8 @@ exports.run = function(key, aDomain, aRcvFun) {
 runLeft = function(aDomain, callback) {
     var h1Domain = aDomain.http1;
     console.log("h1 url : "+h1Domain);
-    mWpt.runTest(h1Domain, { "video":true,"player":true, breakdown: true,
-        domains: true, pageSpeed: true, requests: true,
-        "location":"ec2-ap-northeast-1:Chrome"},
+    mWpt.runTest(h1Domain, { "ignoreSSL":true,"video":true,"player":true, breakdown: true,
+        domains: true, pageSpeed: true, requests: true },
         function(err, aData) {
             console.log(aData);
             var leftTestId = aData.data.testId;
@@ -133,9 +132,8 @@ runLeft = function(aDomain, callback) {
 runRight = function(aDomain, callback) {
     var h2Domain = aDomain.http2;
     console.log("h2 url : "+h2Domain);
-    mWpt.runTest(h2Domain, { "video":true,"player":true, breakdown: true,
-        domains: true, pageSpeed: true, requests: true,
-        "location":"ec2-ap-northeast-1:Chrome"},
+    mWpt.runTest(h2Domain, { "ignoreSSL":true,"video":true,"player":true, breakdown: true,
+        domains: true, pageSpeed: true, requests: true },
         function(err, aData) {
             console.log(aData);
             var rightTestId = aData.data.testId;
