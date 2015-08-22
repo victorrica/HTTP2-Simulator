@@ -1,19 +1,20 @@
-/*
+
 $(document).ready(function(){
-	$("#url").keyup(function(e){
-		var url = $("#url").val();
-		if(url.substring(0, 8) != "https://")
-			$(this).val("https://");
-		if(e.keyCode == 13)
-	    	$("#start").click();
-	});
-	
-	$("#url").click(function(){
-		if($(this).val() == "")
-			$(this).val("https://");
-	});
+    $(window).on("mousewheel.disableScroll DOMMouseScroll.disableScroll touchmove.disableScroll", function(e) {
+      e.preventDefault();
+      return;                      
+    });
+    $(window).on("keydown.disableScroll", function(e) {
+      var eventKeyArray = [32, 33, 34, 35, 36, 37, 38, 39, 40];
+      for (var i = 0; i < eventKeyArray.length; i++) {
+        if (e.keyCode === eventKeyArray [i]) {
+          e.preventDefault();
+          return;
+        }
+      }
+    });
 });
-*/
+
 
 
 function check_tls(url){
@@ -51,7 +52,8 @@ function get_check_result(protocol){
 		success: function (data) {
 			$('body').append(data);
 			$("#protocol_result").text(protocol);
-
+            var target = $("#one").offset().top;
+            $('html, body').animate({scrollTop:target}, 1000);
 		}
 	});
 }

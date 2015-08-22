@@ -3,7 +3,7 @@
  */
 
 function click_next(){
-
+    
     get_progress_page();
     runCrawler();
 
@@ -27,7 +27,11 @@ function get_progress_page(){
 
     $.ajax({
         url: "/progress_page",
-        success: function (data) { $('body').append(data); },
+        success: function (data) {
+          $('body').append(data); 
+          var target = $("#two").offset().top;
+          $('html, body').animate({scrollTop:target}, 1000);
+        },
         dataType: 'html'
     });
 }
