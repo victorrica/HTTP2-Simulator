@@ -15,7 +15,7 @@ var bodyParser = require('body-parser');
 var checker = require('./routes/check');
 var cookieParser = require('cookie-parser');
 var mysql_module = require('./routes/mysql');
-
+var timeout = express.timeout;
 var mUrl;
 var keyCount=0;
 var user_data;
@@ -58,6 +58,12 @@ app.use(express.logger('dev'));
 app.use(express.methodOverride());
 app.use(app.router);
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(timeout(260000));
+app.use(haltOnTimedout);
+
+function haltOnTimedout(req, res, next){
+  if (!req.timedout) next();
+}
 
 // development only
 if ('development' == app.get('env')) {
