@@ -15,8 +15,6 @@ function runCrawler() {
         success: function(result){
             if(result.status==0) {
                 get_result_page(result);
-            } else {
-                //fail message
             }
         },
         error:function(e){
