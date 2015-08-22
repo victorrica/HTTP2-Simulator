@@ -1093,11 +1093,10 @@
 			margin: 0 0 2em 0;
 		}
 /* row */
-	.row h3{
+	.row{
 		text-align: center;
 	}
 	.row h1{
-		text-align: center;
 		font-size: 2em;
 	}
 /* Footer */
