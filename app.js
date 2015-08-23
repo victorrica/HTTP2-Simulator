@@ -16,7 +16,7 @@ var mysql_module = require('./routes/mysql');
 var fs = require('fs');
 var ejs = require('ejs');
 var app = express();
-
+var async = require('async');
 var timeout = express.timeout;
 var mUrl;
 var keyCount=0;
@@ -27,6 +27,11 @@ var key = [
   "A.4c4149b53488c09ce7ee8f7e8cc637b6", "A.a66edbb10b50e156ebf63dccda3e938d", "A.cfbefb5968dacd324d3ce4426ff593ce",
   "A.81570d0c6da5ed737e21f766e7a89655", "A.4f498e8fdf15d820545af9a0ced88431"
 ];
+
+var client = {
+  socketid : undefined,
+  crawler : undefined
+};
 
 const HTTPS = "https://";
 const H1_DOMAIN = "-h1.h2perf.org:1234/";
@@ -79,7 +84,7 @@ app.get('/check_result', routes.check_result);
 app.get('/result', routes.result);
 app.get('/mysql', routes.mysql);
 
-app.get('/crawler', function(req, res) {
+var startCrawler = function(aSocket, callback) {
   var child = spawn("phantomjs", ["--ssl-protocol=any", "--ignore-ssl-errors=yes", "./routes/crawler.js",
     mUrl, user_data.path1]);
 
@@ -93,6 +98,7 @@ app.get('/crawler', function(req, res) {
 
   child.stdout.on("data", function (data) {
     var cleanData = data.toString("utf8");
+    aSocket.emit("state", 'download+'+cleanData);
     console.log(cleanData);
   });
 
@@ -109,14 +115,11 @@ app.get('/crawler', function(req, res) {
     const SUCCESS = "0";
     const FAIL = "1";
     if(code == SUCCESS) {
-      res.send(domain);
-    } else {
-      res.send(domain);
+      //res.send(domain);
+      callback();
     }
-
   });
-
-});
+}
 
 app.post('/tls', function(req, res) {
   mUrl = req.body.hostName;
@@ -154,20 +157,45 @@ var server = http.createServer(app).listen(app.get('port'), function(){
 
 var io = require('socket.io').listen(server);
 io.sockets.on('connection', function(socket) {
-  socket.on('checkWpt', function (data) {
-    console.log('client send Data: '+ data);
-    var domain = {
-      http1 : data.http1,
-      http2 : data.http2
-    };
+  socket.on('crawler', function (data) {
+    async.series([
+      function(callback) {
+          socket.emit('state',"crawling");
+          startCrawler(socket, function() {
+            console.log("111");
+            callback(null);
+          });
+      },
+      function(callback) {
+          socket.emit('state',"wpt");
+          startWpt(data, function() {
+            callback(null);
+          });
+      },
+      function(callback) {
+        socket.emit('state',"redirect");
+        callback(null);
+      }
+    ], function(error, result) {
 
-    wpt.run(key[keyCount++], domain, function(aResData) {
-      console.log(key[keyCount++]);
-      console.log(aResData);
-      socket.emit('state','0');
     });
-
-    if(keyCount >= 4)
-      keyCount = 0;
-  })
+  });
 });
+
+var startWpt = function(aData, callback) {
+  var domain = {
+    http1 : aData.http1,
+    http2 : aData.http2
+  };
+
+  wpt.run(key[keyCount++], domain, function(aResData) {
+    console.log(key[keyCount++]);
+    console.log(aResData);
+    socket.emit('state','redirect');
+  });
+
+  if(keyCount >= 4)
+    keyCount = 0;
+
+  callback();
+}

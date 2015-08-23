@@ -7,21 +7,6 @@ function click_next(){
     get_progress_page();
 }
 
-function startCrawler() {
-    $.ajax({
-        url: '/crawler',
-        success: function(result){
-            const SUCCESS = '0';
-            if(result.status==SUCCESS) {
-                checkWpt(result);
-            }
-        },
-        error:function(e){
-            alert(e.responseText);
-        }
-    });
-}
-
 function get_progress_page(){
 
     $.ajax({
@@ -30,20 +15,35 @@ function get_progress_page(){
             $('body').append(data);
             var target = $("#two").offset().top;
             $('html, body').animate({scrollTop:target}, 1000);
-            startCrawler();
+            startComparison();
         },
         dataType: 'html'
     });
 }
 
-function checkWpt(aDomain) {
+function updateText(aText) {
+    $('#text').text(aText);
+}
+function updateBaseText(aText) {
+    $('#baseText').text(aText);
+}
+
+function startComparison(aDomain) {
     var socket = io.connect();
-    socket.emit('checkWpt', aDomain);
+    var index=0;
+    socket.emit('crawler', aDomain);
     socket.on('state', function(data) {
-        if(data == '0') {
-            alert('result');
-            var domain = "http://www.h2perf.org//result";
+        if(data.search('redirect') != -1) {
+            var domain = "http://www.h2perf.org/result";
             window.location.replace(domain);
+        } else if(data.search('crawling') != -1) {
+            updateText("Crawling Website");
+        } else if(data.search('wpt') != -1) {
+            updateBaseText("");
+            updateText("Comparing http1 and http2");
+        } else if(index = data.search('download') != -1) {
+            var text = data.substring(index+24);
+            updateBaseText(text);
         }
     });
 }
