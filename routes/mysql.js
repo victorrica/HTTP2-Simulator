@@ -98,7 +98,7 @@ exports.findResultdataByIdx = function(idx,cb){
             console.error(err);
             throw err;
         }
-
+        console.log("findResultdataByIdx : "+rows);
         cb(rows);
     });
 
