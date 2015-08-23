@@ -1,5 +1,3 @@
-
-
 /**
  * Module dependencies.
  */
@@ -17,6 +15,8 @@ var cookieParser = require('cookie-parser');
 var mysql_module = require('./routes/mysql');
 var fs = require('fs');
 var ejs = require('ejs');
+var app = express();
+
 var timeout = express.timeout;
 var mUrl;
 var keyCount=0;
@@ -27,8 +27,6 @@ var key = [
   "A.4c4149b53488c09ce7ee8f7e8cc637b6", "A.a66edbb10b50e156ebf63dccda3e938d", "A.cfbefb5968dacd324d3ce4426ff593ce",
   "A.81570d0c6da5ed737e21f766e7a89655", "A.4f498e8fdf15d820545af9a0ced88431"
 ];
-
-var app = express();
 
 const HTTPS = "https://";
 const H1_DOMAIN = "-h1.h2perf.org:1234/";
@@ -49,7 +47,7 @@ process.on('uncaughtException', function (err) {
 });
 
 // all environments
-app.set('port', process.env.PORT || 80);
+app.set('port', process.env.PORT || 3000);
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 app.use(express.favicon());
@@ -76,52 +74,10 @@ app.get('/', routes.index);
 app.get('/Webpagetest', routes.Webpagetest);
 app.get('/rank', routes.rank);
 app.get('/contactus', routes.contactus);
+app.get('/progress_page', routes.progress_page);
 app.get('/check_result', routes.check_result);
-//app.get('/progress_page', routes.progress_page);
 app.get('/result', routes.result);
 app.get('/mysql', routes.mysql);
-
-app.get('/progress_page', function(req, res) {
-  fs.readFile('./views/progress_page.ejs', 'utf8', function(error, data) {
-    res.writeHead(200, { 'Content-Type': 'text/html'});
-    res.end(ejs.render(data));
-
-    var domain = {
-      http1 : req.params.http1,
-      http2 : req.params.http2,
-      status : req.params.status
-    };
-
-    wpt.run(key[keyCount++], domain, function(aResData) {
-      console.log(key[keyCount++]);
-      console.log(aResData);
-      //insert db
-    });
-
-    if(keyCount >= 4)
-      keyCount = 0;
-  });
-});
-app.post('/webpagetest',  function(req, res) {
-  //var domain = {
-  //  http1 : req.body.http1,
-  //  http2 : req.body.http2,
-  //  status : req.body.status
-  //};
-  //console.log("domain");
-  //console.log(req.body.http1);
-  //console.log(req.body.http2);
-  //
-  //wpt.run(key[keyCount++], domain, function(aResData) {
-  //  console.log(key[keyCount++]);
-  //  console.log(aResData);
-  //  res.send(aResData);
-  //
-  //});
-  //if(keyCount >= 4)
-  //    keyCount = 0;
-});
-
 
 app.get('/crawler', function(req, res) {
   var child = spawn("phantomjs", ["--ssl-protocol=any", "--ignore-ssl-errors=yes", "./routes/crawler.js",
@@ -136,9 +92,9 @@ app.get('/crawler', function(req, res) {
   console.log("**user_data.path1 : "+user_data.path1);
 
   child.stdout.on("data", function (data) {
-  var cleanData = data.toString("utf8");
-  console.log(cleanData);
-    });
+    var cleanData = data.toString("utf8");
+    console.log(cleanData);
+  });
 
   child.stderr.on("data", function (err,data) {
     console.log("Download Error : " + err);
@@ -161,6 +117,7 @@ app.get('/crawler', function(req, res) {
   });
 
 });
+
 app.post('/tls', function(req, res) {
   mUrl = req.body.hostName;
 
@@ -191,8 +148,26 @@ app.post('/tls', function(req, res) {
 
 mysql_module.start_connection();
 
-
-http.createServer(app).listen(app.get('port'), function(){
-    console.log("Start H2Perf.org Server!");
+var server = http.createServer(app).listen(app.get('port'), function(){
+  console.log("Start H2Perf.org Server!");
 });
 
+var io = require('socket.io').listen(server);
+io.sockets.on('connection', function(socket) {
+  socket.on('checkWpt', function (data) {
+    console.log('client send Data: '+ data);
+    var domain = {
+      http1 : data.http1,
+      http2 : data.http2
+    };
+
+    wpt.run(key[keyCount++], domain, function(aResData) {
+      console.log(key[keyCount++]);
+      console.log(aResData);
+      socket.emit('state','0');
+    });
+
+    if(keyCount >= 4)
+      keyCount = 0;
+  })
+});
