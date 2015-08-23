@@ -75,11 +75,28 @@
 				<ul class="icons">
 					<li><a href="#" class="icon rounded fa-twitter"><span class="label">Twitter</span></a></li>
 					<li><a href="#" class="icon rounded fa-facebook"><span class="label">Facebook</span></a></li>
-					<li><a href="#" class="icon rounded fa-instagram"><span class="label">Instagram</span></a></li>
-					<li><a href="#" class="icon rounded fa-github"><span class="label">Github</span></a></li>
-					<li><a href="#" class="icon rounded fa-dribbble"><span class="label">Dribbble</span></a></li>
 					<li><a href="#" class="icon rounded fa-tumblr"><span class="label">Tumblr</span></a></li>
 				</ul>
+				<script>
+				$(".fa-twitter").click(function(){
+						newwindow=window.open("https://twitter.com/intent/tweet?text=My http2 simulate site result page : " + $(location).attr('href'),'Twitter Share','height=250,width=500');
+						if (window.focus) {
+							newwindow.focus()
+						}
+				});
+				$(".fa-facebook").click(function(){
+						newwindow=window.open("https://www.facebook.com/sharer/sharer.php?u=" + $(location).attr('href'),'Twitter Share','height=250,width=500');
+						if (window.focus) {
+							newwindow.focus()
+						}
+				});
+				$(".fa-tubmlr").click(function(){
+						newwindow=window.open("https://www.tumblr.com/share?u=" + $(location).attr('href'),'Twitter Share','height=250,width=500');
+						if (window.focus) {
+							newwindow.focus()
+						}
+				});
+				</script>
 			</section>
 	</body>
 </html>
