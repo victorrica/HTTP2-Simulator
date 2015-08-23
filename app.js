@@ -91,7 +91,8 @@ var startCrawler = function(aSocket, callback) {
   var domain = {
     http1 : undefined,
     http2 : undefined,
-    status : undefined
+    status : undefined,
+    path1 : undefined
   }
 
   console.log("**user_data.path1 : "+user_data.path1);
@@ -109,6 +110,7 @@ var startCrawler = function(aSocket, callback) {
   child.on("exit", function (code) {
     domain.http1 = HTTPS+user_data.path1+H1_DOMAIN;
     domain.http2 = HTTPS+user_data.path1+H2_DOMAIN;
+    domain.path1 = user_data.path1;
     domain.status = code;
 
     console.log("app:"+code);
@@ -146,6 +148,15 @@ app.post('/tls', function(req, res) {
 
 });
 
+app.get('/result/:path2', function(request, response) {
+
+  var path2 = request.params.path2;
+  var select_data = mysql_module.findPath1ByPath2(path2, function(data) {
+    console.log(data);
+    response.render('result');
+  });
+});
+
 mysql_module.start_connection();
 
 var server = http.createServer(app).listen(app.get('port'), function(){
@@ -167,7 +178,7 @@ io.sockets.on('connection', function(socket) {
       function(callback) {
           socket.emit('state',"wpt");
           startWpt(domain, function() {
-            socket.emit('state',"redirect");
+            socket.emit('state',"redirect"+user_data.path2);
             callback(null);
           });
       },
@@ -180,7 +191,8 @@ io.sockets.on('connection', function(socket) {
 var startWpt = function(aData, callback) {
   var domain = {
     http1 : aData.http1,
-    http2 : aData.http2
+    http2 : aData.http2,
+    path1 : aData.path1
   };
 
   wpt.run(key[keyCount++], domain, function(aResData) {

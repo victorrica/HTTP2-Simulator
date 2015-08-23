@@ -70,6 +70,28 @@ exports.insert_result = function(data){
 
 }
 
+exports.findPath1ByPath2 = function(path2, cb){
+    var query = connection.query('select * from sites where `path2`='+mysql.escape(path2), function(err,rows) {
+        if(err) {
+            console.error(err);
+            throw err;
+        }
+
+        cb(rows[0].path1);
+    });
+}
+
+exports.findIdxByPath1 = function(path1, cb){
+    var query = connection.query('select * from sites where `path1`='+mysql.escape(path1), function(err,rows) {
+        if(err) {
+            console.error(err);
+            throw err;
+        }
+
+        cb(rows[0].idx);
+    });
+}
+
 function randomValueHex (len) {
     return crypto.randomBytes(Math.ceil(len/2))
         .toString('hex') // convert to hexadecimal format
