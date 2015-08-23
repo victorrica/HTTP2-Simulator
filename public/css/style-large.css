@@ -25,6 +25,9 @@
 	#footer .icons .rounded {
 		font-size: 1em;
 	}
-		#step1 > h2{
+	#banner #url{
+		font-size: 2em;
+	}
+	#step1 > h2{
 		font-size: 2em;
 	}

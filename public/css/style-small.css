@@ -70,6 +70,9 @@
 			display: block;
 		}
 
+	#banner #url{
+		font-size: 1em;
+	}
 	#step1 > h2{
-		font-size: 2em;
+		font-size: 1em;
 	}

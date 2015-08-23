@@ -9,6 +9,9 @@
 	body, input, select, textarea {
 		font-size: 13pt;
 	}
-		#step1 > h2{
+	#banner #url{
+		font-size: 2em;
+	}
+	#step1 > h2{
 		font-size: 2em;
 	}
