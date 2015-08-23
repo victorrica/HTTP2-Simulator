@@ -55,3 +55,9 @@
 	input[type="button"] {
 		padding: 0;
 	}
+	#banner #url{
+		font-size: 1em;
+	}
+	#step1 > h2{
+		font-size: 1em;
+	}
