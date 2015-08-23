@@ -52,7 +52,7 @@ process.on('uncaughtException', function (err) {
 app.set('port', process.env.PORT || 80);
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
-app.use(express.favicon());
+app.use(express.favicon("public/images/favicon.ico"));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
