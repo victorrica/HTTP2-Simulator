@@ -9,3 +9,6 @@
 	body, input, select, textarea {
 		font-size: 13pt;
 	}
+		#step1 > h2{
+		font-size: 2em;
+	}

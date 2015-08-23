@@ -69,3 +69,7 @@
 			padding-left: 0;
 			display: block;
 		}
+
+	#step1 > h2{
+		font-size: 2em;
+	}
