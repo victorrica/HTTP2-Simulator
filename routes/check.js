@@ -90,10 +90,10 @@ exports.checkSpdy = function(callback) {
 exports.checkNPNproto = function(){
 	var port = 443;
 	var host = url.spdy;
+
+
 	if(host.charAt(host.length-1)=='/'){
-		//console.log(host);
 		host = host.substring(0,host.length-1);
-		//console.log(host);
 
 	}
 	var options = {
@@ -143,8 +143,43 @@ exports.checkNPNproto = function(){
 	});
 
 	socket.on('error', function(error) {
-		console.log("This host not support TSL connection or wrong host name");
+
+		var result_check;
+
+		var agent = spdy.createAgent({
+			host: url.spdy,
+			port: 443,
+
+			// Optional SPDY options
+			//spdy: {
+			//	plain: true,
+			//	ssl: true
+			//}
+		});
+
+		http.get({
+			host: url.spdy,
+			agent: agent
+		}, function(response) {
+			result_check = response.req.agent._spdyState.socket.npnProtocol;
+			console.log(response);
+			agent.close();
+			//exports.checkHttp2();
+		}).end();
+		console.log("spdy_check");
+		console.log(result_check);
+		//console.log("This host not support TSL connection or wrong host name");
 		mResponse.send('Not TLS');
+
 	})
+
+}
+exports.notHTTPS = function(){
+	mResponse.send("HTTP/1.1(Not SSL)");
+
+}
+
+exports.wronghost = function(){
+	mResponse.send("Wrong Host");
 
 }
