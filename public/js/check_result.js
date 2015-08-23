@@ -42,7 +42,7 @@ function checkWpt(aDomain) {
     socket.on('state', function(data) {
         if(data == '0') {
             alert('result');
-            var domain = "/result";
+            var domain = "http://www.h2perf.org//result";
             window.location.replace(domain);
         }
     });
