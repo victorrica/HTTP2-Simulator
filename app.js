@@ -81,7 +81,6 @@ app.get('/rank', routes.rank);
 app.get('/contactus', routes.contactus);
 app.get('/progress_page', routes.progress_page);
 app.get('/check_result', routes.check_result);
-app.get('/result', routes.result);
 app.get('/mysql', routes.mysql);
 
 var startCrawler = function(aSocket, callback) {
@@ -155,7 +154,9 @@ app.get('/result/:path2', function(request, response) {
     console.log("findIdxByPath2 : "+idx);
 
     mysql_module.findResultdataByIdx(idx,function(data){
+      console.log(data[0].compare_url);
       response.render('result', {
+        url : "https://h2perf.org/result"+path2,
         compare_url : data[0].compare_url,
         graph_url : data[0].graph_url,
         h1_waterfall_url : data[0].h1_waterfall_url,
