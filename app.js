@@ -115,7 +115,6 @@ var startCrawler = function(aSocket, callback) {
     const SUCCESS = "0";
     const FAIL = "1";
     if(code == SUCCESS) {
-      //res.send(domain);
       callback(domain);
     }
   });
@@ -132,9 +131,7 @@ app.post('/tls', function(req, res) {
     checker.fillUrl(mUrl,res);
     checker.notHTTPS();
     user_data = mysql_module.insert_sites(req.body.hostName);
-
-  }else if(ssl_exist.toUpperCase()=="HTTPS"){
-
+  } else if(ssl_exist.toUpperCase()=="HTTPS"){
     checker.fillUrl(mUrl, res);
     checker.checkNPNproto();
     user_data = mysql_module.insert_sites(req.body.hostName);
@@ -158,24 +155,22 @@ var server = http.createServer(app).listen(app.get('port'), function(){
 var io = require('socket.io').listen(server);
 io.sockets.on('connection', function(socket) {
   socket.on('crawler', function (data) {
+    var domain;
     async.series([
       function(callback) {
           socket.emit('state',"crawling");
           startCrawler(socket, function(aDomain) {
-            console.log("111");
+            domain = aDomain;
             callback(null, aDomain);
           });
       },
-      function(callback, aDomain) {
+      function(callback) {
           socket.emit('state',"wpt");
-          startWpt(aDomain, function() {
+          startWpt(domain, function() {
+            socket.emit('state',"redirect");
             callback(null);
           });
       },
-      function(callback) {
-        socket.emit('state',"redirect");
-        callback(null);
-      }
     ], function(error, result) {
 
     });
@@ -191,11 +186,9 @@ var startWpt = function(aData, callback) {
   wpt.run(key[keyCount++], domain, function(aResData) {
     console.log(key[keyCount++]);
     console.log(aResData);
-    socket.emit('state','redirect');
+    callback();
   });
 
   if(keyCount >= 4)
     keyCount = 0;
-
-  callback();
 }

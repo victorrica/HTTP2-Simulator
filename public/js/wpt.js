@@ -19,10 +19,10 @@
 //        }
 //    });
 //}
-
-$(document).ready(function(){
-
-});
+//
+//$(document).ready(function(){
+//
+//});
 
 $('#first-waterfall').load(function() {
     var img=$('#first-waterfall');

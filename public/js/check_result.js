@@ -34,7 +34,7 @@ function startComparison(aDomain) {
     socket.emit('crawler', aDomain);
     socket.on('state', function(data) {
         if(data.search('redirect') != -1) {
-            var domain = "http://www.h2perf.org/result";
+            var domain = "https://www.h2perf.org/result";
             window.location.replace(domain);
         } else if(data.search('crawling') != -1) {
             updateText("Crawling Website");
