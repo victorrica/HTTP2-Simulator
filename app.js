@@ -156,7 +156,7 @@ app.get('/result/:path2', function(request, response) {
     mysql_module.findResultdataByIdx(idx,function(data){
       console.log(data[0].compare_url);
       response.render('result', {
-        url : "https://h2perf.org/result"+path2,
+        url : "https://h2perf.org/result/"+path2,
         compare_url : data[0].compare_url,
         graph_url : data[0].graph_url,
         h1_waterfall_url : data[0].h1_waterfall_url,
