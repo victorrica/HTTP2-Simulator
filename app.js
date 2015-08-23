@@ -159,7 +159,7 @@ app.get('/result/:path2', function(request, response) {
       });
     },
     function(callback) {
-      mysql_module.findResultdataByIdx(idx,function(data){
+      mysql_module.findResultdataByIdx(site_idx,function(data){
         console.log(data[0].compare_url);
         response.render('result', {
           url : "https://h2perf.org/result/"+path2,
