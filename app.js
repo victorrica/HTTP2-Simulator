@@ -184,8 +184,9 @@ var startWpt = function(aData, callback) {
   };
 
   wpt.run(key[keyCount++], domain, function(aResData) {
-    console.log(key[keyCount++]);
-    console.log(aResData);
+    console.log("keycount");
+    console.log(keyCount);
+    console.log(key[keyCount]);
     callback();
   });
 
