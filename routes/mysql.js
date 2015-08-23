@@ -76,6 +76,7 @@ exports.findIdxByPath2 = function(path2, cb){
             console.error(err);
             throw err;
         }
+        console.log('Query execute : '+query.sql);
 
         cb(rows[0].idx);
     });
@@ -87,6 +88,7 @@ exports.findIdxByPath1 = function(path1, cb){
             console.error(err);
             throw err;
         }
+        console.log('Query execute : '+query.sql);
 
         cb(rows[0].idx);
     });
@@ -98,7 +100,8 @@ exports.findResultdataByIdx = function(idx,cb){
             console.error(err);
             throw err;
         }
-        console.log("findResultdataByIdx : "+rows);
+        console.log('Query execute : '+query.sql);
+
         cb(rows);
     });
 
