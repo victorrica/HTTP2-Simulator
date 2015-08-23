@@ -34,26 +34,26 @@
     filter: alpha(opacity=25);
 }
 
-@-webkit-keyframes progress { 
-    from { width: 0% }
+@-webkit-keyframes progress {
+    from { width: 100% }
 
-    to { width: 70% }
+    to { width: 100% }
 }
 
-@-moz-keyframes progress { 
-    from { width: 0% }
+@-moz-keyframes progress {
+    from { width: 100% }
 
-    to { width: 70% }
+    to { width: 100% }
 }
 
-@-ms-keyframes progress { 
-    from {  width: 0% }
+@-ms-keyframes progress {
+    from {  width: 100% }
 
-    to { width: 70% }
+    to { width: 100% }
 }
 
-@keyframes progress { 
-    from { width: 0% }
+@keyframes progress {
+    from { width: 100% }
 
-    to { width: 70% }
+    to { width: 100% }
 }
