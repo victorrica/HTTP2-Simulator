@@ -70,14 +70,14 @@ exports.insert_result = function(data){
 
 }
 
-exports.findPath1ByPath2 = function(path2, cb){
+exports.findIdxByPath2 = function(path2, cb){
     var query = connection.query('select * from sites where `path2`='+mysql.escape(path2), function(err,rows) {
         if(err) {
             console.error(err);
             throw err;
         }
 
-        cb(rows[0].path1);
+        cb(rows[0].idx);
     });
 }
 
@@ -90,6 +90,19 @@ exports.findIdxByPath1 = function(path1, cb){
 
         cb(rows[0].idx);
     });
+}
+
+exports.findResultdataByIdx = function(idx,cb){
+    var query = connection.query('select * from sites where `idx`='+mysql.escape(idx), function(err,rows) {
+        if(err) {
+            console.error(err);
+            throw err;
+        }
+
+        cb(rows);
+    });
+
+
 }
 
 function randomValueHex (len) {
