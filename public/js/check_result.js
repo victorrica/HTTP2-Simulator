@@ -14,7 +14,8 @@ function runCrawler() {
         url: '/crawler',
         success: function(result){
             if(result.status==0) {
-                get_result_page(result);
+                //get_result_page(result);
+                get_progress_page(result);
             }
         },
         error:function(e){
@@ -23,10 +24,11 @@ function runCrawler() {
     });
 }
 
-function get_progress_page(){
+function get_progress_page(result){
 
     $.ajax({
         url: "/progress_page",
+        data: result,
         success: function (data) {
           $('body').append(data); 
           var target = $("#two").offset().top;
@@ -36,10 +38,10 @@ function get_progress_page(){
     });
 }
 
-function get_result_page(aDomain) {
-    var domain = "https://www.h2perf.org/result?http1=" + aDomain.http1 + "&http2=" + aDomain.http2 + "&status=" + aDomain.status;
-    window.location.replace(domain);
-}
+//function get_result_page(aDomain) {
+//    var domain = "https://www.h2perf.org/result?http1=" + aDomain.http1 + "&http2=" + aDomain.http2 + "&status=" + aDomain.status;
+//    window.location.replace(domain);
+//}
 
 $(document).ready(function(){
 

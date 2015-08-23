@@ -15,6 +15,8 @@ var bodyParser = require('body-parser');
 var checker = require('./routes/check');
 var cookieParser = require('cookie-parser');
 var mysql_module = require('./routes/mysql');
+var fs = require('fs');
+var ejs = require('ejs');
 var timeout = express.timeout;
 var mUrl;
 var keyCount=0;
@@ -75,28 +77,49 @@ app.get('/Webpagetest', routes.Webpagetest);
 app.get('/rank', routes.rank);
 app.get('/contactus', routes.contactus);
 app.get('/check_result', routes.check_result);
-app.get('/progress_page', routes.progress_page);
+//app.get('/progress_page', routes.progress_page);
 app.get('/result', routes.result);
 app.get('/mysql', routes.mysql);
 
-app.post('/webpagetest',  function(req, res) {
-  var domain = {
-    http1 : req.body.http1,
-    http2 : req.body.http2,
-    status : req.body.status
-  };
-  console.log("domain");
-  console.log(req.body.http1);
-  console.log(req.body.http2);
+app.get('/progress_page', function(req, res) {
+  fs.readFile('./views/progress_page.ejs', 'utf8', function(error, data) {
+    res.writeHead(200, { 'Content-Type': 'text/html'});
+    res.end(ejs.render(data));
 
-  wpt.run(key[keyCount++], domain, function(aResData) {
-    console.log(key[keyCount++]);
-    console.log(aResData);
-    res.send(aResData);
+    var domain = {
+      http1 : req.params.http1,
+      http2 : req.params.http2,
+      status : req.params.status
+    };
 
-  });
-  if(keyCount >= 4)
+    wpt.run(key[keyCount++], domain, function(aResData) {
+      console.log(key[keyCount++]);
+      console.log(aResData);
+      //insert db
+    });
+
+    if(keyCount >= 4)
       keyCount = 0;
+  });
+});
+app.post('/webpagetest',  function(req, res) {
+  //var domain = {
+  //  http1 : req.body.http1,
+  //  http2 : req.body.http2,
+  //  status : req.body.status
+  //};
+  //console.log("domain");
+  //console.log(req.body.http1);
+  //console.log(req.body.http2);
+  //
+  //wpt.run(key[keyCount++], domain, function(aResData) {
+  //  console.log(key[keyCount++]);
+  //  console.log(aResData);
+  //  res.send(aResData);
+  //
+  //});
+  //if(keyCount >= 4)
+  //    keyCount = 0;
 });
 
 

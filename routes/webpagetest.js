@@ -120,7 +120,7 @@ exports.run = function(key, aDomain, aRcvFun) {
 runLeft = function(aDomain, callback) {
     var h1Domain = aDomain.http1;
     console.log("h1 url : "+h1Domain);
-    mWpt.runTest(h1Domain, { "ignoreSSL":true,"video":true,"player":true, breakdown: true,
+    mWpt.runTest("https://www.yahoo.com", { "ignoreSSL":true,"video":true,"player":true, breakdown: true,
         domains: true, pageSpeed: true, requests: true },
         function(err, aData) {
             console.log(aData);
@@ -132,7 +132,7 @@ runLeft = function(aDomain, callback) {
 runRight = function(aDomain, callback) {
     var h2Domain = aDomain.http2;
     console.log("h2 url : "+h2Domain);
-    mWpt.runTest(h2Domain, { "ignoreSSL":true,"video":true,"player":true, breakdown: true,
+    mWpt.runTest("https://www.google.com", { "ignoreSSL":true,"video":true,"player":true, breakdown: true,
         domains: true, pageSpeed: true, requests: true },
         function(err, aData) {
             console.log(aData);
