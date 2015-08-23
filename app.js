@@ -116,7 +116,7 @@ var startCrawler = function(aSocket, callback) {
     const FAIL = "1";
     if(code == SUCCESS) {
       //res.send(domain);
-      callback();
+      callback(domain);
     }
   });
 }
@@ -161,14 +161,14 @@ io.sockets.on('connection', function(socket) {
     async.series([
       function(callback) {
           socket.emit('state',"crawling");
-          startCrawler(socket, function() {
+          startCrawler(socket, function(aDomain) {
             console.log("111");
-            callback(null);
+            callback(null, aDomain);
           });
       },
-      function(callback) {
+      function(callback, aDomain) {
           socket.emit('state',"wpt");
-          startWpt(data, function() {
+          startWpt(aDomain, function() {
             callback(null);
           });
       },
