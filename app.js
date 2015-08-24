@@ -150,11 +150,12 @@ app.post('/tls', function(req, res) {
 app.get('/result/:path2', function(request, response) {
 
   var path2 = request.params.path2;
-  var site_idx;
+  var site_idx,site_url;
   async.series([
     function(callback) {
-      mysql_module.findIdxByPath2(path2, function(idx) {
-        site_idx=idx;
+      mysql_module.findIdxByPath2(path2, function(data) {
+        site_idx = data.idx;
+        site_url = data.url;
         callback(null);
       });
     },
@@ -162,7 +163,7 @@ app.get('/result/:path2', function(request, response) {
       mysql_module.findResultdataByIdx(site_idx,function(data){
         console.log(data[0].compare_url);
         response.render('result', {
-          url : "https://h2perf.org/result/"+path2,
+          url : site_url,
           compare_url : data[0].compare_url,
           graph_url : data[0].graph_url,
           h1_waterfall_url : data[0].h1_waterfall_url,

@@ -78,12 +78,12 @@ exports.findIdxByPath2 = function(path2, cb){
         }
         console.log('Query execute : '+query.sql);
 
-        cb(rows[0].idx);
+        cb(rows[0]);
     });
 }
 
 exports.findIdxByPath1 = function(path1, cb){
-    var query = connection.query('select * from sites where `path1`='+mysql.escape(path1), function(err,rows) {
+    var query = connection.query('select idx from sites where `path1`='+mysql.escape(path1), function(err,rows) {
         if(err) {
             console.error(err);
             throw err;
