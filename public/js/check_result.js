@@ -27,7 +27,8 @@ function updateText(aText) {
     $('#text').text(aText);
 }
 function updateBaseText(aText) {
-    $('#baseText').text(aText);
+	aText.replace("Download Start", "\nDownload Start");
+    $('#baseText').text(aText.trim());
 }
 
 var gap = 0;
@@ -42,12 +43,11 @@ function echoTime (serverStartTime, serverNowTime)
 
 	var echoTime = nowTime - (serverStartTime);
 
-	h = parseInt((echoTime % 86400) / 3600);
 	m = parseInt((echoTime % 3600) / 60);
 	s = parseInt((echoTime % 60));
 
-	count = h + ':' + m + ':' + s;
-	$('#baseText').text("경과 시간 : " + count);
+	count = m + '분 :' + s + "초";
+	$('#countText').text("예상 시간 : 5분\n" + "경과 시간 : " + count);
 }
 
 function startComparison(aDomain) {
@@ -61,8 +61,10 @@ function startComparison(aDomain) {
             window.location.replace(domain);
         } else if(data.search('crawling') != -1) {
             updateText("Crawling and Modifying Website");
+            updateBaseText("");
         } else if(data.search('wpt') != -1) {
             updateText("Comparing HTTP/1.1 and HTTP/2");
+            updateBaseText("");
         } else if(index = data.search('download') != -1) {
             var text = data.substring(index+24);
             updateBaseText(text);
