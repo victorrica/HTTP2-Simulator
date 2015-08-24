@@ -18,9 +18,9 @@ var ejs = require('ejs');
 var app = express();
 var async = require('async');
 var timeout = express.timeout;
-var mUrl;
+//var mUrl;
 var keyCount=0;
-var user_data;
+//var user_data;
 
 //WebPageTest Keys
 var mId;
@@ -84,9 +84,9 @@ app.get('/progress_page', routes.progress_page);
 app.get('/check_result', routes.check_result);
 app.get('/mysql', routes.mysql);
 
-var startCrawler = function(aSocket, callback) {
+var startCrawler = function(aSocket, callback, aUser_data, aUrl) {
   var child = spawn("phantomjs", ["--ssl-protocol=any", "--ignore-ssl-errors=yes", "./routes/crawler.js",
-    mUrl, user_data.path1]);
+    aUrl, aUser_data.path1]);
 
   var domain = {
     http1 : undefined,
@@ -95,7 +95,7 @@ var startCrawler = function(aSocket, callback) {
     path1 : undefined
   }
 
-  console.log("**user_data.path1 : "+user_data.path1);
+  console.log("**user_data.path1 : "+aUser_data.path1);
 
   child.stdout.on("data", function (data) {
     var cleanData = data.toString("utf8");
@@ -121,32 +121,32 @@ var startCrawler = function(aSocket, callback) {
     }
   });
 }
-
-app.post('/tls', function(req, res) {
-  mUrl = req.body.hostName;
-
-  var ssl_exist_array = mUrl.split(':');
-  var ssl_exist = ssl_exist_array[0];
-
-  if(ssl_exist.toUpperCase()=="HTTP"){
-
-    checker.fillUrl(mUrl,res);
-    checker.notHTTPS();
-    user_data = mysql_module.insert_sites(req.body.hostName);
-  } else if(ssl_exist.toUpperCase()=="HTTPS"){
-    checker.fillUrl(mUrl, res);
-    checker.checkNPNproto();
-    user_data = mysql_module.insert_sites(req.body.hostName);
-
-  }else{
-
-    checker.fillUrl(mUrl, res);
-    checker.wronghost();
-
-  }
-
-
-});
+//
+//app.post('/tls', function(req, res) {
+//  mUrl = req.body.hostName;
+//
+//  var ssl_exist_array = mUrl.split(':');
+//  var ssl_exist = ssl_exist_array[0];
+//
+//  if(ssl_exist.toUpperCase()=="HTTP"){
+//
+//    checker.fillUrl(mUrl,res);
+//    checker.notHTTPS();
+//    user_data = mysql_module.insert_sites(req.body.hostName);
+//  } else if(ssl_exist.toUpperCase()=="HTTPS"){
+//    checker.fillUrl(mUrl, res);
+//    checker.checkNPNproto();
+//    user_data = mysql_module.insert_sites(req.body.hostName);
+//
+//  }else{
+//
+//    checker.fillUrl(mUrl, res);
+//    checker.wronghost();
+//
+//  }
+//
+//
+//});
 
 app.get('/result/:path2', function(request, response) {
 
@@ -190,6 +190,8 @@ var io = require('socket.io').listen(server);
 io.sockets.on('connection', function(socket) {
   mId = socket.id;
   if(socket.id == mId) {
+    var url;
+    var user_data;
     socket.on('crawler', function (data) {
       var domain;
       async.series([
@@ -198,7 +200,7 @@ io.sockets.on('connection', function(socket) {
           startCrawler(io.sockets.connected[mId], function(aDomain) {
             domain = aDomain;
             callback(null, aDomain);
-          });
+          }, user_data, url);
         },
         function(callback) {
           io.sockets.connected[mId].emit('state',"wpt");
@@ -210,6 +212,25 @@ io.sockets.on('connection', function(socket) {
       ], function(error, result) {
 
       });
+    });
+    socket.on('tls', function (data) {
+      url = req.body.hostName;
+
+      var ssl_exist_array = url.split(':');
+      var ssl_exist = ssl_exist_array[0];
+
+      if(ssl_exist.toUpperCase()=="HTTP"){
+        checker.fillUrl(url,res);
+        checker.notHTTPS();
+        user_data = mysql_module.insert_sites(req.body.hostName);
+      } else if(ssl_exist.toUpperCase()=="HTTPS"){
+        checker.fillUrl(url, res);
+        checker.checkNPNproto();
+        user_data = mysql_module.insert_sites(req.body.hostName);
+      }else{
+        checker.fillUrl(url, res);
+        checker.wronghost();
+      }
     });
   }
 });
