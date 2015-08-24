@@ -71,8 +71,8 @@ var task = function(mResFunction, aDomain) {
                     'site_idx':idx,
                     'compare_url':resData.compareVideo,
                     'graph_url':resData.leftContentUrl,
-                    'h1_waterfall_url':resData.leftWaterfallImg,
-                    'h2_waterfall_url':resData.rightWatefFallImg,
+                    'h1_waterfall_url':resData.leftWaterfallImg.replace("http", "https"),
+                    'h2_waterfall_url':resData.rightWatefFallImg.replace("http", "https"),
                     'http1_time':resData.leftLoadTime,
                     'http2_time':resData.rightLoadTime,
                     'performance':(resData.rightLoadTime/resData.leftLoadTime)*100

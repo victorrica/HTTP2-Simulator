@@ -2,6 +2,8 @@
  * Created by kolnidur on 15. 8. 18..
  */
 
+ var count = 0;
+
 function click_next(){
 
     get_progress_page();
@@ -28,6 +30,26 @@ function updateBaseText(aText) {
     $('#baseText').text(aText);
 }
 
+var gap = 0;
+// 경과 시간 표시
+function echoTime (serverStartTime, serverNowTime)
+{
+	var nowTime = new Date();
+	nowTime = parseInt(nowTime / 1000);
+
+	if (gap == 0) gap = serverNowTime - nowTime;
+	nowTime = nowTime + gap;
+
+	var echoTime = nowTime - (serverStartTime);
+
+	h = parseInt((echoTime % 86400) / 3600);
+	m = parseInt((echoTime % 3600) / 60);
+	s = parseInt((echoTime % 60));
+
+	count = h + ':' + m + ':' + s;
+	$('#baseText').text("경과 시간 : " + count);
+}
+
 function startComparison(aDomain) {
     var socket = io.connect();
     var index=0;
@@ -35,14 +57,12 @@ function startComparison(aDomain) {
     socket.on('state', function(data) {
         if(data.search('redirect') != -1) {
             var text = data.substring(8);
-            alert("text is "+text);
             var domain = "/result/"+text;
             window.location.replace(domain);
         } else if(data.search('crawling') != -1) {
-            updateText("Crawling Website");
+            updateText("Crawling and Modifying Website");
         } else if(data.search('wpt') != -1) {
-            updateBaseText("");
-            updateText("Comparing http1 and http2");
+            updateText("Comparing HTTP/1.1 and HTTP/2");
         } else if(index = data.search('download') != -1) {
             var text = data.substring(index+24);
             updateBaseText(text);
@@ -51,12 +71,14 @@ function startComparison(aDomain) {
 }
 
 $(document).ready(function(){
-
-
     $("#next").click(function(){
 
         click_next();
-
+        var nt = new Date();
+        var nt2 = new Date();
+        setInterval(function(){
+	        echoTime(nt, nt2);
+	    }, 1000);
     });
 
 });
