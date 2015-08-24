@@ -160,7 +160,6 @@ app.get('/result/:path2', function(request, response) {
     },
     function(callback) {
       mysql_module.findResultdataByIdx(site_idx,function(data){
-        console.log(data[0].compare_url);
         response.render('result', {
           url : "https://h2perf.org/result/"+path2,
           compare_url : data[0].compare_url,
@@ -174,28 +173,8 @@ app.get('/result/:path2', function(request, response) {
         callback(null);
       });
     }
-
-
   ], function(error, result) {
-
   });
-
-  //var select_data = mysql_module.findIdxByPath2(path2, function(idx) {
-  //  console.log("findIdxByPath2 : "+idx);
-  //  mysql_module.findResultdataByIdx(idx,function(data){
-  //    console.log(data[0].compare_url);
-  //    response.render('result', {
-  //      url : "https://h2perf.org/result/"+path2,
-  //      compare_url : data[0].compare_url,
-  //      graph_url : data[0].graph_url,
-  //      h1_waterfall_url : data[0].h1_waterfall_url,
-  //      h2_waterfall_url : data[0].h2_waterfall_url,
-  //      http1_time : data[0].http1_time,
-  //      http2_time : data[0].http2_time,
-  //      performance : data[0].performance
-  //    });
-  //  });
-  //});
 });
 
 

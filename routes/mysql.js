@@ -65,9 +65,6 @@ exports.insert_result = function(data){
         }
         console.log('Query execute : '+query.sql);
     });
-
-
-
 }
 
 exports.findIdxByPath2 = function(path2, cb){
