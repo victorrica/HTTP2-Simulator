@@ -51,11 +51,30 @@ function echoTime (serverStartTime, serverNowTime)
 
 	m = parseInt((echoTime % 3600) / 60);
 	s = parseInt((echoTime % 60));
-	if(m != 0)
-		count = m + '분 ' + s + "초";
-	else
-		count = s + "초";
-	$('#countText').multiline("예상 시간 : 4분 10초\n경과 시간 : " + count);
+	if(m != 0){
+        if(m==1){
+            if(s==0||s==1){
+                count = m + 'minute ' + s + "second";
+            }else{
+                count = m + 'minute ' + s + "seconds";
+            }
+        }else{
+            if(s==0||s==1){
+                count = m + 'minutes ' + s + "second";
+            }else{
+                count = m + 'minutes ' + s + "seconds";
+            }
+        }
+    }
+	else{
+        if(s==0||s==1){
+            count = s + "second";
+        }else{
+            count = s + "seconds";
+        }
+    }
+
+	$('#countText').multiline("Estimated time : 4 minutes 10 seconds\nLead time : " + count);
 }
 
 function startComparison(aDomain) {
