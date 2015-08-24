@@ -10,7 +10,7 @@ var childProcess = require("child_process");
 var spawn = childProcess.spawn;
 var wpt = require('./routes/webpagetest');
 var bodyParser = require('body-parser');
-var checker = require('./routes/check');
+
 var cookieParser = require('cookie-parser');
 var mysql_module = require('./routes/mysql');
 var fs = require('fs');
@@ -18,9 +18,9 @@ var ejs = require('ejs');
 var app = express();
 var async = require('async');
 var timeout = express.timeout;
-var mUrl;
+//var mUrl;
 var keyCount=0;
-var user_data;
+//var user_data;
 
 //WebPageTest Keys
 var mId;
@@ -41,15 +41,15 @@ const H2_DOMAIN = "-h2.h2perf.org:12345/";
 process.on('uncaughtException', function (err) {
   console.log("error");
   console.log('Caught exception: ' + err);
-  if(err ==  "Error: No supported SPDY version") {
-    checker.checkHttp2();
-  } else if(err = "Error: connect ECONNREFUSED") {
-    try {
-      checker.sendFailMsg();
-    } catch(e) {
-      console.log(e.message);
-    }
-  }
+  //if(err ==  "Error: No supported SPDY version") {
+  //  checker.checkHttp2();
+  //} else if(err = "Error: connect ECONNREFUSED") {
+  //  try {
+  //    checker.sendFailMsg();
+  //  } catch(e) {
+  //    console.log(e.message);
+  //  }
+  //}
 });
 
 // all environments
@@ -84,9 +84,12 @@ app.get('/progress_page', routes.progress_page);
 app.get('/check_result', routes.check_result);
 app.get('/mysql', routes.mysql);
 
-var startCrawler = function(aSocket, callback) {
+var startCrawler = function(aSocket, callback, aUser_data, aUrl) {
+  console.log(aUrl);
+  console.log("123123123");
+  console.log(aUser_data.path1);
   var child = spawn("phantomjs", ["--ssl-protocol=any", "--ignore-ssl-errors=yes", "./routes/crawler.js",
-    mUrl, user_data.path1]);
+    aUrl, aUser_data.path1]);
 
   var domain = {
     http1 : undefined,
@@ -95,7 +98,7 @@ var startCrawler = function(aSocket, callback) {
     path1 : undefined
   }
 
-  console.log("**user_data.path1 : "+user_data.path1);
+  console.log("**user_data.path1 : "+aUser_data.path1);
 
   child.stdout.on("data", function (data) {
     var cleanData = data.toString("utf8");
@@ -108,9 +111,9 @@ var startCrawler = function(aSocket, callback) {
   });
 
   child.on("exit", function (code) {
-    domain.http1 = HTTPS+user_data.path1+H1_DOMAIN;
-    domain.http2 = HTTPS+user_data.path1+H2_DOMAIN;
-    domain.path1 = user_data.path1;
+    domain.http1 = HTTPS+aUser_data.path1+H1_DOMAIN;
+    domain.http2 = HTTPS+aUser_data.path1+H2_DOMAIN;
+    domain.path1 = aUser_data.path1;
     domain.status = code;
 
     console.log("app:"+code);
@@ -121,32 +124,32 @@ var startCrawler = function(aSocket, callback) {
     }
   });
 }
-
-app.post('/tls', function(req, res) {
-  mUrl = req.body.hostName;
-
-  var ssl_exist_array = mUrl.split(':');
-  var ssl_exist = ssl_exist_array[0];
-
-  if(ssl_exist.toUpperCase()=="HTTP"){
-
-    checker.fillUrl(mUrl,res);
-    checker.notHTTPS();
-    user_data = mysql_module.insert_sites(req.body.hostName);
-  } else if(ssl_exist.toUpperCase()=="HTTPS"){
-    checker.fillUrl(mUrl, res);
-    checker.checkNPNproto();
-    user_data = mysql_module.insert_sites(req.body.hostName);
-
-  }else{
-
-    checker.fillUrl(mUrl, res);
-    checker.wronghost();
-
-  }
-
-
-});
+//
+//app.post('/tls', function(req, res) {
+//  mUrl = req.body.hostName;
+//
+//  var ssl_exist_array = mUrl.split(':');
+//  var ssl_exist = ssl_exist_array[0];
+//
+//  if(ssl_exist.toUpperCase()=="HTTP"){
+//
+//    checker.fillUrl(mUrl,res);
+//    checker.notHTTPS();
+//    user_data = mysql_module.insert_sites(req.body.hostName);
+//  } else if(ssl_exist.toUpperCase()=="HTTPS"){
+//    checker.fillUrl(mUrl, res);
+//    checker.checkNPNproto();
+//    user_data = mysql_module.insert_sites(req.body.hostName);
+//
+//  }else{
+//
+//    checker.fillUrl(mUrl, res);
+//    checker.wronghost();
+//
+//  }
+//
+//
+//});
 
 app.get('/rank', function(request, response){
   mysql_module.getTopPerformanceData(function(data){
@@ -195,28 +198,56 @@ var server = http.createServer(app).listen(app.get('port'), function(){
 
 var io = require('socket.io').listen(server);
 io.sockets.on('connection', function(socket) {
-  socket.on('crawler', function (data) {
-    mId = socket.id;
-    var domain;
-    async.series([
-      function(callback) {
-          io.sockets[mId].emit('state',"crawling");
-          startCrawler(io.sockets[mId], function(aDomain) {
+  mId = socket.id;
+  if(socket.id == mId) {
+    var url;
+    var user_data;
+    var checker = require('./routes/check');
+    socket.on('crawler', function (data) {
+      var domain;
+      async.series([
+        function(callback) {
+          io.sockets.connected[mId].emit('state',"crawling");
+          startCrawler(io.sockets.connected[mId], function(aDomain) {
             domain = aDomain;
             callback(null, aDomain);
-          });
-      },
-      function(callback) {
-          io.sockets[mId].emit('state',"wpt");
+          }, user_data, url);
+        },
+        function(callback) {
+          io.sockets.connected[mId].emit('state',"wpt");
           startWpt(domain, function() {
-            io.sockets[mId].emit('state',"redirect"+user_data.path2);
+            io.sockets.connected[mId].emit('state',"redirect"+user_data.path2);
             callback(null);
           });
-      },
-    ], function(error, result) {
+        },
+      ], function(error, result) {
 
+      });
     });
-  });
+    socket.on('tls', function (data) {
+      url = data;
+      console.log("url" + data);
+      var ssl_exist_array = url.split(':');
+      var ssl_exist = ssl_exist_array[0];
+
+      if(ssl_exist.toUpperCase()=="HTTP"){
+        checker.startCheck("1", url, io.sockets.connected[mId]);
+        //checker.fillUrl(url,io.sockets.connected[mId]);
+        //checker.notHTTPS();
+        user_data = mysql_module.insert_sites(data);
+      } else if(ssl_exist.toUpperCase()=="HTTPS"){
+        checker.startCheck("2", url, io.sockets.connected[mId]);
+        //checker.startCheck("2");
+        //checker.fillUrl(url,io.sockets.connected[mId]);
+        //checker.checkNPNproto();
+        user_data = mysql_module.insert_sites(data);
+      }else{
+        checker.startCheck("3", url, io.sockets.connected[mId]);
+        //checker.fillUrl(url,io.sockets.connected[mId]);
+        //checker.wronghost();
+      }
+    });
+  }
 });
 
 var startWpt = function(aData, callback) {

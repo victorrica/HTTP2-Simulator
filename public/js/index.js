@@ -17,31 +17,27 @@ $(document).ready(function(){
 
 
 
-function check_tls(url){
-	$.ajax({
-		//url: "https://www.google.com",
-		url: '/tls',
-		type: "POST",
-		data:{'hostName':url},
-		//data: "hostname=" + url.substring(8, url.length).replace("/", "") + "&public=true",
-		success: function(result){
-
-
-			if($("#protocol_result").length==1){
-				//alert("두번째 검사");
-				$("#protocol_result").text(result);
-
-			}else{
-				//alert("첫번째 검사");
-				get_check_result(result);
-			}
-
-		},
-		error:function(e){
-			alert(e.responseText);
-		}
-	});
-}
+//function check_tls(url){
+//	$.ajax({
+//		url: '/tls',
+//		type: "POST",
+//		data:{'hostName':url},
+//		success: function(result){
+//
+//
+//			if($("#protocol_result").length==1){
+//				$("#protocol_result").text(result);
+//
+//			}else{
+//				get_check_result(result);
+//			}
+//
+//		},
+//		error:function(e){
+//			alert(e.responseText);
+//		}
+//	});
+//}
 
 
 function get_check_result(protocol){
@@ -68,3 +64,38 @@ $(document).ready(function(){
 
 
 });
+//
+//function check_tls(url){
+//	$.ajax({
+//		url: '/tls',
+//		type: "POST",
+//		data:{'hostName':url},
+//		success: function(result){
+//
+//
+//			if($("#protocol_result").length==1){
+//				$("#protocol_result").text(result);
+//
+//			}else{
+//				get_check_result(result);
+//			}
+//
+//		},
+//		error:function(e){
+//			alert(e.responseText);
+//		}
+//	});
+//}
+
+function check_tls(url) {
+	var socket = io.connect();
+	socket.emit('tls', url);
+	socket.on('result', function(result) {
+		if($("#protocol_result").length==1){
+			$("#protocol_result").text(result);
+
+		}else{
+			get_check_result(result);
+		}
+	});
+}
