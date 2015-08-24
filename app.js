@@ -198,6 +198,7 @@ io.sockets.on('connection', function(socket) {
       });
     });
     socket.on('tls', function (data) {
+      console.log(mId);
       url = data;
       console.log("url" + data);
       var ssl_exist_array = url.split(':');

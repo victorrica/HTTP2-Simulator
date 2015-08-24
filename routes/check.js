@@ -60,7 +60,7 @@ var version = {
 exports.run = function(arg, aUrl, aSocket) {
 	startCheck(arg, aUrl, aSocket);
 }
-startCheck = function(arg, aUrl, aSocket) {
+var startCheck = function(arg, aUrl, aSocket) {
 	var url = {
 		spdy : undefined,
 		http2 : undefined
@@ -146,6 +146,8 @@ var checkNPNproto = function(aSocket, aUrl){
 
 		var ajax_message = npn;
 		console.log('This host using '+npn+'(origin : '+this.npnProtocol+')');
+		console.log('ajax_message' + ajax_message);
+		console.log('sockId' + aSocket.id);
 		aSocket.emit("result", ajax_message);
 	});
 
