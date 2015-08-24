@@ -10,7 +10,7 @@ var childProcess = require("child_process");
 var spawn = childProcess.spawn;
 var wpt = require('./routes/webpagetest');
 var bodyParser = require('body-parser');
-var checker = require('./routes/check');
+
 var cookieParser = require('cookie-parser');
 var mysql_module = require('./routes/mysql');
 var fs = require('fs');
@@ -41,15 +41,15 @@ const H2_DOMAIN = "-h2.h2perf.org:12345/";
 process.on('uncaughtException', function (err) {
   console.log("error");
   console.log('Caught exception: ' + err);
-  if(err ==  "Error: No supported SPDY version") {
-    checker.checkHttp2();
-  } else if(err = "Error: connect ECONNREFUSED") {
-    try {
-      checker.sendFailMsg();
-    } catch(e) {
-      console.log(e.message);
-    }
-  }
+  //if(err ==  "Error: No supported SPDY version") {
+  //  checker.checkHttp2();
+  //} else if(err = "Error: connect ECONNREFUSED") {
+  //  try {
+  //    checker.sendFailMsg();
+  //  } catch(e) {
+  //    console.log(e.message);
+  //  }
+  //}
 });
 
 // all environments
@@ -85,6 +85,9 @@ app.get('/check_result', routes.check_result);
 app.get('/mysql', routes.mysql);
 
 var startCrawler = function(aSocket, callback, aUser_data, aUrl) {
+  console.log(aUrl);
+  console.log("123123123");
+  console.log(aUser_data.path1);
   var child = spawn("phantomjs", ["--ssl-protocol=any", "--ignore-ssl-errors=yes", "./routes/crawler.js",
     aUrl, aUser_data.path1]);
 
@@ -108,9 +111,9 @@ var startCrawler = function(aSocket, callback, aUser_data, aUrl) {
   });
 
   child.on("exit", function (code) {
-    domain.http1 = HTTPS+user_data.path1+H1_DOMAIN;
-    domain.http2 = HTTPS+user_data.path1+H2_DOMAIN;
-    domain.path1 = user_data.path1;
+    domain.http1 = HTTPS+aUser_data.path1+H1_DOMAIN;
+    domain.http2 = HTTPS+aUser_data.path1+H2_DOMAIN;
+    domain.path1 = aUser_data.path1;
     domain.status = code;
 
     console.log("app:"+code);
@@ -192,6 +195,7 @@ io.sockets.on('connection', function(socket) {
   if(socket.id == mId) {
     var url;
     var user_data;
+    var checker = require('./routes/check');
     socket.on('crawler', function (data) {
       var domain;
       async.series([
@@ -214,21 +218,21 @@ io.sockets.on('connection', function(socket) {
       });
     });
     socket.on('tls', function (data) {
-      url = req.body.hostName;
-
+      url = data;
+      console.log("url" + data);
       var ssl_exist_array = url.split(':');
       var ssl_exist = ssl_exist_array[0];
 
       if(ssl_exist.toUpperCase()=="HTTP"){
-        checker.fillUrl(url,res);
+        checker.fillUrl(url,io.sockets.connected[mId]);
         checker.notHTTPS();
-        user_data = mysql_module.insert_sites(req.body.hostName);
+        user_data = mysql_module.insert_sites(data);
       } else if(ssl_exist.toUpperCase()=="HTTPS"){
-        checker.fillUrl(url, res);
+        checker.fillUrl(url,io.sockets.connected[mId]);
         checker.checkNPNproto();
-        user_data = mysql_module.insert_sites(req.body.hostName);
+        user_data = mysql_module.insert_sites(data);
       }else{
-        checker.fillUrl(url, res);
+        checker.fillUrl(url,io.sockets.connected[mId]);
         checker.wronghost();
       }
     });

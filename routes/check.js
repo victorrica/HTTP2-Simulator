@@ -22,7 +22,7 @@ var version = {
 	http2 : undefined
 };
 
-var mResponse = undefined;
+var mSocket = undefined;
 
 var url = {
 	spdy : undefined,
@@ -31,7 +31,7 @@ var url = {
 
 exports.sendFailMsg = function() {
 	ajaxResponse.status = ERROR;
-	mResponse.send(ajaxResponse);
+	mSocket.emit("result",ajaxResponse);
 	ajaxResponse.status = undefined;
 	ajaxResponse.value = undefined;
 }
@@ -44,14 +44,14 @@ exports.checkHttp2 = function() {
 		if(version.spdy != undefined && (version.http2 == undefined || version.http2 == '1.1')) {
 			ajaxResponse.status = OK;
 			ajaxResponse.value = version.spdy;
-			mResponse.send(ajaxResponse);
+			mSocket.emit("result",ajaxResponse);
 		} else {
 			var resHttp2 = "http" + version.http2;
 			ajaxResponse.status = OK;
 			ajaxResponse.value = resHttp2;
-			mResponse.send(ajaxResponse);
+			mSocket.emit("result",ajaxResponse);
 		}
-		mResponse = undefined;
+		mSocket = undefined;
 		version.spdy = undefined;
 		version.http2 = undefined;
 		ajaxResponse.status = undefined;
@@ -59,9 +59,9 @@ exports.checkHttp2 = function() {
 	});
 }
 
-exports.fillUrl = function(aUrl, aResponse){
+exports.fillUrl = function(aUrl, aSocket){
 	console.log(aUrl);
-	mResponse = aResponse;
+	mSocket = aSocket;
 	url.http2 = aUrl;
 	url.spdy = url.http2.substring(8, Buffer.byteLength(url.http2));
 }
@@ -138,8 +138,7 @@ exports.checkNPNproto = function(){
 
 		var ajax_message = npn;
 		console.log('This host using '+npn+'(origin : '+this.npnProtocol+')');
-
-		mResponse.send(ajax_message);
+		mSocket.emit("result", ajax_message);
 	});
 
 	socket.on('error', function(error) {
@@ -169,17 +168,16 @@ exports.checkNPNproto = function(){
 		console.log("spdy_check");
 		console.log(result_check);
 		//console.log("This host not support TSL connection or wrong host name");
-		mResponse.send('Not TLS');
+		mSocket.emit("result",'Not TLS');
 
 	})
 
 }
 exports.notHTTPS = function(){
-	mResponse.send("HTTP/1.1(Not SSL)");
+	mSocket.emit("result","HTTP/1.1(Not SSL)");
 
 }
 
 exports.wronghost = function(){
-	mResponse.send("Wrong Host");
-
+	mSocket.emit("result","Wrong Host");
 }
