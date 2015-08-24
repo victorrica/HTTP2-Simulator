@@ -1153,3 +1153,14 @@
 					margin-left: 0;
 					padding-left: 0;
 				}
+
+	.title{
+		font-size: 2em;
+	}
+	#faster{
+		border: 5px solid grey;
+		padding: 30px;
+	}
+	.feature{
+		margin-top: 5%;
+	}
