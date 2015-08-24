@@ -46,7 +46,7 @@ function echoTime (serverStartTime, serverNowTime)
 	s = parseInt((echoTime % 60));
 
 	count = m + '분 :' + s + "초";
-	$('#countText').text("예상 시간 : 2분<br>" + "경과 시간 : " + count);
+	$('#countText').text("예상 시간 : 2분" + "  -  " + "경과 시간 : " + count);
 }
 
 function startComparison(aDomain) {
@@ -60,6 +60,7 @@ function startComparison(aDomain) {
             window.location.replace(domain);
         } else if(data.search('crawling') != -1) {
             updateText("Crawling and Modifying Website");
+            updateBaseText("");
         } else if(data.search('wpt') != -1) {
             updateText("Comparing HTTP/1.1 and HTTP/2");
         } else if(index = data.search('download') != -1) {
