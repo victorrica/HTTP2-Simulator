@@ -17,27 +17,27 @@ $(document).ready(function(){
 
 
 
-function check_tls(url){
-	$.ajax({
-		url: '/tls',
-		type: "POST",
-		data:{'hostName':url},
-		success: function(result){
-
-
-			if($("#protocol_result").length==1){
-				$("#protocol_result").text(result);
-
-			}else{
-				get_check_result(result);
-			}
-
-		},
-		error:function(e){
-			alert(e.responseText);
-		}
-	});
-}
+//function check_tls(url){
+//	$.ajax({
+//		url: '/tls',
+//		type: "POST",
+//		data:{'hostName':url},
+//		success: function(result){
+//
+//
+//			if($("#protocol_result").length==1){
+//				$("#protocol_result").text(result);
+//
+//			}else{
+//				get_check_result(result);
+//			}
+//
+//		},
+//		error:function(e){
+//			alert(e.responseText);
+//		}
+//	});
+//}
 
 
 function get_check_result(protocol){
