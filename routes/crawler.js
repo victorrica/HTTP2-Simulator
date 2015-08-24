@@ -51,9 +51,9 @@ if (system.args.length === 1) {
 	       header[req.headers[i].name] = req.headers[i].value;
 
         var options = {
-			url : URL,
+ 			url : URL,
 			//hostname: parsedURL.domain,
-			port : parsedURL.protocol=="http"?parsedURL.protocol=80:parsedURL.protocol=443,
+// 			port : parsedURL.protocol=="http"?parsedURL.protocol=80:parsedURL.protocol=443
 			//path: parsedURL.path==null?parsedURL.path="/":parsedURL.path="/"+parsedURL.path,
 			method: req.method,
 			headers: header
