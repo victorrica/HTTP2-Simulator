@@ -193,16 +193,16 @@ io.sockets.on('connection', function(socket) {
     var domain;
     async.series([
       function(callback) {
-          io.sockets.connected(mId).emit('state',"crawling");
+          io.sockets.connected[mId].emit('state',"crawling");
           startCrawler(io.sockets.connected(mId), function(aDomain) {
             domain = aDomain;
             callback(null, aDomain);
           });
       },
       function(callback) {
-        io.sockets.connected(mId).emit('state',"wpt");
+        io.sockets.connected[mId].emit('state',"wpt");
           startWpt(domain, function() {
-            io.sockets.connected(mId).emit('state',"redirect"+user_data.path2);
+            io.sockets.connected[mId].emit('state',"redirect"+user_data.path2);
             callback(null);
           });
       },
