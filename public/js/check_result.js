@@ -27,7 +27,8 @@ function updateText(aText) {
     $('#text').text(aText);
 }
 function updateBaseText(aText) {
-    $('#baseText').text(aText);
+	setInterval(function(){
+    	$('#baseText').text(aText);},1000);
 }
 
 var gap = 0;
@@ -61,7 +62,7 @@ function startComparison(aDomain) {
         } else if(data.search('crawling') != -1) {
             updateText("Crawling and Modifying Website");
         } else if(data.search('wpt') != -1) {
-            updateBaseText("남은 시간 : " + count);
+            updateBaseText("경과 시간 : " + count);
             updateText("Comparing HTTP/1.1 and HTTP/2");
         } else if(index = data.search('download') != -1) {
             var text = data.substring(index+24);
