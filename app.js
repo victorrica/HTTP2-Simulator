@@ -194,7 +194,7 @@ io.sockets.on('connection', function(socket) {
     async.series([
       function(callback) {
           io.sockets.connected[mId].emit('state',"crawling");
-          startCrawler(io.sockets.connected(mId), function(aDomain) {
+          startCrawler(io.sockets.connected[mId], function(aDomain) {
             domain = aDomain;
             callback(null, aDomain);
           });
