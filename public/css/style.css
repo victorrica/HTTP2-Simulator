@@ -195,8 +195,10 @@
 	#step2 > p{
 		margin: 0;
 	}
-	#step > #baseText{
-		font-size: 2em;
+	#baseText{
+		font-size: 1.5em;
+		border: 1px solid black;
+		padding : 1%;
 		margin-top: 5%;
 	}
 	section.special, article.special {
