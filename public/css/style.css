@@ -1178,3 +1178,6 @@
 	#perf_table{
 		padding-top: 0 !important;
 	}
+	#email_btn{
+		text-align: left;
+	}
