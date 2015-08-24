@@ -38,6 +38,13 @@ exports.insert_sites = function(hostname){
     var path2 = randomValueHex(6);
     callback(path2);
 
+
+    var domain_arr = domain.split('.');
+    if(domain_arr[0].toUpperCase()=="WWW"){
+        domain=domain.substring(4,domain.length);
+
+    }
+    console.log("domain : "+domain);
     var user = {'url':url,
         'path1':path1,
         'path2':path2,
