@@ -148,6 +148,13 @@ app.post('/tls', function(req, res) {
 
 });
 
+app.get('/rank', function(request, response){
+  mysql_module.getTopPerformanceData(function(data){
+    console.log(data);
+    response.render('rank',{data:data});
+  });
+});
+
 app.get('/result/:path2', function(request, response) {
 
   var path2 = request.params.path2;

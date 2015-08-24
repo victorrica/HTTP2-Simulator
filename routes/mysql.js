@@ -112,6 +112,18 @@ exports.findResultdataByIdx = function(idx,cb){
 
 }
 
+exports.getTopPerformanceData = function(cb){
+    var query = connection.query('select * from sites left join result ON sites.idx = result.site_idx where not result.performance is null group by sites.domain order by result.performance ', function(err,rows){
+        if(err){
+            console.error(err);
+            throw err;
+        }
+        console.log('Query execute : '+query.sql);
+        cb(rows);
+    });
+
+}
+
 function randomValueHex (len) {
     return crypto.randomBytes(Math.ceil(len/2))
         .toString('hex') // convert to hexadecimal format
