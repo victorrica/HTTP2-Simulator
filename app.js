@@ -206,9 +206,10 @@ io.sockets.on('connection', function(socket) {
         checker.run("1", url, io.sockets.connected[mId]);
         user_data = mysql_module.insert_sites(data);
       } else if(ssl_exist.toUpperCase()=="HTTPS"){
-
+        console.log("00000000000000"+mId);
         async.series([
           function(callback) {
+            console.log("222222222222222"+mId);
             checker.run("2", url, io.sockets.connected[mId], function () {
               callback(null);
             });
