@@ -27,7 +27,7 @@ function updateText(aText) {
     $('#text').text(aText);
 }
 function updateBaseText(aText) {
-    $('#baseText').text(aText);
+    $('#baseText').text(aText).trim();
 }
 
 var gap = 0;
@@ -42,12 +42,11 @@ function echoTime (serverStartTime, serverNowTime)
 
 	var echoTime = nowTime - (serverStartTime);
 
-	h = parseInt((echoTime % 86400) / 3600);
 	m = parseInt((echoTime % 3600) / 60);
 	s = parseInt((echoTime % 60));
 
-	count = h + ':' + m + ':' + s;
-	$('#baseText').text("경과 시간 : " + count);
+	count = m + '분 :' + s + "초";
+	$('#countText').text("예상 시간 : 2분 " + "경과 시간 : " + count);
 }
 
 function startComparison(aDomain) {

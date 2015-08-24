@@ -195,6 +195,10 @@
 	#step2 > p{
 		margin: 0;
 	}
+	#step > #baseText{
+		font-size: 2em;
+		margin-top: 5%;
+	}
 	section.special, article.special {
 		text-align: center;
 	}
