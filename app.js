@@ -123,32 +123,6 @@ var startCrawler = function(aSocket, callback, aUser_data, aUrl) {
     }
   });
 }
-//
-//app.post('/tls', function(req, res) {
-//  mUrl = req.body.hostName;
-//
-//  var ssl_exist_array = mUrl.split(':');
-//  var ssl_exist = ssl_exist_array[0];
-//
-//  if(ssl_exist.toUpperCase()=="HTTP"){
-//
-//    checker.fillUrl(mUrl,res);
-//    checker.notHTTPS();
-//    user_data = mysql_module.insert_sites(req.body.hostName);
-//  } else if(ssl_exist.toUpperCase()=="HTTPS"){
-//    checker.fillUrl(mUrl, res);
-//    checker.checkNPNproto();
-//    user_data = mysql_module.insert_sites(req.body.hostName);
-//
-//  }else{
-//
-//    checker.fillUrl(mUrl, res);
-//    checker.wronghost();
-//
-//  }
-//
-//
-//});
 
 app.get('/rank', function(request, response){
   mysql_module.getTopPerformanceData(function(data){
