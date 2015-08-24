@@ -78,7 +78,6 @@ if ('development' == app.get('env')) {
 
 app.get('/', routes.index);
 app.get('/Webpagetest', routes.Webpagetest);
-app.get('/rank', routes.rank);
 app.get('/contactus', routes.contactus);
 app.get('/progress_page', routes.progress_page);
 app.get('/check_result', routes.check_result);
@@ -150,6 +149,13 @@ var startCrawler = function(aSocket, callback, aUser_data, aUrl) {
 //
 //
 //});
+
+app.get('/rank', function(request, response){
+  mysql_module.getTopPerformanceData(function(data){
+    console.log(data);
+    response.render('rank',{data:data});
+  });
+});
 
 app.get('/result/:path2', function(request, response) {
 
