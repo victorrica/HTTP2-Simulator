@@ -1176,5 +1176,5 @@
 		text-align: center;
 	}
 	#perf_table{
-		padding-top: 0;
+		padding-top: 0 !important;
 	}
