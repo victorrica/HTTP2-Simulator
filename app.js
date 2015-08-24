@@ -23,6 +23,7 @@ var keyCount=0;
 var user_data;
 
 //WebPageTest Keys
+var mId;
 var key = [
   "A.cfbefb5968dacd324d3ce4426ff593ce", "A.81570d0c6da5ed737e21f766e7a89655",
   "A.4f498e8fdf15d820545af9a0ced88431", "A.4c4149b53488c09ce7ee8f7e8cc637b6", "A.a66edbb10b50e156ebf63dccda3e938d"
@@ -188,19 +189,20 @@ var server = http.createServer(app).listen(app.get('port'), function(){
 var io = require('socket.io').listen(server);
 io.sockets.on('connection', function(socket) {
   socket.on('crawler', function (data) {
+    mId = socket.id;
     var domain;
     async.series([
       function(callback) {
-          socket.emit('state',"crawling");
-          startCrawler(socket, function(aDomain) {
+          io.sockets[mId].emit('state',"crawling");
+          startCrawler(io.sockets[mId], function(aDomain) {
             domain = aDomain;
             callback(null, aDomain);
           });
       },
       function(callback) {
-          socket.emit('state',"wpt");
+          io.sockets[mId].emit('state',"wpt");
           startWpt(domain, function() {
-            socket.emit('state',"redirect"+user_data.path2);
+            io.sockets[mId].emit('state',"redirect"+user_data.path2);
             callback(null);
           });
       },
@@ -217,7 +219,7 @@ var startWpt = function(aData, callback) {
     path1 : aData.path1
   };
 
-  wpt.run(key[keyCount++], domain, function() {
+  wpt.run(key[keyCount++], domain, function(aResData) {
     console.log("keycount");
     console.log(keyCount);
     console.log(key[keyCount]);
