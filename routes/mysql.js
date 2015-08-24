@@ -113,7 +113,7 @@ exports.findResultdataByIdx = function(idx,cb){
 }
 
 exports.getTopPerformanceData = function(cb){
-    var query = connection.query('select * from sites left join result ON sites.idx = result.site_idx where not result.performance is null group by sites.domain order by result.performance ', function(err,rows){
+    var query = connection.query('select * from sites left join result ON sites.idx = result.site_idx where not result.performance is null group by sites.domain order by result.performance DESC LIMIT 10', function(err,rows){
         if(err){
             console.error(err);
             throw err;
