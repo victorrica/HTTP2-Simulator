@@ -38,6 +38,13 @@ exports.insert_sites = function(hostname){
     var path2 = randomValueHex(6);
     callback(path2);
 
+
+    var domain_arr = domain.split('.');
+    if(domain_arr[0].toUpperCase()=="WWW"){
+        domain=domain.substring(4,domain.length);
+
+    }
+    console.log("domain : "+domain);
     var user = {'url':url,
         'path1':path1,
         'path2':path2,
@@ -65,7 +72,42 @@ exports.insert_result = function(data){
         }
         console.log('Query execute : '+query.sql);
     });
+}
 
+exports.findIdxByPath2 = function(path2, cb){
+    var query = connection.query('select * from sites where `path2`='+mysql.escape(path2), function(err,rows) {
+        if(err) {
+            console.error(err);
+            throw err;
+        }
+        console.log('Query execute : '+query.sql);
+
+        cb(rows[0]);
+    });
+}
+
+exports.findIdxByPath1 = function(path1, cb){
+    var query = connection.query('select idx from sites where `path1`='+mysql.escape(path1), function(err,rows) {
+        if(err) {
+            console.error(err);
+            throw err;
+        }
+        console.log('Query execute : '+query.sql);
+
+        cb(rows[0].idx);
+    });
+}
+
+exports.findResultdataByIdx = function(idx,cb){
+    var query = connection.query('select * from result where `site_idx`='+mysql.escape(idx), function(err,rows) {
+        if(err) {
+            console.error(err);
+            throw err;
+        }
+        console.log('Query execute : '+query.sql);
+
+        cb(rows);
+    });
 
 
 }

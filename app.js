@@ -24,8 +24,8 @@ var user_data;
 
 //WebPageTest Keys
 var key = [
-  "A.4c4149b53488c09ce7ee8f7e8cc637b6", "A.a66edbb10b50e156ebf63dccda3e938d", "A.cfbefb5968dacd324d3ce4426ff593ce",
-  "A.81570d0c6da5ed737e21f766e7a89655", "A.4f498e8fdf15d820545af9a0ced88431"
+  "A.cfbefb5968dacd324d3ce4426ff593ce", "A.81570d0c6da5ed737e21f766e7a89655",
+  "A.4f498e8fdf15d820545af9a0ced88431", "A.4c4149b53488c09ce7ee8f7e8cc637b6", "A.a66edbb10b50e156ebf63dccda3e938d"
 ];
 
 var client = {
@@ -81,7 +81,6 @@ app.get('/rank', routes.rank);
 app.get('/contactus', routes.contactus);
 app.get('/progress_page', routes.progress_page);
 app.get('/check_result', routes.check_result);
-app.get('/result', routes.result);
 app.get('/mysql', routes.mysql);
 
 var startCrawler = function(aSocket, callback) {
@@ -91,7 +90,8 @@ var startCrawler = function(aSocket, callback) {
   var domain = {
     http1 : undefined,
     http2 : undefined,
-    status : undefined
+    status : undefined,
+    path1 : undefined
   }
 
   console.log("**user_data.path1 : "+user_data.path1);
@@ -109,6 +109,7 @@ var startCrawler = function(aSocket, callback) {
   child.on("exit", function (code) {
     domain.http1 = HTTPS+user_data.path1+H1_DOMAIN;
     domain.http2 = HTTPS+user_data.path1+H2_DOMAIN;
+    domain.path1 = user_data.path1;
     domain.status = code;
 
     console.log("app:"+code);
@@ -146,6 +147,38 @@ app.post('/tls', function(req, res) {
 
 });
 
+app.get('/result/:path2', function(request, response) {
+
+  var path2 = request.params.path2;
+  var site_idx,site_url;
+  async.series([
+    function(callback) {
+      mysql_module.findIdxByPath2(path2, function(data) {
+        site_idx = data.idx;
+        site_url = data.url;
+        callback(null);
+      });
+    },
+    function(callback) {
+      mysql_module.findResultdataByIdx(site_idx,function(data){
+        response.render('result', {
+          url : site_url,
+          compare_url : data[0].compare_url,
+          graph_url : data[0].graph_url,
+          h1_waterfall_url : data[0].h1_waterfall_url,
+          h2_waterfall_url : data[0].h2_waterfall_url,
+          http1_time : data[0].http1_time,
+          http2_time : data[0].http2_time,
+          performance : data[0].performance
+        });
+        callback(null);
+      });
+    }
+  ], function(error, result) {
+  });
+});
+
+
 mysql_module.start_connection();
 
 var server = http.createServer(app).listen(app.get('port'), function(){
@@ -167,7 +200,7 @@ io.sockets.on('connection', function(socket) {
       function(callback) {
           socket.emit('state',"wpt");
           startWpt(domain, function() {
-            socket.emit('state',"redirect");
+            socket.emit('state',"redirect"+user_data.path2);
             callback(null);
           });
       },
@@ -180,7 +213,8 @@ io.sockets.on('connection', function(socket) {
 var startWpt = function(aData, callback) {
   var domain = {
     http1 : aData.http1,
-    http2 : aData.http2
+    http2 : aData.http2,
+    path1 : aData.path1
   };
 
   wpt.run(key[keyCount++], domain, function(aResData) {

@@ -1,8 +1,5 @@
 var fs = require('fs');
-var path = require('path');
 var mkdirp = require('mkdirp');
-var http = require("http");
-var https = require("https");
 var request = require("request");
 
 var options = JSON.parse(process.argv[2]);
@@ -19,13 +16,8 @@ if(filepath.lastIndexOf('/') != -1)
 
 var file = fs.createWriteStream(filepath);
 
-var req = (URLprotocal=="80"?http:https).request(options, function(response) {
-	console.log("Download Start - " + options.hostname + options.path + "\n");
-	response.pipe(file,{end: false});
-});
-
-req.on('error', function(error) {
-  console.log(error);
-});
-
-req.end();
+request(options) .on('response', function(response) {
+	if(response.statusCode == 200) {
+		console.log("Download Start - " + options.url);
+	}
+}).pipe(file);

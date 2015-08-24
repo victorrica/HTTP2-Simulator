@@ -195,6 +195,12 @@
 	#step2 > p{
 		margin: 0;
 	}
+	#baseText{
+		font-size: 1.5em;
+		border: 1px solid black;
+		padding : 1%;
+		margin-top: 5%;
+	}
 	section.special, article.special {
 		text-align: center;
 	}
@@ -226,7 +232,6 @@
 
 	header.major {
 		text-align: center;
-		margin-bottom: 3em;
 	}
 
 		header.major h2 {
@@ -1153,3 +1158,14 @@
 					margin-left: 0;
 					padding-left: 0;
 				}
+
+	.title{
+		font-size: 2em;
+	}
+	#faster{
+		border: 5px solid grey;
+		padding: 30px;
+	}
+	.feature{
+		margin-top: 5%;
+	}

@@ -14,6 +14,7 @@ var mWpt;
 const LEFT_VIEW = 1;
 const RIGHT_VIEW = 2;
 
+
 //var mysql_connection;
 
 
@@ -28,6 +29,7 @@ var task = function(mResFunction, aDomain) {
         function(callback) {
             console.log(aDomain.http1);
             console.log(aDomain.http2);
+            console.log("aaaaaaaa"+aDomain.path1);
             runLeft(aDomain, function(aId) {
                 leftId = aId;
                 callback(null);
@@ -64,20 +66,19 @@ var task = function(mResFunction, aDomain) {
             getWaterfallImg(leftId, LEFT_VIEW);
             getWaterfallImg(rightId, RIGHT_VIEW);
             mResFunction(resData);
-
-            var sql_data = {
-                'compare_url':resData.compareVideo,
-                'graph_url':resData.leftContentUrl,
-                'h1_waterfall_url':resData.leftWaterfallImg,
-                'h2_waterfall_url':resData.rightWatefFallImg,
-                'http1_time':resData.leftLoadTime,
-                'http2_time':resData.rightLoadTime,
-                'performance':(resData.rightLoadTime/resData.leftLoadTime)*100
-            };
-
-            mysql_module.insert_result(sql_data);
-
-            console.log('error : ', result);
+            mysql_module.findIdxByPath1(aDomain.path1,function(idx){
+                var sql_data = {
+                    'site_idx':idx,
+                    'compare_url':resData.compareVideo,
+                    'graph_url':resData.leftContentUrl,
+                    'h1_waterfall_url':resData.leftWaterfallImg.replace("http", "https"),
+                    'h2_waterfall_url':resData.rightWatefFallImg.replace("http", "https"),
+                    'http1_time':resData.leftLoadTime,
+                    'http2_time':resData.rightLoadTime,
+                    'performance':(resData.rightLoadTime/resData.leftLoadTime)*100
+                };
+                mysql_module.insert_result(sql_data);
+            });
 
 
         }, 2000);
@@ -120,7 +121,7 @@ exports.run = function(key, aDomain, aRcvFun) {
 runLeft = function(aDomain, callback) {
     var h1Domain = aDomain.http1;
     console.log("h1 url : "+h1Domain);
-    mWpt.runTest(h1Domain, { "ignoreSSL":true,"video":true,"player":true, breakdown: true,
+    mWpt.runTest(h1Domain, { "label": "HTTP/1.1", "ignoreSSL":true,"video":true,"player":true, breakdown: true,
         domains: true, pageSpeed: true, requests: true },
         function(err, aData) {
             console.log(aData);
@@ -132,7 +133,7 @@ runLeft = function(aDomain, callback) {
 runRight = function(aDomain, callback) {
     var h2Domain = aDomain.http2;
     console.log("h2 url : "+h2Domain);
-    mWpt.runTest(h2Domain, { "ignoreSSL":true,"video":true,"player":true, breakdown: true,
+    mWpt.runTest(h2Domain, { "label": "HTTP/2", "ignoreSSL":true,"video":true,"player":true, breakdown: true,
         domains: true, pageSpeed: true, requests: true },
         function(err, aData) {
             console.log(aData);
