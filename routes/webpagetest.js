@@ -74,7 +74,7 @@ var task = function(mResFunction, aDomain) {
                     'h2_waterfall_url':resData.rightWatefFallImg.replace("http", "https"),
                     'http1_time':resData.leftLoadTime,
                     'http2_time':resData.rightLoadTime,
-                    'performance':(resData.rightLoadTime/resData.leftLoadTime)*100
+                    'performance':(resData.leftLoadTime/resData.rightLoadTime)*100
                 };
                 mysql_module.insert_result(sql_data);
                 mResFunction();
