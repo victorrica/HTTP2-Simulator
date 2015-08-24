@@ -217,7 +217,7 @@ var startWpt = function(aData, callback) {
     path1 : aData.path1
   };
 
-  wpt.run(key[keyCount++], domain, function(aResData) {
+  wpt.run(key[keyCount++], domain, function() {
     console.log("keycount");
     console.log(keyCount);
     console.log(key[keyCount]);
