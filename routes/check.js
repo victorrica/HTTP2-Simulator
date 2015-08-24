@@ -4,7 +4,6 @@ var http = require('http');
 var fs = require('fs');
 var path = require("path");
 var body,file,url = "https://patenthelper.kr";
-var chunked = false;
 var spdy = require('spdy');
 var util = require('util');
 var http = require('https');
@@ -22,72 +21,70 @@ var version = {
 	http2 : undefined
 };
 
-var mSocket = undefined;
+//var mSocket = undefined;
 
-var url = {
-	spdy : undefined,
-	http2 : undefined
-};
+//var url = {
+//	spdy : undefined,
+//	http2 : undefined
+//};
 
-exports.sendFailMsg = function() {
-	ajaxResponse.status = ERROR;
-	mSocket.emit("result",ajaxResponse);
-	ajaxResponse.status = undefined;
-	ajaxResponse.value = undefined;
+//var sendFailMsg = function() {
+//	ajaxResponse.status = ERROR;
+//	mSocket.emit("result",ajaxResponse);
+//	ajaxResponse.status = undefined;
+//	ajaxResponse.value = undefined;
+//}
+
+//var checkHttp2 = function() {
+//	require('http2').get(url.http2, function(response) {
+//		version.http2 = response.httpVersion;
+//
+//
+//		if(version.spdy != undefined && (version.http2 == undefined || version.http2 == '1.1')) {
+//			ajaxResponse.status = OK;
+//			ajaxResponse.value = version.spdy;
+//			mSocket.emit("result",ajaxResponse);
+//		} else {
+//			var resHttp2 = "http" + version.http2;
+//			ajaxResponse.status = OK;
+//			ajaxResponse.value = resHttp2;
+//			mSocket.emit("result",ajaxResponse);
+//		}
+//		mSocket = undefined;
+//		version.spdy = undefined;
+//		version.http2 = undefined;
+//		ajaxResponse.status = undefined;
+//		ajaxResponse.value = undefined;
+//	});
+//}
+
+exports.startCheck = function(arg, aUrl, aSocket) {
+	fillUrl(aUrl, aSocket);
+	if(arg == '1') {
+		notHTTPS(aSocket);
+	}
+	else if(arg == '2') {
+		checkNPNproto(aSocket);
+	}
+	else if(arg == '3') {
+		wronghost(aSocket);
+	}
 }
 
-exports.checkHttp2 = function() {
-	require('http2').get(url.http2, function(response) {
-		version.http2 = response.httpVersion;
-
-
-		if(version.spdy != undefined && (version.http2 == undefined || version.http2 == '1.1')) {
-			ajaxResponse.status = OK;
-			ajaxResponse.value = version.spdy;
-			mSocket.emit("result",ajaxResponse);
-		} else {
-			var resHttp2 = "http" + version.http2;
-			ajaxResponse.status = OK;
-			ajaxResponse.value = resHttp2;
-			mSocket.emit("result",ajaxResponse);
-		}
-		mSocket = undefined;
-		version.spdy = undefined;
-		version.http2 = undefined;
-		ajaxResponse.status = undefined;
-		ajaxResponse.value = undefined;
-	});
-}
-
-exports.fillUrl = function(aUrl, aSocket){
+var fillUrl = function(aUrl, aSocket) {
+	var url = {
+		spdy : undefined,
+		http2 : undefined
+	};
 	console.log(aUrl);
-	mSocket = aSocket;
+
+	//mSocket = aSocket;
 	url.http2 = aUrl;
 	url.spdy = url.http2.substring(8, Buffer.byteLength(url.http2));
 }
-exports.checkSpdy = function(callback) {
-	var agent = spdy.createAgent({
-		host: url.spdy,
-		port: 443,
-
-		// Optional SPDY options
-		spdy: {
-			plain: true,
-			ssl: true
-		}
-	});
-	http.get({
-		host: url.spdy,
-		agent: agent
-	}, function(response) {
-		version.spdy = response.req.agent._spdyState.socket.npnProtocol;
-		agent.close();
-		exports.checkHttp2();
-	}).end();
-}
 
 //Protocol Check using TLS extensions NPN protocol
-exports.checkNPNproto = function(){
+var checkNPNproto = function(aSocket){
 	var port = 443;
 	var host = url.spdy;
 
@@ -138,7 +135,7 @@ exports.checkNPNproto = function(){
 
 		var ajax_message = npn;
 		console.log('This host using '+npn+'(origin : '+this.npnProtocol+')');
-		mSocket.emit("result", ajax_message);
+		aSocket.emit("result", ajax_message);
 	});
 
 	socket.on('error', function(error) {
@@ -168,16 +165,16 @@ exports.checkNPNproto = function(){
 		console.log("spdy_check");
 		console.log(result_check);
 		//console.log("This host not support TSL connection or wrong host name");
-		mSocket.emit("result",'Not TLS');
+		aSocket.emit("result",'Not TLS');
 
 	})
 
 }
-exports.notHTTPS = function(){
-	mSocket.emit("result","HTTP/1.1(Not SSL)");
+var notHTTPS = function(aSocket){
+	aSocket.emit("result","HTTP/1.1(Not SSL)");
 
 }
 
-exports.wronghost = function(){
-	mSocket.emit("result","Wrong Host");
+var wronghost = function(){
+	aSocket.emit("result","Wrong Host");
 }
