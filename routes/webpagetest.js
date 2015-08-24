@@ -152,9 +152,9 @@ result = function(aLocation, aId, callback) {
         console.log("statusCode : "+data.data.statusCode + "\n" + data.data.statusText);
         if(data.statusCode == 200) {
             if(aLocation==LEFT_VIEW){
-                resData.leftLoadTime = data.data.average.firstView.loadTime;
+                resData.leftLoadTime = data.data.average.firstView.visualComplete;
             }else{
-                resData.rightLoadTime = data.data.average.firstView.loadTime;
+                resData.rightLoadTime = data.data.average.firstView.visualComplete;
             }
 
             var leftContent = data.data.median.firstView.breakdown;
