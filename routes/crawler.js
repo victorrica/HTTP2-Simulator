@@ -37,7 +37,7 @@ if (system.args.length === 1) {
 		}
 
 		//Domain Sharding 처리
-		
+
         if(originURL.replace("www.", "") != parsedURL.domain.replace("www.", ""))
         {
 			localPath = parsedURL.domain + "/" + localPath;
@@ -49,12 +49,13 @@ if (system.args.length === 1) {
 		header["User-Agent"] = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.155 Safari/537.36";
         for(var i=0;i<req.headers.length;i++)
 	       header[req.headers[i].name] = req.headers[i].value;
-        
+
         var options = {
-			hostname: parsedURL.domain,
+			url : URL;
+			//hostname: parsedURL.domain,
 			port : parsedURL.protocol=="http"?parsedURL.protocol=80:parsedURL.protocol=443,
-			path: parsedURL.path==null?parsedURL.path="/":parsedURL.path="/"+parsedURL.path,
-			method: "GET",
+			//path: parsedURL.path==null?parsedURL.path="/":parsedURL.path="/"+parsedURL.path,
+			method: req.method,
 			headers: header
 		};
 
