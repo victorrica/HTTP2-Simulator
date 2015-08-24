@@ -24,7 +24,7 @@ var keyCount=0;
 
 //WebPageTest Keys
 var key = [
-  "A.cfbefb5968dacd324d3ce4426ff593ce", "A.81570d0c6da5ed737e21f766e7a89655",
+  "A.81570d0c6da5ed737e21f766e7a89655", "A.cfbefb5968dacd324d3ce4426ff593ce",
   "A.4f498e8fdf15d820545af9a0ced88431", "A.4c4149b53488c09ce7ee8f7e8cc637b6", "A.a66edbb10b50e156ebf63dccda3e938d"
 ];
 
@@ -52,7 +52,7 @@ process.on('uncaughtException', function (err) {
 });
 
 // all environments
-app.set('port', process.env.PORT || 80);
+app.set('port', process.env.PORT || 3000);
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 app.use(express.favicon("public/images/favicon.ico"));
@@ -167,10 +167,10 @@ mysql_module.start_connection();
 var server = http.createServer(app).listen(app.get('port'), function(){
   console.log("Start H2Perf.org Server!");
 });
-var mId;
+//var mId;
 var io = require('socket.io').listen(server);
 io.sockets.on('connection', function(socket) {
-  mId = socket.id;
+  //mId = socket.id;
     var url;
     var user_data;
     var checker = require('./routes/check');
@@ -178,16 +178,16 @@ io.sockets.on('connection', function(socket) {
       var domain;
       async.series([
         function(callback) {
-          io.sockets.connected[mId].emit('state',"crawling");
-          startCrawler(io.sockets.connected[mId], function(aDomain) {
+          socket.emit('state',"crawling");
+          startCrawler(socket, function(aDomain) {
             domain = aDomain;
             callback(null, aDomain);
           }, user_data, url);
         },
         function(callback) {
-          io.sockets.connected[mId].emit('state',"wpt");
+          socket.emit('state',"wpt");
           startWpt(domain, function() {
-            io.sockets.connected[mId].emit('state',"redirect"+user_data.path2);
+            socket.emit('state',"redirect"+user_data.path2);
             callback(null);
           });
         },
@@ -196,21 +196,18 @@ io.sockets.on('connection', function(socket) {
       });
     });
     socket.on('tls', function (data) {
-      console.log(mId);
       url = data;
       console.log("url" + data);
       var ssl_exist_array = url.split(':');
       var ssl_exist = ssl_exist_array[0];
 
       if(ssl_exist.toUpperCase()=="HTTP"){
-        checker.run("1", url, io.sockets.connected[mId]);
+        checker.run("1", url, io.sockets.connected[socket.id]);
         user_data = mysql_module.insert_sites(data);
       } else if(ssl_exist.toUpperCase()=="HTTPS"){
-        console.log("00000000000000"+mId);
         async.series([
           function(callback) {
-            console.log("222222222222222"+mId);
-            checker.run("2", url, io.sockets.connected[mId], function () {
+            checker.run("2", url, socket, function () {
               callback(null);
             });
           },
@@ -223,7 +220,7 @@ io.sockets.on('connection', function(socket) {
 
         });
       }else{
-        checker.run("3", url, io.sockets.connected[mId]);
+        checker.run("3", url, socket);
       }
     });
 });
