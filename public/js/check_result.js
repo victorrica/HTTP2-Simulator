@@ -2,7 +2,13 @@
  * Created by kolnidur on 15. 8. 18..
  */
 
- var count = 0;
+var count;
+
+$.fn.multiline = function(text){
+    this.text(text);
+    this.html(this.html().replace(/\n/g,'<br/>'));
+    return this;
+}
 
 function click_next(){
 
@@ -28,7 +34,7 @@ function updateText(aText) {
 }
 function updateBaseText(aText) {
 	aText.replace("Download Start", "\nDownload Start");
-    $('#baseText').text(aText.trim());
+    $('#baseText').multiline(aText.trim());
 }
 
 var gap = 0;
@@ -47,7 +53,7 @@ function echoTime (serverStartTime, serverNowTime)
 	s = parseInt((echoTime % 60));
 
 	count = m + '분 :' + s + "초";
-	$('#countText').text("예상 시간 : 5분\n" + "경과 시간 : " + count);
+	$('#countText').multiline("예상 시간 : 5분\n경과 시간 : " + count);
 }
 
 function startComparison(aDomain) {
