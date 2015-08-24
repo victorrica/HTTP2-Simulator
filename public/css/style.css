@@ -1169,3 +1169,11 @@
 	.feature{
 		margin-top: 5%;
 	}
+	#perf_label{
+		text-decoration: underline;
+		font-size: 2em;
+		margin-top: 5%;
+	}
+	#perf_table{
+		padding-top: 0;
+	}
