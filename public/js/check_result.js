@@ -51,9 +51,10 @@ function echoTime (serverStartTime, serverNowTime)
 
 	m = parseInt((echoTime % 3600) / 60);
 	s = parseInt((echoTime % 60));
-
-	count = m + '분 :' + s + "초";
-	$('#countText').multiline("예상 시간 : 5분\n경과 시간 : " + count);
+	if(m != 0)
+		count += m + '분 ';
+	count += s + "초";
+	$('#countText').multiline("예상 시간 : 4분 10초\n경과 시간 : " + count);
 }
 
 function startComparison(aDomain) {
