@@ -27,8 +27,7 @@ function updateText(aText) {
     $('#text').text(aText);
 }
 function updateBaseText(aText) {
-	setInterval(function(){
-    	$('#baseText').text(aText);},1000);
+    $('#baseText').text(aText);
 }
 
 var gap = 0;
@@ -48,6 +47,7 @@ function echoTime (serverStartTime, serverNowTime)
 	s = parseInt((echoTime % 60));
 
 	count = h + ':' + m + ':' + s;
+	$('#baseText').text("경과 시간 : " + count);
 }
 
 function startComparison(aDomain) {
@@ -62,7 +62,6 @@ function startComparison(aDomain) {
         } else if(data.search('crawling') != -1) {
             updateText("Crawling and Modifying Website");
         } else if(data.search('wpt') != -1) {
-            updateBaseText("경과 시간 : " + count);
             updateText("Comparing HTTP/1.1 and HTTP/2");
         } else if(index = data.search('download') != -1) {
             var text = data.substring(index+24);
@@ -79,7 +78,7 @@ $(document).ready(function(){
         var nt2 = new Date();
         setInterval(function(){
 	        echoTime(nt, nt2);
-	        }, 1000);
+	    }, 1000);
     });
 
 });
