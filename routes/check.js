@@ -57,15 +57,11 @@ var version = {
 //		ajaxResponse.value = undefined;
 //	});
 //}
-exports.run = function(arg, aUrl, aSocket, callback) {
-	startCheck(arg, aUrl, aSocket, callback);
-}
-var startCheck = function(arg, aUrl, aSocket, callback) {
+exports.startCheck = function(arg, aUrl, aSocket, callback) {
 	var url = {
 		spdy : undefined,
 		http2 : undefined
 	};
-	//url = fillUrl(aUrl, aSocket);
 	console.log("url : " + aUrl);
 	url.http2 = aUrl;
 	url.spdy = aUrl.substring(8, Buffer.byteLength(aUrl));
