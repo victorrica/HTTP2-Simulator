@@ -224,20 +224,13 @@ io.sockets.on('connection', function(socket) {
       var ssl_exist = ssl_exist_array[0];
 
       if(ssl_exist.toUpperCase()=="HTTP"){
-        checker.startCheck("1", url, io.sockets.connected[mId]);
-        //checker.fillUrl(url,io.sockets.connected[mId]);
-        //checker.notHTTPS();
+        checker.run("1", url, io.sockets.connected[mId]);
         user_data = mysql_module.insert_sites(data);
       } else if(ssl_exist.toUpperCase()=="HTTPS"){
-        checker.startCheck("2", url, io.sockets.connected[mId]);
-        //checker.startCheck("2");
-        //checker.fillUrl(url,io.sockets.connected[mId]);
-        //checker.checkNPNproto();
+        checker.run("2", url, io.sockets.connected[mId]);
         user_data = mysql_module.insert_sites(data);
       }else{
-        checker.startCheck("3", url, io.sockets.connected[mId]);
-        //checker.fillUrl(url,io.sockets.connected[mId]);
-        //checker.wronghost();
+        checker.run("3", url, io.sockets.connected[mId]);
       }
     });
   }

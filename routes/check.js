@@ -57,13 +57,20 @@ var version = {
 //		ajaxResponse.value = undefined;
 //	});
 //}
-
-exports.startCheck = function(arg, aUrl, aSocket) {
+exports.run = function(arg, aUrl, aSocket) {
+	startCheck(arg, aUrl, aSocket);
+}
+startCheck = function(arg, aUrl, aSocket) {
 	var url = {
 		spdy : undefined,
 		http2 : undefined
 	};
-	url = fillUrl(aUrl, aSocket);
+	//url = fillUrl(aUrl, aSocket);
+	console.log("url : " + aUrl);
+	url.http2 = aUrl;
+	url.spdy = aUrl.substring(8, Buffer.byteLength(aUrl));
+	console.log("spdy : "+url.spdy);
+	console.log("http2 : " + url.http2);
 	if(arg == '1') {
 		notHTTPS(aSocket);
 	}
@@ -76,14 +83,13 @@ exports.startCheck = function(arg, aUrl, aSocket) {
 	}
 }
 
-var fillUrl = function(aUrl, aSocket) {
+var fillUrl = function(aUrl) {
 	var url = {
 		spdy : undefined,
 		http2 : undefined
 	};
-	console.log(aUrl);
-	url.http2 = aUrl;
-	url.spdy = url.http2.substring(8, Buffer.byteLength(url.http2));
+	//console.log(aUrl);
+
 
 	return url;
 }
