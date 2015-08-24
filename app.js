@@ -188,21 +188,21 @@ var server = http.createServer(app).listen(app.get('port'), function(){
 
 var io = require('socket.io').listen(server);
 io.sockets.on('connection', function(socket) {
+  mId = socket.id;
   socket.on('crawler', function (data) {
-    mId = socket.id;
     var domain;
     async.series([
       function(callback) {
-          io.sockets[mId].emit('state',"crawling");
-          startCrawler(io.sockets[mId], function(aDomain) {
+          io.sockets.connected(mId).emit('state',"crawling");
+          startCrawler(io.sockets.connected(mId), function(aDomain) {
             domain = aDomain;
             callback(null, aDomain);
           });
       },
       function(callback) {
-          io.sockets[mId].emit('state',"wpt");
+        io.sockets.connected(mId).emit('state',"wpt");
           startWpt(domain, function() {
-            io.sockets[mId].emit('state',"redirect"+user_data.path2);
+            io.sockets.connected(mId).emit('state',"redirect"+user_data.path2);
             callback(null);
           });
       },
