@@ -206,8 +206,21 @@ io.sockets.on('connection', function(socket) {
         checker.run("1", url, io.sockets.connected[mId]);
         user_data = mysql_module.insert_sites(data);
       } else if(ssl_exist.toUpperCase()=="HTTPS"){
-        checker.run("2", url, io.sockets.connected[mId]);
-        user_data = mysql_module.insert_sites(data);
+
+        async.series([
+          function(callback) {
+            checker.run("2", url, io.sockets.connected[mId], function () {
+              callback(null);
+            });
+          },
+          function(callback) {
+            user_data = mysql_module.insert_sites(data, function () {
+              callback(null);
+            });
+          },
+        ], function(error, result) {
+
+        });
       }else{
         checker.run("3", url, io.sockets.connected[mId]);
       }
