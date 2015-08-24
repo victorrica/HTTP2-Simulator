@@ -52,8 +52,9 @@ function echoTime (serverStartTime, serverNowTime)
 	m = parseInt((echoTime % 3600) / 60);
 	s = parseInt((echoTime % 60));
 	if(m != 0)
-		count += m + '분 ';
-	count += s + "초";
+		count = m + '분 ' + s + "초";
+	else
+		count = s + "초";
 	$('#countText').multiline("예상 시간 : 4분 10초\n경과 시간 : " + count);
 }
 
@@ -68,10 +69,9 @@ function startComparison(aDomain) {
             window.location.replace(domain);
         } else if(data.search('crawling') != -1) {
             updateText("Crawling and Modifying Website");
-            updateBaseText("");
         } else if(data.search('wpt') != -1) {
             updateText("Comparing HTTP/1.1 and HTTP/2");
-            updateBaseText("");
+            $("#baseText").remove();
         } else if(index = data.search('download') != -1) {
             var text = data.substring(index+24);
             updateBaseText(text);
