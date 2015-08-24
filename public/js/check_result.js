@@ -2,7 +2,7 @@
  * Created by kolnidur on 15. 8. 18..
  */
 
- var count;
+ var count = 0;
 
 function click_next(){
 
@@ -30,52 +30,23 @@ function updateBaseText(aText) {
     $('#baseText').text(aText);
 }
 
-function Display(min,sec) {
- var disp;
- if( min <= 9 ) disp=" 0";
- else disp=" ";
+var gap = 0;
+// 경과 시간 표시
+function echoTime (serverStartTime, serverNowTime)
+{
+	var nowTime = new Date();
+	nowTime = parseInt(nowTime / 1000);
 
- if( min >= 60 ) {
-  hour = parseInt( min / 60 );
+	if (gap == 0) gap = serverNowTime - nowTime;
+	nowTime = nowTime + gap;
 
-  if( hour >=24 ) {
-    day = parseInt( hour / 24 );
-    disp += day + "일 :" + ( hour % 24 ) + "시간 :" + parseInt( min % 60 ) + "분 :";
-  }
-  else {
-    disp +=  hour + "시간 :" + parseInt( min % 60 ) + "분 :";
-  }
- }
- else {
-  disp += min + "분 :";
- }
+	var echoTime = nowTime - (serverStartTime);
 
- if( sec <= 9 ) disp += "0" + sec + "초";
- else disp += sec + "초";
+	h = parseInt((echoTime % 86400) / 3600);
+	m = parseInt((echoTime % 3600) / 60);
+	s = parseInt((echoTime % 60));
 
- return(disp);
-}
-
-
-
-function Tcounter(timegap) {
- csec1j = timegap % 60;
- cmin1j = ( timegap - csec1j ) / 60;
- TcounterZero();
-}
-
-function TcounterZero() {
- csec1j--;
-
- if(csec1j == -1) {
-  csec1j = 59;
-  cmin1j--;
- }
-
- count = Display( cmin1j, csec1j );
- else{
-  Tcounter = setTimeout( "TcounterZero()", 1000 );
- }
+	count = h + ':' + m + ':' + s;
 }
 
 function startComparison(aDomain) {
@@ -103,8 +74,11 @@ $(document).ready(function(){
     $("#next").click(function(){
 
         click_next();
-        Tcounter(45);
-
+        var nt = new Date();
+        var nt2 = new Date();
+        setInterval(function(){
+	        echoTime(nt, nt2);
+	        }, 1000);
     });
 
 });
