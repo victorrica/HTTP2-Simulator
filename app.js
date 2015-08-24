@@ -23,7 +23,6 @@ var keyCount=0;
 //var user_data;
 
 //WebPageTest Keys
-var mId;
 var key = [
   "A.cfbefb5968dacd324d3ce4426ff593ce", "A.81570d0c6da5ed737e21f766e7a89655",
   "A.4f498e8fdf15d820545af9a0ced88431", "A.4c4149b53488c09ce7ee8f7e8cc637b6", "A.a66edbb10b50e156ebf63dccda3e938d"
@@ -168,11 +167,10 @@ mysql_module.start_connection();
 var server = http.createServer(app).listen(app.get('port'), function(){
   console.log("Start H2Perf.org Server!");
 });
-
+var mId;
 var io = require('socket.io').listen(server);
 io.sockets.on('connection', function(socket) {
   mId = socket.id;
-  if(socket.id == mId) {
     var url;
     var user_data;
     var checker = require('./routes/check');
@@ -214,7 +212,6 @@ io.sockets.on('connection', function(socket) {
         checker.run("3", url, io.sockets.connected[mId]);
       }
     });
-  }
 });
 
 var startWpt = function(aData, callback) {
