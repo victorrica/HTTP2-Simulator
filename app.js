@@ -53,7 +53,7 @@ process.on('uncaughtException', function (err) {
 });
 
 // all environments
-app.set('port', process.env.PORT || 3000);
+app.set('port', process.env.PORT || 80);
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 app.use(express.favicon("public/images/favicon.ico"));
@@ -189,8 +189,8 @@ var server = http.createServer(app).listen(app.get('port'), function(){
 var io = require('socket.io').listen(server);
 io.sockets.on('connection', function(socket) {
   mId = socket.id;
-  socket.on('crawler', function (data) {
-    if(socket.id == mId) {
+  if(socket.id == mId) {
+    socket.on('crawler', function (data) {
       var domain;
       async.series([
         function(callback) {
@@ -210,8 +210,8 @@ io.sockets.on('connection', function(socket) {
       ], function(error, result) {
 
       });
-    }
-  });
+    });
+  }
 });
 
 var startWpt = function(aData, callback) {
