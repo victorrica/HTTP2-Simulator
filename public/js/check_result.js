@@ -27,6 +27,7 @@ function updateText(aText) {
     $('#text').text(aText);
 }
 function updateBaseText(aText) {
+	aText.replace("Download Start", "\nDownload Start");
     $('#baseText').text(aText.trim());
 }
 
@@ -46,7 +47,7 @@ function echoTime (serverStartTime, serverNowTime)
 	s = parseInt((echoTime % 60));
 
 	count = m + '분 :' + s + "초";
-	$('#countText').text("예상 시간 : 2분" + "  -  " + "경과 시간 : " + count);
+	$('#countText').text("예상 시간 : 5분\n" + "경과 시간 : " + count);
 }
 
 function startComparison(aDomain) {
@@ -63,6 +64,7 @@ function startComparison(aDomain) {
             updateBaseText("");
         } else if(data.search('wpt') != -1) {
             updateText("Comparing HTTP/1.1 and HTTP/2");
+            updateBaseText("");
         } else if(index = data.search('download') != -1) {
             var text = data.substring(index+24);
             updateBaseText(text);
