@@ -53,7 +53,7 @@ process.on('uncaughtException', function (err) {
 });
 
 // all environments
-app.set('port', process.env.PORT || 80);
+app.set('port', process.env.PORT || 3000);
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 app.use(express.favicon("public/images/favicon.ico"));
@@ -190,25 +190,27 @@ var io = require('socket.io').listen(server);
 io.sockets.on('connection', function(socket) {
   mId = socket.id;
   socket.on('crawler', function (data) {
-    var domain;
-    async.series([
-      function(callback) {
+    if(socket.id == mId) {
+      var domain;
+      async.series([
+        function(callback) {
           io.sockets.connected[mId].emit('state',"crawling");
           startCrawler(io.sockets.connected[mId], function(aDomain) {
             domain = aDomain;
             callback(null, aDomain);
           });
-      },
-      function(callback) {
-        io.sockets.connected[mId].emit('state',"wpt");
+        },
+        function(callback) {
+          io.sockets.connected[mId].emit('state',"wpt");
           startWpt(domain, function() {
             io.sockets.connected[mId].emit('state',"redirect"+user_data.path2);
             callback(null);
           });
-      },
-    ], function(error, result) {
+        },
+      ], function(error, result) {
 
-    });
+      });
+    }
   });
 });
 
