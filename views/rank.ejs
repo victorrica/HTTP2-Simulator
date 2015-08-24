@@ -73,86 +73,16 @@
 								</tr>
 							</thead>
 							<tbody>
+							<%for(var i=1;i<=data.length;i++){%>
 								<tr>
-									<td>1</td>
-									<td>http://google.com/</td>
-									<td>2.5 Sec</td>
-									<td>5 Sec</td>
-									<td>50%</td>
-									<td><a href="#">Link</a></td>
+									<td><%=i%></td>
+									<td><%=data[i-1].domain%></td>
+									<td><%=data[i-1].http1_time%></td>
+									<td><%=data[i-1].http2_time%></td>
+									<td><%=data[i-1].performance%></td>
+									<td><a href="http://www.h2perf.org/result/<%=data[i-1].path2%>">Link</a></td>
 								</tr>
-								<tr>
-									<td>2</td>
-									<td>http://google.com/</td>
-									<td>2.5 Sec</td>
-									<td>5 Sec</td>
-									<td>50%</td>
-									<td><a href="#">Link</a></td>
-								</tr>
-								<tr>
-									<td>3</td>
-									<td>http://google.com/</td>
-									<td>2.5 Sec</td>
-									<td>5 Sec</td>
-									<td>50%</td>
-									<td><a href="#">Link</a></td>
-								</tr>
-								<tr>
-									<td>4</td>
-									<td>http://google.com/</td>
-									<td>2.5 Sec</td>
-									<td>5 Sec</td>
-									<td>50%</td>
-									<td><a href="#">Link</a></td>
-								</tr>
-								<tr>
-									<td>5</td>
-									<td>http://google.com/</td>
-									<td>2.5 Sec</td>
-									<td>5 Sec</td>
-									<td>50%</td>
-									<td><a href="#">Link</a></td>
-								</tr>
-								<tr>
-									<td>6</td>
-									<td>http://google.com/</td>
-									<td>2.5 Sec</td>
-									<td>5 Sec</td>
-									<td>50%</td>
-									<td><a href="#">Link</a></td>
-								</tr>
-								<tr>
-									<td>7</td>
-									<td>http://google.com/</td>
-									<td>2.5 Sec</td>
-									<td>5 Sec</td>
-									<td>50%</td>
-									<td><a href="#">Link</a></td>
-								</tr>
-								<tr>
-									<td>8</td>
-									<td>http://google.com/</td>
-									<td>2.5 Sec</td>
-									<td>5 Sec</td>
-									<td>50%</td>
-									<td><a href="#">Link</a></td>
-								</tr>
-								<tr>
-									<td>9</td>
-									<td>http://google.com/</td>
-									<td>2.5 Sec</td>
-									<td>5 Sec</td>
-									<td>50%</td>
-									<td><a href="#">Link</a></td>
-								</tr>
-								<tr>
-									<td>10</td>
-									<td>http://google.com/</td>
-									<td>2.5 Sec</td>
-									<td>5 Sec</td>
-									<td>50%</td>
-									<td><a href="#">Link</a></td>
-								</tr>
+							<%}%>
 							</tbody>
 						</table>
 					</div>
