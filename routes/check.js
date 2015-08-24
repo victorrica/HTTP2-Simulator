@@ -57,10 +57,10 @@ var version = {
 //		ajaxResponse.value = undefined;
 //	});
 //}
-exports.run = function(arg, aUrl, aSocket) {
-	startCheck(arg, aUrl, aSocket);
+exports.run = function(arg, aUrl, aSocket, callback) {
+	startCheck(arg, aUrl, aSocket, callback);
 }
-var startCheck = function(arg, aUrl, aSocket) {
+var startCheck = function(arg, aUrl, aSocket, callback) {
 	var url = {
 		spdy : undefined,
 		http2 : undefined
@@ -76,7 +76,7 @@ var startCheck = function(arg, aUrl, aSocket) {
 	}
 	else if(arg == '2') {
 		console.log("aUrl",+url);
-		checkNPNproto(aSocket, url);
+		checkNPNproto(aSocket, url, callback);
 	}
 	else if(arg == '3') {
 		wronghost(aSocket);
@@ -95,7 +95,7 @@ var fillUrl = function(aUrl) {
 }
 
 //Protocol Check using TLS extensions NPN protocol
-var checkNPNproto = function(aSocket, aUrl){
+var checkNPNproto = function(aSocket, aUrl, callback){
 	var port = 443;
 	var host = aUrl.spdy;
 
@@ -149,6 +149,7 @@ var checkNPNproto = function(aSocket, aUrl){
 		console.log('ajax_message' + ajax_message);
 		console.log('sockId' + aSocket.id);
 		aSocket.emit("result", ajax_message);
+		callback();
 	});
 
 	socket.on('error', function(error) {
