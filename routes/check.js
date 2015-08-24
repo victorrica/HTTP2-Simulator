@@ -59,12 +59,17 @@ var version = {
 //}
 
 exports.startCheck = function(arg, aUrl, aSocket) {
-	fillUrl(aUrl, aSocket);
+	var url = {
+		spdy : undefined,
+		http2 : undefined
+	};
+	url = fillUrl(aUrl, aSocket);
 	if(arg == '1') {
 		notHTTPS(aSocket);
 	}
 	else if(arg == '2') {
-		checkNPNproto(aSocket);
+		console.log("aUrl",+url);
+		checkNPNproto(aSocket, url);
 	}
 	else if(arg == '3') {
 		wronghost(aSocket);
@@ -77,16 +82,16 @@ var fillUrl = function(aUrl, aSocket) {
 		http2 : undefined
 	};
 	console.log(aUrl);
-
-	//mSocket = aSocket;
 	url.http2 = aUrl;
 	url.spdy = url.http2.substring(8, Buffer.byteLength(url.http2));
+
+	return url;
 }
 
 //Protocol Check using TLS extensions NPN protocol
-var checkNPNproto = function(aSocket){
+var checkNPNproto = function(aSocket, aUrl){
 	var port = 443;
-	var host = url.spdy;
+	var host = aUrl.spdy;
 
 
 	if(host.charAt(host.length-1)=='/'){

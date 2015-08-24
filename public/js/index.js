@@ -91,7 +91,6 @@ function check_tls(url) {
 	var socket = io.connect();
 	socket.emit('tls', url);
 	socket.on('result', function(result) {
-		alert(result);
 		if($("#protocol_result").length==1){
 			$("#protocol_result").text(result);
 
