@@ -21,9 +21,4 @@ if(filepath.lastIndexOf('/') != -1)
 var file = fs.createWriteStream(filepath);
 
 // 	response.pipe(file,{end: false});
-request(options).pipe(file, {end: false});
-req.on('error', function(error) {
-  console.log(error);
-});
-
-req.end();
+request(options).pipe(file);
