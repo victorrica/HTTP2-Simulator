@@ -76,7 +76,7 @@ app.get('/mysql', routes.mysql);
 
 var startCrawler = function(aSocket, callback, aUser_data, aUrl) {
   console.log(aUrl);
-  var child = spawn("phantomjs", ["--ssl-protocol=any", "--ignore-ssl-errors=yes", "./routes/crawler.js",
+  var child = spawn("phantomjs", ["--ssl-protocol=any", "--ignore-ssl-errors=yes", "--web-security=no", "./routes/crawler.js",
     aUrl, aUser_data.path1]);
 
   var domain = {
