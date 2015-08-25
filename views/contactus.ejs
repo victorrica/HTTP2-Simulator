@@ -37,27 +37,20 @@
 				<div class="container">
 
 					<h3>Contact Us</h3>
-					<form method="post" action="#">
-						<div class="row uniform 50%">
-							<div class="6u 12u$(xsmall)">
-								<input type="text" name="name" id="name" value="" placeholder="Name" />
-							</div>
-							<div class="6u$ 12u$(xsmall)">
-								<input type="email" name="email" id="email" value="" placeholder="Email" />
-							</div>
-							<div class="12u$">
-								<textarea name="message" id="message" placeholder="Enter your message" rows="6"></textarea>
-							</div>
-							<div class="12u$" id="email_btn">
-								<ul class="actions">
-									<li><input type="submit" value="Send Message" class="special" /></li>
-									<li><input type="reset" value="Reset" /></li>
-								</ul>
-							</div>
-						</div>
-					</form>
+					<div id="disqus_thread"></div>
 				</div>
 			</footer>
+			<script type="text/javascript">
+		    /* * * CONFIGURATION VARIABLES * * */
+		    var disqus_shortname = 'http2simulator';
 
+		    /* * * DON'T EDIT BELOW THIS LINE * * */
+		    (function() {
+		        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+		        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+		        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+		    })();
+		</script>
+		<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
 	</body>
 </html>
