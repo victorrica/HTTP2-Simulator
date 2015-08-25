@@ -71,6 +71,7 @@
 		}
 
 	#banner #url{
+		width: 100%;
 		font-size: 1em;
 	}
 	#step1 > h2{
