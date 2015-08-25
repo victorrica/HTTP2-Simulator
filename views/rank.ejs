@@ -22,12 +22,13 @@
 			  sum2+=data[i].http1_time;
 		  }
 		  sum1/=data.length;
-		  sum2/=data.length;%>
+		  sum2/=data.length;
+		%>
 
         var data = google.visualization.arrayToDataTable([
           ['Protocol Type', 'Speed'],
-          ['HTTP/2', <%=sum1%>],
-          ['HTTP/1.1', <%=sum2%>]
+          ['HTTP/2', <%=sum2/100%>],
+          ['HTTP/1.1', <%=sum1/100%>]
         ]);
 
         var options = {
@@ -74,8 +75,8 @@
 								<tr>
 									<th>Rank</th>
 									<th>URL</th>
-									<th>HTTP/2</th>
 									<th>HTTP/1.1</th>
+									<th>HTTP/2</th>
 									<th>Percentage</th>
 									<th>Result Page</th>
 								</tr>
@@ -87,7 +88,7 @@
 									<td><%=data[i-1].domain%></td>
 									<td><%=data[i-1].http1_time/1000%>Sec</td>
 									<td><%=data[i-1].http2_time/1000%>Sec</td>
-									<td><%=data[i-1].performance%></td>
+									<td><%=data[i-1].performance%>%</td>
 									<td><a href="http://www.h2perf.org/result/<%=data[i-1].path2%>">Link</a></td>
 								</tr>
 							<%}%>
