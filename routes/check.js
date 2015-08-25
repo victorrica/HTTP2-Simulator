@@ -68,7 +68,7 @@ exports.startCheck = function(arg, aUrl, aSocket, callback) {
 	console.log("spdy : "+url.spdy);
 	console.log("http2 : " + url.http2);
 	if(arg == '1') {
-		notHTTPS(aSocket);
+        notHTTPS(aSocket, callback);
 	}
 	else if(arg == '2') {
 		console.log("aUrl",+url);
@@ -180,11 +180,11 @@ var checkNPNproto = function(aSocket, aUrl, callback){
 	})
 
 }
-var notHTTPS = function(aSocket){
-	aSocket.emit("result","HTTP/1.1(Not SSL)");
-
+var notHTTPS = function(aSocket, callback){
+    aSocket.emit("result","HTTP/1.1(Not SSL)");
+      callback();
 }
 
 var wronghost = function(){
-	aSocket.emit("result","Wrong Host");
+    aSocket.emit("result","Wrong Host");
 }
