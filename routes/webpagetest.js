@@ -21,38 +21,33 @@ const RIGHT_VIEW = 2;
 
 var getAgent = function(aCallback) {
     mWpt.getLocations(function callback(err, data) {
-        var priority = new Array();
-
-        var agent = {
-            lowPriority:undefined,
-            agent:undefined
-        };
-
+        var lowPriority = new Array();
+        var lowAgent = new Array();
+        var count=0;
         var length = data.response.data.location.length;
         for(var i=0; i<length; i++) {
             var msg = data.response.data.location[i];
             var id = msg.id;
             if(id.indexOf('ec2') != -1 && id.indexOf('Chrome') != -1) {
-                agent.lowPriority = msg.PendingTests.LowPriority;
-                agent.agent = msg.id;
-                priority.push(agent);
+                lowPriority[count] = msg.PendingTests.LowPriority;
+                lowAgent[count] = msg.id;
+                count++
             }
         }
-        var minimumPriority = priority[0].lowPriority;
-        var minimumAgent = priority[0].agent;
-
-        length = priority.length;
-        for(var cnt=0; cnt<length; cnt++) {
-            if(minimumPriority > priority[cnt].lowPriority) {
-                minimumPriority = priority[cnt].lowPriority;
-                minimumAgent = priority[cnt].agent;
+        var minimumPriority = lowPriority[0];
+        var minimumAgent = lowAgent[0];
+        for(var cnt=0; cnt<count; cnt++) {
+            if(minimumPriority > lowPriority[cnt]) {
+                minimumPriority = lowPriority[cnt];
+                minimumAgent = lowAgent[cnt];
             }
         }
-        console.log(minimumPriority);
-        console.log(minimumAgent);
+        console.log("lowPriority : ", minimumPriority);
+        console.log("lowAgent : ", minimumAgent);
         aCallback(minimumAgent);
     });
 }
+
 var task = function(mResFunction, aDomain) {
     var leftId;
     var rightId;
