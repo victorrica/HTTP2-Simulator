@@ -120,6 +120,35 @@ app.get('/rank', function(request, response){
   });
 });
 
+app.post('/mail', function(request,response){
+
+	var nodemailer = require('nodemailer');
+
+	var transporter = nodemailer.createTransport({
+	    service: 'Gmail',
+	    auth: {
+	        user: 'somah2simulator@gmail.com',
+	        pass: 'soma123123!'
+	    }
+	});
+
+	var mailOptions = {
+	    from: request.body.name + ' <SomaH2Simulator@gmail.com>',
+	    to: 'SomaH2Simulator@gmail.com',
+	    subject: 'HTTP/2 Simulator Service Feedback - ' + request.body.subject,
+	    text: request.body.message,
+	    html: '<b>' + request.body.message + '</b>'
+	};
+
+	transporter.sendMail(mailOptions, function(error, info){
+	    if(error){
+	        return console.log(error);
+	    }
+	    console.log('Message sent: ' + info.response);
+	});
+	response.send("<script>alert('Thank you for the feedback.');location.href='/';</script>");
+});
+
 app.get('/result/:path2', function(request, response) {
 
   var path2 = request.params.path2;

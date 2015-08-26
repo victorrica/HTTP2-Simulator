@@ -37,6 +37,25 @@
 				<div class="container">
 
 					<h3>Contact Us</h3>
+					<form method="post" action="/mail">
+						<div class="row uniform 50%">
+							<div class="6u 12u$(xsmall)">
+								<input type="text" name="subject" id="subject" value="" placeholder="Subject" />
+							</div>
+							<div class="6u$ 12u$(xsmall)">
+								<input type="text" name="name" id="name" value="" placeholder="Name" />
+							</div>
+							<div class="12u$">
+								<textarea name="message" id="message" placeholder="Enter your message" rows="6"></textarea>
+							</div>
+							<div class="12u$" id="email_btn">
+								<ul class="actions">
+									<li><input type="submit" value="Send Message" class="special" /></li>
+									<li><input type="reset" value="Reset" /></li>
+								</ul>
+							</div>
+						</div>
+					</form>
 					<div id="disqus_thread"></div>
 				</div>
 			</footer>
