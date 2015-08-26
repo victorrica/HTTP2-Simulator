@@ -19,7 +19,7 @@ const RIGHT_VIEW = 2;
 
 
 
-var getAgent = function(callback) {
+var getAgent = function(aCallback) {
     mWpt.getLocations(function callback(err, data) {
         var priority = new Array();
 
@@ -50,7 +50,7 @@ var getAgent = function(callback) {
         }
         console.log(minimumPriority);
         console.log(minimumAgent);
-        callback(minimumAgent);
+        aCallback(minimumAgent);
     });
 }
 var task = function(mResFunction, aDomain) {
