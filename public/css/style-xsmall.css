@@ -64,3 +64,6 @@
 	#perf_table > thead, #perf_table > tbody{
 		font-size: 0.5em;
 	}
+	#faster{
+		font-size: 1.5em;
+	}
