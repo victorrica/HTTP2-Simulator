@@ -96,6 +96,7 @@ function startComparison(aDomain) {
             updateBaseText(text);
         } else if(data.search('wpt_status')) {
             var text = data.substring(index+11);
+            alert(text);
             updateBaseText(text);
         }
     });

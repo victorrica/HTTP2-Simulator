@@ -206,6 +206,7 @@ result = function(socket,aLocation, aId, callback) {
 
             callback(leftContent);
         } else {
+            console.log("dddddddddddddd",data.data.statusText);
             socket.emit("state","wpt_status"+data.data.statusText);
             result(socket,aLocation,aId, callback);
         }
@@ -230,6 +231,8 @@ exports.startWpt = function(socket, aData, callback) {
         http2 : aData.http2,
         path1 : aData.path1
     };
+    if(keyCount >= 4)
+        keyCount = 0;
 
     run(socket, key[keyCount], domain, function() {
         console.log("keycount");
@@ -239,6 +242,5 @@ exports.startWpt = function(socket, aData, callback) {
         callback();
     });
 
-    if(keyCount >= 4)
-        keyCount = 0;
+
 }
