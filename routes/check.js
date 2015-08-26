@@ -68,13 +68,16 @@ exports.startCheck = function(arg, aUrl, aSocket, callback) {
 	console.log("spdy : "+url.spdy);
 	console.log("http2 : " + url.http2);
 	if(arg == '1') {
+		//http일때
         notHTTPS(aSocket, callback);
 	}
 	else if(arg == '2') {
+		//https일때
 		console.log("aUrl",+url);
 		checkNPNproto(aSocket, url, callback);
 	}
 	else if(arg == '3') {
+		//http나 https가 붙지않았을때
 		wronghost(aSocket);
 	}
 }
@@ -131,6 +134,7 @@ var checkNPNproto = function(aSocket, aUrl, callback){
 			require('http2').get(host, function(response) {
 				npn='HTTP/';
 				npn += util.inspect(response.httpVersion);
+				npn+='(pseudo)';
 
 			});
 		}
@@ -181,7 +185,7 @@ var checkNPNproto = function(aSocket, aUrl, callback){
 
 }
 var notHTTPS = function(aSocket, callback){
-    aSocket.emit("result","HTTP/1.1(Not SSL)");
+    aSocket.emit("result","HTTP/1.1(http)");
       callback();
 }
 
