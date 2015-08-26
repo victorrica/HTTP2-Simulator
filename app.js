@@ -72,6 +72,7 @@ app.get('/Webpagetest', routes.Webpagetest);
 app.get('/contactus', routes.contactus);
 app.get('/progress_page', routes.progress_page);
 app.get('/check_result', routes.check_result);
+app.get('/check_result_http2', routes.check_result_http2);
 app.get('/mysql', routes.mysql);
 
 var startCrawler = function(aSocket, callback, aUser_data, aUrl) {

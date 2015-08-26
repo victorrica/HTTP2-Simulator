@@ -91,11 +91,32 @@ function check_tls(url) {
 	var socket = io.connect();
 	socket.emit('tls', url);
 	socket.on('result', function(result) {
-		if($("#protocol_result").length==1){
-			$("#protocol_result").text(result);
+		var result_arr = result.split('#');
+		if(result_arr[1]=='http1'){
+
+			if($("#protocol_result").length==1){
+				$("#protocol_result").text(result_arr[0]);
+
+			}else{
+				get_check_result(result_arr[0]);
+			}
+
+		}else if(result_arr[1]=='http2'){
+			$.ajax({
+				url: "/check_result_http2",
+				dataType: 'html',
+				success: function (data) {
+					$('body').append(data);
+					$("#protocol_result").text(result_arr[0]);
+					var target = $("#one").offset().top;
+					$('html, body').animate({scrollTop:target}, 1000);
+				}
+			});
 
 		}else{
-			get_check_result(result);
+			alert("checker error");
 		}
+
+
 	});
 }

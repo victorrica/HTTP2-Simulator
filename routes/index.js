@@ -29,6 +29,11 @@ exports.check_result = function(req, res){
 };
 
 
+exports.check_result_http2 = function(req, res){
+  res.render('check_result_http2', { title: 'HTTP/2 Simulator::Check Result' });
+};
+
+
 exports.progress_page = function(req, res){
   res.render('progress_page', { title: 'HTTP/2 Simulator::Progress Page' });
 };

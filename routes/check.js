@@ -68,16 +68,13 @@ exports.startCheck = function(arg, aUrl, aSocket, callback) {
 	console.log("spdy : "+url.spdy);
 	console.log("http2 : " + url.http2);
 	if(arg == '1') {
-		//http일때
         notHTTPS(aSocket, callback);
 	}
 	else if(arg == '2') {
-		//https일때
 		console.log("aUrl",+url);
 		checkNPNproto(aSocket, url, callback);
 	}
 	else if(arg == '3') {
-		//http나 https가 붙지않았을때
 		wronghost(aSocket);
 	}
 }
@@ -124,23 +121,23 @@ var checkNPNproto = function(aSocket, aUrl, callback){
 
 	var socket = tls.connect(port, host, options, function () {
 		//console.log(host);
-		var npn = 'HTTP/1';
+		var npn = 'HTTP/1#http1';
 		console.log('check host name : '+host);
 		console.log('npn data : ' + this.npnProtocol);
 		if(this.npnProtocol == 'h2')  {
-			npn = 'HTTP/2(npn)';
+			npn = 'HTTP/2(npn)#http2';
 		}
 		else if(this.npnProtocol == undefined){
+			npn='HTTP/2(ALPN)#http2';
 			require('http2').get(host, function(response) {
 				npn='HTTP/';
 				npn += util.inspect(response.httpVersion);
-				npn+='(pseudo)';
 
 			});
 		}
 		else if(this.npnProtocol != false) {
 			if(/spdy\/[0-9\.]+/.test(this.npnProtocol)) {
-				npn = this.npnProtocol;
+				npn = this.npnProtocol+'#http2';
 			}
 		}
 
@@ -154,41 +151,41 @@ var checkNPNproto = function(aSocket, aUrl, callback){
 
 	socket.on('error', function(error) {
 
-		var result_check;
+		//var result_check;
 
-		var agent = spdy.createAgent({
-			host: url.spdy,
-			port: 443,
+		//var agent = spdy.createAgent({
+		//	host: url.spdy,
+		//	port: 443,
+        //
+		//	// Optional SPDY options
+		//	//spdy: {
+		//	//	plain: true,
+		//	//	ssl: true
+		//	//}
+		//});
 
-			// Optional SPDY options
-			//spdy: {
-			//	plain: true,
-			//	ssl: true
-			//}
-		});
-
-		http.get({
-			host: url.spdy,
-			agent: agent
-		}, function(response) {
-			result_check = response.req.agent._spdyState.socket.npnProtocol;
-			console.log(response);
-			agent.close();
-			//exports.checkHttp2();
-		}).end();
-		console.log("spdy_check");
-		console.log(result_check);
+		//http.get({
+		//	host: url.spdy,
+		//	agent: agent
+		//}, function(response) {
+		//	result_check = response.req.agent._spdyState.socket.npnProtocol;
+		//	console.log(response);
+		//	agent.close();
+		//	//exports.checkHttp2();
+		//}).end();
+		//console.log("spdy_check");
+		//console.log(result_check);
 		//console.log("This host not support TSL connection or wrong host name");
-		aSocket.emit("result",'Not TLS');
+		aSocket.emit("result",'Wrong SSL#http2');
 
 	})
 
 }
 var notHTTPS = function(aSocket, callback){
-    aSocket.emit("result","HTTP/1.1(http)");
+    aSocket.emit("result","HTTP/1.1(Not SSL)#http1");
       callback();
 }
 
 var wronghost = function(){
-    aSocket.emit("result","Wrong Host");
+    aSocket.emit("result","Wrong Host#http2");
 }
