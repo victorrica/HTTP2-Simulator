@@ -90,9 +90,12 @@ function startComparison(aDomain) {
             updateText("Crawling and Modifying Website");
         } else if(data.search('wpt') != -1) {
             updateText("Comparing HTTP/1.1 and HTTP/2");
-            $("#baseText").remove();
+            //$("#baseText").remove();
         } else if(index = data.search('download') != -1) {
             var text = data.substring(index+24);
+            updateBaseText(text);
+        } else if(data.search('wpt_status')) {
+            var text = data.substring(index+11);
             updateBaseText(text);
         }
     });

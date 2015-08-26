@@ -197,7 +197,7 @@ io.sockets.on('connection', function(socket) {
       },
       function(callback) {
         socket.emit('state',"wpt");
-        wpt.startWpt(domain, function() {
+        wpt.startWpt(socket, domain, function() {
           socket.emit('state',"redirect"+user_data.path2);
           callback(null);
         });

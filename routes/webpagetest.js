@@ -52,7 +52,7 @@ var getAgent = function(aCallback) {
     });
 }
 
-var task = function(mResFunction, aDomain) {
+var task = function(socket,mResFunction, aDomain) {
     var leftId;
     var rightId;
     var leftContent;
@@ -73,14 +73,14 @@ var task = function(mResFunction, aDomain) {
             },
             function(callback) {
                 console.log("left Id : " + leftId);
-                result(LEFT_VIEW, leftId, function(aContent) {
+                result(socket,LEFT_VIEW, leftId, function(aContent) {
                     leftContent = aContent;
                     callback(null);
                 });
             },
             function(callback) {
                 console.log("right Id : " + rightId);
-                result(RIGHT_VIEW, rightId, function(aContent) {
+                result(socket,RIGHT_VIEW, rightId, function(aContent) {
                     var compareId = leftId+','+rightId;
                     rightContent = aContent;
                     createVideo(compareId);
@@ -140,11 +140,11 @@ var resData = {
     rightLoadTime : undefined
 }
 
-run = function(key, aDomain, aRcvFun) {
+run = function(socket, key, aDomain, aRcvFun) {
     mWpt = new WebPageTest('www.webpagetest.org', key);
     //mysql_connection = connection;
     console.log(key);
-    task(aRcvFun, aDomain);
+    task(socket,aRcvFun, aDomain);
 }
 
 runLeft = function(aResFun, aAgent, aDomain, callback) {
@@ -192,7 +192,7 @@ createVideo = function(compareId) {
     });
 }
 
-result = function(aLocation, aId, callback) {
+result = function(socket,aLocation, aId, callback) {
     mWpt.getTestResults(aId, { breakdown: true, requests: true}, function(err, data) {
         console.log("statusCode : "+data.data.statusCode + "\n" + data.data.statusText);
         if(data.statusCode == 200) {
@@ -206,7 +206,8 @@ result = function(aLocation, aId, callback) {
 
             callback(leftContent);
         } else {
-            result(aLocation,aId, callback);
+            socket.emit("state","wpt_status"+data.data.statusText);
+            result(socket,aLocation,aId, callback);
         }
     });
 }
@@ -230,7 +231,7 @@ exports.startWpt = function(aData, callback) {
         path1 : aData.path1
     };
 
-    run(key[keyCount], domain, function() {
+    run(socket, key[keyCount], domain, function() {
         console.log("keycount");
         console.log(keyCount);
         console.log(key[keyCount]);
