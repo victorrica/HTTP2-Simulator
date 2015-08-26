@@ -224,7 +224,7 @@ getWaterfallImg = function(aId, aLocation) {
     });
 }
 
-exports.startWpt = function(aData, callback) {
+exports.startWpt = function(socket, aData, callback) {
     var domain = {
         http1 : aData.http1,
         http2 : aData.http2,
