@@ -1184,3 +1184,7 @@
 	#player{
 		width: 100% !important;
 	}
+	#top{
+		width: 100%;
+		overflow: hidden;
+	}

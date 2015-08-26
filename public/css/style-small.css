@@ -77,6 +77,10 @@
 	#step1 > h2{
 		font-size: 1em;
 	}
+	#piechart_3d,#piechart_3d > div > div:nth-child(1){
+		width: 500px !important;
+	    height: 300px;
+	}
 	#perf_table > thead, #perf_table > tbody{
 		font-size: 0.5em;
 	}
