@@ -18,16 +18,6 @@ var ejs = require('ejs');
 var app = express();
 var async = require('async');
 var timeout = express.timeout;
-//var mUrl;
-keyCount=0;
-//var user_data;
-
-//WebPageTest Keys
-var key = [
-   "A.4f498e8fdf15d820545af9a0ced88431", "A.4c4149b53488c09ce7ee8f7e8cc637b6", "A.81570d0c6da5ed737e21f766e7a89655", "A.cfbefb5968dacd324d3ce4426ff593ce",
-   "A.a66edbb10b50e156ebf63dccda3e938d"
-];
-
 
 var client = {
   socketid : undefined,
@@ -204,7 +194,6 @@ io.sockets.on('connection', function(socket) {
           domain = aDomain;
           callback(null, aDomain);
         }, user_data, url);
-        callback(null);
       },
       function(callback) {
         socket.emit('state',"wpt");

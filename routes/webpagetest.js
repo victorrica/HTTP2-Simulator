@@ -13,8 +13,12 @@ var mWpt;
 
 const LEFT_VIEW = 1;
 const RIGHT_VIEW = 2;
-
-
+var keycount = 0;
+var key = [
+    "A.a66edbb10b50e156ebf63dccda3e938d", "A.4f498e8fdf15d820545af9a0ced88431",
+    "A.4c4149b53488c09ce7ee8f7e8cc637b6", "A.81570d0c6da5ed737e21f766e7a89655",
+    "A.cfbefb5968dacd324d3ce4426ff593ce",
+];
 //var mysql_connection;
 
 
