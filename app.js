@@ -229,6 +229,8 @@ io.sockets.on('connection', function(socket) {
       res = '2';
     else
       res = '3';
+
+    console.log(res);
     async.series([
       function(callback) {
         checker.startCheck(res, url, socket, function () {

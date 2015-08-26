@@ -176,7 +176,7 @@ var checkNPNproto = function(aSocket, aUrl, callback){
 		//console.log("spdy_check");
 		//console.log(result_check);
 		//console.log("This host not support TSL connection or wrong host name");
-		aSocket.emit("result",'Wrong SSL#http2');
+		aSocket.emit("result",'Wrong host#http2');
 
 	})
 
@@ -186,6 +186,6 @@ var notHTTPS = function(aSocket, callback){
       callback();
 }
 
-var wronghost = function(){
-    aSocket.emit("result","Wrong Host#http2");
+var wronghost = function(aSocket){
+    aSocket.emit("result","Not HTTP or HTTPS#http2");
 }
