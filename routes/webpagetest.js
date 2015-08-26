@@ -56,16 +56,13 @@ var task = function(mResFunction, aDomain) {
     getAgent(function(aAgent) {
         async.series([
             function(callback) {
-                console.log(aDomain.http1);
-                console.log(aDomain.http2);
-                console.log("aaaaaaaa"+aDomain.path1);
-                runLeft(aAgent, aDomain, function(aId) {
+                runLeft(mResFunction, aAgent, aDomain, function(aId) {
                     leftId = aId;
                     callback(null);
                 });
             },
             function(callback) {
-                runRight(aAgent, aDomain, function(aId) {
+                runRight(mResFunction, aAgent, aDomain, function(aId) {
                     rightId = aId;
                     callback(null);
                 });
@@ -139,36 +136,48 @@ var resData = {
     rightLoadTime : undefined
 }
 
-exports.run = function(key, aDomain, aRcvFun) {
+run = function(key, aDomain, aRcvFun) {
     mWpt = new WebPageTest('www.webpagetest.org', key);
     //mysql_connection = connection;
     console.log(key);
     task(aRcvFun, aDomain);
 }
 
-runLeft = function(aAgent, aDomain, callback) {
+runLeft = function(aResFun, aAgent, aDomain, callback) {
     var h1Domain = aDomain.http1;
     console.log("h1 url : "+h1Domain);
     console.log(aAgent);
     mWpt.runTest(h1Domain, { "location":aAgent, "label": "HTTP/1.1", "ignoreSSL":true,"video":true,"player":true, breakdown: true,
         domains: true, pageSpeed: true, requests: true },
         function(err, aData) {
-            console.log(aData);
-            var leftTestId = aData.data.testId;
-            callback(leftTestId);
+            if(aData.statusCode == 400 && aData.statusText.indexOf('limit') != -1) {
+                keyCount++;
+                exports.startWpt(aDomain, aResFun);
+            }
+            else {
+                console.log(aData);
+                var leftTestId = aData.data.testId;
+                callback(leftTestId);
+            }
         });
 }
 
-runRight = function(aAgent, aDomain, callback) {
+runRight = function(aResFun, aAgent, aDomain, callback) {
     var h2Domain = aDomain.http2;
     console.log("h2 url : "+h2Domain);
     console.log(aAgent);
     mWpt.runTest(h2Domain, { "location":aAgent, "label": "HTTP/2", "ignoreSSL":true,"video":true,"player":true, breakdown: true,
         domains: true, pageSpeed: true, requests: true },
         function(err, aData) {
-            console.log(aData);
-            var rightTestId = aData.data.testId;
-            callback(rightTestId);
+            if(aData.statusCode == 400 && aData.statusText.indexOf('limit') != -1) {
+                keyCount++;
+                exports.startWpt(aDomain, aResFun);
+            }
+            else {
+                console.log(aData);
+                var rightTestId = aData.data.testId;
+                callback(rightTestId);
+            }
         });
 }
 
@@ -208,4 +217,23 @@ getWaterfallImg = function(aId, aLocation) {
             resData.rightWatefFallImg = aData.url;
         }
     });
+}
+
+exports.startWpt = function(aData, callback) {
+    var domain = {
+        http1 : aData.http1,
+        http2 : aData.http2,
+        path1 : aData.path1
+    };
+
+    run(key[keyCount], domain, function() {
+        console.log("keycount");
+        console.log(keyCount);
+        console.log(key[keyCount]);
+        keyCount++;
+        callback();
+    });
+
+    if(keyCount >= 4)
+        keyCount = 0;
 }
