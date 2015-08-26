@@ -19,67 +19,96 @@ const RIGHT_VIEW = 2;
 
 
 
+var getAgent = function(callback) {
+    mWpt.getLocations(function callback(err, data) {
+        var priority = new Array();
+        var length = data.response.data.location.length;
+        var validCnt=0;
+        for(var i=0; i<length; i++) {
+            var msg = data.response.data.location[i];
+            var id = msg.id;
+            if(id.indexOf('ec2') != -1 && id.indexOf('Chrome') != -1) {
+                validCnt++;
+                console.log(msg.id);
+                console.log('priority : '+msg.PendingTests.LowPriority);
+                priority.push(msg.PendingTests.LowPriority);
+            }
+        }
+        var minPriority=0;
+        var agent;
+        for(var cnt=0; cnt<validCnt; cnt++) {
+            if(minPriority > priority[cnt]) {
+                minPriority = priority[cnt];
+                agent = data.response.data.location[cnt].id;
+            }
+        }
+        console.log(minPriority);
+        console.log(agent);
+        callback(agent);
+    });
+}
 var task = function(mResFunction, aDomain) {
     var leftId;
     var rightId;
     var leftContent;
     var rightContent;
-
-    async.series([
-        function(callback) {
-            console.log(aDomain.http1);
-            console.log(aDomain.http2);
-            console.log("aaaaaaaa"+aDomain.path1);
-            runLeft(aDomain, function(aId) {
-                leftId = aId;
-                callback(null);
-            });
-        },
-        function(callback) {
-            runRight(aDomain, function(aId) {
-                rightId = aId;
-                callback(null);
-            });
-        },
-        function(callback) {
-            console.log("left Id : " + leftId);
-            result(LEFT_VIEW, leftId, function(aContent) {
-                leftContent = aContent;
-                callback(null);
-            });
-        },
-        function(callback) {
-            console.log("right Id : " + rightId);
-            result(RIGHT_VIEW, rightId, function(aContent) {
+    getAgent(function(aAgent) {
+        async.series([
+            function(callback) {
+                console.log(aDomain.http1);
+                console.log(aDomain.http2);
+                console.log("aaaaaaaa"+aDomain.path1);
+                runLeft(aAgent, aDomain, function(aId) {
+                    leftId = aId;
+                    callback(null);
+                });
+            },
+            function(callback) {
+                runRight(aAgent, aDomain, function(aId) {
+                    rightId = aId;
+                    callback(null);
+                });
+            },
+            function(callback) {
+                console.log("left Id : " + leftId);
+                result(LEFT_VIEW, leftId, function(aContent) {
+                    leftContent = aContent;
+                    callback(null);
+                });
+            },
+            function(callback) {
+                console.log("right Id : " + rightId);
+                result(RIGHT_VIEW, rightId, function(aContent) {
+                    var compareId = leftId+','+rightId;
+                    rightContent = aContent;
+                    createVideo(compareId);
+                    callback(null);
+                });
+            }
+        ], function(error, result) {
+            setTimeout(function() {
                 var compareId = leftId+','+rightId;
-                rightContent = aContent;
                 createVideo(compareId);
-                callback(null);
-            });
-        }
-    ], function(error, result) {
-        setTimeout(function() {
-            var compareId = leftId+','+rightId;
-            createVideo(compareId);
-            getChartUrl(leftContent, LEFT_VIEW);
-            getChartUrl(rightContent, RIGHT_VIEW);
-            getWaterfallImg(leftId, LEFT_VIEW);
-            getWaterfallImg(rightId, RIGHT_VIEW);
-            mysql_module.findIdxByPath1(aDomain.path1,function(idx){
-                var sql_data = {
-                    'site_idx':idx,
-                    'compare_url':resData.compareVideo,
-                    'graph_url':resData.leftContentUrl,
-                    'h1_waterfall_url':resData.leftWaterfallImg.replace("http", "https"),
-                    'h2_waterfall_url':resData.rightWatefFallImg.replace("http", "https"),
-                    'http1_time':resData.leftLoadTime,
-                    'http2_time':resData.rightLoadTime,
-                    'performance':(resData.leftLoadTime/resData.rightLoadTime)*100
-                };
-                mysql_module.insert_result(sql_data);
-                mResFunction();
-            });
-        }, 2000);
+                getChartUrl(leftContent, LEFT_VIEW);
+                getChartUrl(rightContent, RIGHT_VIEW);
+                getWaterfallImg(leftId, LEFT_VIEW);
+                getWaterfallImg(rightId, RIGHT_VIEW);
+                mysql_module.findIdxByPath1(aDomain.path1,function(idx){
+                    var sql_data = {
+                        'site_idx':idx,
+                        'compare_url':resData.compareVideo,
+                        'graph_url':resData.leftContentUrl,
+                        'h1_waterfall_url':resData.leftWaterfallImg.replace("http", "https"),
+                        'h2_waterfall_url':resData.rightWatefFallImg.replace("http", "https"),
+                        'http1_time':resData.leftLoadTime,
+                        'http2_time':resData.rightLoadTime,
+                        'performance':(resData.leftLoadTime/resData.rightLoadTime)*100
+                    };
+                    mysql_module.insert_result(sql_data);
+                    mResFunction();
+                });
+            }, 2000);
+        });
     });
 }
 
@@ -116,10 +145,11 @@ exports.run = function(key, aDomain, aRcvFun) {
     task(aRcvFun, aDomain);
 }
 
-runLeft = function(aDomain, callback) {
+runLeft = function(aAgent, aDomain, callback) {
     var h1Domain = aDomain.http1;
     console.log("h1 url : "+h1Domain);
-    mWpt.runTest(h1Domain, { "location":"ec2-us-west-2:Chrome", "label": "HTTP/1.1", "ignoreSSL":true,"video":true,"player":true, breakdown: true,
+    console.log(aAgent);
+    mWpt.runTest(h1Domain, { "location":aAgent, "label": "HTTP/1.1", "ignoreSSL":true,"video":true,"player":true, breakdown: true,
         domains: true, pageSpeed: true, requests: true },
         function(err, aData) {
             console.log(aData);
@@ -128,10 +158,11 @@ runLeft = function(aDomain, callback) {
         });
 }
 
-runRight = function(aDomain, callback) {
+runRight = function(aAgent, aDomain, callback) {
     var h2Domain = aDomain.http2;
     console.log("h2 url : "+h2Domain);
-    mWpt.runTest(h2Domain, { "location":"ec2-us-west-2:Chrome", "label": "HTTP/2", "ignoreSSL":true,"video":true,"player":true, breakdown: true,
+    console.log(aAgent);
+    mWpt.runTest(h2Domain, { "location":aAgent, "label": "HTTP/2", "ignoreSSL":true,"video":true,"player":true, breakdown: true,
         domains: true, pageSpeed: true, requests: true },
         function(err, aData) {
             console.log(aData);
