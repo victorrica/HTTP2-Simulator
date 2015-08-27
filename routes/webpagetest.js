@@ -208,8 +208,9 @@ result = function(aSocket,aLocation, aId, callback) {
         } else {
             console.log("dddddddddddddd",data.data.statusText);
             console.log("aSocketaSocketaSocket", aSocket);
-            aSocket.emit("state","wpt_status"+data.data.statusText);
-            result(aSocket,aLocation,aId, callback);
+            var text = "wpt_status"+data.data.statusText;
+            aSocket.emit("state",text);
+            result(aLocation,aId, callback);
         }
     });
 }
