@@ -238,7 +238,7 @@ io.sockets.on('connection', function(socket) {
         user_data = mysql_module.insert_sites(url, function () {
           callback(null);
         });
-      },
+      }
     ])
   });
 });
