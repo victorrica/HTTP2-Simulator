@@ -202,9 +202,6 @@
 	section.special, article.special {
 		text-align: center;
 	}
-	#header{
-		position: fixed;
-	}
 	header p {
 		position: relative;
 		margin: 0 0 1.5em 0;
@@ -917,7 +914,7 @@
 	body.landing #header {
 		background-color: transparent;
 		left: 0;
-		position: absolute;
+		position: fixed;
 		top: 0;
 	}
 
