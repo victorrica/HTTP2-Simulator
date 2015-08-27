@@ -143,6 +143,15 @@ var task = function(aSocket, mResFunction, aDomain) {
                         'http2_time':resData.rightLoadTime,
                         'performance':(resData.leftLoadTime/resData.rightLoadTime)*100
                     };
+                    console.log("---------------------");
+                    console.log(resData.compareVideo);
+                    console.log(resData.leftContentUrl);
+                    console.log(resData.leftWaterfallImg);
+                    console.log(resData.rightWatefFallImg);
+                    console.log(resData.leftLoadTime);
+                    console.log(resData.rightLoadTime);
+                    console.log(performance);
+                    console.log("---------------------");
                     mysql_module.insert_result(sql_data);
                     mResFunction();
                     console.log("exitttttttttttttttttttt : ", keyCount);
