@@ -206,9 +206,8 @@ result = function(aSocket,aLocation, aId, callback) {
 
             callback(leftContent);
         } else {
-            console.log("dddddddddddddd",data.data.statusText);
-            console.log("aSocketaSocketaSocket", aSocket);
             var text = "wpt_status"+data.data.statusText;
+            console.log("text :", text);
             aSocket.emit("state",text);
             result(aSocket,aLocation,aId, callback);
         }
