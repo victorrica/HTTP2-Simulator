@@ -9,6 +9,7 @@ var util = require('util');
 var http = require('https');
 var tls = require('tls');
 
+
 var ERROR = '4';
 var OK = '2';
 
@@ -62,16 +63,16 @@ exports.startCheck = function(arg, aUrl, aSocket, callback) {
 		spdy : undefined,
 		http2 : undefined
 	};
-	console.log("url : " + aUrl);
+	//console.log("url : " + aUrl);
 	url.http2 = aUrl;
 	url.spdy = aUrl.substring(8, Buffer.byteLength(aUrl));
-	console.log("spdy : "+url.spdy);
-	console.log("http2 : " + url.http2);
+	//console.log("spdy : "+url.spdy);
+	//console.log("http2 : " + url.http2);
 	if(arg == '1') {
         notHTTPS(aSocket, callback);
 	}
 	else if(arg == '2') {
-		console.log("aUrl",+url);
+		//console.log("aUrl",+url);
 		checkNPNproto(aSocket, url, callback);
 	}
 	else if(arg == '3') {
@@ -126,12 +127,36 @@ var checkNPNproto = function(aSocket, aUrl, callback){
 		console.log('npn data : ' + this.npnProtocol);
 		if(this.npnProtocol == 'h2')  {
 			npn = 'HTTP/2(npn)#http2';
+			var ajax_message = npn;
+			console.log('This host using '+npn+'(origin : '+this.npnProtocol+')');
+			//console.log('ajax_message' + ajax_message);
+			//console.log('sockId' + aSocket.id);
+			aSocket.emit("result", ajax_message);
+			callback();
 		}
 		else if(this.npnProtocol == undefined){
-			npn='HTTP/2(ALPN)#http2';
-			require('http2').get(host, function(response) {
+			console.log(host);
+			npn='HTTP/1(NPN)#http1';
+			var http2_url = "https://"+host;
+			require('http2').get(http2_url, function(response) {
+				var version = util.inspect(response.httpVersion);
+				version.trim();
+				var version_arr1=version.split("'");
+				var version_arr2=version_arr1[1].split('.');
+				console.log("version_arr:"+version_arr2[0]);
 				npn='HTTP/';
-				npn += util.inspect(response.httpVersion);
+				npn += version_arr2[0];
+				npn += "(ALPN)";
+				npn+="#http"
+				npn += version_arr2[0];
+				console.log("***httpVersion = "+response.httpVersion);
+
+				var ajax_message = npn;
+				console.log('This host using '+npn+'(origin : '+this.npnProtocol+')');
+				//console.log('ajax_message' + ajax_message);
+				//console.log('sockId' + aSocket.id);
+				aSocket.emit("result", ajax_message);
+				callback();
 
 			});
 		}
@@ -139,14 +164,22 @@ var checkNPNproto = function(aSocket, aUrl, callback){
 			if(/spdy\/[0-9\.]+/.test(this.npnProtocol)) {
 				npn = this.npnProtocol+'#http2';
 			}
+			var ajax_message = npn;
+			console.log('This host using '+npn+'(origin : '+this.npnProtocol+')');
+			//console.log('ajax_message' + ajax_message);
+			//console.log('sockId' + aSocket.id);
+			aSocket.emit("result", ajax_message);
+			callback();
+		}else{
+			var ajax_message = npn;
+			console.log('This host using '+npn+'(origin : '+this.npnProtocol+')');
+			//console.log('ajax_message' + ajax_message);
+			//console.log('sockId' + aSocket.id);
+			aSocket.emit("result", ajax_message);
+			callback();
+
 		}
 
-		var ajax_message = npn;
-		console.log('This host using '+npn+'(origin : '+this.npnProtocol+')');
-		console.log('ajax_message' + ajax_message);
-		console.log('sockId' + aSocket.id);
-		aSocket.emit("result", ajax_message);
-		callback();
 	});
 
 	socket.on('error', function(error) {

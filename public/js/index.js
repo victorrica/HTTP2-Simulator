@@ -114,6 +114,7 @@ function check_tls(url) {
 			});
 
 		}else{
+			alert("**result : "+result);
 			alert("checker error");
 		}
 
