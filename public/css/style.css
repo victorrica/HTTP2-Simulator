@@ -169,18 +169,16 @@
 	    text-align: center;
 	}
 	#step1{
-		position: relative;
-		top: 60%;
-		bottom: 0;
-		left: 0;
-		right: 0;
-		margin: auto;
+		margin-top: 10%;
 		font-size: 2em;
 	}
 	#step1 > h2{
 		font-weight: bold;
 		font-size: 3em;
 		text-decoration: underline;
+	}
+	#step2{
+		margin-top: 10%;
 	}
 	#step2 > h1{
 		font-size: 3em;
@@ -204,7 +202,9 @@
 	section.special, article.special {
 		text-align: center;
 	}
-
+	#header{
+		position: fixed;
+	}
 	header p {
 		position: relative;
 		margin: 0 0 1.5em 0;
