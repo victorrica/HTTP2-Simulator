@@ -13,12 +13,18 @@ var mWpt;
 
 const LEFT_VIEW = 1;
 const RIGHT_VIEW = 2;
-var keyCount = 0;
-var key = [
+keyCount = 0;
+/*var key = [
     "A.a66edbb10b50e156ebf63dccda3e938d", "A.4f498e8fdf15d820545af9a0ced88431",
     "A.4c4149b53488c09ce7ee8f7e8cc637b6", "A.81570d0c6da5ed737e21f766e7a89655",
     "A.cfbefb5968dacd324d3ce4426ff593ce",
-];
+];*/
+var key = [
+    "A.a620315bf396d7262967e30946ba161a","A.e93010f2bc66cb646f18825ccb76101b","A.cab08c165e78344079744e984cb2c5b5",
+    "A.58067983769a0219b6bce7368ed1e196","A.c93b1070dc4903bcbdf1ad06f51116cf","A.18b73dc5e789b37068e510ef5f631501",
+    "A.f7853ac48a457add4debc37f04deb0d2","A.7f7b3c557d06af003fd30fde775ef9e7","A.0e79c8894e9f18171d45195914c08109",
+    "A.9c66553fd61dd092c88c763078495b0a"
+]
 //var mysql_connection;
 
 
