@@ -120,8 +120,10 @@ var getChartUrl = function(aContent, aLocation) {
     chart.addData(aContent.html.bytes, 'html', '0000FF');
     chart.addData(aContent.js.bytes, 'js', 'F2CB61');
     chart.addData(aContent.css.bytes, 'css', 'A566FF');
+    chart.addData(aContent.image.bytes, 'image', 'F6F6F6');
     chart.addData(aContent.flash.bytes, 'flash', 'ABF200');
     chart.addData(aContent.other.bytes, 'other', 'CFFF24');
+
     chart.setAutoScaling();
     chart.setTransparentBackground();
     if(aLocation == LEFT_VIEW)
