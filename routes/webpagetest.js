@@ -63,6 +63,17 @@ var task = function(aSocket, mResFunction, aDomain) {
     var rightId;
     var leftContent;
     var rightContent;
+
+    var resData = {
+        leftWaterfallImg : undefined,
+        rightWatefFallImg : undefined,
+        compareVideo : undefined,
+        leftContentUrl : undefined,
+        rightContentUrl : undefined,
+        leftLoadTime : undefined,
+        rightLoadTime : undefined
+    }
+
     getAgent(function(aAgent) {
         async.series([
             function(callback) {
@@ -85,22 +96,44 @@ var task = function(aSocket, mResFunction, aDomain) {
                 });
             },
             function(callback) {
+                console.log("left Id : " + leftId);
+                result(aSocket,LEFT_VIEW, leftId, function(aContent) {
+                    leftContent = aContent;
+                    callback(null);
+                });
+            },
+            function(callback) {
                 console.log("right Id : " + rightId);
                 result(aSocket,RIGHT_VIEW, rightId, function(aContent) {
                     var compareId = leftId+','+rightId;
                     rightContent = aContent;
-                    createVideo(compareId);
+                    createVideo(compareId, function (aData) {
+                        resData.compareVideo = aData;
+                        callback(null);
+                    });
+
+                });
+            },
+            function(callback) {
+                getChartUrl(leftContent, LEFT_VIEW, function (aData) {
+                    resData.leftContentUrl = aData;
                     callback(null);
                 });
-            }
+            },
+            function(callback) {
+                getWaterfallImg(leftId, LEFT_VIEW, function(aData) {
+                    resData.leftWaterfallImg = aData;
+                    callback(null);
+                });
+            },
+            function(callback) {
+                getWaterfallImg(rightId, RIGHT_VIEW, function(aData) {
+                    resData.rightWatefFallImg = aData;
+                    callback(null);
+                });
+            },
         ], function(error, result) {
             setTimeout(function() {
-                var compareId = leftId+','+rightId;
-                createVideo(compareId);
-                getChartUrl(leftContent, LEFT_VIEW);
-                getChartUrl(rightContent, RIGHT_VIEW);
-                getWaterfallImg(leftId, LEFT_VIEW);
-                getWaterfallImg(rightId, RIGHT_VIEW);
                 mysql_module.findIdxByPath1(aDomain.path1,function(idx){
                     var sql_data = {
                         'site_idx':idx,
@@ -121,7 +154,7 @@ var task = function(aSocket, mResFunction, aDomain) {
     });
 }
 
-var getChartUrl = function(aContent, aLocation) {
+var getChartUrl = function(aContent, aLocation, aCallback) {
     var quiche = require('quiche');
     var chart = quiche('pie');
     chart.addData(aContent.html.bytes, 'html', '5f86cb');
@@ -133,30 +166,22 @@ var getChartUrl = function(aContent, aLocation) {
 
     chart.setAutoScaling();
     chart.setTransparentBackground();
+
     if(aLocation == LEFT_VIEW)
-        resData.leftContentUrl =  chart.getUrl(true);
+        aCallback(chart.getUrl(true));
     else
-        resData.rightContentUrl =  chart.getUrl(true);
+        aCallback(chart.getUrl(true));
+
 }
 
-var resData = {
-    leftWaterfallImg : undefined,
-    rightWatefFallImg : undefined,
-    compareVideo : undefined,
-    leftContentUrl : undefined,
-    rightContentUrl : undefined,
-    leftLoadTime : undefined,
-    rightLoadTime : undefined
-}
-
-run = function(aSocket, key, aDomain, aRcvFun) {
+var run = function(aSocket, key, aDomain, aRcvFun) {
     mWpt = new WebPageTest('www.webpagetest.org', key);
     //mysql_connection = connection;
     console.log('key : ',key);
     task(aSocket,aRcvFun, aDomain);
 }
 
-runLeft = function(aSocket, aResFun, aAgent, aDomain, callback) {
+var runLeft = function(aSocket, aResFun, aAgent, aDomain, callback) {
     var h1Domain = aDomain.http1;
     console.log("h1 url : "+h1Domain);
     console.log(aAgent);
@@ -180,7 +205,7 @@ runLeft = function(aSocket, aResFun, aAgent, aDomain, callback) {
         });
 }
 
-runRight = function(aSocket, aResFun, aAgent, aDomain, callback) {
+var runRight = function(aSocket, aResFun, aAgent, aDomain, callback) {
     var h2Domain = aDomain.http2;
     console.log("h2 url : "+h2Domain);
     console.log(aAgent);
@@ -203,14 +228,14 @@ runRight = function(aSocket, aResFun, aAgent, aDomain, callback) {
         });
 }
 
-createVideo = function(compareId) {
+var createVideo = function(compareId, aCallback) {
     mWpt.createVideo(compareId, {'dryrun':true},function(error, data) {
         var videoId = data.data.videoId;
-        resData.compareVideo = compare_url + videoId + compare_extrUrl;
+        aCallback(compare_url + videoId + compare_extrUrl);
     });
 }
 
-result = function(aSocket,aLocation, aId, callback) {
+var result = function(aSocket,aLocation, aId, callback) {
     mWpt.getTestResults(aId, { breakdown: true, requests: true}, function(err, data) {
         console.log("statusCode : "+data.data.statusCode + "\n" + data.data.statusText);
         if(data.statusCode == 200) {
@@ -237,14 +262,13 @@ result = function(aSocket,aLocation, aId, callback) {
     });
 }
 
-getWaterfallImg = function(aId, aLocation) {
+var getWaterfallImg = function(aId, aLocation, aCallback) {
     mWpt.getWaterfallImage(aId, { dryRun:true, chartWidth: 450, mime:true, colorByMime: true }, function (err, aData) {
         if(aLocation == LEFT_VIEW) {
-            resData.leftWaterfallImg = aData.url;
-
+            aCallback(aData.url)
         }
         else {
-            resData.rightWatefFallImg = aData.url;
+            aCallback(aData.url)
         }
     });
 }
