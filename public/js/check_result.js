@@ -82,22 +82,24 @@ function startComparison(aDomain) {
     var index=0;
     socket.emit('crawler', aDomain);
     socket.on('state', function(data) {
-        alert(data);
         if(data.search('redirect') != -1) {
             var text = data.substring(8);
-            var domain = "https://www.h2perf.org/result/"+text;
+            var domain = "https://www.h2perf.org/result/" + text;
             window.location.replace(domain);
-        } else if(data.search('crawling') != -1) {
+        }
+        if(data.search('crawling') != -1) {
             updateText("Crawling and Modifying Website");
-        } else if(data.search('wpt') != -1) {
+        }
+        if(data.search('wpt') != -1) {
             updateText("Comparing HTTP/1.1 and HTTP/2");
             //$("#baseText").remove();
-        } else if(index = data.search('download') != -1) {
+        }
+        if(index = data.search('download') != -1) {
             var text = data.substring(index+24);
             updateBaseText(text);
         }
         if(index = data.search('wptstatus') != -1) {
-            var text = data.substring(index+11);
+            var text = data.substring(index+9);
             updateBaseText(text);
         }
     });
