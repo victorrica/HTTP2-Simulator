@@ -52,7 +52,7 @@ var getAgent = function(aCallback) {
     });
 }
 
-var task = function(socket,mResFunction, aDomain) {
+var task = function(aSocket,mResFunction, aDomain) {
     var leftId;
     var rightId;
     var leftContent;
@@ -73,14 +73,14 @@ var task = function(socket,mResFunction, aDomain) {
             },
             function(callback) {
                 console.log("left Id : " + leftId);
-                result(socket,LEFT_VIEW, leftId, function(aContent) {
+                result(aSocket,LEFT_VIEW, leftId, function(aContent) {
                     leftContent = aContent;
                     callback(null);
                 });
             },
             function(callback) {
                 console.log("right Id : " + rightId);
-                result(socket,RIGHT_VIEW, rightId, function(aContent) {
+                result(aSocket,RIGHT_VIEW, rightId, function(aContent) {
                     var compareId = leftId+','+rightId;
                     rightContent = aContent;
                     createVideo(compareId);
@@ -140,11 +140,11 @@ var resData = {
     rightLoadTime : undefined
 }
 
-run = function(socket, key, aDomain, aRcvFun) {
+run = function(aSocket, key, aDomain, aRcvFun) {
     mWpt = new WebPageTest('www.webpagetest.org', key);
     //mysql_connection = connection;
     console.log(key);
-    task(socket,aRcvFun, aDomain);
+    task(aSocket,aRcvFun, aDomain);
 }
 
 runLeft = function(aResFun, aAgent, aDomain, callback) {
@@ -192,7 +192,7 @@ createVideo = function(compareId) {
     });
 }
 
-result = function(socket,aLocation, aId, callback) {
+result = function(aSocket,aLocation, aId, callback) {
     mWpt.getTestResults(aId, { breakdown: true, requests: true}, function(err, data) {
         console.log("statusCode : "+data.data.statusCode + "\n" + data.data.statusText);
         if(data.statusCode == 200) {
@@ -207,8 +207,9 @@ result = function(socket,aLocation, aId, callback) {
             callback(leftContent);
         } else {
             console.log("dddddddddddddd",data.data.statusText);
-            socket.emit("state","wpt_status"+data.data.statusText);
-            result(socket,aLocation,aId, callback);
+            console.log("aSocketaSocketaSocket", aSocket);
+            aSocket.emit("state","wpt_status"+data.data.statusText);
+            result(aSocket,aLocation,aId, callback);
         }
     });
 }
@@ -225,7 +226,7 @@ getWaterfallImg = function(aId, aLocation) {
     });
 }
 
-exports.startWpt = function(socket, aData, callback) {
+exports.startWpt = function(aSocket, aData, callback) {
     var domain = {
         http1 : aData.http1,
         http2 : aData.http2,
@@ -234,7 +235,7 @@ exports.startWpt = function(socket, aData, callback) {
     if(keyCount >= 4)
         keyCount = 0;
 
-    run(socket, key[keyCount], domain, function() {
+    run(aSocket, key[keyCount], domain, function() {
         console.log("keycount");
         console.log(keyCount);
         console.log(key[keyCount]);
