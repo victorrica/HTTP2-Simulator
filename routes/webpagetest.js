@@ -148,7 +148,7 @@ var task = function(aSocket, mResFunction, aDomain) {
                     console.log(resData.rightWatefFallImg);
                     console.log(resData.leftLoadTime);
                     console.log(resData.rightLoadTime);
-                    console.log(performance);
+                    console.log((resData.leftLoadTime/resData.rightLoadTime)*100);
                     console.log("---------------------");
                     mysql_module.insert_result(sql_data);
                     mResFunction();
