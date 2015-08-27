@@ -60,13 +60,13 @@ var task = function(aSocket, mResFunction, aDomain) {
     getAgent(function(aAgent) {
         async.series([
             function(callback) {
-                runLeft(mResFunction, aAgent, aDomain, function(aId) {
+                runLeft(aSocket, mResFunction, aAgent, aDomain, function(aId) {
                     leftId = aId;
                     callback(null);
                 });
             },
             function(callback) {
-                runRight(mResFunction, aAgent, aDomain, function(aId) {
+                runRight(aSocket, mResFunction, aAgent, aDomain, function(aId) {
                     rightId = aId;
                     callback(null);
                 });
@@ -149,7 +149,7 @@ run = function(aSocket, key, aDomain, aRcvFun) {
     task(aSocket,aRcvFun, aDomain);
 }
 
-runLeft = function(aResFun, aAgent, aDomain, callback) {
+runLeft = function(aSocket, aResFun, aAgent, aDomain, callback) {
     var h1Domain = aDomain.http1;
     console.log("h1 url : "+h1Domain);
     console.log(aAgent);
@@ -158,9 +158,9 @@ runLeft = function(aResFun, aAgent, aDomain, callback) {
         function(err, aData) {
             if(aData.statusCode == 400) {
                 keyCount++;
-                exports.startWpt(aDomain, aResFun)
                 console.log("aaaaaaaaaDomain", aDomain);
                 console.log("aaaaaaaaaResFun", aResFun);
+                exports.startWpt(aSocket, aDomain, aResFun)
             }
             else {
                 console.log(aData);
@@ -170,7 +170,7 @@ runLeft = function(aResFun, aAgent, aDomain, callback) {
         });
 }
 
-runRight = function(aResFun, aAgent, aDomain, callback) {
+runRight = function(aSocket, aResFun, aAgent, aDomain, callback) {
     var h2Domain = aDomain.http2;
     console.log("h2 url : "+h2Domain);
     console.log(aAgent);
@@ -179,9 +179,9 @@ runRight = function(aResFun, aAgent, aDomain, callback) {
         function(err, aData) {
             if(aData.statusCode == 400) {
                 keyCount++;
-                console.log("aaaaaaaaaDomain", aDomain);
-                console.log("aaaaaaaaaResFun", aResFun);
-                exports.startWpt(aDomain, aResFun);
+                console.log("bbbbbbbbbDomain", aDomain);
+                console.log("bbbbbbbbbResFun", aResFun);
+                exports.startWpt(aSocket, aDomain, aResFun);
             }
             else {
                 console.log(aData);
