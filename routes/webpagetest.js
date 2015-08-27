@@ -96,17 +96,12 @@ var task = function(aSocket, mResFunction, aDomain) {
                 });
             },
             function(callback) {
-                console.log("left Id : " + leftId);
-                result(aSocket,LEFT_VIEW, leftId, function(aContent) {
-                    leftContent = aContent;
-                    callback(null);
-                });
-            },
-            function(callback) {
                 console.log("right Id : " + rightId);
-                result(aSocket,RIGHT_VIEW, rightId, function(aContent) {
+                result(aSocket,RIGHT_VIEW, rightId, function(aContent, aLeftLoad, aRightLoad) {
                     var compareId = leftId+','+rightId;
                     rightContent = aContent;
+                    resData.leftLoadTime = aLeftLoad;
+                    resData.rightLoadTime = aRightLoad;
                     createVideo(compareId, function (aData) {
                         resData.compareVideo = aData;
                         callback(null);
@@ -239,15 +234,17 @@ var result = function(aSocket,aLocation, aId, callback) {
     mWpt.getTestResults(aId, { breakdown: true, requests: true}, function(err, data) {
         console.log("statusCode : "+data.data.statusCode + "\n" + data.data.statusText);
         if(data.statusCode == 200) {
+            var leftLoadTime;
+            var rightLoadTime;
             if(aLocation==LEFT_VIEW){
-                resData.leftLoadTime = data.data.average.firstView.visualComplete;
+                leftLoadTime = data.data.average.firstView.visualComplete;
             }else{
-                resData.rightLoadTime = data.data.average.firstView.visualComplete;
+                rightLoadTime = data.data.average.firstView.visualComplete;
             }
 
             var leftContent = data.data.median.firstView.breakdown;
 
-            callback(leftContent);
+            callback(leftContent, leftLoadTime, rightLoadTime);
         } else {
             if(aLocation==LEFT_VIEW){
                 var text = "wptstatus"+"HTTP1.1 "+data.data.statusText;
