@@ -206,7 +206,7 @@ result = function(aSocket,aLocation, aId, callback) {
 
             callback(leftContent);
         } else {
-            var text = "wpt_status"+data.data.statusText;
+            var text = "wpt_status"+" "+data.data.statusText;
             console.log("text :", text);
             aSocket.emit("state",text);
             result(aSocket,aLocation,aId, callback);
