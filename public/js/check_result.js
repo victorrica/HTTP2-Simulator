@@ -94,10 +94,9 @@ function startComparison(aDomain) {
         } else if(index = data.search('download') != -1) {
             var text = data.substring(index+24);
             updateBaseText(text);
-        } else if(index = data.search('wpt_status') != -1) {
+        } else if(data.indexOf('wpt_status') != -1) {
             alert("eeee");
-            var text = data.substring(index);
-            alert(text);
+            var text = data.substring(11);
             updateBaseText(text);
         }
     });
