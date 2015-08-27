@@ -112,10 +112,9 @@ var task = function(aSocket, mResFunction, aDomain) {
                         'http2_time':resData.rightLoadTime,
                         'performance':(resData.leftLoadTime/resData.rightLoadTime)*100
                     };
-                    mysql_module.insert_result(sql_data, function() {
-                        mResFunction();
-                        console.log("exitttttttttttttttttttt : ", keyCount);
-                    });
+                    mysql_module.insert_result(sql_data);
+                    mResFunction();
+                    console.log("exitttttttttttttttttttt : ", keyCount);
                 });
             }, 2000);
         });
