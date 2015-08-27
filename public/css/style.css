@@ -198,6 +198,7 @@
 		border: 1px solid black;
 		padding : 1%;
 		margin-top: 5% !important;
+		overflow: hidden;
 	}
 	section.special, article.special {
 		text-align: center;
