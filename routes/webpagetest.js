@@ -92,16 +92,19 @@ var task = function(aSocket, mResFunction, aDomain) {
                 console.log("left Id : " + leftId);
                 result(aSocket,LEFT_VIEW, leftId, function(aContent, aLeftLoad, aRightLoad) {
                     leftContent = aContent;
+                    resData.leftLoadTime = aLeftLoad;
+                    resData.rightLoadTime = aRightLoad;
                     callback(null);
                 });
             },
             function(callback) {
                 console.log("right Id : " + rightId);
                 result(aSocket,RIGHT_VIEW, rightId, function(aContent, aLeftLoad, aRightLoad) {
-                    var compareId = leftId+','+rightId;
+
                     rightContent = aContent;
                     resData.leftLoadTime = aLeftLoad;
                     resData.rightLoadTime = aRightLoad;
+                    var compareId = leftId+','+rightId;
                     createVideo(compareId, function (aData) {
                         resData.compareVideo = aData;
                         callback(null);
