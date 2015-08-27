@@ -108,6 +108,8 @@ var task = function(aSocket, mResFunction, aDomain) {
                     };
                     mysql_module.insert_result(sql_data);
                     mResFunction();
+                    keyCount--;
+                    console.log("exitttttttttttttttttttt : ", keyCount);
                 });
             }, 2000);
         });
@@ -158,8 +160,11 @@ runLeft = function(aSocket, aResFun, aAgent, aDomain, callback) {
         function(err, aData) {
             if(aData.statusCode == 400) {
                 keyCount++;
+                console.log(keyCount + "\n");
                 console.log("aaaaaaaaaDomain", aDomain);
                 console.log("aaaaaaaaaResFun", aResFun);
+                console.log("111111111111ccccccccccccccccc : ", key[keyCount]);
+                console.log("111111111111ddddddddddddddddd : ", keyCount);
                 exports.startWpt(aSocket, aDomain, aResFun);
             }
             else {
@@ -181,6 +186,8 @@ runRight = function(aSocket, aResFun, aAgent, aDomain, callback) {
                 keyCount++;
                 console.log("bbbbbbbbbDomain", aDomain);
                 console.log("bbbbbbbbbResFun", aResFun);
+                console.log("22222222222ccccccccccccccccc : ", key[keyCount]);
+                console.log("22222222222ddddddddddddddddd : ", keyCount);
                 exports.startWpt(aSocket, aDomain, aResFun);
             }
             else {
