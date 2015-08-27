@@ -208,7 +208,12 @@ result = function(aSocket,aLocation, aId, callback) {
 
             callback(leftContent);
         } else {
-            var text = "wptstatus"+" "+data.data.statusText;
+            if(aLocation==LEFT_VIEW){
+                var text = "wptstatus"+"HTTP1.1 "+data.data.statusText;
+            } else {
+                var text = "wptstatus"+"HTTP/2 "+data.data.statusText;
+            }
+
             console.log("text :", text);
             aSocket.emit("state",text);
             result(aSocket,aLocation,aId, callback);
