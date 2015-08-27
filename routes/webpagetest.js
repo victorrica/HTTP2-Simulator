@@ -117,12 +117,13 @@ var task = function(aSocket,mResFunction, aDomain) {
 var getChartUrl = function(aContent, aLocation) {
     var quiche = require('quiche');
     var chart = quiche('pie');
-    chart.addData(aContent.html.bytes, 'html', '0000FF');
-    chart.addData(aContent.js.bytes, 'js', 'F2CB61');
-    chart.addData(aContent.css.bytes, 'css', 'A566FF');
-    chart.addData(aContent.image.bytes, 'image', 'F6F6F6');
-    chart.addData(aContent.flash.bytes, 'flash', 'ABF200');
-    chart.addData(aContent.other.bytes, 'other', 'CFFF24');
+    chart.addData(aContent.html.bytes, 'html', '5f86cb');
+    chart.addData(aContent.js.bytes, 'js', '3fa5ae');
+    chart.addData(aContent.css.bytes, 'css', '90c574');
+    chart.addData(aContent.image.bytes, 'image', 'ab84cc');
+    chart.addData(aContent.flash.bytes, 'flash', '359ea6');
+    chart.addData(aContent.font.bytes, 'font', 'cd382c');
+    chart.addData(aContent.other.bytes, 'other', 'b7b7b7');
 
     chart.setAutoScaling();
     chart.setTransparentBackground();
