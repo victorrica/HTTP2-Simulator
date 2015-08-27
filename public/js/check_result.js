@@ -82,6 +82,7 @@ function startComparison(aDomain) {
     var index=0;
     socket.emit('crawler', aDomain);
     socket.on('state', function(data) {
+        alert(data);
         if(data.search('redirect') != -1) {
             var text = data.substring(8);
             var domain = "https://www.h2perf.org/result/"+text;

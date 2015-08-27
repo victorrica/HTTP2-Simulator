@@ -4,7 +4,7 @@
 //api key :A.81570d0c6da5ed737e21f766e7a89655
 //statusText: 'The test request will exceed the daily test limit for the given API key' }
 var compare_url = 'https://www.webpagetest.org/video/view.php?id='
-var compare_extrUrl = "&embed=1&width=300&height=400"
+var compare_extrUrl = "&embed=1&width=900&height=600"
 var WebPageTest = require('webpagetest');
 var async = require('async');
 var mysql = require('mysql');
