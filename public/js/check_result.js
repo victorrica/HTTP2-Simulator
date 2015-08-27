@@ -95,8 +95,8 @@ function startComparison(aDomain) {
         } else if(index = data.search('download') != -1) {
             var text = data.substring(index+24);
             updateBaseText(text);
-        } else if(index = data.search('wptstatus') != -1) {
-            alert('erort erer')
+        }
+        if(index = data.search('wptstatus') != -1) {
             var text = data.substring(index+11);
             updateBaseText(text);
         }
