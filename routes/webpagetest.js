@@ -52,7 +52,7 @@ var getAgent = function(aCallback) {
     });
 }
 
-var task = function(aSocket,mResFunction, aDomain) {
+var task = function(aSocket, mResFunction, aDomain) {
     var leftId;
     var rightId;
     var leftContent;
@@ -122,7 +122,6 @@ var getChartUrl = function(aContent, aLocation) {
     chart.addData(aContent.css.bytes, 'css', '90c574');
     chart.addData(aContent.image.bytes, 'image', 'ab84cc');
     chart.addData(aContent.flash.bytes, 'flash', '359ea6');
-    chart.addData(aContent.font.bytes, 'font', 'cd382c');
     chart.addData(aContent.other.bytes, 'other', 'b7b7b7');
 
     chart.setAutoScaling();
@@ -146,7 +145,7 @@ var resData = {
 run = function(aSocket, key, aDomain, aRcvFun) {
     mWpt = new WebPageTest('www.webpagetest.org', key);
     //mysql_connection = connection;
-    console.log(key);
+    console.log('key : ',key);
     task(aSocket,aRcvFun, aDomain);
 }
 
@@ -159,7 +158,9 @@ runLeft = function(aResFun, aAgent, aDomain, callback) {
         function(err, aData) {
             if(aData.statusCode == 400) {
                 keyCount++;
-                exports.startWpt(aDomain, aResFun);
+                exports.startWpt(aDomain, aResFun)
+                console.log("aaaaaaaaaDomain", aDomain);
+                console.log("aaaaaaaaaResFun", aResFun);
             }
             else {
                 console.log(aData);
@@ -176,8 +177,10 @@ runRight = function(aResFun, aAgent, aDomain, callback) {
     mWpt.runTest(h2Domain, { "location":aAgent, "label": "HTTP/2", "ignoreSSL":true,"video":true,"player":true, breakdown: true,
         domains: true, pageSpeed: true, requests: true },
         function(err, aData) {
-            if(aData.statusCode == 400 && aData.statusText.indexOf('limit') != -1) {
+            if(aData.statusCode == 400) {
                 keyCount++;
+                console.log("aaaaaaaaaDomain", aDomain);
+                console.log("aaaaaaaaaResFun", aResFun);
                 exports.startWpt(aDomain, aResFun);
             }
             else {
