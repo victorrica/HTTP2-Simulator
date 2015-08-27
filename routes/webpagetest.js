@@ -160,7 +160,7 @@ runLeft = function(aSocket, aResFun, aAgent, aDomain, callback) {
                 keyCount++;
                 console.log("aaaaaaaaaDomain", aDomain);
                 console.log("aaaaaaaaaResFun", aResFun);
-                exports.startWpt(aSocket, aDomain, aResFun)
+                exports.startWpt(aSocket, aDomain, aResFun);
             }
             else {
                 console.log(aData);
