@@ -22,7 +22,10 @@ function get_progress_page(){
         success: function (data) {
             $('body').append(data);
             var target = $("#two").offset().top;
-            $('html, body').animate({scrollTop:target}, 1000);
+            $('html, body').animate({scrollTop:target}, 1000,function(){
+	            $("#header h1").css("color","black");
+				$("#header nav > ul > li a").css("color","black");
+            });
             startComparison();
         },
         dataType: 'html'
