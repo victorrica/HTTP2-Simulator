@@ -94,7 +94,7 @@ function startComparison(aDomain) {
             updateText("Crawling and Modifying Website");
         }
         if(data.search('wpt') != -1) {
-            updateText("Comparing HTTP/1.1 and HTTP/2");
+            updateText("Comparing HTTP1.1 and HTTP/2");
             //$("#baseText").remove();
         }
         if(index = data.search('download') != -1) {
