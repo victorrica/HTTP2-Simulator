@@ -104,7 +104,7 @@ function startComparison(aDomain) {
         if(index = data.search('wptstatus') != -1) {
             var cnt = 0;
             if(cnt = data.search('HTTP1.1') != -1) {
-                text = data.substring(cnt+index+8);
+                text = data.substring(cnt+index+7);
             }
             else if(cnt = data.search('HTTP/2') != -1) {
                 text = data.substring(cnt+index+7);
