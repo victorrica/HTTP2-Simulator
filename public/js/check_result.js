@@ -2,8 +2,6 @@
  * Created by kolnidur on 15. 8. 18..
  */
 
-var count;
-
 $.fn.multiline = function(text){
     this.text(text);
     this.html(this.html().replace(/\n/g,'<br/>'));
@@ -39,47 +37,6 @@ function updateBaseText(aText) {
 	aText.replace("Download Start", "\nDownload Start");
     $('#baseText').multiline(aText.trim());
 }
-
-var gap = 0;
-// 경과 시간 표시
-function echoTime (serverStartTime, serverNowTime)
-{
-	var nowTime = new Date();
-	nowTime = parseInt(nowTime / 1000);
-
-	if (gap == 0) gap = serverNowTime - nowTime;
-	nowTime = nowTime + gap;
-
-	var echoTime = nowTime - (serverStartTime);
-
-	m = parseInt((echoTime % 3600) / 60);
-	s = parseInt((echoTime % 60));
-	if(m != 0){
-        if(m==1){
-            if(s==0||s==1){
-                count = m + 'minute ' + s + "second";
-            }else{
-                count = m + 'minute ' + s + "seconds";
-            }
-        }else{
-            if(s==0||s==1){
-                count = m + 'minutes ' + s + "second";
-            }else{
-                count = m + 'minutes ' + s + "seconds";
-            }
-        }
-    }
-	else{
-        if(s==0||s==1){
-            count = s + "second";
-        }else{
-            count = s + "seconds";
-        }
-    }
-
-	$('#countText').multiline("Estimated time : 4 minutes 10 seconds\nLead time : " + count);
-}
-
 function startComparison(aDomain) {
     var socket = io.connect();
     var index=0;
@@ -112,11 +69,6 @@ $(document).ready(function(){
     $("#next").click(function(){
 
         click_next();
-        var nt = new Date();
-        var nt2 = new Date();
-        setInterval(function(){
-	        echoTime(nt, nt2);
-	    }, 1000);
     });
 
 });
