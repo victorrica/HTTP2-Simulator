@@ -210,7 +210,7 @@ result = function(aSocket,aLocation, aId, callback) {
             console.log("aSocketaSocketaSocket", aSocket);
             var text = "wpt_status"+data.data.statusText;
             aSocket.emit("state",text);
-            result(aLocation,aId, callback);
+            result(aSocket,aLocation,aId, callback);
         }
     });
 }
