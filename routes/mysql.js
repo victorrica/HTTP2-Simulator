@@ -63,7 +63,7 @@ exports.insert_sites = function(hostname){
     return user;
 }
 
-exports.insert_result = function(data){
+exports.insert_result = function(data, aCallback){
 
     var query = connection.query('insert into result set ?',data,function(err,result){
         if (err) {
@@ -71,6 +71,7 @@ exports.insert_result = function(data){
             throw err;
         }
         console.log('Query execute : '+query.sql);
+        aCallback();
     });
 }
 

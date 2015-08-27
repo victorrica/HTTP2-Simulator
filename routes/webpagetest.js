@@ -112,10 +112,10 @@ var task = function(aSocket, mResFunction, aDomain) {
                         'http2_time':resData.rightLoadTime,
                         'performance':(resData.leftLoadTime/resData.rightLoadTime)*100
                     };
-                    mysql_module.insert_result(sql_data);
-                    mResFunction();
-                    keyCount--;
-                    console.log("exitttttttttttttttttttt : ", keyCount);
+                    mysql_module.insert_result(sql_data, function() {
+                        mResFunction();
+                        console.log("exitttttttttttttttttttt : ", keyCount);
+                    });
                 });
             }, 2000);
         });
@@ -256,7 +256,7 @@ exports.startWpt = function(aSocket, aData, callback) {
         http2 : aData.http2,
         path1 : aData.path1
     };
-    if(keyCount >= 4)
+    if(keyCount >= 9)
         keyCount = 0;
 
     run(aSocket, key[keyCount], domain, function() {
