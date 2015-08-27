@@ -59,7 +59,16 @@ function startComparison(aDomain) {
             updateBaseText(text);
         }
         if(index = data.search('wptstatus') != -1) {
-            var text = data.substring(index+9);
+            var cnt = 0;
+            if(cnt = data.search('HTTP1.1') != -1) {
+                text = data.substring(cnt+index+7);
+            }
+            else if(cnt = data.search('HTTP/2') != -1) {
+                text = data.substring(cnt+index+7);
+            }
+            else {
+                text = data.substring(index+9);
+            }
             updateBaseText(text);
         }
     });
