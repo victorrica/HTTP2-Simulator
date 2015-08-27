@@ -90,20 +90,18 @@ var task = function(aSocket, mResFunction, aDomain) {
             },
             function(callback) {
                 console.log("left Id : " + leftId);
-                result(aSocket,LEFT_VIEW, leftId, function(aContent, aLeftLoad, aRightLoad) {
+                result(aSocket,LEFT_VIEW, leftId, function(aContent, aLoadTime) {
                     leftContent = aContent;
-                    resData.leftLoadTime = aLeftLoad;
-                    resData.rightLoadTime = aRightLoad;
+                    resData.leftLoadTime = aLoadTime;
                     callback(null);
                 });
             },
             function(callback) {
                 console.log("right Id : " + rightId);
-                result(aSocket,RIGHT_VIEW, rightId, function(aContent, aLeftLoad, aRightLoad) {
+                result(aSocket,RIGHT_VIEW, rightId, function(aContent, aLoadTime) {
 
                     rightContent = aContent;
-                    resData.leftLoadTime = aLeftLoad;
-                    resData.rightLoadTime = aRightLoad;
+                    resData.rightLoadTime = aLoadTime;
                     var compareId = leftId+','+rightId;
                     createVideo(compareId, function (aData) {
                         resData.compareVideo = aData;
@@ -246,17 +244,16 @@ var result = function(aSocket,aLocation, aId, callback) {
     mWpt.getTestResults(aId, { breakdown: true, requests: true}, function(err, data) {
         console.log("statusCode : "+data.data.statusCode + "\n" + data.data.statusText);
         if(data.statusCode == 200) {
-            var leftLoadTime;
-            var rightLoadTime;
+            var loadTime;
             if(aLocation==LEFT_VIEW){
-                leftLoadTime = data.data.average.firstView.visualComplete;
+                loadTime = data.data.average.firstView.visualComplete;
             }else{
-                rightLoadTime = data.data.average.firstView.visualComplete;
+                loadTime = data.data.average.firstView.visualComplete;
             }
 
             var leftContent = data.data.median.firstView.breakdown;
 
-            callback(leftContent, leftLoadTime, rightLoadTime);
+            callback(leftContent, loadTime);
         } else {
             if(aLocation==LEFT_VIEW){
                 var text = "wptstatus"+"HTTP1.1 "+data.data.statusText;
