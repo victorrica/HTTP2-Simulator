@@ -95,6 +95,7 @@ function startComparison(aDomain) {
             var text = data.substring(index+24);
             updateBaseText(text);
         } else if(data.search('wpt_status')) {
+            alert("eeee");
             var text = data.substring(index+11);
             alert(text);
             updateBaseText(text);

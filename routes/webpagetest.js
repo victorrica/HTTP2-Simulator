@@ -154,7 +154,7 @@ runLeft = function(aResFun, aAgent, aDomain, callback) {
     mWpt.runTest(h1Domain, { "location":aAgent, "label": "HTTP/1.1", "ignoreSSL":true,"video":true,"player":true, breakdown: true,
         domains: true, pageSpeed: true, requests: true },
         function(err, aData) {
-            if(aData.statusCode == 400 && aData.statusText.indexOf('limit') != -1) {
+            if(aData.statusCode == 400) {
                 keyCount++;
                 exports.startWpt(aDomain, aResFun);
             }
