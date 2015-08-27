@@ -1,8 +1,9 @@
 
+var doubleclick = true;
 $(document).ready(function(){
     $(window).on("mousewheel.disableScroll DOMMouseScroll.disableScroll touchmove.disableScroll", function(e) {
       e.preventDefault();
-      return;                      
+      return;
     });
     $(window).on("keydown.disableScroll", function(e) {
       var eventKeyArray = [32, 33, 34, 35, 36, 37, 38, 39, 40];
@@ -59,7 +60,9 @@ $(document).ready(function(){
 
 
 	$("#start").click(function(){
-		check_tls($("#url").val());
+		if(doubleclick)
+			check_tls($("#url").val());
+		doubleclick = false;
 	});
 
 
@@ -96,7 +99,6 @@ function check_tls(url) {
 
 			if($("#protocol_result").length==1){
 				$("#protocol_result").text(result_arr[0]);
-
 			}else{
 				get_check_result(result_arr[0]);
 			}

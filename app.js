@@ -155,6 +155,12 @@ app.get('/result/:path2', function(request, response) {
     },
     function(callback) {
       mysql_module.findResultdataByIdx(site_idx,function(data){
+        var faster="faster";
+        if(parseInt(data[0].performance)<100){
+          faster = "slower";
+          data[0].performance = 100-parseInt(data[0].performance);
+        }
+
         response.render('result', {
           url : site_url,
           compare_url : data[0].compare_url,
@@ -163,7 +169,8 @@ app.get('/result/:path2', function(request, response) {
           h2_waterfall_url : data[0].h2_waterfall_url,
           http1_time : data[0].http1_time,
           http2_time : data[0].http2_time,
-          performance : data[0].performance
+          performance : data[0].performance,
+          faster : faster
         });
         callback(null);
       });
