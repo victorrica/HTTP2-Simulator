@@ -90,7 +90,7 @@ var task = function(aSocket, mResFunction, aDomain) {
             },
             function(callback) {
                 console.log("left Id : " + leftId);
-                result(aSocket,LEFT_VIEW, leftId, function(aContent) {
+                result(aSocket,LEFT_VIEW, leftId, function(aContent, aLeftLoad, aRightLoad) {
                     leftContent = aContent;
                     callback(null);
                 });
