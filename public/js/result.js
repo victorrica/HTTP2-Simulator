@@ -14,7 +14,7 @@ $( document ).ready(function() {
     else if(window.mobileAndTabletcheck())
     	$("#comparevideo").attr("src",$("#comparevideo").attr("src")+ "&embed=1&width=600&height=400");
     else
-    	$("#comparevideo").attr("src",$("#comparevideo").attr("src")+ "&embed=1&width=1200&height=400");
+    	$("#comparevideo").attr("src",$("#comparevideo").attr("src")+ "&embed=1&width=900&height=400");
 });
 
 
