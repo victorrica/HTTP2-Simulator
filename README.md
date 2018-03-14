@@ -1,5 +1,5 @@
 # HTTP/2 Simulator
-## Domain : https://www.h2perf.org (deprecated)
+Domain : https://www.h2perf.org (deprecated)
 
 # UX FLOW
 ```
